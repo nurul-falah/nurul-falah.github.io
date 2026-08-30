@@ -178,12 +178,12 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
 
             <div className="bg-emerald-950/70 p-3.5 rounded-xl border-l-4 border-amber-400">
               <span className="text-[10px] font-mono text-amber-300 font-bold block mb-1">TAHAP 2 (2027)</span>
-              <div className="font-bold text-white mb-1">Konstruksi Wadah & Pelatihan Da'i</div>
+              <div className="font-bold text-white mb-1">Revitalisasi wadah & media</div>
               <p className="text-slate-300 text-[11px]">Penyelesaian fisik lantai dua, pembangunan ruang kelas TPA, dan wisuda angkatan pertama dai muda.</p>
             </div>
 
             <div className="bg-emerald-950/70 p-3.5 rounded-xl border-l-4 border-teal-400">
-              <span className="text-[10px] font-mono text-teal-300 font-bold block mb-1">TAHAP 3 (2028)</span>
+              <span className="text-[10px] font-mono text-teal-300 font-bold block mb-1">TAHAP 3 (2030)</span>
               <div className="font-bold text-white mb-1">Kemandirian & Sentra Sosial Madani</div>
               <p className="text-slate-300 text-[11px]">Peresmian Islamic Center Nurul Falah, inkubasi Baitul Maal warga Sukatani mandiri.</p>
             </div>
