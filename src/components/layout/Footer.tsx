@@ -1,5 +1,5 @@
 import React from "react";
-import { Landmark, Video, Camera, MessageCircle } from "lucide-react";
+import { Landmark, MessageCircle } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
 export function Footer() {
@@ -41,12 +41,6 @@ export function Footer() {
                 className="flex items-center gap-2 hover:text-white transition"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-400" /> WhatsApp Pengurus DKM
-              </a>
-              <a href="#" className="flex items-center gap-2 hover:text-white transition">
-                <Video className="w-4 h-4 text-red-400" /> Nurul Falah TV Sukatani
-              </a>
-              <a href="#" className="flex items-center gap-2 hover:text-white transition">
-                <Camera className="w-4 h-4 text-pink-400" /> @nurulfalah.sukatani
               </a>
             </div>
           </div>
