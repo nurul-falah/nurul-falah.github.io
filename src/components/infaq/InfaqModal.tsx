@@ -67,9 +67,6 @@ export function InfaqModal({ open, onOpenChange }: InfaqModalProps) {
                 <span className="font-bold text-base text-slate-900 block leading-tight">
                   {account.bankName}
                 </span>
-                <span className="text-xs text-emerald-700 font-medium">
-                  Bank Syariah Indonesia
-                </span>
               </div>
             </div>
 
