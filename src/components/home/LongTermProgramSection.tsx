@@ -43,7 +43,7 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
 
               <h3 className="text-xl font-bold text-white mb-2">Ekspansi Kegiatan Keagamaan & Pembinaan Warga</h3>
               <p className="text-slate-300 text-xs leading-relaxed mb-5">
-                Mengintensifkan pembinaan ruhani secara alamiah, membangun karakter masyarakat madani dari generasi anak-anak, remaja, hingga orang tua.
+                Mengintensifkan pembinaan ruhani secara alamiah sedari dini melalui kegiatan belajar materi ajaran islam mulai dari membaca alqur'an sampai seluruh cabang ilmu yang terkandung dalam rukun agama islam.
               </p>
 
               {/* Rincian Program Dakwah */}
