@@ -18,6 +18,7 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
       window.addEventListener("keydown", handleKeyDown);
     } else {
       document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
     }
     return () => {
       document.body.style.overflow = "unset";
@@ -31,7 +32,7 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity animate-in fade-in"
+        className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity animate-in fade-in"
         onClick={() => onOpenChange(false)}
       />
       {/* Content */}
@@ -51,7 +52,7 @@ export function DialogContent({
   return (
     <div
       className={cn(
-        "relative rounded-2xl border border-emerald-500/30 bg-slate-950/95 p-6 shadow-2xl backdrop-blur-2xl text-slate-100",
+        "relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-2xl text-slate-900 text-left",
         className
       )}
       {...props}
@@ -60,7 +61,7 @@ export function DialogContent({
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-lg p-1.5 text-slate-400 hover:bg-slate-800 hover:text-slate-100 transition-colors"
+          className="absolute right-4 top-4 rounded-xl p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
           aria-label="Tutup"
         >
           <X className="h-5 w-5" />
@@ -77,7 +78,7 @@ export function DialogHeader({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("flex flex-col space-y-1.5 text-left mb-5", className)}
+      className={cn("flex flex-col space-y-1.5 text-left mb-4", className)}
       {...props}
     />
   );
@@ -90,7 +91,7 @@ export function DialogTitle({
   return (
     <h3
       className={cn(
-        "text-xl font-bold tracking-tight text-slate-50 flex items-center gap-2",
+        "text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2",
         className
       )}
       {...props}
@@ -103,6 +104,6 @@ export function DialogDescription({
   ...props
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className={cn("text-xs sm:text-sm text-slate-400 leading-relaxed", className)} {...props} />
+    <p className={cn("text-xs sm:text-sm text-slate-500 leading-relaxed", className)} {...props} />
   );
 }

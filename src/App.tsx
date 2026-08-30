@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/home/HeroSection";
 import { PrayerTimesWidget } from "@/components/home/PrayerTimesWidget";
@@ -16,13 +15,10 @@ export function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-slate-50 text-slate-800 selection:bg-emerald-600 selection:text-white font-sans antialiased">
-      {/* 1. Top Bar */}
-      <TopBar />
-
-      {/* 2. Header Navigation Bar */}
+      {/* 1. Header Navigation Bar */}
       <Navbar onOpenInfaq={() => setIsInfaqOpen(true)} />
 
-      {/* 3. Main Content Sections in Menu Order */}
+      {/* 2. Main Content Sections in Menu Order */}
       <main className="flex-1">
         {/* Hero Section */}
         <HeroSection onOpenInfaq={() => setIsInfaqOpen(true)} />
@@ -43,10 +39,10 @@ export function App() {
         <OrganizationSection />
       </main>
 
-      {/* 4. Footer */}
+      {/* 3. Footer */}
       <Footer />
 
-      {/* 5. Interactive Modals */}
+      {/* 4. Interactive Modals */}
       <InfaqModal open={isInfaqOpen} onOpenChange={setIsInfaqOpen} />
       <LayananModal open={isLayananOpen} onOpenChange={setIsLayananOpen} />
     </div>
