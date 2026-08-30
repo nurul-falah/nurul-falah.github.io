@@ -82,8 +82,8 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
             {/* Target Realisasi */}
             <div className="bg-emerald-950/60 p-4 rounded-xl border border-emerald-500/20 mt-2 flex items-center justify-between text-xs">
               <div>
-                <div className="text-emerald-300 font-bold">Target Implementasi</div>
-                <div className="text-[11px] text-slate-300">Dimulai bertahap Triwulan IV 2026</div>
+                <div className="text-emerald-300 font-bold">Status Program</div>
+                <div className="text-[11px] text-emerald-200">Sudah berjalan tanpa kendala</div>
               </div>
               <button
                 type="button"
