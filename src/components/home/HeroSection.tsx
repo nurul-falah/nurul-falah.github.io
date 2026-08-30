@@ -36,7 +36,7 @@ export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
                 <Compass className="w-4 h-4" /> Rencana & Pembangunan Masjid
               </a>
               <a
-                href="#agenda"
+                href="#program"
                 className="px-6 py-3 rounded-xl bg-emerald-800/70 hover:bg-emerald-800 border border-emerald-500/40 text-white font-semibold text-sm transition flex items-center gap-2"
               >
                 <Calendar className="w-4 h-4" /> Jadwal Kajian
