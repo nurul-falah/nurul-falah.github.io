@@ -31,9 +31,9 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
               <Landmark className="w-6 h-6 text-amber-300" />
             </div>
             <div>
-              <div className="font-bold text-lg leading-tight text-[#064e3b]">Masjid Nurul Falah</div>
+              <div className="font-bold text-lg leading-tight text-[#064e3b]">Masjid Nurul Falah &amp; RKM</div>
               <div className="text-xs text-slate-500 font-medium tracking-wide">
-                Kp. Sukatani, RT 05 RW 03, Desa Wangunsari
+                Sukatani, Desa Wangunsari
               </div>
             </div>
           </a>

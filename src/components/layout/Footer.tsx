@@ -11,7 +11,7 @@ export function Footer() {
           <div className="space-y-3 md:col-span-2">
             <div className="flex items-center gap-2 text-white font-bold text-lg">
               <Landmark className="w-5 h-5 text-amber-400" />
-              <span>Masjid Nurul Falah Sukatani</span>
+              <span>Masjid Nurul Falah &amp; RKM</span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-md">
               Pusat ibadah dan pelatihan generasi madani.
@@ -48,7 +48,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-400">
-          <div>&copy; 2026 DKM Masjid Nurul Falah Sukatani. Seluruh hak cipta dilindungi.</div>
+          <div>&copy; 2026 DKM Masjid Nurul Falah &amp; RKM. Seluruh hak cipta dilindungi.</div>
           <div className="text-emerald-300 font-semibold">Amanah & Transparan Memakmurkan Masjid</div>
         </div>
       </div>
