@@ -90,7 +90,7 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
                 onClick={onOpenLayanan}
                 className="px-3 py-1.5 bg-[#059669] hover:bg-emerald-500 rounded-lg text-white font-semibold transition text-xs cursor-pointer"
               >
-                Daftar Relawan Dakwah
+                Daftar Relawan Pengajar
               </button>
             </div>
           </div>

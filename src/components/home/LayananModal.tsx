@@ -20,10 +20,10 @@ export function LayananModal({ open, onOpenChange }: LayananModalProps) {
           </div>
 
           <h3 className="text-lg font-bold text-slate-900 mb-1">
-            Partisipasi Relawan Dakwah
+            Partisipasi Relawan Pengajar
           </h3>
           <p className="text-xs text-slate-500 mb-4">
-            Bagi warga Sukatani yang ingin berkontribusi sebagai pengajar tahfidz, panitia pembangunan, atau tim multimedia syiar:
+            Bagi warga Sukatani yang ingin berkontribusi sebagai tenaga pengajar atau pembimbing Al-Qur'an dan generasi madani:
           </p>
 
           <div className="space-y-3 text-xs text-slate-700">
@@ -31,7 +31,7 @@ export function LayananModal({ open, onOpenChange }: LayananModalProps) {
               <div className="font-bold text-slate-900 mb-1">{contacts.secretariat.role}</div>
               <div className="text-slate-600 mb-2">{contacts.secretariat.name}</div>
               <a
-                href="https://wa.me/6285710546122?text=Assalamu%27alaikum%20Bpk.%20Badar%20Rustandi%20(Sekretariat%20DKM)%2C%20saya%20ingin%20mengajukan%20kegiatan%20atau%20pendaftaran%20relawan"
+                href="https://wa.me/6285710546122?text=Assalamu%27alaikum%20Bpk.%20Badar%20Rustandi%20(Imarah)%2C%20saya%20ingin%20mendaftar%20sebagai%20relawan%20pengajar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#059669] hover:bg-[#047857] text-white rounded-lg font-semibold transition"
