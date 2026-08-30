@@ -1,5 +1,5 @@
 import React from "react";
-import { Milestone, Hammer, BookMarked, CheckCircle2, Sparkles, CalendarRange, Compass } from "lucide-react";
+import { Milestone, Hammer, BookMarked, CheckCircle2, Sparkles, Compass } from "lucide-react";
 
 export interface LongTermProgramSectionProps {
   onOpenWakaf?: () => void;
@@ -161,33 +161,6 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
             </div>
           </div>
 
-        </div>
-
-        {/* Roadmap Timeline Bar */}
-        <div className="relative z-10 bg-white/5 rounded-2xl p-5 border border-white/10">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-amber-300 mb-4 flex items-center gap-2">
-            <CalendarRange className="w-4 h-4" /> Tahapan Target Program (Roadmap)
-          </h4>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-            <div className="bg-emerald-950/70 p-3.5 rounded-xl border-l-4 border-emerald-400">
-              <span className="text-[10px] font-mono text-emerald-300 font-bold block mb-1">TAHAP 1 (2026)</span>
-              <div className="font-bold text-white mb-1">Fondasi Dakwah & Inisiasi Program</div>
-              <p className="text-slate-300 text-[11px]">Penambahan penceramah dari luar dalam rangka mempererat silaturahmi antar DKM</p>
-            </div>
-
-            <div className="bg-emerald-950/70 p-3.5 rounded-xl border-l-4 border-amber-400">
-              <span className="text-[10px] font-mono text-amber-300 font-bold block mb-1">TAHAP 2 (2027)</span>
-              <div className="font-bold text-white mb-1">Revitalisasi wadah & media</div>
-              <p className="text-slate-300 text-[11px]">Penyelesaian fisik lantai dua, pembangunan ruang kelas TPA, dan wisuda angkatan pertama dai muda.</p>
-            </div>
-
-            <div className="bg-emerald-950/70 p-3.5 rounded-xl border-l-4 border-teal-400">
-              <span className="text-[10px] font-mono text-teal-300 font-bold block mb-1">TAHAP 3 (2030)</span>
-              <div className="font-bold text-white mb-1">Kemandirian & Sentra Sosial Madani</div>
-              <p className="text-slate-300 text-[11px]">Peresmian Islamic Center Nurul Falah, inkubasi Baitul Maal warga Sukatani mandiri.</p>
-            </div>
-          </div>
         </div>
 
       </div>
