@@ -14,7 +14,7 @@ export function Footer() {
               <span>Masjid Nurul Falah Sukatani</span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-md">
-              Pusat ibadah, pembinaan generasi Qur'ani, pembangunan 2 lantai, dan pemberdayaan sosial di lingkungan Sukatani, Cisolok, Sukabumi.
+              Pusat ibadah dan pelatihan generasi madani.
             </p>
             <div className="text-slate-400">
               <b>Alamat:</b> {masjidData.address.fullAddress}.
