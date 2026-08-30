@@ -51,29 +51,29 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
                 <li className="flex items-start gap-2.5">
                   <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <b className="text-white">Gerakan 1 Rumah 1 Hafidz Sukatani:</b>
-                    <p className="text-slate-300 text-[11px]">Bimbingan intensif tahfidz online & offline berjenjang untuk keluarga muslim.</p>
+                    <b className="text-white">Pelatihan Baca-Tulis Al-Qur'an:</b>
+                    <p className="text-slate-300 text-[11px]">Bimbingan membaca Iqro, tajwid, tahsin tilawah, dan literasi menulis huruf hijaiyah secara sistematis sedari dini.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <b className="text-white">Kajian Shubuh Gabungan Antar-Masjid & Musala:</b>
-                    <p className="text-slate-300 text-[11px]">Rotasi bulanan menghadirkan ulama dan santapan sarapan ukhuwah bersama.</p>
+                    <b className="text-white">Pelatihan Shalat Berjamaah Maghrib:</b>
+                    <p className="text-slate-300 text-[11px]">Pembiasaan disiplin hadir ke masjid meramaikan shaf shalat Maghrib berjamaah, adab di dalam masjid, dan doa harian.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <b className="text-white">Madrasah Diniyah Malam & Bahasa Arab Jamaah:</b>
-                    <p className="text-slate-300 text-[11px]">Kelas bahasa Al-Qur'an dan fiqih muamalah praktis bagi pekerja dan wiraswasta.</p>
+                    <b className="text-white">Pelatihan Imam Shalat Isya:</b>
+                    <p className="text-slate-300 text-[11px]">Kaderisasi keberanian adzan, iqomah, kefasihan bacaan surat, dan tata cara memimpin shalat Isya bagi generasi muda.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <b className="text-white">Kaderisasi Da'i Muda & Pelatihan Khotib Sukatani:</b>
-                    <p className="text-slate-300 text-[11px]">Mencetak khatib dan imam muda berkualitas dari pemuda lingkungan sekitar.</p>
+                    <b className="text-white">Pelatihan Mengajar Baca-Tulis Al-Qur'an:</b>
+                    <p className="text-slate-300 text-[11px]">Training of Trainers (ToT) bagi para remaja dan kader dakwah untuk menjadi pengajar Al-Qur'an generasi berikutnya.</p>
                   </div>
                 </li>
               </ul>
