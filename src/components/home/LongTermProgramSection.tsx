@@ -109,7 +109,7 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
 
               <h3 className="text-xl font-bold text-white mb-2">Pembangunan & Revitalisasi Sarana Masjid</h3>
               <p className="text-slate-300 text-xs leading-relaxed mb-5">
-                Meningkatkan daya tampung jamaah ibadah sholat dan fasilitas ruang belajar anak-anak serta sentra interaksi warga Sukatani.
+                Meningkatkan kualitas dan pengoptimalan kegunaan lahan masjid untuk tempat ibadah, kegiatan belajar dan kegiatan sosial.
               </p>
 
               {/* Rincian Sarana & Prasarana */}
