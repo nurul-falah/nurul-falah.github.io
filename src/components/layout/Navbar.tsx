@@ -38,39 +38,39 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
             </div>
           </a>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-semibold text-slate-600">
-            {navLinks.map((link) => {
-              if (link.highlight) {
+          {/* Right Group: Desktop Nav Links & CTA Button side-by-side */}
+          <div className="hidden md:flex items-center gap-3 lg:gap-4">
+            <nav className="flex items-center gap-1 lg:gap-2 text-sm font-semibold text-slate-600">
+              {navLinks.map((link) => {
+                if (link.highlight) {
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="px-3 py-2 rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 transition flex items-center gap-1 font-bold"
+                    >
+                      <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>{link.label}</span>
+                    </a>
+                  );
+                }
                 return (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="px-3 py-2 rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 transition flex items-center gap-1 font-bold"
+                    className="px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition"
                   >
-                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>{link.label}</span>
+                    {link.label}
                   </a>
                 );
-              }
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition"
-                >
-                  {link.label}
-                </a>
-              );
-            })}
-          </nav>
+              })}
+            </nav>
 
-          {/* CTA Infaq Button */}
-          <div className="hidden sm:flex items-center gap-3">
+            {/* CTA Infaq Button */}
             <button
               type="button"
               onClick={handleInfaqClick}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-semibold text-sm shadow-sm hover:shadow-md transition cursor-pointer active:scale-95"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-semibold text-sm shadow-sm hover:shadow-md transition cursor-pointer active:scale-95 ml-1"
             >
               <HeartHandshake className="w-4 h-4 text-amber-300" />
               <span>Infaq / Wakaf</span>
