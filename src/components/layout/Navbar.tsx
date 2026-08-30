@@ -94,13 +94,13 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-slate-100 py-3 space-y-1 animate-in slide-in-from-top-2 duration-150">
+          <div className="md:hidden border-t border-slate-100 py-4 space-y-2 text-center animate-in slide-in-from-top-2 duration-150">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition ${
+                className={`block px-4 py-2.5 rounded-xl text-base font-medium transition text-center ${
                   link.highlight
                     ? "text-emerald-800 bg-emerald-50 font-bold"
                     : "text-slate-700 hover:bg-emerald-50"
@@ -109,14 +109,14 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
                 {link.label}
               </a>
             ))}
-            <div className="pt-2">
+            <div className="pt-2 px-2">
               <button
                 type="button"
                 onClick={handleInfaqClick}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-medium text-sm shadow cursor-pointer active:scale-95"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-medium text-sm shadow cursor-pointer active:scale-95 text-center"
               >
                 <HeartHandshake className="w-4 h-4 text-amber-300" />
-                <span>Infaq & Wakaf</span>
+                <span>Infaq &amp; Wakaf</span>
               </button>
             </div>
           </div>
