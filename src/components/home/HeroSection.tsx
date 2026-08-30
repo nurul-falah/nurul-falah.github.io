@@ -82,10 +82,10 @@ export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
               <div className="space-y-2 bg-emerald-950/40 p-3.5 rounded-xl border border-emerald-500/20 text-xs text-emerald-100 mb-5">
                 <div className="flex items-center justify-between">
                   <span>Progress Wakaf Pembangunan:</span>
-                  <span className="font-bold text-amber-300 font-mono">42% (Rp 189 Jt / Rp 450 Jt)</span>
+                  <span className="font-bold text-amber-300 font-mono">12% (Rp 56 Jt / Rp 450 Jt)</span>
                 </div>
                 <div className="w-full bg-emerald-900/80 h-2 rounded-full overflow-hidden">
-                  <div className="bg-amber-400 h-full rounded-full transition-all duration-500" style={{ width: "42%" }}></div>
+                  <div className="bg-amber-400 h-full rounded-full transition-all duration-500" style={{ width: "12%" }}></div>
                 </div>
               </div>
 

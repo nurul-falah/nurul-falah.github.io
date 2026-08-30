@@ -145,10 +145,10 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
                 <span className="text-amber-300 font-bold font-mono">Rp 450.000.000</span>
               </div>
               <div className="w-full bg-slate-700/60 h-2.5 rounded-full overflow-hidden mb-2">
-                <div className="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full" style={{ width: "42%" }}></div>
+                <div className="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full" style={{ width: "12%" }}></div>
               </div>
               <div className="flex justify-between items-center text-[11px] text-slate-400">
-                <span>Terkumpul: <b className="text-white font-mono">Rp 189.000.000</b> (42%)</span>
+                <span>Terkumpul: <b className="text-white font-mono">Rp 56.000.000</b> (12%)</span>
                 <div className="flex items-center gap-3">
                   <a
                     href="https://burubur.github.io/drftr/?project=masjid"

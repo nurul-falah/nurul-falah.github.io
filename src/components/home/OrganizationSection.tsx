@@ -10,7 +10,7 @@ export function OrganizationSection() {
       <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
         <h3 className="text-xl font-bold text-slate-900 mb-2">Sekretariat Masjid & RKM</h3>
         <p className="text-xs text-slate-500 max-w-xl mx-auto mb-6">
-          Informasi panitia pembangunan, konsultasi zakat/wakaf, atau pengajuan kegiatan warga Sukatani.
+          Informasi kegiatan di lingkungan masjid dan RKM
         </p>
 
         <div className="grid sm:grid-cols-3 gap-4 text-left text-xs">
