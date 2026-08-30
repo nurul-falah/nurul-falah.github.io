@@ -116,23 +116,14 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
               <ul className="space-y-3.5 text-xs text-slate-200 mb-6">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <div>
-                    <b className="text-white">Perluasan Ruang Ibadah Utama (Lantai 2):</b>
-                    <p className="text-slate-300 text-[11px]">Menambah kapasitas hingga +300 jamaah dengan konstruksi baja tahan gempa.</p>
+                  <div className="text-white font-medium text-xs leading-relaxed">
+                    Revitalisasi struktur bangunan
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <div>
-                    <b className="text-white">Pembangunan Gedung TPA & Tahfidz 2 Lantai:</b>
-                    <p className="text-slate-300 text-[11px]">4 ruang kelas multimedia, perpustakaan Islam, dan ruang sekretariat RISMA.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <div>
-                    <b className="text-white">Modernisasi Tempat Wudhu & Akses Disabilitas/Lansia:</b>
-                    <p className="text-slate-300 text-[11px]">Ramp khusus kursi roda, sanitasi otomatis, dan penampungan air wudhu daur ulang.</p>
+                  <div className="text-white font-medium text-xs leading-relaxed">
+                    Optimalisasi lahan untuk persiapan struktur bangunan jangka panjang (TPA &amp; Tahfidz &amp; Layanan Sosial)
                   </div>
                 </li>
               </ul>
