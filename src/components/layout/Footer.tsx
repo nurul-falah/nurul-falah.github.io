@@ -24,10 +24,10 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold mb-3 uppercase tracking-wider text-xs">Navigasi Utama</h4>
             <ul className="space-y-2">
-              <li><a href="#program-panjang" className="hover:text-amber-300 transition text-amber-200">Pembangunan & Jangka Panjang</a></li>
+              <li><a href="#beranda" className="hover:text-amber-300 transition">Beranda Utama</a></li>
               <li><a href="#jadwal" className="hover:text-amber-300 transition">Jadwal Sholat Sukatani</a></li>
-              <li><a href="#agenda" className="hover:text-amber-300 transition">Agenda Pengajian</a></li>
-              <li><a href="#laporan" className="hover:text-amber-300 transition">Laporan Keuangan Kas</a></li>
+              <li><a href="#program" className="hover:text-amber-300 transition">Program Rutin</a></li>
+              <li><a href="#program-panjang" className="hover:text-amber-300 transition text-amber-200">Program Jangka Panjang</a></li>
             </ul>
           </div>
 

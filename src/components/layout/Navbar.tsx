@@ -11,8 +11,6 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
   const navLinks = [
     { label: "Program Rutin", href: "#program" },
     { label: "Program Jangka Panjang", href: "#program-panjang", highlight: true },
-    { label: "Agenda & Warta", href: "#agenda" },
-    { label: "Transparansi Kas", href: "#laporan" },
   ];
 
   const handleInfaqClick = () => {
