@@ -1,6 +1,6 @@
 import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Users, Phone, MessageCircle } from "lucide-react";
+import { Users, MessageCircle } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
 export interface LayananModalProps {
@@ -31,7 +31,7 @@ export function LayananModal({ open, onOpenChange }: LayananModalProps) {
               <div className="font-bold text-slate-900 mb-1">{contacts.secretariat.role}</div>
               <div className="text-slate-600 mb-2">{contacts.secretariat.name}</div>
               <a
-                href={contacts.whatsappUrl}
+                href="https://wa.me/6285710546122?text=Assalamu%27alaikum%20Bpk.%20Badar%20Rustandi%20(Sekretariat%20DKM)%2C%20saya%20ingin%20mengajukan%20kegiatan%20atau%20pendaftaran%20relawan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#059669] hover:bg-[#047857] text-white rounded-lg font-semibold transition"
