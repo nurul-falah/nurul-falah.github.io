@@ -8,7 +8,7 @@ export function OrganizationSection() {
   return (
     <section className="py-14 max-w-5xl mx-auto px-4 sm:px-6 text-center">
       <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-        <h3 className="text-xl font-bold text-slate-900 mb-2">Layanan & Sekretariat Masjid</h3>
+        <h3 className="text-xl font-bold text-slate-900 mb-2">Sekretariat Masjid & RKM</h3>
         <p className="text-xs text-slate-500 max-w-xl mx-auto mb-6">
           Informasi panitia pembangunan, konsultasi zakat/wakaf, atau pengajuan kegiatan warga Sukatani.
         </p>
