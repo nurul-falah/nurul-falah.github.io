@@ -173,7 +173,7 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
             <div className="bg-emerald-950/70 p-3.5 rounded-xl border-l-4 border-emerald-400">
               <span className="text-[10px] font-mono text-emerald-300 font-bold block mb-1">TAHAP 1 (2026)</span>
               <div className="font-bold text-white mb-1">Fondasi Dakwah & Inisiasi Program</div>
-              <p className="text-slate-300 text-[11px]">Gerakan 1 Rumah 1 Hafidz, penggalangan dana wakaf sarana, serta legalitas rancang bangun.</p>
+              <p className="text-slate-300 text-[11px]">Penambahan penceramah dari luar dalam rangka mempererat silaturahmi antar DKM</p>
             </div>
 
             <div className="bg-emerald-950/70 p-3.5 rounded-xl border-l-4 border-amber-400">
