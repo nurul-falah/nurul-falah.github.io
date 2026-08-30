@@ -22,7 +22,7 @@ export function TopBar() {
       <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5 text-emerald-300">
-            <MapPin className="w-3.5 h-3.5" /> Kp. Sukatani, Rt 05, Rw 03, Wangunsari
+            <MapPin className="w-3.5 h-3.5" /> Kp. Sukatani, RT 05 RW 03, Desa Wangunsari
           </span>
           <span className="hidden sm:inline-block text-emerald-600">•</span>
           <span className="text-amber-300 font-medium">14 Safar 1448 H</span>

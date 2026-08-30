@@ -3,13 +3,13 @@
   "arabicName": "مَسْجِدُ نُوْرِ الْفَلَاحِ",
   "tagline": "Pembangunan Masjid Permanen 2 Lantai & Pusat Dakwah Umat",
   "address": {
-    "kampung": "Kp. Sukatani, Rt 05, Rw 03",
-    "kelurahan": "Wangunsari",
+    "kampung": "Kp. Sukatani, RT 05 RW 03",
+    "kelurahan": "Desa Wangunsari",
     "kecamatan": "Cisolok",
     "kabupaten": "Sukabumi",
     "provinsi": "Jawa Barat",
     "kodepos": "43366",
-    "fullAddress": "Jl. Masjid Nurul Falah No. 01, Kp. Sukatani, Rt 05, Rw 03, Wangunsari, Cisolok, Sukabumi"
+    "fullAddress": "Kp. Sukatani, RT 05 RW 03, Desa Wangunsari, Cisolok, Sukabumi"
   },
   "coordinates": {
     "latitude": -6.9458,
@@ -51,8 +51,8 @@
     },
     "funeralService": {
       "role": "Pelayanan Jenazah / Rukun Kematian",
-      "name": "Ust. Marzuki & Tim",
-      "phone": "0857-7788-990 (24 Jam)"
+      "name": "Bpk. Dede Dzulkipli",
+      "phone": "0856-4038-0652"
     }
   },
   "routinePrograms": [
