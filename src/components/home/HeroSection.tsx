@@ -74,9 +74,9 @@ export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold mb-2">Perluasan Ruang Ibadah & Sentra Tahfidz Sukatani</h3>
+              <h3 className="text-xl font-bold mb-2">Pembangunan & Revitalisasi Sarana Masjid</h3>
               <p className="text-slate-200 text-sm mb-4 line-clamp-2">
-                Proyek pembangunan ruang sholat lantai dua dan pembinaan 100 santri penghafal Al-Qur'an bersertifikat.
+                Konstruksi lanjutan untuk area ibadah dan pembelajaran yang lebih berkualitas
               </p>
 
               <div className="space-y-2 bg-emerald-950/40 p-3.5 rounded-xl border border-emerald-500/20 text-xs text-emerald-100 mb-5">

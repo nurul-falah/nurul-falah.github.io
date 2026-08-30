@@ -116,14 +116,16 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
               <ul className="space-y-3.5 text-xs text-slate-200 mb-6">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <div className="text-white font-medium text-xs leading-relaxed">
-                    Revitalisasi struktur bangunan
+                  <div>
+                    <div className="text-white font-semibold text-xs">Revitalisasi struktur bangunan</div>
+                    <p className="text-slate-300 text-[11px]">Konstruksi lanjutan untuk area ibadah dan pembelajaran yang lebih berkualitas</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <div className="text-white font-medium text-xs leading-relaxed">
-                    Optimalisasi lahan untuk persiapan struktur bangunan jangka panjang (TPA &amp; Tahfidz &amp; Layanan Sosial)
+                  <div>
+                    <div className="text-white font-semibold text-xs">Optimalisasi lahan untuk persiapan struktur bangunan jangka panjang</div>
+                    <p className="text-slate-300 text-[11px]">Penataan sarana TPA &amp; Tahfidz &amp; Layanan Sosial masyarakat</p>
                   </div>
                 </li>
               </ul>
