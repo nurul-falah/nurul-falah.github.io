@@ -3,12 +3,12 @@ import { SunMedium } from "lucide-react";
 
 export function PrayerTimesWidget() {
   const prayers = [
-    { name: "Shubuh", time: "04:42", note: "Iqomah +12m", active: false },
-    { name: "Syuruq", time: "05:58", note: "Terbit", active: false },
-    { name: "Dzuhur", time: "12:02", note: "Iqomah +10m", active: true },
-    { name: "Ashar", time: "15:21", note: "Iqomah +10m", active: false },
-    { name: "Maghrib", time: "18:04", note: "Iqomah +08m", active: false },
-    { name: "Isya", time: "19:14", note: "Iqomah +10m", active: false },
+    { name: "Shubuh", time: "04:42", note: "Iqomah +12m" },
+    { name: "Syuruq", time: "05:58", note: "Terbit" },
+    { name: "Dzuhur", time: "12:02", note: "Iqomah +10m" },
+    { name: "Ashar", time: "15:21", note: "Iqomah +10m" },
+    { name: "Maghrib", time: "18:04", note: "Iqomah +08m" },
+    { name: "Isya", time: "19:14", note: "Iqomah +10m" },
   ];
 
   return (
@@ -26,47 +26,24 @@ export function PrayerTimesWidget() {
           </div>
         </div>
 
-        {/* Prayer Cards Grid */}
+        {/* Prayer Cards Grid - Uniform Normal Style */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
-          {prayers.map((prayer) => {
-            if (prayer.active) {
-              return (
-                <div
-                  key={prayer.name}
-                  className="prayer-card p-3 rounded-xl bg-[#047857] text-white border-2 border-amber-400 shadow-md transform -translate-y-0.5"
-                >
-                  <div className="flex items-center justify-center gap-1">
-                    <span className="text-xs font-medium text-emerald-200 block mb-1">
-                      {prayer.name}
-                    </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                  </div>
-                  <span className="text-xl font-black text-amber-300 font-mono">
-                    {prayer.time}
-                  </span>
-                  <span className="text-[10px] text-emerald-200 block mt-1">
-                    {prayer.note}
-                  </span>
-                </div>
-              );
-            }
-            return (
-              <div
-                key={prayer.name}
-                className="prayer-card p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-emerald-500 transition"
-              >
-                <span className="text-xs font-medium text-slate-500 block mb-1">
-                  {prayer.name}
-                </span>
-                <span className="text-xl font-black text-slate-800 font-mono">
-                  {prayer.time}
-                </span>
-                <span className="text-[10px] text-slate-400 block mt-1">
-                  {prayer.note}
-                </span>
-              </div>
-            );
-          })}
+          {prayers.map((prayer) => (
+            <div
+              key={prayer.name}
+              className="prayer-card p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-emerald-500 transition"
+            >
+              <span className="text-xs font-medium text-slate-500 block mb-1">
+                {prayer.name}
+              </span>
+              <span className="text-xl font-black text-slate-800 font-mono">
+                {prayer.time}
+              </span>
+              <span className="text-[10px] text-slate-400 block mt-1">
+                {prayer.note}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
