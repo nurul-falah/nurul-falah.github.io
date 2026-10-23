@@ -209,29 +209,75 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
             <div className="grid gap-2.5">
               {masjidData.constructionPhases.map((phase, i) => {
                 const Icon = phaseIcons[i] || Hammer;
+                const isCompleted = phase.status === "Selesai";
+                const isInProgress = phase.status === "Dalam Proses";
+
                 return (
                   <div
                     key={phase.phase}
-                    className="flex items-start gap-3 p-3 sm:p-3.5 rounded-xl bg-white/90 border border-emerald-100/90 hover:border-emerald-300 transition-colors shadow-2xs"
+                    className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 sm:p-4 rounded-xl border transition-all ${
+                      isCompleted
+                        ? "bg-emerald-50/70 border-emerald-300/80 shadow-2xs"
+                        : isInProgress
+                        ? "bg-amber-50/50 border-amber-200/90 shadow-2xs"
+                        : "bg-white/90 border-emerald-100/90 shadow-2xs"
+                    }`}
                   >
-                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white font-extrabold text-xs flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                      {phase.phase}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-2 mb-1">
-                        <span className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
-                          {phase.title}
-                        </span>
-                        <span className="text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/80">
-                          {phase.badge}
-                        </span>
+                    {/* Left: Phase Number & Info */}
+                    <div className="flex items-start gap-3 min-w-0 flex-1">
+                      <div
+                        className={`w-8 h-8 rounded-xl text-white font-extrabold text-xs flex items-center justify-center shrink-0 shadow-sm mt-0.5 sm:mt-0 ${
+                          isCompleted
+                            ? "bg-emerald-600"
+                            : isInProgress
+                            ? "bg-amber-500"
+                            : "bg-gradient-to-br from-emerald-600 to-emerald-800"
+                        }`}
+                      >
+                        {isCompleted ? (
+                          <CheckCircle2 className="w-4 h-4 text-white" />
+                        ) : (
+                          phase.phase
+                        )}
                       </div>
-                      <p className="text-xs text-slate-600 leading-relaxed">
-                        {phase.desc}
-                      </p>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mb-1">
+                          <span className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
+                            {phase.title}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded-md border border-emerald-200/80">
+                            <Icon className="w-3 h-3 text-emerald-700" />
+                            {phase.badge}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          {phase.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div className="hidden sm:flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 shrink-0 self-center">
-                      <Icon className="w-4 h-4" />
+
+                    {/* Right: Status Badge */}
+                    <div className="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                      <span className="sm:hidden text-[11px] text-slate-400 font-medium">
+                        Status:
+                      </span>
+                      {isCompleted ? (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-2xs">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                          Selesai
+                        </span>
+                      ) : isInProgress ? (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300 shadow-2xs">
+                          <Clock className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
+                          Dalam Proses
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">
+                          <CircleDot className="w-3.5 h-3.5 text-slate-400" />
+                          Rencana
+                        </span>
+                      )}
                     </div>
                   </div>
                 );
