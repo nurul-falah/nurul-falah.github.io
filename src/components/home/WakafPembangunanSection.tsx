@@ -13,6 +13,12 @@ import {
   Building2,
   Users,
   Maximize2,
+  Droplets,
+  Layers,
+  Sparkles,
+  CheckCircle2,
+  Clock,
+  CircleDot,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
@@ -22,6 +28,7 @@ export interface WakafSectionProps {
 
 const financial = masjidData.financial;
 const account = masjidData.bankAccounts[0];
+const phaseIcons = [Droplets, Layers, Sparkles, Building2, Hammer];
 
 const buildingItems = [
   { label: "Pondasi & Struktur Beton", pct: 35 },
@@ -184,6 +191,51 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                   {tujuan}
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Fase Pembangunan */}
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h4 className="text-sm font-bold text-[#064e3b] flex items-center gap-1.5">
+                <span className="w-1 h-4 bg-emerald-600 rounded-full inline-block" />
+                Fase & Rencana Tahapan Pembangunan
+              </h4>
+              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-100/90 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                5 Tahapan Terencana
+              </span>
+            </div>
+
+            <div className="grid gap-2.5">
+              {masjidData.constructionPhases.map((phase, i) => {
+                const Icon = phaseIcons[i] || Hammer;
+                return (
+                  <div
+                    key={phase.phase}
+                    className="flex items-start gap-3 p-3 sm:p-3.5 rounded-xl bg-white/90 border border-emerald-100/90 hover:border-emerald-300 transition-colors shadow-2xs"
+                  >
+                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white font-extrabold text-xs flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                      {phase.phase}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-1">
+                        <span className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
+                          {phase.title}
+                        </span>
+                        <span className="text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/80">
+                          {phase.badge}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-600 leading-relaxed">
+                        {phase.desc}
+                      </p>
+                    </div>
+                    <div className="hidden sm:flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 shrink-0 self-center">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

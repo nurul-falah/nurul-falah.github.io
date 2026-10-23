@@ -23,6 +23,43 @@
     "mezzanineFloorM2": 120.0,
     "capacity": 360
   },
+  "constructionPhases": [
+    {
+      "phase": 1,
+      "title": "Pembangunan Jalur Sanitasi/Irigasi Air",
+      "desc": "Penataan saluran sanitasi pembuangan, sumur resapan, dan perpipaan irigasi lingkungan agar tapak lahan masjid stabil, kering, dan bebas genangan.",
+      "badge": "Tahap 1",
+      "status": "Selesai"
+    },
+    {
+      "phase": 2,
+      "title": "Pembangunan Teras Masjid Sisi Utara (Area Jum'atan Sementara)",
+      "desc": "Pembuatan selasar teras utara beratap kokoh sebagai ruang sholat darurat agar ibadah sholat 5 waktu dan sholat Jum'at berjamaah tetap berjalan lancar.",
+      "badge": "Tahap 2",
+      "status": "Dalam Proses"
+    },
+    {
+      "phase": 3,
+      "title": "Pembangunan Area Wudhu dan Kamar Mandi",
+      "desc": "Penyediaan sarana tempat wudhu higienis terpisah dan toilet modern yang siap digunakan sebelum pembongkaran bangunan utama lama.",
+      "badge": "Tahap 3",
+      "status": "Rencana"
+    },
+    {
+      "phase": 4,
+      "title": "Pembangunan Struktur Bangunan Utama",
+      "desc": "Pengerjaan pondasi tapak cakar ayam bertulang, tiang kolom struktur utama 2 lantai, sloof balok penopang, dan cor plat dak mezzanine.",
+      "badge": "Tahap 4",
+      "status": "Rencana"
+    },
+    {
+      "phase": 5,
+      "title": "Pembangunan Dinding dan Fasad",
+      "desc": "Pemasangan dinding bata ringan keliling, plester acian halus, ornamen arsitektur fasad modern islami, kusen jendela, dan ornamen mihrab.",
+      "badge": "Tahap 5",
+      "status": "Rencana"
+    }
+  ],
   "bankAccounts": [
     {
       "id": "bsi",
