@@ -1,4 +1,6 @@
 node_modules/
 dist/
+docs/
+.ascii_history/
 .DS_Store
 *.local
