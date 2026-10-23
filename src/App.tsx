@@ -4,6 +4,8 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { PrayerTimesWidget } from "@/components/home/PrayerTimesWidget";
 import { RoutineProgramSection } from "@/components/home/RoutineProgramSection";
 import { LongTermProgramSection } from "@/components/home/LongTermProgramSection";
+import { DesainMasjidSection } from "@/components/home/DesainMasjidSection";
+import { WakafPembangunanSection } from "@/components/home/WakafPembangunanSection";
 import { OrganizationSection } from "@/components/home/OrganizationSection";
 import { Footer } from "@/components/layout/Footer";
 import { InfaqModal } from "@/components/infaq/InfaqModal";
@@ -34,6 +36,12 @@ export function App() {
           onOpenWakaf={() => setIsInfaqOpen(true)}
           onOpenLayanan={() => setIsLayananOpen(true)}
         />
+
+        {/* 4. Desain Masjid */}
+        <DesainMasjidSection />
+
+        {/* 5. Wakaf Pembangunan */}
+        <WakafPembangunanSection onOpenWakaf={() => setIsInfaqOpen(true)} />
 
         {/* Layanan & Sekretariat */}
         <OrganizationSection />
