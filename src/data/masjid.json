@@ -32,6 +32,11 @@
       "status": "Selesai",
       "photos": [
         {
+          "title": "Pembuatan & Pengecoran U-Ditch",
+          "desc": "Perakitan bekisting kayu dan pengecoran saluran u-ditch beton bertulang secara swadaya.",
+          "filename": "tahap-1-pembuatan-uditch.jpg"
+        },
+        {
           "title": "Pemasangan Saluran Sanitasi & Irigasi",
           "desc": "Penggalian dan pemasangan saluran buis beton u-ditch secara gotong royong bersama warga di sisi tapak bangunan masjid.",
           "filename": "tahap-1-saluran-sanitasi.jpg"
