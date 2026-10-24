@@ -34,6 +34,7 @@ export function Footer() {
               <li><a href="#program-panjang" className="hover:text-amber-300 transition text-amber-200">Program Jangka Panjang</a></li>
               <li><a href="#wakaf-pembangunan" className="hover:text-amber-300 transition">Wakaf Pembangunan</a></li>
               <li><a href="#pendanaan" className="hover:text-amber-300 transition text-amber-200">Skema Pendanaan</a></li>
+              <li><a href="#rekap-tugas" className="hover:text-amber-300 transition">Rekap Tugas DKM</a></li>
             </ul>
           </div>
 

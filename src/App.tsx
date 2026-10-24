@@ -7,6 +7,7 @@ import { LongTermProgramSection } from "@/components/home/LongTermProgramSection
 import { DesainMasjidSection } from "@/components/home/DesainMasjidSection";
 import { WakafPembangunanSection } from "@/components/home/WakafPembangunanSection";
 import { PendanaanSection } from "@/components/home/PendanaanSection";
+import { TaskRecapSection } from "@/components/home/TaskRecapSection";
 import { OrganizationSection } from "@/components/home/OrganizationSection";
 import { Footer } from "@/components/layout/Footer";
 import { InfaqModal } from "@/components/infaq/InfaqModal";
@@ -46,6 +47,9 @@ export function App() {
 
         {/* 6. Skema Pendanaan */}
         <PendanaanSection onOpenWakaf={() => setIsInfaqOpen(true)} />
+
+        {/* 7. Rekap Pelaksanaan Tugas */}
+        <TaskRecapSection />
 
         {/* Layanan & Sekretariat */}
         <OrganizationSection />
