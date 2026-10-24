@@ -13,6 +13,7 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
     { label: "Program Jangka Panjang", href: "#program-panjang", highlight: true },
     { label: "Desain Masjid", href: "#desain-masjid" },
     { label: "Wakaf Pembangunan", href: "#wakaf-pembangunan", highlight: true },
+    { label: "Pendanaan", href: "#pendanaan" },
   ];
 
   const handleInfaqClick = () => {
