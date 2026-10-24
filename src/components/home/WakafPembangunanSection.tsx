@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   HeartHandshake,
   Landmark,
@@ -21,6 +21,8 @@ import {
   CircleDot,
   Camera,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ZoomIn,
   X,
   Play,
@@ -34,6 +36,13 @@ import tahap1JembatanPhoto from "@/assets/construction/tahap-1-jembatan-gang-rt5
 import tahap1VideoPoster from "@/assets/construction/tahap-1-video-poster.jpg";
 import tahap2PengirimanPhoto from "@/assets/construction/tahap-2-pengiriman-baja-ringan.jpg";
 import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
+
+export interface GalleryItem {
+  url: string;
+  title: string;
+  desc?: string;
+  phaseBadge?: string;
+}
 
 const phaseImageMap: Record<string, string> = {
   "tahap-1-pembuatan-uditch.jpg": tahap1UditchPhoto,
@@ -68,11 +77,52 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
     1: true,
     2: true,
   });
-  const [selectedImage, setSelectedImage] = useState<{
-    url: string;
-    title: string;
-    desc?: string;
+  const [galleryState, setGalleryState] = useState<{
+    items: GalleryItem[];
+    currentIndex: number;
   } | null>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const openGallery = (items: GalleryItem[], index: number) => {
+    setGalleryState({ items, currentIndex: index });
+  };
+
+  const nextGalleryImage = () => {
+    setGalleryState((prev) => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        currentIndex: (prev.currentIndex + 1) % prev.items.length,
+      };
+    });
+  };
+
+  const prevGalleryImage = () => {
+    setGalleryState((prev) => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        currentIndex: (prev.currentIndex - 1 + prev.items.length) % prev.items.length,
+      };
+    });
+  };
+
+  useEffect(() => {
+    if (!galleryState) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setGalleryState(null);
+      } else if (e.key === "ArrowRight") {
+        nextGalleryImage();
+      } else if (e.key === "ArrowLeft") {
+        prevGalleryImage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [galleryState]);
 
   const togglePhotos = (phaseNumber: number) => {
     setOpenPhotoPhases((prev) => ({
@@ -364,35 +414,36 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                         {isPhotosOpen && (
                           <div className="mt-2.5 space-y-3">
                             {/* Photos Grid */}
-                            {photos && photos.length > 0 && (
-                              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                {photos.map((p, pIdx) => {
-                                  const photoUrl = p.filename && phaseImageMap[p.filename]
-                                    ? phaseImageMap[p.filename]
-                                    : `./images/construction/${p.filename}`;
-                                  return (
-                                    <div
-                                      key={pIdx}
-                                      className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
-                                        isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
-                                      }`}
-                                    >
+                            {photos && photos.length > 0 && (() => {
+                              const phaseGalleryItems: GalleryItem[] = photos.map((item) => ({
+                                url: item.filename && phaseImageMap[item.filename]
+                                  ? phaseImageMap[item.filename]
+                                  : `./images/construction/${item.filename}`,
+                                title: item.title,
+                                desc: item.desc,
+                                phaseBadge: phase.badge,
+                              }));
+
+                              return (
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                  {phaseGalleryItems.map((p, pIdx) => {
+                                    return (
                                       <div
-                                        className="relative aspect-[4/3] bg-slate-900 overflow-hidden cursor-pointer"
-                                        onClick={() =>
-                                          setSelectedImage({
-                                            url: photoUrl,
-                                            title: p.title,
-                                            desc: p.desc,
-                                          })
-                                        }
+                                        key={pIdx}
+                                        className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
+                                          isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
+                                        }`}
                                       >
-                                        <img
-                                          src={photoUrl}
-                                          alt={p.title}
-                                          className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
-                                          loading="lazy"
-                                        />
+                                        <div
+                                          className="relative aspect-[4/3] bg-slate-900 overflow-hidden cursor-pointer"
+                                          onClick={() => openGallery(phaseGalleryItems, pIdx)}
+                                        >
+                                          <img
+                                            src={p.url}
+                                            alt={p.title}
+                                            className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
+                                            loading="lazy"
+                                          />
                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors flex items-center justify-center">
                                           <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-xs text-white text-xs px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 shadow-lg">
                                             <ZoomIn className={`w-3.5 h-3.5 ${isCompleted ? "text-emerald-300" : "text-amber-300"}`} /> Klik untuk perbesar
@@ -416,7 +467,8 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                                   );
                                 })}
                               </div>
-                            )}
+                            );
+                          })()}
 
                             {/* Video / GIF Animation Section (Displayed after photos) */}
                             {videos && videos.length > 0 && (
@@ -702,45 +754,142 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
         </div>
       </div>
 
-      {/* Lightbox Modal Foto Kegiatan */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
-          onClick={() => setSelectedImage(null)}
-        >
+      {/* Lightbox Modal Foto Kegiatan dengan Navigasi Next/Prev */}
+      {galleryState && (() => {
+        const activeItem = galleryState.items[galleryState.currentIndex];
+        const hasMultiple = galleryState.items.length > 1;
+
+        return (
           <div
-            className="relative max-w-3xl w-full bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-white/20 flex flex-col max-h-[90vh]"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-6 select-none animate-in fade-in duration-200"
+            onClick={() => setGalleryState(null)}
           >
-            <div className="flex items-center justify-between p-4 border-b border-white/10 bg-slate-950/70">
-              <div className="flex items-center gap-2">
-                <Camera className="w-4 h-4 text-amber-400" />
-                <h4 className="font-bold text-sm text-white">{selectedImage.title}</h4>
+            <div
+              className="relative max-w-4xl w-full bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-white/20 flex flex-col max-h-[95vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header Bar */}
+              <div className="flex items-center justify-between p-3.5 sm:p-4 border-b border-white/10 bg-slate-950/80">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <Camera className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span className="font-bold text-xs sm:text-sm text-white truncate">
+                    {activeItem.title}
+                  </span>
+                  {activeItem.phaseBadge && (
+                    <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                      {activeItem.phaseBadge}
+                    </span>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-3 shrink-0 ml-2">
+                  <span className="text-xs text-slate-400 font-mono">
+                    {galleryState.currentIndex + 1} / {galleryState.items.length}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setGalleryState(null)}
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition cursor-pointer"
+                    title="Tutup preview (Esc)"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
-              <button
-                type="button"
-                onClick={() => setSelectedImage(null)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition cursor-pointer"
-                title="Tutup preview"
+
+              {/* Main Photo View Area with Left/Right Buttons and Touch Swipe */}
+              <div
+                className="relative p-2 sm:p-4 bg-black/70 flex-1 overflow-hidden flex items-center justify-center min-h-[260px] sm:min-h-[420px]"
+                onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
+                onTouchEnd={(e) => {
+                  if (touchStart === null) return;
+                  const diff = touchStart - e.changedTouches[0].clientX;
+                  if (diff > 45) {
+                    nextGalleryImage();
+                  } else if (diff < -45) {
+                    prevGalleryImage();
+                  }
+                  setTouchStart(null);
+                }}
               >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="p-2 sm:p-4 bg-black/50 flex-1 overflow-auto flex items-center justify-center">
-              <img
-                src={selectedImage.url}
-                alt={selectedImage.title}
-                className="max-h-[65vh] w-auto max-w-full rounded-lg object-contain shadow-md"
-              />
-            </div>
-            {selectedImage.desc && (
-              <div className="p-4 bg-slate-950 text-xs text-slate-300 border-t border-white/10 leading-relaxed">
-                {selectedImage.desc}
+                {/* Prev Button */}
+                {hasMultiple && (
+                  <button
+                    type="button"
+                    onClick={prevGalleryImage}
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-2.5 rounded-full bg-black/60 hover:bg-black/90 text-white border border-white/20 shadow-xl transition active:scale-90 z-20 cursor-pointer"
+                    title="Foto Sebelumnya (←)"
+                    aria-label="Foto Sebelumnya"
+                  >
+                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </button>
+                )}
+
+                {/* Active Photo */}
+                <img
+                  key={activeItem.url}
+                  src={activeItem.url}
+                  alt={activeItem.title}
+                  className="max-h-[58vh] sm:max-h-[64vh] w-auto max-w-full rounded-lg object-contain shadow-2xl transition-all duration-200"
+                />
+
+                {/* Next Button */}
+                {hasMultiple && (
+                  <button
+                    type="button"
+                    onClick={nextGalleryImage}
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-2.5 rounded-full bg-black/60 hover:bg-black/90 text-white border border-white/20 shadow-xl transition active:scale-90 z-20 cursor-pointer"
+                    title="Foto Selanjutnya (→)"
+                    aria-label="Foto Selanjutnya"
+                  >
+                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </button>
+                )}
               </div>
-            )}
+
+              {/* Footer: Description & Thumbnails */}
+              <div className="p-3 sm:p-4 bg-slate-950 border-t border-white/10 space-y-3">
+                {activeItem.desc && (
+                  <p className="text-xs text-slate-300 leading-relaxed max-w-3xl">
+                    {activeItem.desc}
+                  </p>
+                )}
+
+                {/* Thumbnail Strip */}
+                {hasMultiple && (
+                  <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 hide-scrollbar">
+                    {galleryState.items.map((thumb, tIdx) => {
+                      const isActive = tIdx === galleryState.currentIndex;
+                      return (
+                        <button
+                          key={tIdx}
+                          type="button"
+                          onClick={() => setGalleryState((prev) => prev ? { ...prev, currentIndex: tIdx } : null)}
+                          className={`relative shrink-0 rounded-lg overflow-hidden transition-all duration-150 cursor-pointer ${
+                            isActive
+                              ? "ring-2 ring-amber-400 scale-105 shadow-md opacity-100"
+                              : "opacity-45 hover:opacity-90 ring-1 ring-white/10"
+                          }`}
+                          title={thumb.title}
+                        >
+                          <img
+                            src={thumb.url}
+                            alt={thumb.title}
+                            className="w-12 h-9 sm:w-14 sm:h-10 object-cover"
+                          />
+                        </button>
+                      );
+                    })}
+                    <span className="text-[11px] text-slate-400 pl-2 hidden sm:inline">
+                      Gunakan tombol panah ← dan → pada keyboard atau geser layar
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </section>
   );
 }

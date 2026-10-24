@@ -14,28 +14,49 @@ export function OrganizationSection() {
         </p>
 
         <div className="grid sm:grid-cols-3 gap-4 text-left text-xs">
-          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-            <div className="font-bold text-slate-800 mb-0.5">{contacts.dkmLeader.role}</div>
-            <div className="text-slate-600">{contacts.dkmLeader.name}</div>
-            <div className="text-[#047857] font-mono mt-2 flex items-center gap-1 font-semibold">
+          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div className="font-bold text-slate-800 mb-0.5">{contacts.dkmLeader.role}</div>
+              <div className="text-slate-600">{contacts.dkmLeader.name}</div>
+            </div>
+            <a
+              href={`https://wa.me/${contacts.dkmLeader.whatsapp}?text=Assalamu%27alaikum%20${encodeURIComponent(contacts.dkmLeader.name)}%20(${encodeURIComponent(contacts.dkmLeader.role)})`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#047857] hover:text-emerald-800 font-mono mt-3 flex items-center gap-1.5 font-semibold transition hover:underline"
+            >
               <Phone className="w-3.5 h-3.5" /> {contacts.dkmLeader.phone}
-            </div>
+            </a>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-            <div className="font-bold text-slate-800 mb-0.5">{contacts.secretariat.role}</div>
-            <div className="text-slate-600">{contacts.secretariat.name}</div>
-            <div className="text-[#047857] font-mono mt-2 flex items-center gap-1 font-semibold">
+          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div className="font-bold text-slate-800 mb-0.5">{contacts.secretariat.role}</div>
+              <div className="text-slate-600">{contacts.secretariat.name}</div>
+            </div>
+            <a
+              href={`https://wa.me/${contacts.secretariat.whatsapp}?text=Assalamu%27alaikum%20${encodeURIComponent(contacts.secretariat.name)}%20(${encodeURIComponent(contacts.secretariat.role)})`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#047857] hover:text-emerald-800 font-mono mt-3 flex items-center gap-1.5 font-semibold transition hover:underline"
+            >
               <Phone className="w-3.5 h-3.5" /> {contacts.secretariat.phone}
-            </div>
+            </a>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-            <div className="font-bold text-slate-800 mb-0.5">{contacts.funeralService.role}</div>
-            <div className="text-slate-600">{contacts.funeralService.name}</div>
-            <div className="text-[#047857] font-mono mt-2 flex items-center gap-1 font-semibold">
-              <Phone className="w-3.5 h-3.5" /> {contacts.funeralService.phone}
+          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div className="font-bold text-slate-800 mb-0.5">{contacts.funeralService.role}</div>
+              <div className="text-slate-600">{contacts.funeralService.name}</div>
             </div>
+            <a
+              href={`https://wa.me/${contacts.funeralService.whatsapp}?text=Assalamu%27alaikum%20${encodeURIComponent(contacts.funeralService.name)}%20(${encodeURIComponent(contacts.funeralService.role)})`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#047857] hover:text-emerald-800 font-mono mt-3 flex items-center gap-1.5 font-semibold transition hover:underline"
+            >
+              <Phone className="w-3.5 h-3.5" /> {contacts.funeralService.phone}
+            </a>
           </div>
         </div>
       </div>

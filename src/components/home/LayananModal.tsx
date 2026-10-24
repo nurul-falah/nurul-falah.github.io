@@ -31,7 +31,7 @@ export function LayananModal({ open, onOpenChange }: LayananModalProps) {
               <div className="font-bold text-slate-900 mb-1">{contacts.secretariat.role}</div>
               <div className="text-slate-600 mb-2">{contacts.secretariat.name}</div>
               <a
-                href="https://wa.me/6285710546122?text=Assalamu%27alaikum%20Bpk.%20Badar%20Rustandi%20(Imarah)%2C%20saya%20ingin%20mendaftar%20sebagai%20relawan%20pengajar"
+                href={`https://wa.me/${contacts.secretariat.whatsapp}?text=Assalamu%27alaikum%20${encodeURIComponent(contacts.secretariat.name)}%20(${encodeURIComponent(contacts.secretariat.role)})%2C%20saya%20ingin%20mendaftar%20sebagai%20relawan%20pengajar`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#059669] hover:bg-[#047857] text-white rounded-lg font-semibold transition"

@@ -127,17 +127,20 @@
     "dkmLeader": {
       "role": "Ketua DKM",
       "name": "Bpk. Burhan Mubarok, S.Kom",
-      "phone": "0857-8010-6011"
+      "phone": "0857-8010-6011",
+      "whatsapp": "6285780106011"
     },
     "secretariat": {
       "role": "Imarah",
       "name": "Bpk. Badar Rustandi",
-      "phone": "0815-7396-0016"
+      "phone": "0815-7396-0016",
+      "whatsapp": "6281573960016"
     },
     "funeralService": {
       "role": "Pelayanan Jenazah / RKM",
       "name": "Bpk. Dede Dzulkipli",
-      "phone": "0856-4038-0652"
+      "phone": "0856-4038-0652",
+      "whatsapp": "6285640380652"
     }
   },
   "routinePrograms": [
