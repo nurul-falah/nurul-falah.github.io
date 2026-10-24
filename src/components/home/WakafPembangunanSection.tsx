@@ -500,32 +500,15 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                                 )}
                               </span>
                             )}
+                            {phaseTimeline.targetBudget && (
+                              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 font-mono">
+                                <span>Alokasi: {phaseTimeline.targetBudget}</span>
+                              </span>
+                            )}
                           </div>
                           <p className="text-xs text-slate-600 leading-relaxed">
                             {phase.desc}
                           </p>
-
-                          {/* Milestone Output & Target Budget Bar */}
-                          {(phaseTimeline.milestone || phaseTimeline.targetBudget) && (
-                            <div className="mt-2 pt-2 border-t border-slate-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-                              {phaseTimeline.milestone && (
-                                <div className="flex items-start sm:items-center gap-1.5 text-slate-700 min-w-0">
-                                  <span className="font-bold text-[10px] uppercase tracking-wider text-emerald-800 bg-emerald-100/80 px-1.5 py-0.5 rounded shrink-0">
-                                    Output Fisik
-                                  </span>
-                                  <span className="text-[11px] text-slate-600 truncate">{phaseTimeline.milestone}</span>
-                                </div>
-                              )}
-                              {phaseTimeline.targetBudget && (
-                                <div className="flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
-                                  <span className="text-[10px] text-slate-400 font-medium">Alokasi Biaya:</span>
-                                  <span className="font-mono font-bold text-emerald-800 bg-white border border-emerald-200/90 px-2 py-0.5 rounded text-[11px] shadow-2xs">
-                                    {phaseTimeline.targetBudget}
-                                  </span>
-                                </div>
-                              )}
-                            </div>
-                          )}
 
                           {/* Mini Phase Progress Bar */}
                           {typeof phaseTimeline.progressPercent === "number" && phaseTimeline.progressPercent > 0 && (
