@@ -14,6 +14,7 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
     { label: "Desain Masjid", shortLabel: "Desain", href: "#desain-masjid" },
     { label: "Wakaf Pembangunan", shortLabel: "Wakaf", href: "#wakaf-pembangunan", highlight: true },
     { label: "Skema Pendanaan", shortLabel: "Pendanaan", href: "#pendanaan" },
+    { label: "Rekap Tugas", shortLabel: "Tugas", href: "#rekap-tugas" },
   ];
 
   const handleInfaqClick = () => {

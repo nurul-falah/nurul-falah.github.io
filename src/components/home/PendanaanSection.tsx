@@ -205,9 +205,14 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                 Alokasi Saldo Berdasarkan Cost Center
               </h3>
             </div>
-            <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 self-start sm:self-auto">
-              Amanah &amp; Akuntabel
-            </span>
+            <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+              <span className="text-[11px] font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+                Total Saldo Kas: <span className="font-mono text-emerald-800">{masjidData.financial.balance}</span>
+              </span>
+              <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full border border-slate-200 hidden sm:inline-block">
+                Amanah &amp; Akuntabel
+              </span>
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
