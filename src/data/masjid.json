@@ -247,9 +247,13 @@
     "income": "Rp 24.850.000",
     "expense": "Rp 16.320.000",
     "balance": "Rp 48.910.000",
-    "buildingFundAllocated": "Rp 57.000.000",
+    "buildingFundAllocated": "Rp 57.391.000",
     "buildingFundTarget": "Rp 600.000.000",
     "progressPercent": 10,
+    "costCenter": {
+      "infaqRenovasi": "Rp 57.391.000",
+      "infaqUmum": "Rp 1.770.373"
+    },
     "recentTransactions": [
       {
         "title": "Infaq Tromol Kotak Jumat (28/08)",
@@ -281,7 +285,7 @@
         "icon": "Users",
         "badge": "Pilar Gotong Royong",
         "color": "emerald",
-        "amount": "Rp 57.000.000",
+        "amount": "Rp 57.391.000",
         "amountLabel": "Nominal Sementara Terhimpun",
         "amountBadge": "Terhimpun",
         "desc": "Kontribusi berkelanjutan dari seluruh jamaah dan warga Kp. Sukatani (RT 05 RW 03, Desa Wangunsari) sebagai wujud kepemilikan bersama (sense of belonging) dan kebersamaan umat di akar rumput.",

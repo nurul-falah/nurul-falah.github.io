@@ -11,6 +11,8 @@ import {
   Check,
   TrendingUp,
   ShieldCheck,
+  Wallet,
+  Landmark,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
@@ -189,6 +191,72 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
           );
         })}
       </div>
+
+      {/* Cost Center / Pos Kas Masjid */}
+      {masjidData.financial?.costCenter && (
+        <div className="mb-12 bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-7 shadow-xs">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 pb-4 border-b border-slate-100">
+            <div>
+              <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1.5">
+                <Wallet className="w-3.5 h-3.5 text-emerald-600" />
+                Pemisahan Pos Keuangan (Cost Center)
+              </div>
+              <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5">
+                Alokasi Saldo Berdasarkan Cost Center
+              </h3>
+            </div>
+            <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 self-start sm:self-auto">
+              Amanah &amp; Akuntabel
+            </span>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {/* Cost Center 1: Kas Infaq Renovasi */}
+            <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-br from-emerald-50 via-white to-emerald-50/40 border border-emerald-200/90 flex flex-col justify-between shadow-2xs hover:border-emerald-400 transition">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                    Pos Pembangunan
+                  </span>
+                  <Landmark className="w-4 h-4 text-emerald-700" />
+                </div>
+                <div className="text-sm font-bold text-slate-900">Kas Infaq Renovasi</div>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  Dana khusus yang dialokasikan dan disalurkan langsung untuk pembiayaan konstruksi, material, dan renovasi fisik masjid.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-emerald-100/90 flex items-baseline justify-between">
+                <span className="text-[11px] text-slate-500 font-medium">Saldo Terhimpun:</span>
+                <span className="text-xl sm:text-2xl font-black font-mono text-[#064e3b]">
+                  {masjidData.financial.costCenter.infaqRenovasi}
+                </span>
+              </div>
+            </div>
+
+            {/* Cost Center 2: Kas Infaq Umum */}
+            <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-br from-blue-50 via-white to-blue-50/40 border border-blue-200/90 flex flex-col justify-between shadow-2xs hover:border-blue-400 transition">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-blue-800 bg-blue-100/80 px-2.5 py-0.5 rounded-full border border-blue-200">
+                    Pos Operasional
+                  </span>
+                  <Wallet className="w-4 h-4 text-blue-700" />
+                </div>
+                <div className="text-sm font-bold text-slate-900">Kas Infaq Umum</div>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  Dana operasional rutin untuk kelistrikan, kebersihan, pemeliharaan sarana harian, dan kegiatan taklim/dakwah masjid.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-blue-100/90 flex items-baseline justify-between">
+                <span className="text-[11px] text-slate-500 font-medium">Saldo Aktif:</span>
+                <span className="text-xl sm:text-2xl font-black font-mono text-blue-900">
+                  {masjidData.financial.costCenter.infaqUmum}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Summary Action Banner */}
       <div className="bg-gradient-to-br from-[#064e3b] via-[#047857] to-emerald-950 rounded-2xl text-white p-6 sm:p-8 shadow-xl border border-emerald-700/50 flex flex-col lg:flex-row items-center justify-between gap-6">
