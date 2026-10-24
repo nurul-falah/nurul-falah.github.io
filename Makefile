@@ -31,4 +31,4 @@ deploy:
 	git add .
 	(git diff --staged --quiet || git commit -m "feat: update Masjid Nurul Falah portal $(shell date +%Y-%m-%d)")
 	git push origin main
-	@echo "✅ Pushed to main. GitHub Actions will deploy to https://burubur.github.io/dkmnf/"
+	@echo "✅ Pushed to main. GitHub Actions will deploy to https://nurul-falah.github.io"

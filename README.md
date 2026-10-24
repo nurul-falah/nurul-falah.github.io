@@ -1,7 +1,7 @@
 # 🕌 DKM Masjid Nurul Falah Sukatani
 
-[![Deploy DKM Masjid Nurul Falah Site to GitHub Pages](https://github.com/burubur/dkmnf/actions/workflows/deploy.yml/badge.svg)](https://github.com/burubur/dkmnf/actions/workflows/deploy.yml)
-[![Live Web Portal](https://img.shields.io/badge/Live%20Portal-burubur.github.io%2Fdkmnf-059669?style=for-the-badge&logo=githubpages&logoColor=white)](https://burubur.github.io/dkmnf/)
+[![Deploy DKM Masjid Nurul Falah Site to GitHub Pages](https://github.com/nurul-falah/nurul-falah.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/nurul-falah/nurul-falah.github.io/actions/workflows/deploy.yml)
+[![Live Web Portal](https://img.shields.io/badge/Live%20Portal-nurul--falah.github.io-059669?style=for-the-badge&logo=githubpages&logoColor=white)](https://nurul-falah.github.io)
 [![DRFTR 3D CAD Blueprint](https://img.shields.io/badge/3D%20CAD%20Blueprint-DRFTR%20Viewer-d97706?style=for-the-badge&logo=three.js&logoColor=white)](https://burubur.github.io/drftr/?project=masjid)
 
 > **Portal Resmi & Publikasi Pembangunan Masjid Nurul Falah 2 Lantai**  
@@ -13,7 +13,7 @@
 
 | Layanan | Tautan / Link |
 | :--- | :--- |
-| 🌍 **Portal Web Resmi (Live)** | [**https://burubur.github.io/dkmnf/**](https://burubur.github.io/dkmnf/) |
+| 🌍 **Portal Web Resmi (Live)** | [**https://nurul-falah.github.io**](https://nurul-falah.github.io) |
 | 📐 **3D CAD Blueprint (DRFTR)** | [**https://burubur.github.io/drftr/?project=masjid**](https://burubur.github.io/drftr/?project=masjid) |
 | 📊 **RAB & Tahapan Pondasi** | [**https://burubur.github.io/drftr/?project=masjid&phase=PONDASI&step=3**](https://burubur.github.io/drftr/?project=masjid&phase=PONDASI&step=3) |
 
