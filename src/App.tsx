@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/home/HeroSection";
 import { PrayerTimesWidget } from "@/components/home/PrayerTimesWidget";
 import { RoutineProgramSection } from "@/components/home/RoutineProgramSection";
+import { AgendaSection } from "@/components/home/AgendaSection";
 import { LongTermProgramSection } from "@/components/home/LongTermProgramSection";
 import { DesainMasjidSection } from "@/components/home/DesainMasjidSection";
 import { WakafPembangunanSection } from "@/components/home/WakafPembangunanSection";
@@ -32,6 +33,9 @@ export function App() {
 
         {/* 2. Program Rutin */}
         <RoutineProgramSection />
+
+        {/* 2b. Rencana Agenda & Publikasi Kegiatan */}
+        <AgendaSection />
 
         {/* 3. Program Jangka Panjang */}
         <LongTermProgramSection
