@@ -117,6 +117,24 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                   {sub.tagline}
                 </div>
 
+                {/* Nominal Sementara Callout (if amount exists) */}
+                {"amount" in sub && Boolean((sub as any).amount) && (
+                  <div className="mb-4 p-3.5 rounded-xl bg-gradient-to-r from-emerald-50 to-emerald-100/60 border border-emerald-200 flex items-center justify-between shadow-2xs">
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        {(sub as any).amountLabel || "Nominal Sementara"}
+                      </div>
+                      <div className="text-2xl font-black text-[#064e3b] font-mono tracking-tight mt-1">
+                        {(sub as any).amount}
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-bold bg-emerald-600 text-white px-2.5 py-1 rounded-full shadow-xs">
+                      Terhimpun
+                    </span>
+                  </div>
+                )}
+
                 {/* Description */}
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
                   {sub.desc}
