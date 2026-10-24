@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Landmark, HeartHandshake, Menu, X, TrendingUp } from "lucide-react";
+import { HeartHandshake, Menu, X, TrendingUp } from "lucide-react";
 
 export interface NavbarProps {
   onOpenInfaq?: () => void;
@@ -29,9 +29,11 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
           
           {/* Brand Logo */}
           <a href="#beranda" className="flex items-center gap-3 group text-left">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white flex items-center justify-center shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform">
-              <Landmark className="w-6 h-6 text-amber-300" />
-            </div>
+            <img
+              src="./favicon.svg"
+              alt="Logo Masjid Nurul Falah"
+              className="w-12 h-12 rounded-xl shadow-md shadow-emerald-900/20 group-hover:scale-105 transition-transform"
+            />
             <div>
               <div className="font-bold text-lg leading-tight text-[#064e3b]">Masjid Nurul Falah &amp; RKM</div>
               <div className="text-xs text-slate-500 font-medium tracking-wide">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Landmark, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
 export function Footer() {
@@ -9,8 +9,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-[#065f46]">
           
           <div className="space-y-3 md:col-span-2">
-            <div className="flex items-center gap-2 text-white font-bold text-lg">
-              <Landmark className="w-5 h-5 text-amber-400" />
+            <div className="flex items-center gap-3 text-white font-bold text-lg">
+              <img
+                src="./favicon.svg"
+                alt="Logo Masjid Nurul Falah"
+                className="w-7 h-7 rounded-lg shadow-sm"
+              />
               <span>Masjid Nurul Falah &amp; RKM</span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-md">
