@@ -27,12 +27,14 @@ import {
 import masjidData from "@/data/masjid.json";
 import tahap1UditchPhoto from "@/assets/construction/tahap-1-pembuatan-uditch.jpg";
 import tahap1Photo from "@/assets/construction/tahap-1-saluran-sanitasi.jpg";
+import tahap1InstalasiLanjutanPhoto from "@/assets/construction/tahap-1-instalasi-lanjutan.jpg";
 import tahap2PengirimanPhoto from "@/assets/construction/tahap-2-pengiriman-baja-ringan.jpg";
 import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
 
 const phaseImageMap: Record<string, string> = {
   "tahap-1-pembuatan-uditch.jpg": tahap1UditchPhoto,
   "tahap-1-saluran-sanitasi.jpg": tahap1Photo,
+  "tahap-1-instalasi-lanjutan.jpg": tahap1InstalasiLanjutanPhoto,
   "tahap-2-pengiriman-baja-ringan.jpg": tahap2PengirimanPhoto,
   "tahap-2-perakitan-rangka.jpg": tahap2Photo,
 };
@@ -352,7 +354,7 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
 
                         {isPhotosOpen && (
                           <div className="mt-2.5 space-y-2.5">
-                            <div className="grid sm:grid-cols-2 gap-3">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                               {photos.map((p, pIdx) => {
                                 const photoUrl = p.filename && phaseImageMap[p.filename]
                                   ? phaseImageMap[p.filename]
