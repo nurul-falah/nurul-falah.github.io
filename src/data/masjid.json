@@ -32,6 +32,9 @@
       "status": "Selesai",
       "timeline": "Agustus - September 2026",
       "quarter": "Q3 2026",
+      "targetBudget": "Rp 25.000.000",
+      "milestone": "Saluran buis beton U-Ditch 40m, sumur resapan, & cor jembatan gang akses warga RT 5",
+      "progressPercent": 100,
       "photos": [
         {
           "title": "Pembuatan & Pengecoran U-Ditch",
@@ -77,6 +80,9 @@
       "status": "Dalam Proses",
       "timeline": "Oktober - November 2026",
       "quarter": "Q4 2026",
+      "targetBudget": "Rp 35.000.000",
+      "milestone": "Rangka profil kanal C baja ringan, penutup atap spandek, & perataan lantai selasar darurat",
+      "progressPercent": 65,
       "photos": [
         {
           "title": "Pengiriman Material Baja Ringan",
@@ -97,7 +103,10 @@
       "badge": "Tahap 3",
       "status": "Rencana",
       "timeline": "Desember 2026 - Februari 2027",
-      "quarter": "Q1 2027"
+      "quarter": "Q1 2027",
+      "targetBudget": "Rp 60.000.000",
+      "milestone": "Tempat wudhu terpisah ikhwan/akhwat, 4 unit toilet, toren tandon air, & sistem pompa otomatis",
+      "progressPercent": 0
     },
     {
       "phase": 4,
@@ -106,7 +115,10 @@
       "badge": "Tahap 4",
       "status": "Rencana",
       "timeline": "Maret - Agustus 2027",
-      "quarter": "Q2 - Q3 2027"
+      "quarter": "Q2 - Q3 2027",
+      "targetBudget": "Rp 300.000.000",
+      "milestone": "Pondasi cakar ayam, 16 kolom beton bertulang, balok sloof, & pengecoran plat dak lantai mezanin",
+      "progressPercent": 0
     },
     {
       "phase": 5,
@@ -115,7 +127,10 @@
       "badge": "Tahap 5",
       "status": "Rencana",
       "timeline": "September 2027 - 2028",
-      "quarter": "Q4 2027 - 2028"
+      "quarter": "Q4 2027 - 2028",
+      "targetBudget": "Rp 180.000.000",
+      "milestone": "Dinding bata hebel, ornamen mihrab kayu jati / GRC islami, jendela alumunium, pengecatan & kubah",
+      "progressPercent": 0
     }
   ],
   "bankAccounts": [

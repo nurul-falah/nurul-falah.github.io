@@ -83,6 +83,18 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
     currentIndex: number;
   } | null>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [phaseFilter, setPhaseFilter] = useState<"all" | "Selesai" | "Dalam Proses" | "Rencana">("all");
+
+  const scrollToPhase = (phaseNumber: number) => {
+    setOpenPhotoPhases((prev) => ({ ...prev, [phaseNumber]: true }));
+    setPhaseFilter("all");
+    setTimeout(() => {
+      const el = document.getElementById(`fase-${phaseNumber}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 50);
+  };
 
   const openGallery = (items: GalleryItem[], index: number) => {
     setGalleryState({ items, currentIndex: index });
@@ -298,16 +310,27 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
             </div>
 
             {/* Visual Roadmap Timeline Stepper */}
-            <div className="mb-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-[#064e3b] to-emerald-900 text-white shadow-sm border border-emerald-800/40">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3.5 pb-2.5 border-b border-emerald-800/60 text-xs">
+            <div className="mb-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950 via-[#064e3b] to-emerald-900 text-white shadow-sm border border-emerald-800/40">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3 pb-2.5 border-b border-emerald-800/60 text-xs">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-amber-300" />
-                  <span className="font-bold text-white tracking-wide">
-                    Target Garis Waktu Konstruksi Fisik
+                  <span className="font-bold text-white tracking-wide text-xs sm:text-sm">
+                    Target Garis Waktu Konstruksi Fisik (Roadmap 2026 – 2028)
                   </span>
                 </div>
                 <div className="text-[11px] text-emerald-200">
-                  Estimasi Total: <b className="text-white">±18 - 24 Bulan</b>
+                  Estimasi Total: <b className="text-white">±18 - 24 Bulan</b> • Target Biaya: <b className="text-amber-300 font-mono">Rp 600 Jt</b>
+                </div>
+              </div>
+
+              {/* Overall Roadmap Progress Bar */}
+              <div className="mb-3.5 bg-emerald-950/60 p-2.5 sm:p-3 rounded-xl border border-emerald-700/40 space-y-1.5">
+                <div className="flex items-center justify-between text-[11px]">
+                  <span className="text-emerald-200">Realisasi Fisik Berjalan:</span>
+                  <span className="text-amber-300 font-bold font-mono">Tahap 1 Selesai • Tahap 2 Berjalan (33% Keseluruhan)</span>
+                </div>
+                <div className="w-full bg-emerald-900/80 h-2 rounded-full overflow-hidden">
+                  <div className="bg-gradient-to-r from-emerald-400 via-amber-400 to-amber-500 h-full rounded-full transition-all duration-700" style={{ width: "33%" }} />
                 </div>
               </div>
 
@@ -316,17 +339,20 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                 {masjidData.constructionPhases.map((p) => {
                   const isDone = p.status === "Selesai";
                   const isOngoing = p.status === "Dalam Proses";
-                  const pTimeline = (p as { timeline?: string; quarter?: string });
+                  const pTimeline = p as { timeline?: string; quarter?: string; targetBudget?: string };
                   return (
-                    <div
+                    <button
                       key={p.phase}
-                      className={`p-2 sm:p-2.5 rounded-xl border flex flex-col justify-between transition-all ${
+                      type="button"
+                      onClick={() => scrollToPhase(p.phase)}
+                      className={`p-2.5 rounded-xl border text-left flex flex-col justify-between transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                         isDone
-                          ? "bg-emerald-800/50 border-emerald-400/50 text-emerald-100"
+                          ? "bg-emerald-800/50 border-emerald-400/50 text-emerald-100 hover:border-emerald-300"
                           : isOngoing
-                          ? "bg-amber-500/25 border-amber-400/70 text-amber-100 ring-1 ring-amber-400/40"
-                          : "bg-white/5 border-white/10 text-slate-300"
+                          ? "bg-amber-500/25 border-amber-400/70 text-amber-100 ring-1 ring-amber-400/40 hover:border-amber-300"
+                          : "bg-white/5 border-white/10 text-slate-300 hover:border-white/30"
                       }`}
+                      title={`Klik untuk lompat ke rincian Tahap ${p.phase}`}
                     >
                       <div>
                         <div className="flex items-center justify-between mb-1">
@@ -352,31 +378,79 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                         <div className="font-bold text-xs text-white line-clamp-1">
                           {pTimeline.quarter || p.badge}
                         </div>
+                        {pTimeline.targetBudget && (
+                          <div className="text-[10px] text-amber-300/90 font-mono font-semibold mt-0.5">
+                            {pTimeline.targetBudget}
+                          </div>
+                        )}
                       </div>
-                      <div className="text-[10px] text-emerald-200/90 mt-1.5 line-clamp-1 font-medium">
-                        {p.status === "Selesai" ? "✓ Selesai" : p.status === "Dalam Proses" ? "⚡ Berjalan" : pTimeline.timeline || "Rencana"}
+                      <div className="text-[10px] text-emerald-200/90 mt-2 line-clamp-1 font-medium flex items-center justify-between">
+                        <span>{p.status === "Selesai" ? "✓ Selesai" : p.status === "Dalam Proses" ? "⚡ Berjalan" : "Rencana"}</span>
+                        <span className="text-[9px] text-emerald-300/70">Lihat ↓</span>
                       </div>
-                    </div>
+                    </button>
                   );
                 })}
               </div>
             </div>
 
+            {/* Filter Controls Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <span>Daftar Rincian Tahap:</span>
+                {phaseFilter !== "all" && (
+                  <span className="text-[10px] font-normal text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    Menampilkan: {phaseFilter}
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs">
+                {[
+                  { id: "all", label: "Semua (5)" },
+                  { id: "Selesai", label: "✓ Selesai (1)" },
+                  { id: "Dalam Proses", label: "⚡ Berjalan (1)" },
+                  { id: "Rencana", label: "🎯 Rencana (3)" },
+                ].map((f) => (
+                  <button
+                    key={f.id}
+                    type="button"
+                    onClick={() => setPhaseFilter(f.id as any)}
+                    className={`px-2.5 py-1 rounded-lg font-semibold transition cursor-pointer text-[11px] ${
+                      phaseFilter === f.id
+                        ? "bg-[#064e3b] text-white shadow-xs"
+                        : "text-slate-600 hover:bg-white"
+                    }`}
+                  >
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="grid gap-2.5">
-              {masjidData.constructionPhases.map((phase, i) => {
-                const Icon = phaseIcons[i] || Hammer;
+              {masjidData.constructionPhases
+                .filter((phase) => phaseFilter === "all" || phase.status === phaseFilter)
+                .map((phase) => {
+                const Icon = phaseIcons[phase.phase - 1] || Hammer;
                 const isCompleted = phase.status === "Selesai";
                 const isInProgress = phase.status === "Dalam Proses";
                 const photos = (phase as { photos?: { title: string; desc: string; filename: string }[] }).photos;
                 const videos = (phase as { videos?: { title: string; desc: string; filename: string; poster?: string }[] }).videos;
-                const phaseTimeline = phase as { timeline?: string; quarter?: string };
+                const phaseTimeline = phase as {
+                  timeline?: string;
+                  quarter?: string;
+                  milestone?: string;
+                  targetBudget?: string;
+                  progressPercent?: number;
+                };
                 const hasMedia = (photos && photos.length > 0) || (videos && videos.length > 0);
                 const isPhotosOpen = !!openPhotoPhases[phase.phase];
 
                 return (
                   <div
                     key={phase.phase}
-                    className={`flex flex-col gap-3 p-3.5 sm:p-4 rounded-xl border transition-all ${
+                    id={`fase-${phase.phase}`}
+                    className={`flex flex-col gap-3 p-3.5 sm:p-4 rounded-xl border transition-all duration-300 scroll-mt-24 ${
                       isCompleted
                         ? "bg-emerald-50/70 border-emerald-300/80 shadow-2xs"
                         : isInProgress
@@ -428,6 +502,46 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                           <p className="text-xs text-slate-600 leading-relaxed">
                             {phase.desc}
                           </p>
+
+                          {/* Milestone Output & Target Budget Bar */}
+                          {(phaseTimeline.milestone || phaseTimeline.targetBudget) && (
+                            <div className="mt-2 pt-2 border-t border-slate-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                              {phaseTimeline.milestone && (
+                                <div className="flex items-start sm:items-center gap-1.5 text-slate-700 min-w-0">
+                                  <span className="font-bold text-[10px] uppercase tracking-wider text-emerald-800 bg-emerald-100/80 px-1.5 py-0.5 rounded shrink-0">
+                                    Output Fisik
+                                  </span>
+                                  <span className="text-[11px] text-slate-600 truncate">{phaseTimeline.milestone}</span>
+                                </div>
+                              )}
+                              {phaseTimeline.targetBudget && (
+                                <div className="flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
+                                  <span className="text-[10px] text-slate-400 font-medium">Alokasi Biaya:</span>
+                                  <span className="font-mono font-bold text-emerald-800 bg-white border border-emerald-200/90 px-2 py-0.5 rounded text-[11px] shadow-2xs">
+                                    {phaseTimeline.targetBudget}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                          )}
+
+                          {/* Mini Phase Progress Bar */}
+                          {typeof phaseTimeline.progressPercent === "number" && phaseTimeline.progressPercent > 0 && (
+                            <div className="space-y-1 pt-2">
+                              <div className="flex items-center justify-between text-[10px] text-slate-500 font-medium">
+                                <span>Progres Fisik Tahap Ini:</span>
+                                <span className="font-bold font-mono text-emerald-700">{phaseTimeline.progressPercent}%</span>
+                              </div>
+                              <div className="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden">
+                                <div
+                                  className={`h-full rounded-full transition-all duration-500 ${
+                                    isCompleted ? "bg-emerald-500" : "bg-amber-400"
+                                  }`}
+                                  style={{ width: `${phaseTimeline.progressPercent}%` }}
+                                />
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
 
