@@ -63,6 +63,12 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
             numberText: "text-emerald-700/60 font-mono",
             pointIcon: "text-emerald-600",
             gradientLine: "from-emerald-500 to-emerald-700",
+            amountBg: "bg-gradient-to-r from-emerald-50 to-emerald-100/60 border-emerald-200",
+            amountLabelText: "text-emerald-800",
+            amountDot: "bg-emerald-500",
+            amountValueText: "text-[#064e3b]",
+            amountBadgeBg: "bg-emerald-600 text-white",
+            amountNoteText: "text-emerald-800/80",
           };
 
           if (sub.color === "amber") {
@@ -73,6 +79,12 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
               numberText: "text-amber-700/60 font-mono",
               pointIcon: "text-amber-600",
               gradientLine: "from-amber-500 to-amber-700",
+              amountBg: "bg-gradient-to-r from-amber-50 to-amber-100/60 border-amber-200",
+              amountLabelText: "text-amber-900",
+              amountDot: "bg-amber-500",
+              amountValueText: "text-amber-950",
+              amountBadgeBg: "bg-amber-500 text-slate-950 font-extrabold",
+              amountNoteText: "text-amber-900/80",
             };
           } else if (sub.color === "blue") {
             themeClasses = {
@@ -82,6 +94,12 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
               numberText: "text-blue-700/60 font-mono",
               pointIcon: "text-blue-600",
               gradientLine: "from-blue-500 to-blue-700",
+              amountBg: "bg-gradient-to-r from-blue-50 to-blue-100/60 border-blue-200",
+              amountLabelText: "text-blue-900",
+              amountDot: "bg-blue-500",
+              amountValueText: "text-blue-950",
+              amountBadgeBg: "bg-blue-600 text-white",
+              amountNoteText: "text-blue-800/80",
             };
           }
 
@@ -119,19 +137,24 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
 
                 {/* Nominal Sementara Callout (if amount exists) */}
                 {"amount" in sub && Boolean((sub as any).amount) && (
-                  <div className="mb-4 p-3.5 rounded-xl bg-gradient-to-r from-emerald-50 to-emerald-100/60 border border-emerald-200 flex items-center justify-between shadow-2xs">
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <div className={`mb-4 p-3.5 rounded-xl border flex flex-col gap-1.5 shadow-2xs ${themeClasses.amountBg}`}>
+                    <div className="flex items-center justify-between">
+                      <div className={`text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 ${themeClasses.amountLabelText}`}>
+                        <span className={`w-2 h-2 rounded-full animate-pulse ${themeClasses.amountDot}`}></span>
                         {(sub as any).amountLabel || "Nominal Sementara"}
                       </div>
-                      <div className="text-2xl font-black text-[#064e3b] font-mono tracking-tight mt-1">
-                        {(sub as any).amount}
-                      </div>
+                      <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs ${themeClasses.amountBadgeBg}`}>
+                        {(sub as any).amountBadge || "Aktif"}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-bold bg-emerald-600 text-white px-2.5 py-1 rounded-full shadow-xs">
-                      Terhimpun
-                    </span>
+                    <div className={`text-2xl font-black font-mono tracking-tight mt-0.5 ${themeClasses.amountValueText}`}>
+                      {(sub as any).amount}
+                    </div>
+                    {(sub as any).amountNote && (
+                      <div className={`text-[11px] font-medium leading-tight pt-1.5 border-t border-black/5 ${themeClasses.amountNoteText}`}>
+                        {(sub as any).amountNote}
+                      </div>
+                    )}
                   </div>
                 )}
 

@@ -283,6 +283,7 @@
         "color": "emerald",
         "amount": "Rp 57.000.000",
         "amountLabel": "Nominal Sementara Terhimpun",
+        "amountBadge": "Terhimpun",
         "desc": "Kontribusi berkelanjutan dari seluruh jamaah dan warga Kp. Sukatani (RT 05 RW 03, Desa Wangunsari) sebagai wujud kepemilikan bersama (sense of belonging) dan kebersamaan umat di akar rumput.",
         "points": [
           "Infaq dan iuran sukarela rutin mingguan/bulanan warga Sukatani",
@@ -298,9 +299,13 @@
         "icon": "Sprout",
         "badge": "Inovasi Mandiri",
         "color": "amber",
+        "amount": "Rp 1.800.000 / bln",
+        "amountLabel": "Alokasi Pembangunan (60% Profit)",
+        "amountBadge": "60% Alokasi",
+        "amountNote": "Total profit unit usaha saat ini: Rp 3.000.000 / bulan",
         "desc": "Dukungan mandiri berkelanjutan yang diinisiasi oleh Ketua DKM (Bpk. Burhan Mubarok, S.Kom) melalui model pertanian terpadu (Integrated Farming). Memadukan budidaya organik, peternakan, dan pemanfaatan lahan secara sirkular untuk menghasilkan dana produktif bagi pembangunan fisik masjid.",
         "points": [
-          "Alokasi profit usaha dari unit pertanian dan peternakan terpadu",
+          "Total profit unit saat ini Rp 3.000.000/bulan dengan 60% (Rp 1.800.000) dialokasikan langsung untuk pembangunan masjid",
           "Mewujudkan model kemandirian finansial masjid berbasis aset produktif",
           "Mengurangi ketergantungan semata pada donasi eksternal secara berkelanjutan"
         ]
