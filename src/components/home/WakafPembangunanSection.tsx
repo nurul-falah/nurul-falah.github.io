@@ -27,11 +27,13 @@ import {
 import masjidData from "@/data/masjid.json";
 import tahap1UditchPhoto from "@/assets/construction/tahap-1-pembuatan-uditch.jpg";
 import tahap1Photo from "@/assets/construction/tahap-1-saluran-sanitasi.jpg";
+import tahap2PengirimanPhoto from "@/assets/construction/tahap-2-pengiriman-baja-ringan.jpg";
 import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
 
 const phaseImageMap: Record<string, string> = {
   "tahap-1-pembuatan-uditch.jpg": tahap1UditchPhoto,
   "tahap-1-saluran-sanitasi.jpg": tahap1Photo,
+  "tahap-2-pengiriman-baja-ringan.jpg": tahap2PengirimanPhoto,
   "tahap-2-perakitan-rangka.jpg": tahap2Photo,
 };
 
