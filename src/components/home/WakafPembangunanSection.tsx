@@ -348,7 +348,7 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                                 ? "bg-emerald-200/90 text-emerald-950 border-emerald-300/60"
                                 : "bg-amber-200/90 text-amber-950 border-amber-300/60"
                             }`}>
-                              {photos?.length || 0} Foto{videos && videos.length > 0 ? ` • ${videos.length} Video` : ""}
+                              {photos?.length || 0} Foto{videos && videos.length > 0 ? ` • ${videos.length} Animasi GIF` : ""}
                             </span>
                           </span>
                           <span className={`flex items-center gap-1 text-[11px] font-medium ${isCompleted ? "text-emerald-800" : "text-amber-800"}`}>
@@ -363,7 +363,7 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
 
                         {isPhotosOpen && (
                           <div className="mt-2.5 space-y-3">
-                            {/* Video Section */}
+                            {/* Video / GIF Animation Section */}
                             {videos && videos.length > 0 && (
                               <div className="space-y-2">
                                 <div className="grid sm:grid-cols-2 gap-3">
@@ -385,9 +385,12 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                                           <video
                                             src={videoUrl}
                                             poster={posterUrl}
-                                            controls
-                                            preload="metadata"
+                                            autoPlay
+                                            loop
+                                            muted
                                             playsInline
+                                            controls
+                                            preload="auto"
                                             className="w-full h-full object-contain"
                                           >
                                             Browser Anda tidak mendukung pemutar video HTML5.
@@ -396,10 +399,10 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                                         <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
                                           <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
                                             <span>{vid.title}</span>
-                                            <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded flex items-center gap-1 ${
-                                              isCompleted ? "text-emerald-800 bg-emerald-100" : "text-amber-800 bg-amber-100"
+                                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-2xs ${
+                                              isCompleted ? "text-emerald-800 bg-emerald-100 border border-emerald-200" : "text-amber-800 bg-amber-100 border border-amber-200"
                                             }`}>
-                                              <Play className="w-2.5 h-2.5 fill-current" /> Video Lapangan
+                                              <Sparkles className="w-2.5 h-2.5" /> Animasi GIF Loop (600 KB)
                                             </span>
                                           </div>
                                           <p className="text-[11px] text-slate-600 leading-relaxed">

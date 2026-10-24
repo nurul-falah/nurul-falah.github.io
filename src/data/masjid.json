@@ -59,10 +59,11 @@
       ],
       "videos": [
         {
-          "title": "Video Dokumentasi Pengerjaan Saluran Air",
-          "desc": "Rekaman video kerja bakti warga dalam pengerjaan saluran sanitasi dan irigasi air tapak masjid.",
+          "title": "Animasi Dokumentasi Pengerjaan Saluran Air",
+          "desc": "Klip animasi bergerak pengerjaan saluran sanitasi dan irigasi air tapak masjid secara gotong royong.",
           "filename": "tahap-1-dokumentasi.mp4",
-          "poster": "tahap-1-video-poster.jpg"
+          "poster": "tahap-1-video-poster.jpg",
+          "isLoopGif": true
         }
       ]
     },
