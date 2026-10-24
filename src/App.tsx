@@ -44,7 +44,7 @@ export function App() {
         {/* 5. Wakaf Pembangunan */}
         <WakafPembangunanSection onOpenWakaf={() => setIsInfaqOpen(true)} />
 
-        {/* 6. Pendanaan */}
+        {/* 6. Skema Pendanaan */}
         <PendanaanSection onOpenWakaf={() => setIsInfaqOpen(true)} />
 
         {/* Layanan & Sekretariat */}
