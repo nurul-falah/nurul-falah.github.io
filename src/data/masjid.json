@@ -29,7 +29,14 @@
       "title": "Pembangunan Jalur Sanitasi/Irigasi Air",
       "desc": "Penataan saluran sanitasi pembuangan, sumur resapan, dan perpipaan irigasi lingkungan agar tapak lahan masjid stabil, kering, dan bebas genangan.",
       "badge": "Tahap 1",
-      "status": "Selesai"
+      "status": "Selesai",
+      "photos": [
+        {
+          "title": "Pemasangan Saluran Sanitasi & Irigasi",
+          "desc": "Penggalian dan pemasangan saluran buis beton u-ditch secara gotong royong bersama warga di sisi tapak bangunan masjid.",
+          "filename": "tahap-1-saluran-sanitasi.jpg"
+        }
+      ]
     },
     {
       "phase": 2,

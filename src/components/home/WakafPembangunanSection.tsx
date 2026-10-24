@@ -25,9 +25,11 @@ import {
   X,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import tahap1Photo from "@/assets/construction/tahap-1-saluran-sanitasi.jpg";
 import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
 
 const phaseImageMap: Record<string, string> = {
+  "tahap-1-saluran-sanitasi.jpg": tahap1Photo,
   "tahap-2-perakitan-rangka.jpg": tahap2Photo,
 };
 
@@ -50,6 +52,7 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
   const [copiedAccount, setCopiedAccount] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
   const [openPhotoPhases, setOpenPhotoPhases] = useState<Record<number, boolean>>({
+    1: true,
     2: true,
   });
   const [selectedImage, setSelectedImage] = useState<{
@@ -311,21 +314,29 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
 
                     {/* Accordion: Foto Kegiatan */}
                     {photos && photos.length > 0 && (
-                      <div className="mt-1 pt-2.5 border-t border-amber-200/70">
+                      <div className={`mt-1 pt-2.5 border-t ${isCompleted ? "border-emerald-200/80" : "border-amber-200/70"}`}>
                         <button
                           type="button"
                           onClick={() => togglePhotos(phase.phase)}
-                          className="w-full flex items-center justify-between py-2 px-3 rounded-lg bg-amber-100/60 hover:bg-amber-100/90 border border-amber-200/80 text-xs font-semibold text-amber-900 transition cursor-pointer"
+                          className={`w-full flex items-center justify-between py-2 px-3 rounded-lg border text-xs font-semibold transition cursor-pointer ${
+                            isCompleted
+                              ? "bg-emerald-100/60 hover:bg-emerald-100/90 border-emerald-200/80 text-emerald-900"
+                              : "bg-amber-100/60 hover:bg-amber-100/90 border-amber-200/80 text-amber-900"
+                          }`}
                           aria-expanded={isPhotosOpen}
                         >
                           <span className="flex items-center gap-2">
-                            <Camera className="w-4 h-4 text-amber-700" />
+                            <Camera className={`w-4 h-4 ${isCompleted ? "text-emerald-700" : "text-amber-700"}`} />
                             <span className="font-bold">Foto Kegiatan</span>
-                            <span className="text-[10px] font-medium bg-amber-200/90 text-amber-950 px-2 py-0.5 rounded-full border border-amber-300/60">
+                            <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${
+                              isCompleted
+                                ? "bg-emerald-200/90 text-emerald-950 border-emerald-300/60"
+                                : "bg-amber-200/90 text-amber-950 border-amber-300/60"
+                            }`}>
                               {photos.length} Foto
                             </span>
                           </span>
-                          <span className="flex items-center gap-1 text-[11px] text-amber-800 font-medium">
+                          <span className={`flex items-center gap-1 text-[11px] font-medium ${isCompleted ? "text-emerald-800" : "text-amber-800"}`}>
                             <span>{isPhotosOpen ? "Tutup" : "Lihat"}</span>
                             <ChevronDown
                               className={`w-4 h-4 transition-transform duration-200 ${
@@ -345,7 +356,9 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                                 return (
                                   <div
                                     key={pIdx}
-                                    className="group rounded-xl overflow-hidden border border-amber-300/80 bg-white shadow-2xs hover:shadow-md transition"
+                                    className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
+                                      isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
+                                    }`}
                                   >
                                     <div
                                       className="relative aspect-[4/3] bg-slate-900 overflow-hidden cursor-pointer"
@@ -365,14 +378,16 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                                       />
                                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors flex items-center justify-center">
                                         <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-xs text-white text-xs px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 shadow-lg">
-                                          <ZoomIn className="w-3.5 h-3.5 text-amber-300" /> Klik untuk perbesar
+                                          <ZoomIn className={`w-3.5 h-3.5 ${isCompleted ? "text-emerald-300" : "text-amber-300"}`} /> Klik untuk perbesar
                                         </span>
                                       </div>
                                     </div>
-                                    <div className="p-3 bg-amber-50/40">
+                                    <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
                                       <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
                                         <span>{p.title}</span>
-                                        <span className="text-[10px] text-amber-800 font-medium bg-amber-100 px-1.5 py-0.5 rounded">
+                                        <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${
+                                          isCompleted ? "text-emerald-800 bg-emerald-100" : "text-amber-800 bg-amber-100"
+                                        }`}>
                                           Dokumentasi Lapangan
                                         </span>
                                       </div>
@@ -388,6 +403,7 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                         )}
                       </div>
                     )}
+
                   </div>
                 );
               })}
