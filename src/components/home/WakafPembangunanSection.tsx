@@ -473,21 +473,17 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                               : "bg-gradient-to-br from-emerald-600 to-emerald-800"
                           }`}
                         >
-                          {isCompleted ? (
-                            <CheckCircle2 className="w-4 h-4 text-white" />
-                          ) : (
-                            phase.phase
-                          )}
+                          {phase.phase}
                         </div>
 
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap items-center gap-2 mb-1">
+                            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md border border-emerald-200">
+                              <Icon className="w-3.5 h-3.5 text-emerald-700" />
+                              {phase.badge}
+                            </span>
                             <span className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
                               {phase.title}
-                            </span>
-                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded-md border border-emerald-200/80">
-                              <Icon className="w-3 h-3 text-emerald-700" />
-                              {phase.badge}
                             </span>
                             {phaseTimeline.timeline && (
                               <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-md border border-slate-200">
