@@ -29,6 +29,7 @@ import tahap1UditchPhoto from "@/assets/construction/tahap-1-pembuatan-uditch.jp
 import tahap1Photo from "@/assets/construction/tahap-1-saluran-sanitasi.jpg";
 import tahap1InstalasiLanjutanPhoto from "@/assets/construction/tahap-1-instalasi-lanjutan.jpg";
 import tahap1HasilInstalasiPhoto from "@/assets/construction/tahap-1-hasil-instalasi.jpg";
+import tahap1JembatanPhoto from "@/assets/construction/tahap-1-jembatan-gang-rt5.jpg";
 import tahap2PengirimanPhoto from "@/assets/construction/tahap-2-pengiriman-baja-ringan.jpg";
 import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
 
@@ -37,6 +38,7 @@ const phaseImageMap: Record<string, string> = {
   "tahap-1-saluran-sanitasi.jpg": tahap1Photo,
   "tahap-1-instalasi-lanjutan.jpg": tahap1InstalasiLanjutanPhoto,
   "tahap-1-hasil-instalasi.jpg": tahap1HasilInstalasiPhoto,
+  "tahap-1-jembatan-gang-rt5.jpg": tahap1JembatanPhoto,
   "tahap-2-pengiriman-baja-ringan.jpg": tahap2PengirimanPhoto,
   "tahap-2-perakitan-rangka.jpg": tahap2Photo,
 };
