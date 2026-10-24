@@ -84,7 +84,7 @@ export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
                 <div className="flex items-center justify-between">
                   <span>Progress Wakaf Pembangunan:</span>
                   <span className="font-bold text-amber-300 font-mono">
-                    {masjidData.financial.progressPercent}% (Rp 56 Jt / Rp 600 Jt)
+                    {masjidData.financial.progressPercent}% ({masjidData.financial.buildingFundAllocated} / {masjidData.financial.buildingFundTarget})
                   </span>
                 </div>
                 <div className="w-full bg-emerald-900/80 h-2 rounded-full overflow-hidden">
