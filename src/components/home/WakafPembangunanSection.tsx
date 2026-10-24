@@ -363,59 +363,6 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
 
                         {isPhotosOpen && (
                           <div className="mt-2.5 space-y-3">
-                            {/* Video / GIF Animation Section */}
-                            {videos && videos.length > 0 && (
-                              <div className="space-y-2">
-                                <div className="grid sm:grid-cols-2 gap-3">
-                                  {videos.map((vid, vIdx) => {
-                                    const videoUrl = `./videos/construction/${vid.filename}`;
-                                    const posterUrl = vid.poster && phaseImageMap[vid.poster]
-                                      ? phaseImageMap[vid.poster]
-                                      : vid.poster
-                                      ? `./images/construction/${vid.poster}`
-                                      : undefined;
-                                    return (
-                                      <div
-                                        key={vIdx}
-                                        className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
-                                          isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
-                                        }`}
-                                      >
-                                        <div className="relative aspect-[4/3] bg-black overflow-hidden flex items-center justify-center">
-                                          <video
-                                            src={videoUrl}
-                                            poster={posterUrl}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            controls
-                                            preload="auto"
-                                            className="w-full h-full object-contain"
-                                          >
-                                            Browser Anda tidak mendukung pemutar video HTML5.
-                                          </video>
-                                        </div>
-                                        <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
-                                          <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
-                                            <span>{vid.title}</span>
-                                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-2xs ${
-                                              isCompleted ? "text-emerald-800 bg-emerald-100 border border-emerald-200" : "text-amber-800 bg-amber-100 border border-amber-200"
-                                            }`}>
-                                              <Sparkles className="w-2.5 h-2.5" /> Animasi GIF Loop (600 KB)
-                                            </span>
-                                          </div>
-                                          <p className="text-[11px] text-slate-600 leading-relaxed">
-                                            {vid.desc}
-                                          </p>
-                                        </div>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                              </div>
-                            )}
-
                             {/* Photos Grid */}
                             {photos && photos.length > 0 && (
                               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -468,6 +415,59 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                                     </div>
                                   );
                                 })}
+                              </div>
+                            )}
+
+                            {/* Video / GIF Animation Section (Displayed after photos) */}
+                            {videos && videos.length > 0 && (
+                              <div className="space-y-2 pt-1 border-t border-slate-200/60">
+                                <div className="grid sm:grid-cols-2 gap-3">
+                                  {videos.map((vid, vIdx) => {
+                                    const videoUrl = `./videos/construction/${vid.filename}`;
+                                    const posterUrl = vid.poster && phaseImageMap[vid.poster]
+                                      ? phaseImageMap[vid.poster]
+                                      : vid.poster
+                                      ? `./images/construction/${vid.poster}`
+                                      : undefined;
+                                    return (
+                                      <div
+                                        key={vIdx}
+                                        className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
+                                          isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
+                                        }`}
+                                      >
+                                        <div className="relative aspect-[4/3] bg-black overflow-hidden flex items-center justify-center">
+                                          <video
+                                            src={videoUrl}
+                                            poster={posterUrl}
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            controls
+                                            preload="auto"
+                                            className="w-full h-full object-contain"
+                                          >
+                                            Browser Anda tidak mendukung pemutar video HTML5.
+                                          </video>
+                                        </div>
+                                        <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
+                                          <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
+                                            <span>{vid.title}</span>
+                                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-2xs ${
+                                              isCompleted ? "text-emerald-800 bg-emerald-100 border border-emerald-200" : "text-amber-800 bg-amber-100 border border-amber-200"
+                                            }`}>
+                                              <Sparkles className="w-2.5 h-2.5" /> Animasi GIF Loop (600 KB)
+                                            </span>
+                                          </div>
+                                          <p className="text-[11px] text-slate-600 leading-relaxed">
+                                            {vid.desc}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
                               </div>
                             )}
                           </div>
