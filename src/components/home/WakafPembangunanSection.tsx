@@ -19,6 +19,7 @@ import {
   CheckCircle2,
   Clock,
   CircleDot,
+  Calendar,
   Camera,
   ChevronDown,
   ChevronLeft,
@@ -289,11 +290,76 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
             <div className="flex items-center justify-between mb-3">
               <h4 className="text-sm font-bold text-[#064e3b] flex items-center gap-1.5">
                 <span className="w-1 h-4 bg-emerald-600 rounded-full inline-block" />
-                Fase & Rencana Tahapan Pembangunan
+                Fase &amp; Rencana Garis Waktu Pembangunan
               </h4>
               <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-100/90 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                5 Tahapan Terencana
+                5 Tahapan Terencana (2026 – 2028)
               </span>
+            </div>
+
+            {/* Visual Roadmap Timeline Stepper */}
+            <div className="mb-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-[#064e3b] to-emerald-900 text-white shadow-sm border border-emerald-800/40">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3.5 pb-2.5 border-b border-emerald-800/60 text-xs">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-amber-300" />
+                  <span className="font-bold text-white tracking-wide">
+                    Target Garis Waktu Konstruksi Fisik
+                  </span>
+                </div>
+                <div className="text-[11px] text-emerald-200">
+                  Estimasi Total: <b className="text-white">±18 - 24 Bulan</b>
+                </div>
+              </div>
+
+              {/* Step Markers Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-2.5">
+                {masjidData.constructionPhases.map((p) => {
+                  const isDone = p.status === "Selesai";
+                  const isOngoing = p.status === "Dalam Proses";
+                  const pTimeline = (p as { timeline?: string; quarter?: string });
+                  return (
+                    <div
+                      key={p.phase}
+                      className={`p-2 sm:p-2.5 rounded-xl border flex flex-col justify-between transition-all ${
+                        isDone
+                          ? "bg-emerald-800/50 border-emerald-400/50 text-emerald-100"
+                          : isOngoing
+                          ? "bg-amber-500/25 border-amber-400/70 text-amber-100 ring-1 ring-amber-400/40"
+                          : "bg-white/5 border-white/10 text-slate-300"
+                      }`}
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-1">
+                          <span
+                            className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
+                              isDone
+                                ? "bg-emerald-500/30 text-emerald-300"
+                                : isOngoing
+                                ? "bg-amber-400 text-slate-950 font-extrabold"
+                                : "bg-white/10 text-slate-300"
+                            }`}
+                          >
+                            Tahap {p.phase}
+                          </span>
+                          {isDone ? (
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          ) : isOngoing ? (
+                            <Clock className="w-3.5 h-3.5 text-amber-300 animate-pulse shrink-0" />
+                          ) : (
+                            <CircleDot className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                          )}
+                        </div>
+                        <div className="font-bold text-xs text-white line-clamp-1">
+                          {pTimeline.quarter || p.badge}
+                        </div>
+                      </div>
+                      <div className="text-[10px] text-emerald-200/90 mt-1.5 line-clamp-1 font-medium">
+                        {p.status === "Selesai" ? "✓ Selesai" : p.status === "Dalam Proses" ? "⚡ Berjalan" : pTimeline.timeline || "Rencana"}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             <div className="grid gap-2.5">
@@ -303,6 +369,7 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                 const isInProgress = phase.status === "Dalam Proses";
                 const photos = (phase as { photos?: { title: string; desc: string; filename: string }[] }).photos;
                 const videos = (phase as { videos?: { title: string; desc: string; filename: string; poster?: string }[] }).videos;
+                const phaseTimeline = phase as { timeline?: string; quarter?: string };
                 const hasMedia = (photos && photos.length > 0) || (videos && videos.length > 0);
                 const isPhotosOpen = !!openPhotoPhases[phase.phase];
 
@@ -346,6 +413,17 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                               <Icon className="w-3 h-3 text-emerald-700" />
                               {phase.badge}
                             </span>
+                            {phaseTimeline.timeline && (
+                              <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-md border border-slate-200">
+                                <Calendar className="w-3 h-3 text-emerald-600 shrink-0" />
+                                <span>{phaseTimeline.timeline}</span>
+                                {phaseTimeline.quarter && (
+                                  <span className="text-emerald-800 font-bold font-mono">
+                                    ({phaseTimeline.quarter})
+                                  </span>
+                                )}
+                              </span>
+                            )}
                           </div>
                           <p className="text-xs text-slate-600 leading-relaxed">
                             {phase.desc}
