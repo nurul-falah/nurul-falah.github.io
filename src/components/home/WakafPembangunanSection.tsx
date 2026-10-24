@@ -19,8 +19,17 @@ import {
   CheckCircle2,
   Clock,
   CircleDot,
+  Camera,
+  ChevronDown,
+  ZoomIn,
+  X,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
+
+const phaseImageMap: Record<string, string> = {
+  "tahap-2-perakitan-rangka.jpg": tahap2Photo,
+};
 
 export interface WakafSectionProps {
   onOpenWakaf?: () => void;
@@ -40,6 +49,21 @@ const buildingItems = [
 export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
   const [copiedAccount, setCopiedAccount] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
+  const [openPhotoPhases, setOpenPhotoPhases] = useState<Record<number, boolean>>({
+    2: true,
+  });
+  const [selectedImage, setSelectedImage] = useState<{
+    url: string;
+    title: string;
+    desc?: string;
+  } | null>(null);
+
+  const togglePhotos = (phaseNumber: number) => {
+    setOpenPhotoPhases((prev) => ({
+      ...prev,
+      [phaseNumber]: !prev[phaseNumber],
+    }));
+  };
 
   const handleCopyAccount = () => {
     if (typeof navigator !== "undefined" && navigator.clipboard && account) {
@@ -211,11 +235,13 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                 const Icon = phaseIcons[i] || Hammer;
                 const isCompleted = phase.status === "Selesai";
                 const isInProgress = phase.status === "Dalam Proses";
+                const photos = (phase as { photos?: { title: string; desc: string; filename: string }[] }).photos;
+                const isPhotosOpen = !!openPhotoPhases[phase.phase];
 
                 return (
                   <div
                     key={phase.phase}
-                    className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 sm:p-4 rounded-xl border transition-all ${
+                    className={`flex flex-col gap-3 p-3.5 sm:p-4 rounded-xl border transition-all ${
                       isCompleted
                         ? "bg-emerald-50/70 border-emerald-300/80 shadow-2xs"
                         : isInProgress
@@ -223,65 +249,149 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                         : "bg-white/90 border-emerald-100/90 shadow-2xs"
                     }`}
                   >
-                    {/* Left: Phase Number & Info */}
-                    <div className="flex items-start gap-3 min-w-0 flex-1">
-                      <div
-                        className={`w-8 h-8 rounded-xl text-white font-extrabold text-xs flex items-center justify-center shrink-0 shadow-sm mt-0.5 sm:mt-0 ${
-                          isCompleted
-                            ? "bg-emerald-600"
-                            : isInProgress
-                            ? "bg-amber-500"
-                            : "bg-gradient-to-br from-emerald-600 to-emerald-800"
-                        }`}
-                      >
+                    {/* Top Row: Phase Info & Status Badge */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      {/* Left: Phase Number & Info */}
+                      <div className="flex items-start gap-3 min-w-0 flex-1">
+                        <div
+                          className={`w-8 h-8 rounded-xl text-white font-extrabold text-xs flex items-center justify-center shrink-0 shadow-sm mt-0.5 sm:mt-0 ${
+                            isCompleted
+                              ? "bg-emerald-600"
+                              : isInProgress
+                              ? "bg-amber-500"
+                              : "bg-gradient-to-br from-emerald-600 to-emerald-800"
+                          }`}
+                        >
+                          {isCompleted ? (
+                            <CheckCircle2 className="w-4 h-4 text-white" />
+                          ) : (
+                            phase.phase
+                          )}
+                        </div>
+
+                        <div className="flex-1 min-w-0">
+                          <div className="flex flex-wrap items-center gap-2 mb-1">
+                            <span className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
+                              {phase.title}
+                            </span>
+                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded-md border border-emerald-200/80">
+                              <Icon className="w-3 h-3 text-emerald-700" />
+                              {phase.badge}
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-600 leading-relaxed">
+                            {phase.desc}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Right: Status Badge */}
+                      <div className="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                        <span className="sm:hidden text-[11px] text-slate-400 font-medium">
+                          Status:
+                        </span>
                         {isCompleted ? (
-                          <CheckCircle2 className="w-4 h-4 text-white" />
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-2xs">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                            Selesai
+                          </span>
+                        ) : isInProgress ? (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300 shadow-2xs">
+                            <Clock className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
+                            Dalam Proses
+                          </span>
                         ) : (
-                          phase.phase
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">
+                            <CircleDot className="w-3.5 h-3.5 text-slate-400" />
+                            Rencana
+                          </span>
                         )}
                       </div>
+                    </div>
 
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-wrap items-center gap-2 mb-1">
-                          <span className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
-                            {phase.title}
+                    {/* Accordion: Foto Kegiatan */}
+                    {photos && photos.length > 0 && (
+                      <div className="mt-1 pt-2.5 border-t border-amber-200/70">
+                        <button
+                          type="button"
+                          onClick={() => togglePhotos(phase.phase)}
+                          className="w-full flex items-center justify-between py-2 px-3 rounded-lg bg-amber-100/60 hover:bg-amber-100/90 border border-amber-200/80 text-xs font-semibold text-amber-900 transition cursor-pointer"
+                          aria-expanded={isPhotosOpen}
+                        >
+                          <span className="flex items-center gap-2">
+                            <Camera className="w-4 h-4 text-amber-700" />
+                            <span className="font-bold">Foto Kegiatan</span>
+                            <span className="text-[10px] font-medium bg-amber-200/90 text-amber-950 px-2 py-0.5 rounded-full border border-amber-300/60">
+                              {photos.length} Foto
+                            </span>
                           </span>
-                          <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded-md border border-emerald-200/80">
-                            <Icon className="w-3 h-3 text-emerald-700" />
-                            {phase.badge}
+                          <span className="flex items-center gap-1 text-[11px] text-amber-800 font-medium">
+                            <span>{isPhotosOpen ? "Tutup" : "Lihat"}</span>
+                            <ChevronDown
+                              className={`w-4 h-4 transition-transform duration-200 ${
+                                isPhotosOpen ? "rotate-180" : ""
+                              }`}
+                            />
                           </span>
-                        </div>
-                        <p className="text-xs text-slate-600 leading-relaxed">
-                          {phase.desc}
-                        </p>
+                        </button>
+
+                        {isPhotosOpen && (
+                          <div className="mt-2.5 space-y-2.5">
+                            <div className="grid sm:grid-cols-2 gap-3">
+                              {photos.map((p, pIdx) => {
+                                const photoUrl = p.filename && phaseImageMap[p.filename]
+                                  ? phaseImageMap[p.filename]
+                                  : `./images/construction/${p.filename}`;
+                                return (
+                                  <div
+                                    key={pIdx}
+                                    className="group rounded-xl overflow-hidden border border-amber-300/80 bg-white shadow-2xs hover:shadow-md transition"
+                                  >
+                                    <div
+                                      className="relative aspect-[4/3] bg-slate-900 overflow-hidden cursor-pointer"
+                                      onClick={() =>
+                                        setSelectedImage({
+                                          url: photoUrl,
+                                          title: p.title,
+                                          desc: p.desc,
+                                        })
+                                      }
+                                    >
+                                      <img
+                                        src={photoUrl}
+                                        alt={p.title}
+                                        className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
+                                        loading="lazy"
+                                      />
+                                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors flex items-center justify-center">
+                                        <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-xs text-white text-xs px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 shadow-lg">
+                                          <ZoomIn className="w-3.5 h-3.5 text-amber-300" /> Klik untuk perbesar
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div className="p-3 bg-amber-50/40">
+                                      <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
+                                        <span>{p.title}</span>
+                                        <span className="text-[10px] text-amber-800 font-medium bg-amber-100 px-1.5 py-0.5 rounded">
+                                          Dokumentasi Lapangan
+                                        </span>
+                                      </div>
+                                      <p className="text-[11px] text-slate-600 leading-relaxed">
+                                        {p.desc}
+                                      </p>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    </div>
-
-                    {/* Right: Status Badge */}
-                    <div className="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
-                      <span className="sm:hidden text-[11px] text-slate-400 font-medium">
-                        Status:
-                      </span>
-                      {isCompleted ? (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-2xs">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                          Selesai
-                        </span>
-                      ) : isInProgress ? (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300 shadow-2xs">
-                          <Clock className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
-                          Dalam Proses
-                        </span>
-                      ) : (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">
-                          <CircleDot className="w-3.5 h-3.5 text-slate-400" />
-                          Rencana
-                        </span>
-                      )}
-                    </div>
+                    )}
                   </div>
                 );
               })}
+
             </div>
           </div>
 
@@ -503,6 +613,46 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal Foto Kegiatan */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-w-3xl w-full bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-white/20 flex flex-col max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-4 border-b border-white/10 bg-slate-950/70">
+              <div className="flex items-center gap-2">
+                <Camera className="w-4 h-4 text-amber-400" />
+                <h4 className="font-bold text-sm text-white">{selectedImage.title}</h4>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedImage(null)}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition cursor-pointer"
+                title="Tutup preview"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-2 sm:p-4 bg-black/50 flex-1 overflow-auto flex items-center justify-center">
+              <img
+                src={selectedImage.url}
+                alt={selectedImage.title}
+                className="max-h-[65vh] w-auto max-w-full rounded-lg object-contain shadow-md"
+              />
+            </div>
+            {selectedImage.desc && (
+              <div className="p-4 bg-slate-950 text-xs text-slate-300 border-t border-white/10 leading-relaxed">
+                {selectedImage.desc}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

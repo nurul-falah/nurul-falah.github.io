@@ -36,7 +36,14 @@
       "title": "Pembangunan Teras Masjid Sisi Utara (Area Jum'atan Sementara)",
       "desc": "Pembuatan selasar teras utara beratap kokoh sebagai ruang sholat darurat agar ibadah sholat 5 waktu dan sholat Jum'at berjamaah tetap berjalan lancar.",
       "badge": "Tahap 2",
-      "status": "Dalam Proses"
+      "status": "Dalam Proses",
+      "photos": [
+        {
+          "title": "Perakitan Rangka Baja Ringan",
+          "desc": "Pemasangan dan penyambungan profil kanal C baja ringan menggunakan bor cordless untuk rangka atap selasar teras utara.",
+          "filename": "tahap-2-perakitan-rangka.jpg"
+        }
+      ]
     },
     {
       "phase": 3,
