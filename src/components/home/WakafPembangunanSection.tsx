@@ -37,6 +37,7 @@ import tahap1JembatanPhoto from "@/assets/construction/tahap-1-jembatan-gang-rt5
 import tahap1VideoPoster from "@/assets/construction/tahap-1-video-poster.jpg";
 import tahap2PengirimanPhoto from "@/assets/construction/tahap-2-pengiriman-baja-ringan.jpg";
 import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
+import tahap2FabrikasiPhoto from "@/assets/construction/tahap-2-fabrikasi-rangka.jpg";
 
 export interface GalleryItem {
   url: string;
@@ -54,6 +55,7 @@ const phaseImageMap: Record<string, string> = {
   "tahap-1-video-poster.jpg": tahap1VideoPoster,
   "tahap-2-pengiriman-baja-ringan.jpg": tahap2PengirimanPhoto,
   "tahap-2-perakitan-rangka.jpg": tahap2Photo,
+  "tahap-2-fabrikasi-rangka.jpg": tahap2FabrikasiPhoto,
 };
 
 export interface WakafSectionProps {
