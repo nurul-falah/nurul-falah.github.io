@@ -23,6 +23,7 @@ import {
   ChevronDown,
   ZoomIn,
   X,
+  Play,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 import tahap1UditchPhoto from "@/assets/construction/tahap-1-pembuatan-uditch.jpg";
@@ -30,6 +31,7 @@ import tahap1Photo from "@/assets/construction/tahap-1-saluran-sanitasi.jpg";
 import tahap1InstalasiLanjutanPhoto from "@/assets/construction/tahap-1-instalasi-lanjutan.jpg";
 import tahap1HasilInstalasiPhoto from "@/assets/construction/tahap-1-hasil-instalasi.jpg";
 import tahap1JembatanPhoto from "@/assets/construction/tahap-1-jembatan-gang-rt5.jpg";
+import tahap1VideoPoster from "@/assets/construction/tahap-1-video-poster.jpg";
 import tahap2PengirimanPhoto from "@/assets/construction/tahap-2-pengiriman-baja-ringan.jpg";
 import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
 
@@ -39,6 +41,7 @@ const phaseImageMap: Record<string, string> = {
   "tahap-1-instalasi-lanjutan.jpg": tahap1InstalasiLanjutanPhoto,
   "tahap-1-hasil-instalasi.jpg": tahap1HasilInstalasiPhoto,
   "tahap-1-jembatan-gang-rt5.jpg": tahap1JembatanPhoto,
+  "tahap-1-video-poster.jpg": tahap1VideoPoster,
   "tahap-2-pengiriman-baja-ringan.jpg": tahap2PengirimanPhoto,
   "tahap-2-perakitan-rangka.jpg": tahap2Photo,
 };
@@ -249,6 +252,8 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                 const isCompleted = phase.status === "Selesai";
                 const isInProgress = phase.status === "Dalam Proses";
                 const photos = (phase as { photos?: { title: string; desc: string; filename: string }[] }).photos;
+                const videos = (phase as { videos?: { title: string; desc: string; filename: string; poster?: string }[] }).videos;
+                const hasMedia = (photos && photos.length > 0) || (videos && videos.length > 0);
                 const isPhotosOpen = !!openPhotoPhases[phase.phase];
 
                 return (
@@ -322,8 +327,8 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                       </div>
                     </div>
 
-                    {/* Accordion: Foto Kegiatan */}
-                    {photos && photos.length > 0 && (
+                    {/* Accordion: Dokumentasi Kegiatan */}
+                    {hasMedia && (
                       <div className={`mt-1 pt-2.5 border-t ${isCompleted ? "border-emerald-200/80" : "border-amber-200/70"}`}>
                         <button
                           type="button"
@@ -337,13 +342,13 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                         >
                           <span className="flex items-center gap-2">
                             <Camera className={`w-4 h-4 ${isCompleted ? "text-emerald-700" : "text-amber-700"}`} />
-                            <span className="font-bold">Foto Kegiatan</span>
+                            <span className="font-bold">Dokumentasi Kegiatan</span>
                             <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${
                               isCompleted
                                 ? "bg-emerald-200/90 text-emerald-950 border-emerald-300/60"
                                 : "bg-amber-200/90 text-amber-950 border-amber-300/60"
                             }`}>
-                              {photos.length} Foto
+                              {photos?.length || 0} Foto{videos && videos.length > 0 ? ` • ${videos.length} Video` : ""}
                             </span>
                           </span>
                           <span className={`flex items-center gap-1 text-[11px] font-medium ${isCompleted ? "text-emerald-800" : "text-amber-800"}`}>
@@ -357,62 +362,116 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
                         </button>
 
                         {isPhotosOpen && (
-                          <div className="mt-2.5 space-y-2.5">
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                              {photos.map((p, pIdx) => {
-                                const photoUrl = p.filename && phaseImageMap[p.filename]
-                                  ? phaseImageMap[p.filename]
-                                  : `./images/construction/${p.filename}`;
-                                return (
-                                  <div
-                                    key={pIdx}
-                                    className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
-                                      isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
-                                    }`}
-                                  >
+                          <div className="mt-2.5 space-y-3">
+                            {/* Video Section */}
+                            {videos && videos.length > 0 && (
+                              <div className="space-y-2">
+                                <div className="grid sm:grid-cols-2 gap-3">
+                                  {videos.map((vid, vIdx) => {
+                                    const videoUrl = `./videos/construction/${vid.filename}`;
+                                    const posterUrl = vid.poster && phaseImageMap[vid.poster]
+                                      ? phaseImageMap[vid.poster]
+                                      : vid.poster
+                                      ? `./images/construction/${vid.poster}`
+                                      : undefined;
+                                    return (
+                                      <div
+                                        key={vIdx}
+                                        className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
+                                          isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
+                                        }`}
+                                      >
+                                        <div className="relative aspect-[4/3] bg-black overflow-hidden flex items-center justify-center">
+                                          <video
+                                            src={videoUrl}
+                                            poster={posterUrl}
+                                            controls
+                                            preload="metadata"
+                                            playsInline
+                                            className="w-full h-full object-contain"
+                                          >
+                                            Browser Anda tidak mendukung pemutar video HTML5.
+                                          </video>
+                                        </div>
+                                        <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
+                                          <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
+                                            <span>{vid.title}</span>
+                                            <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded flex items-center gap-1 ${
+                                              isCompleted ? "text-emerald-800 bg-emerald-100" : "text-amber-800 bg-amber-100"
+                                            }`}>
+                                              <Play className="w-2.5 h-2.5 fill-current" /> Video Lapangan
+                                            </span>
+                                          </div>
+                                          <p className="text-[11px] text-slate-600 leading-relaxed">
+                                            {vid.desc}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            )}
+
+                            {/* Photos Grid */}
+                            {photos && photos.length > 0 && (
+                              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                {photos.map((p, pIdx) => {
+                                  const photoUrl = p.filename && phaseImageMap[p.filename]
+                                    ? phaseImageMap[p.filename]
+                                    : `./images/construction/${p.filename}`;
+                                  return (
                                     <div
-                                      className="relative aspect-[4/3] bg-slate-900 overflow-hidden cursor-pointer"
-                                      onClick={() =>
-                                        setSelectedImage({
-                                          url: photoUrl,
-                                          title: p.title,
-                                          desc: p.desc,
-                                        })
-                                      }
+                                      key={pIdx}
+                                      className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
+                                        isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
+                                      }`}
                                     >
-                                      <img
-                                        src={photoUrl}
-                                        alt={p.title}
-                                        className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
-                                        loading="lazy"
-                                      />
-                                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors flex items-center justify-center">
-                                        <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-xs text-white text-xs px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 shadow-lg">
-                                          <ZoomIn className={`w-3.5 h-3.5 ${isCompleted ? "text-emerald-300" : "text-amber-300"}`} /> Klik untuk perbesar
-                                        </span>
+                                      <div
+                                        className="relative aspect-[4/3] bg-slate-900 overflow-hidden cursor-pointer"
+                                        onClick={() =>
+                                          setSelectedImage({
+                                            url: photoUrl,
+                                            title: p.title,
+                                            desc: p.desc,
+                                          })
+                                        }
+                                      >
+                                        <img
+                                          src={photoUrl}
+                                          alt={p.title}
+                                          className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
+                                          loading="lazy"
+                                        />
+                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors flex items-center justify-center">
+                                          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-xs text-white text-xs px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 shadow-lg">
+                                            <ZoomIn className={`w-3.5 h-3.5 ${isCompleted ? "text-emerald-300" : "text-amber-300"}`} /> Klik untuk perbesar
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
+                                        <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
+                                          <span>{p.title}</span>
+                                          <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${
+                                            isCompleted ? "text-emerald-800 bg-emerald-100" : "text-amber-800 bg-amber-100"
+                                          }`}>
+                                            Dokumentasi Lapangan
+                                          </span>
+                                        </div>
+                                        <p className="text-[11px] text-slate-600 leading-relaxed">
+                                          {p.desc}
+                                        </p>
                                       </div>
                                     </div>
-                                    <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
-                                      <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
-                                        <span>{p.title}</span>
-                                        <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${
-                                          isCompleted ? "text-emerald-800 bg-emerald-100" : "text-amber-800 bg-amber-100"
-                                        }`}>
-                                          Dokumentasi Lapangan
-                                        </span>
-                                      </div>
-                                      <p className="text-[11px] text-slate-600 leading-relaxed">
-                                        {p.desc}
-                                      </p>
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </div>
+                                  );
+                                })}
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
                     )}
+
 
                   </div>
                 );
