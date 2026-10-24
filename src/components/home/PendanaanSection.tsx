@@ -137,21 +137,21 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
 
                 {/* Nominal Sementara Callout (if amount exists) */}
                 {"amount" in sub && Boolean((sub as any).amount) && (
-                  <div className={`mb-4 p-3.5 rounded-xl border flex flex-col gap-1.5 shadow-2xs ${themeClasses.amountBg}`}>
-                    <div className="flex items-center justify-between">
-                      <div className={`text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 ${themeClasses.amountLabelText}`}>
-                        <span className={`w-2 h-2 rounded-full animate-pulse ${themeClasses.amountDot}`}></span>
-                        {(sub as any).amountLabel || "Nominal Sementara"}
+                  <div className={`mb-4 p-3 sm:p-3.5 rounded-xl border flex flex-col gap-1 shadow-2xs ${themeClasses.amountBg}`}>
+                    <div className="flex items-center justify-between gap-1.5">
+                      <div className={`text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 min-w-0 ${themeClasses.amountLabelText}`}>
+                        <span className={`w-1.5 h-1.5 rounded-full shrink-0 animate-pulse ${themeClasses.amountDot}`}></span>
+                        <span className="truncate">{(sub as any).amountLabel || "Nominal Sementara"}</span>
                       </div>
-                      <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs ${themeClasses.amountBadgeBg}`}>
+                      <span className={`text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs shrink-0 whitespace-nowrap ${themeClasses.amountBadgeBg}`}>
                         {(sub as any).amountBadge || "Aktif"}
                       </span>
                     </div>
-                    <div className={`text-2xl font-black font-mono tracking-tight mt-0.5 ${themeClasses.amountValueText}`}>
+                    <div className={`text-base sm:text-xl font-bold font-mono tracking-tight mt-0.5 ${themeClasses.amountValueText}`}>
                       {(sub as any).amount}
                     </div>
                     {(sub as any).amountNote && (
-                      <div className={`text-[11px] font-medium leading-tight pt-1.5 border-t border-black/5 ${themeClasses.amountNoteText}`}>
+                      <div className={`text-[10px] sm:text-[11px] font-medium leading-tight pt-1.5 border-t border-black/5 ${themeClasses.amountNoteText}`}>
                         {(sub as any).amountNote}
                       </div>
                     )}
