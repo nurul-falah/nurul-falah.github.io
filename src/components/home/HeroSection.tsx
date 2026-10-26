@@ -50,10 +50,10 @@ export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
                 <div className="text-2xl sm:text-3xl font-bold text-white">450+</div>
                 <div className="text-xs text-emerald-200">Jamaah Aktif</div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-white">2 Pilar</div>
-                <div className="text-xs text-emerald-200">Program Jangka Panjang</div>
-              </div>
+              <a href="#pilar" className="group block">
+                <div className="text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-300 transition-colors">3 Pilar</div>
+                <div className="text-xs text-emerald-200">Doktrin &amp; Nilai Dasar</div>
+              </a>
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-white">100%</div>
                 <div className="text-xs text-emerald-200">Kas Transparan</div>

@@ -9,6 +9,7 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
+    { label: "Pilar Nilai", shortLabel: "Pilar", href: "#pilar" },
     { label: "Program Rutin", shortLabel: "Program", href: "#program" },
     { label: "Program Jangka Panjang", shortLabel: "Roadmap", href: "#program-panjang", highlight: true },
     { label: "Desain Masjid", shortLabel: "Desain", href: "#desain-masjid" },

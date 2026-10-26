@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/home/HeroSection";
 import { PrayerTimesWidget } from "@/components/home/PrayerTimesWidget";
+import { PilarSection } from "@/components/home/PilarSection";
 import { RoutineProgramSection } from "@/components/home/RoutineProgramSection";
 import { LongTermProgramSection } from "@/components/home/LongTermProgramSection";
 import { DesainMasjidSection } from "@/components/home/DesainMasjidSection";
@@ -30,7 +31,10 @@ export function App() {
         {/* 1. Jadwal Sholat */}
         <PrayerTimesWidget />
 
-        {/* 2. Program Rutin */}
+        {/* 2. Pilar Peradaban (Nilai Dasar DKM) */}
+        <PilarSection />
+
+        {/* 3. Program Rutin */}
         <RoutineProgramSection />
 
         {/* 3. Program Jangka Panjang */}

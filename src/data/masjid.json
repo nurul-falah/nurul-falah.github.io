@@ -309,13 +309,13 @@
         "icon": "Sprout",
         "badge": "Inovasi Mandiri",
         "color": "amber",
-        "amount": "Rp 1.800.000 / bln",
-        "amountLabel": "Alokasi Pembangunan (60% Profit)",
-        "amountBadge": "60% Alokasi",
+        "amount": "Rp 900.000 / bln",
+        "amountLabel": "Alokasi Pembangunan (30% Profit)",
+        "amountBadge": "30% Alokasi",
         "amountNote": "Total profit unit usaha saat ini: Rp 3.000.000 / bulan",
         "desc": "Dukungan mandiri berkelanjutan yang diinisiasi oleh Ketua DKM (Bpk. Burhan Mubarok, S.Kom) melalui model pertanian terpadu (Integrated Farming). Memadukan budidaya organik, peternakan, dan pemanfaatan lahan secara sirkular untuk menghasilkan dana produktif bagi pembangunan fisik masjid.",
         "points": [
-          "Total profit unit saat ini Rp 3.000.000/bulan dengan 60% (Rp 1.800.000) dialokasikan langsung untuk pembangunan masjid",
+          "Total profit unit saat ini Rp 3.000.000/bulan dengan 30% (Rp 900.000) dialokasikan langsung untuk pembangunan masjid",
           "Mewujudkan model kemandirian finansial masjid berbasis aset produktif",
           "Mengurangi ketergantungan semata pada donasi eksternal secara berkelanjutan"
         ]
@@ -391,6 +391,59 @@
       { "id": 47, "task": "Pembuatan saluran irigasi utara (samping majlis sebelah luar)", "status": "Selesai", "priority": "Tinggi" },
       { "id": 48, "task": "Pembuatan kolom struktur utama di blok timur, utara, barat dan selatan", "status": "Belum", "priority": "Rendah" },
       { "id": 49, "task": "Pemindahan toilet dari belakang ke depan masjid", "status": "Belum", "priority": "Rendah" }
+    ]
+  },
+  "pillars": {
+    "badge": "Doktrin & Nilai Dasar",
+    "title": "3 Pilar Peradaban DKM",
+    "subtitle": "Murni, Mandiri, dan Tumbuh Berkelanjutan — Fondasi filosofis kami dalam membangun peradaban manusia, mengelola amanah umat, dan merawat masa depan Sukatani.",
+    "quote": "Bukan sekadar membangun fisik bangunan, kami membangun peradaban, martabat manusia, dan ketahanan generasi.",
+    "items": [
+      {
+        "id": "murni",
+        "number": "01",
+        "name": "Murni",
+        "tagline": "Integritas Niat & Kebersihan Adab",
+        "badge": "Integritas & Keikhlasan",
+        "color": "emerald",
+        "icon": "ShieldCheck",
+        "desc": "Membangun semata lillahi ta'ala. Menolak politisasi masjid, mengedepankan musyawarah yang santun dan adil tanpa penghakiman sepihak, serta transparansi 100% tanpa ada yang disembunyikan.",
+        "points": [
+          "Musyawarah Beradab: Mengutamakan mufakat dan solusi bersama, bukan ajang mencari kesalahan orang lain.",
+          "Bebas Politisasi: Menolak barter suara dan proposal caleg/partai demi menjaga independensi dan marwah warga.",
+          "Transparansi Total: Laporan keuangan terbuka di mading fisik dan portal web, siap diuji dan diaudit warga kapan saja."
+        ]
+      },
+      {
+        "id": "mandiri",
+        "number": "02",
+        "name": "Mandiri",
+        "tagline": "Kedaulatan Marwah & Berdikari",
+        "badge": "Kedaulatan & Kehormatan",
+        "color": "amber",
+        "icon": "Flame",
+        "desc": "Berdikari di atas kaki sendiri. Menjaga harga diri dan marwah umat dengan pantang mengemis di jalanan (anti-nyapir) serta menopang kebutuhan melalui gotong royong dan unit produktif.",
+        "points": [
+          "Pantang Mengemis (Anti-Nyapir): Menolak mentalitas menadahkan tangan di pinggir jalan raya yang merendahkan marwah Islam.",
+          "Unit Usaha Integrated Farming: 30% surplus pertanian & peternakan terpadu dialokasikan langsung untuk suplai kas masjid.",
+          "Swadaya Murni Warga: Gotong royong kerja bakti fisik dan infaq sukarela jamaah RW 03 sebagai bukti kepemilikan bersama."
+        ]
+      },
+      {
+        "id": "tumbuh-berkelanjutan",
+        "number": "03",
+        "name": "Tumbuh Berkelanjutan",
+        "tagline": "Pertumbuhan SDM & Pembangunan Taktis",
+        "badge": "Kaderisasi & Resiliensi",
+        "color": "indigo",
+        "icon": "Milestone",
+        "desc": "Memadukan pertumbuhan manusia yang hidup (anak-anak, pemuda, majelis, dan jaring pengaman sosial) dengan strategi pembangunan fisik bertahap yang rasional, bebas utang, dan pantang mangkrak di tengah jalan.",
+        "points": [
+          "Pertumbuhan SDM & Pemakmuran: TPA Al-Qur'an harian, pembiasaan sholat berjamaah, kaderisasi imam muda, dan majelis ilmu warga.",
+          "Pembangunan Taktis Bertahap: Menyelesaikan saluran sanitasi dan selasar ibadah darurat sebelum membongkar bangunan utama.",
+          "Jaring Sosial & Estafet Sehat: Layanan RKM fardhu kifayah jenazah, Baitul Mal warga, serta mewariskan sistem beradab tanpa trauma konflik."
+        ]
+      }
     ]
   }
 }
