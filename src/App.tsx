@@ -31,7 +31,7 @@ export function App() {
         {/* 1. Jadwal Sholat */}
         <PrayerTimesWidget />
 
-        {/* 2. Pilar Peradaban (Nilai Dasar DKM) */}
+        {/* 2. 3 Pilar Nilai */}
         <PilarSection />
 
         {/* 3. Program Rutin */}
