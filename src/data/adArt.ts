@@ -292,7 +292,7 @@ export const adArtData: AdArtDocument = {
         },
         {
           number: "Pasal 13",
-          title: "Sistem Kas Satu Pintu & Keterbukaan Uang Fisik",
+          title: "Sistem Kas Satu Pintu, Keterbukaan Uang Fisik, & Status Aset Wakaf",
           highlight: true,
           badge: "Hak Keuangan Jamaah",
           items: [
@@ -304,6 +304,9 @@ export const adArtData: AdArtDocument = {
             },
             {
               text: "Penyimpanan dana wajib mengutamakan rekening bank syariah resmi atas nama masjid (Bank Syariah Indonesia / BSI No. Rek. 7203516578 a.n. MASJID NURUL FALAH SUKATANI).",
+            },
+            {
+              text: "Status Mutlak Aset Wakaf & Infaq: Seluruh lahan, bangunan, material, inventaris, maupun dana yang telah diserahkan kepada DKM/RKM Nurul Falah sebagai wakaf atau infaq otomatis berstatus milik Allah SWT untuk kemaslahatan umat, sehingga tidak dapat ditarik kembali atau diklaim kepemilikan pribadinya oleh siapapun (baik oleh donatur, ahli waris, maupun pengurus) dalam kondisi apapun.",
             },
           ],
         },
@@ -351,9 +354,11 @@ export const adArtData: AdArtDocument = {
               ],
             },
             {
-              text: "Kewajiban Jamaah:",
+              text: "Kewajiban & Adab Jamaah:",
               subItems: [
                 "Menjaga kesucian, kebersihan, ketertiban, dan fasilitas masjid.",
+                "Memperhatikan Maklumat Resmi: Setiap informasi, laporan keuangan, skema pembangunan, dan maklumat yang telah ditempelkan di Papan Informasi (Mading) Masjid dan/atau dipublikasikan di Portal Web Resmi dianggap telah disampaikan secara sah kepada seluruh warga. Warga wajib membaca dan melakukan tabayyun sebelum menyimpulkan sesuatu.",
+                "Menjaga Adab & Bebas Asap Rokok: Menjaga ketenangan saat shalat dan pengajian anak-anak berlangsung, menjaga kebersihan area wudhu dan toilet, serta dilarang merokok di dalam ruang ibadah maupun area teras masjid.",
                 "Memelihara ukhuwah Islamiyah, kerukunan warga, serta mematuhi keputusan musyawarah yang telah ditetapkan secara sah.",
                 "Menghindari ghibah, provokasi, penyebaran berita yang belum terkonfirmasi (tabayyun), atau tindakan yang memecah belah jamaah.",
               ],
@@ -402,6 +407,9 @@ export const adArtData: AdArtDocument = {
             },
             {
               text: "Mengingat kesibukan kerja profesional Ketua DKM, pelaksanaan teknis harian di lapangan didelegasikan kepada Sekretaris dan Ketua-Ketua Bidang sesuai porsi tanggung jawab masing-masing dengan tetap berada dalam garis koordinasi Ketua DKM.",
+            },
+            {
+              text: "Keabsahan Koordinasi Daring/Virtual: Mengingat seluruh pengurus DKM/RKM mengabdi secara sukarela tanpa gaji (non-profit) dan memiliki kewajiban mencari nafkah bagi keluarganya, maka koordinasi, arahan kebijakan, maupun rapat yang dilakukan secara daring/virtual (melalui WhatsApp, telepon, atau dokumen digital) memiliki kekuatan hukum yang sama sahnya dengan kehadiran fisik.",
             },
           ],
         },
@@ -463,7 +471,7 @@ export const adArtData: AdArtDocument = {
         },
         {
           number: "Pasal 7",
-          title: "Bidang Ri'ayah (Pembangunan, Pemeliharaan & Marbot)",
+          title: "Bidang Ri'ayah (Pembangunan, Pemeliharaan, Audio & Inventaris)",
           items: [
             {
               text: "Merencanakan dan mengawasi pelaksanaan tahapan pembangunan fisik Masjid Nurul Falah sesuai blueprint teknis dan kemampuan kas.",
@@ -473,6 +481,12 @@ export const adArtData: AdArtDocument = {
             },
             {
               text: "Mengoordinasikan tugas Marbot Masjid dalam menjaga kebersihan harian, pembukaan/penutupan masjid, dan kesiapan sarana sebelum waktu shalat.",
+            },
+            {
+              text: "Tata Tertib Pengeras Suara (Audio Indoor & Outdoor): Penggunaan pengeras suara luar (outdoor) diatur secara tertib dan santun (untuk adzan, iqomah, pengumuman penting/kematian RKM, dan syiar yang terukur) serta hanya boleh dioperasikan oleh petugas yang berwenang.",
+            },
+            {
+              text: "Perlindungan Inventaris Masjid & RKM: Seluruh inventaris masjid dan RKM (keranda, meja portabel UPZ, peralatan audio, lemari, perkakas bangunan) adalah harta wakaf/umat yang wajib dicatat, dirawat, dan dilarang dibawa pulang atau digunakan untuk kepentingan pribadi tanpa izin resmi pengurus.",
             },
           ],
         },
@@ -484,10 +498,17 @@ export const adArtData: AdArtDocument = {
               text: "Rukun Kematian Muslim (RKM): Mengelola perlengkapan pemulasaraan jenazah (keranda, kain kafan, pemandian, liang lahat) dan mengoordinasikan fardhu kifayah saat ada warga yang wafat, dengan pelaporan yang terintegrasi di bawah DKM.",
             },
             {
-              text: "Unit Pengumpul Zakat (UPZ): Menghimpun, mendata mustahiq secara objektif dan adil, serta mendistribusikan zakat fitrah dan zakat maal sesuai ketentuan syariat.",
+              text: "Unit Pengumpul Zakat (UPZ): Menghimpun, mendata mustahiq secara objektif dan adil, serta mendistribusikan zakat fitrah dan zakat maal sesuai ketentuan syariat:",
+              subItems: [
+                "Penentuan daftar Mustahiq (penerima zakat) ditetapkan secara objektif melalui musyawarah pengurus berdasarkan kriteria syariat (asnaf zakat), bebas dari nepotisme atau pilih kasih.",
+              ],
             },
             {
-              text: "Baitul Mal (Pinjaman Warga): Mengelola dana kebajikan untuk membantu pinjaman darurat warga tanpa bunga/riba (Qardhul Hasan) dengan pencatatan yang tertib dan amanah.",
+              text: "Baitul Mal (Pinjaman Warga): Mengelola dana kebajikan untuk membantu pinjaman darurat warga tanpa bunga/riba (Qardhul Hasan) dengan ketentuan:",
+              subItems: [
+                "Pinjaman bersifat Qardhul Hasan (0% bunga/riba), diprioritaskan khusus untuk kebutuhan darurat/mendesak warga jamaah sesuai kemampuan kas sosial.",
+                "Setiap pinjaman wajib dicatat secara tertulis dan peminjam tidak diperkenankan mengajukan pinjaman baru sebelum pinjaman sebelumnya dilunasi.",
+              ],
             },
           ],
         },
@@ -578,7 +599,7 @@ export const adArtData: AdArtDocument = {
       pasals: [
         {
           number: "Pasal 12",
-          title: "Prosedur Penyelenggaraan Musyawarah",
+          title: "Prosedur Penyelenggaraan & Mengikatnya Keputusan Musyawarah",
           highlight: true,
           badge: "SOP Musyawarah",
           items: [
@@ -595,6 +616,9 @@ export const adArtData: AdArtDocument = {
                 "5. Pengambilan kesimpulan / mufakat yang dicatat secara tertulis beserta tindak lanjutnya;",
                 "6. Doa penutup (kafaratul majelis) dan mushafahah (bersalam-salaman).",
               ],
+            },
+            {
+              text: "Konsekuensi Ketidakhadiran (Absen = Menerima Keputusan): Warga atau pengurus yang telah diundang secara sah pada Musyawarah Resmi (termasuk Musyawarah Tahunan Ramadhan) namun memilih tidak hadir tanpa alasan syar'i, dianggap menyetujui dan wajib tunduk pada seluruh keputusan yang diambil dalam musyawarah tersebut, serta tidak berhak menggugat atau membuat forum tandingan di luar musyawarah.",
             },
           ],
         },
