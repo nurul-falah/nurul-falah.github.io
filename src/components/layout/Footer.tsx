@@ -71,9 +71,28 @@ export function Footer({ onNavigatePage }: FooterProps) {
 
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-400">
-          <div>&copy; 2026 DKM Masjid Nurul Falah &amp; RKM. Seluruh hak cipta dilindungi.</div>
-          <div className="text-emerald-300 font-semibold">Amanah & Transparan Memakmurkan Masjid</div>
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-3 text-slate-400">
+          <div className="text-center sm:text-left space-y-1">
+            <div>&copy; 2026 DKM Masjid Nurul Falah &amp; RKM. Seluruh hak cipta dilindungi.</div>
+            <div className="text-xs text-slate-500 font-mono tracking-wide">
+              {__COMMIT_HASH__ && __COMMIT_HASH__ !== "dev" ? (
+                <a
+                  href={`https://github.com/nurul-falah/nurul-falah.github.io/commit/${__COMMIT_HASH__}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 transition-colors inline-block"
+                  title="Lihat commit di GitHub"
+                >
+                  {__APP_VERSION__}
+                </a>
+              ) : (
+                <span>{__APP_VERSION__}</span>
+              )}
+            </div>
+          </div>
+          <div className="text-emerald-300 font-semibold text-center sm:text-right">
+            Amanah & Transparan Memakmurkan Masjid
+          </div>
         </div>
       </div>
     </footer>
