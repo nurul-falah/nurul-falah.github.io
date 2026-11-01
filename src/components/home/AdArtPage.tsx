@@ -156,7 +156,7 @@ export function AdArtPage({ onBackToHome }: AdArtPageProps) {
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-3.5">
               <div className="text-[11px] text-emerald-200 font-medium">Anggaran Rumah Tangga</div>
-              <div className="text-lg sm:text-xl font-black text-white mt-0.5">6 Bab • 15 Pasal</div>
+              <div className="text-lg sm:text-xl font-black text-white mt-0.5">6 Bab • 16 Pasal</div>
               <div className="text-[10px] text-emerald-300/80 mt-0.5">Tupoksi, Adab &amp; SOP Teknis</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-3.5">

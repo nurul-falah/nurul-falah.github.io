@@ -59,7 +59,7 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
                 <ArrowRight className="w-4 h-4" />
               </button>
               <div className="text-[11px] text-emerald-200/90 text-center font-mono">
-                7 Bab AD (14 Pasal) • 6 Bab ART (15 Pasal)
+                7 Bab AD (14 Pasal) • 6 Bab ART (16 Pasal)
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
               className="text-xs font-bold text-emerald-700 hover:text-emerald-900 inline-flex items-center gap-1 hover:underline cursor-pointer self-start sm:self-center"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Baca Seluruh 29 Pasal Lengkap &rarr;</span>
+              <span>Baca Seluruh 30 Pasal Lengkap &rarr;</span>
             </button>
           </div>
 

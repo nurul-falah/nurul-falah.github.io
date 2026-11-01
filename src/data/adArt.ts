@@ -138,7 +138,7 @@ export const adArtData: AdArtDocument = {
               text: "2. MANDIRI (Kedaulatan Marwah & Berdikari):",
               subItems: [
                 "Pantang Mengemis (Anti-Nyapir): Dilarang keras menghimpun dana dengan cara meminta-minta di jalan raya (nyapir) atau cara-cara lain yang merendahkan martabat dan kehormatan umat Islam.",
-                "Mengutamakan kemandirian melalui swadaya gotong royong jamaah, pemberdayaan unit usaha produktif (seperti Integrated Farming), serta kemitraan wakaf/infaq yang terhormat.",
+                "Mengutamakan kemandirian melalui swadaya gotong royong jamaah serta kemitraan wakaf dan infaq umat yang terhormat.",
               ],
             },
             {
@@ -182,7 +182,7 @@ export const adArtData: AdArtDocument = {
               text: "Ri'ayah (Pembangunan & Pemeliharaan Fisik): Melaksanakan pembangunan dan pemeliharaan Masjid Nurul Falah 2 lantai beserta sarana pendukungnya (sanitasi, tempat wudhu, selasar ibadah) secara bertahap dan berkualitas.",
             },
             {
-              text: "Ijtima'iyah & Muamalah (Sosial, RKM & Baitul Mal): Mengelola layanan fardhu kifayah pengurusan jenazah (RKM), penyaluran zakat/infaq (UPZ), pinjaman kebajikan warga tanpa riba (Qardhul Hasan melalui Baitul Mal), serta pengembangan unit usaha produktif masjid.",
+              text: "Ijtima'iyah & Muamalah (Sosial, RKM & Baitul Mal): Mengelola layanan fardhu kifayah pengurusan jenazah (RKM), penyaluran zakat/infaq (UPZ), serta pinjaman kebajikan warga tanpa riba (Qardhul Hasan melalui Baitul Mal).",
             },
           ],
         },
@@ -220,7 +220,7 @@ export const adArtData: AdArtDocument = {
                 "Bidang Imarah (Dakwah, Ibadah, Pendidikan TPA & Remaja/Risma)",
                 "Bidang Ri'ayah (Pembangunan, Pemeliharaan Sarana & Kebersihan/Marbot)",
                 "Bidang Sosial & RKM (Pelayanan Jenazah / Fardhu Kifayah)",
-                "Bidang Zakat, Baitul Mal & Ekonomi Produktif (UPZ, Pinjaman Warga & Unit Usaha)",
+                "Bidang Zakat & Baitul Mal (UPZ & Pinjaman Kebajikan Warga)",
               ],
             },
           ],
@@ -283,10 +283,7 @@ export const adArtData: AdArtDocument = {
               text: "Swadaya Jamaah Sukatani: Infaq kotak amal Jum'at/pengajian (penggabungan kas bapak-bapak dan ibu-ibu), iuran sukarela warga, iuran RKM, serta gotong royong tenaga dan material.",
             },
             {
-              text: "Unit Usaha Produktif Masjid: Alokasi bagi hasil keuntungan dari program usaha produktif yang dikelola atau bekerja sama dengan DKM (seperti Integrated Farming dengan alokasi 30% profit untuk masjid).",
-            },
-            {
-              text: "Donatur & Wakaf Umat: Wakaf tunai, wakaf material, dan infaq jariyah dari para muhsinin/simpatisan luar maupun dalam daerah.",
+              text: "Donatur & Wakaf Umat: Wakaf tunai, wakaf material, dan infaq jariyah dari para muhsinin/simpatisan luar maupun dalam daerah yang tidak mengikat.",
             },
             {
               text: "Dana Zakat dan Sosial (UPZ & Baitul Mal): Dana zakat fitrah, zakat maal, dan fidyah yang dikelola khusus sesuai syariat bagi para mustahiq.",
@@ -295,8 +292,13 @@ export const adArtData: AdArtDocument = {
         },
         {
           number: "Pasal 13",
-          title: "Sistem Kas Satu Pintu",
+          title: "Sistem Kas Satu Pintu & Keterbukaan Uang Fisik",
+          highlight: true,
+          badge: "Hak Keuangan Jamaah",
           items: [
+            {
+              text: "Kesiapan Menunjukkan Uang Fisik: Pengurus DKM maupun RKM wajib bersedia menunjukkan uang fisik kas dan/atau bukti mutasi rekening kapan pun diminta oleh warga, dengan sikap terbuka dan tanpa merasa tersinggung, karena mengetahui keamanan keuangan adalah hak bagi setiap jamaah.",
+            },
             {
               text: "Seluruh dana infaq operasional dan pembangunan masjid (baik dari jamaah bapak-bapak maupun ibu-ibu) disatukan dalam satu kesatuan kas DKM Nurul Falah.",
             },
@@ -344,6 +346,7 @@ export const adArtData: AdArtDocument = {
                 "Menggunakan fasilitas Masjid Nurul Falah untuk ibadah, pengajian, dan kegiatan keislaman sesuai tata tertib masjid.",
                 "Mendapatkan pelayanan sosial keagamaan, termasuk layanan RKM (pengurusan jenazah) dan akses program Baitul Mal sesuai ketentuan yang berlaku.",
                 "Memperoleh informasi laporan keuangan dan perkembangan pembangunan secara transparan melalui mading masjid dan portal web resmi.",
+                "Meminta pengurus DKM atau RKM untuk menunjukkan uang fisik kas maupun bukti saldo rekening guna memastikan keamanan keuangan masjid.",
                 "Menyampaikan saran, masukan, atau pertanyaan secara santun, beradab, dan konstruktif di dalam forum resmi maupun langsung kepada pengurus.",
               ],
             },
@@ -435,6 +438,9 @@ export const adArtData: AdArtDocument = {
             {
               text: "Mempublikasikan laporan posisi saldo, pemasukan, dan pengeluaran secara rutin di mading fisik masjid dan menyerahkan datanya untuk diperbarui di portal digital.",
             },
+            {
+              text: "Bersama pengurus DKM atau RKM bersedia menunjukkan uang fisik disaat ada warga yang meminta, tanpa merasa tersinggung, karena mengetahui keamanan keuangan adalah hak bagi setiap jamaah.",
+            },
           ],
         },
         {
@@ -492,17 +498,20 @@ export const adArtData: AdArtDocument = {
       part: "ART",
       babNumber: "BAB III",
       title: "Masa Jabatan dan Mekanisme Pergantian Pengurus",
-      summary: "Periode khidmat 3 tahun, perlindungan marwah pengurus dari kudeta sepihak, dan kebebasan generasi berikutnya.",
+      summary: "Periode khidmat 10 tahun, kewajiban estafet program, perlindungan marwah pengurus dari kudeta sepihak, dan kebebasan generasi berikutnya.",
       pasals: [
         {
           number: "Pasal 9",
-          title: "Masa Jabatan",
+          title: "Masa Jabatan & Kewajiban Estafet Program",
           items: [
             {
-              text: "Masa khidmat kepengurusan DKM Nurul Falah adalah 3 (tiga) tahun untuk satu periode dan dapat dipilih kembali melalui musyawarah.",
+              text: "Masa khidmat kepengurusan DKM Nurul Falah adalah 10 (sepuluh) tahun untuk satu periode dan dapat dipilih kembali melalui musyawarah.",
             },
             {
               text: "Pengurus melaksanakan amanah secara sukarela (tathawwu') sebagai amal shalih.",
+            },
+            {
+              text: "Siapa pun pengurus yang terpilih pada periode baru wajib menjaga kesinambungan dan melanjutkan program kerja jangka panjang yang telah dirintis oleh kepengurusan sebelumnya.",
             },
           ],
         },
@@ -583,11 +592,38 @@ export const adArtData: AdArtDocument = {
       id: "art-bab-5",
       part: "ART",
       babNumber: "BAB V",
-      title: "Pedoman Khusus Pembangunan Fisik dan Pendanaan",
-      summary: "Tahapan pembangunan 1–5 bebas mangkrak, larangan bongkar prematur, dan kode etik penghimpunan dana anti-nyapir.",
+      title: "Pedoman Program Jangka Panjang, Pembangunan, dan Pendanaan",
+      summary: "Kewajiban melanjutkan program jangka panjang lintas pengurus dengan sistem evaluasi konstruktif-berdasar, tahapan pembangunan anti-mangkrak, dan kode etik pendanaan.",
       pasals: [
         {
           number: "Pasal 13",
+          title: "Kewajiban Melanjutkan Program Jangka Panjang & Sistem Evaluasi Konstruktif",
+          highlight: true,
+          badge: "Estafet & Evaluasi Objektif",
+          items: [
+            {
+              text: "Kewajiban Keberlanjutan Lintas Kepengurusan: Siapa pun yang menjabat sebagai Pengurus DKM maupun RKM wajib melanjutkan Program Kerja Jangka Panjang (Visi Strategis 3–10 Tahun) yang telah ditetapkan, sehingga pergantian pengurus tidak menghentikan pembangunan masjid maupun program pembinaan umat yang sedang berjalan.",
+            },
+            {
+              text: "Lingkup Program Jangka Panjang yang Wajib Dilanjutkan:",
+              subItems: [
+                "Program Kajian & Pembinaan SDM Jangka Panjang: Pelatihan baca-tulis Al-Qur'an anak-anak setiap hari, pembiasaan shalat berjamaah Maghrib, kaderisasi imam shalat Isya bagi generasi muda, pelatihan pengajar Al-Qur'an (ToT), serta kajian rutin mingguan bapak-bapak, ibu-ibu, dan kajian bulanan.",
+                "Program Pembangunan & Revitalisasi Masjid: Penyelesaian tahapan pembangunan fisik Masjid Nurul Falah 2 lantai beserta fasilitas sanitasi, tempat wudhu, dan sarana belajar sesuai blueprint teknis.",
+                "Program Layanan Sosial & Keumatan: Pengelolaan kas satu pintu, pelayanan jenazah RKM, UPZ, serta Baitul Mal pinjaman warga.",
+              ],
+            },
+            {
+              text: "Sistem Evaluasi dan Perbaikan yang Objektif, Konstruktif, dan Berdasar: Agar pelaksanaan program jangka panjang tetap objektif dan relevan, setiap penyesuaian atau penyempurnaan program wajib melalui mekanisme evaluasi berkala yang memenuhi prinsip:",
+              subItems: [
+                "Konstruktif (Membangun): Evaluasi bertujuan mencari solusi perbaikan dan meningkatkan efektivitas program, bukan mencari-cari kesalahan pengurus sebelumnya atau menyerang kehormatan pribadi.",
+                "Berdasar Data & Fakta (Evidence-Based): Setiap usulan perbaikan wajib memiliki landasan yang jelas, terukur, dan berbasis data nyata di lapangan (laporan keuangan, rekap realisasi tugas, kehadiran jamaah, atau kajian teknis konstruksi), bukan berdasarkan asumsi sepihak atau sentimen subjektif.",
+                "Terdokumentasi & Mufakat: Hasil evaluasi dan tindak lanjut perbaikan disepakati dalam musyawarah resmi serta dicatat secara terbuka sebagai pedoman bersama.",
+              ],
+            },
+          ],
+        },
+        {
+          number: "Pasal 14",
           title: "Prinsip Pembangunan Bertahap & Anti-Mangkrak",
           highlight: true,
           badge: "Strategi Pembangunan",
@@ -608,7 +644,7 @@ export const adArtData: AdArtDocument = {
           ],
         },
         {
-          number: "Pasal 14",
+          number: "Pasal 15",
           title: "Kode Etik Penghimpunan Dana",
           items: [
             {
@@ -637,7 +673,7 @@ export const adArtData: AdArtDocument = {
       summary: "Ketentuan peralihan dan mulai berlakunya AD/ART.",
       pasals: [
         {
-          number: "Pasal 15",
+          number: "Pasal 16",
           title: "Ketentuan Penutup",
           items: [
             {
