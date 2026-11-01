@@ -38,11 +38,14 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
             <div className="space-y-3 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/90 border border-emerald-600/50 text-amber-300 text-xs font-bold uppercase tracking-wider">
                 <Scale className="w-3.5 h-3.5" />
-                <span>Pedoman Konstitusi &amp; Tata Tertib Organisasi</span>
+                <span>Aturan Dasar &amp; Tata Tertib Organisasi</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
                 AD/ART DKM &amp; RKM Masjid Nurul Falah
               </h2>
+              <div className="text-amber-300/95 text-xs sm:text-sm font-semibold">
+                Anggaran Dasar &amp; Anggaran Rumah Tangga (Aturan Dasar &amp; Tata Tertib Organisasi)
+              </div>
               <p className="text-emerald-100/90 text-xs sm:text-sm leading-relaxed">
                 Landasan aturan organisasi yang menjamin kemurnian niat (bebas politisasi), kemandirian marwah (pantang mengemis di jalanan), ketertiban musyawarah yang beradab tanpa penghakiman sepihak, serta transparansi kas satu pintu.
               </p>
@@ -59,7 +62,7 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
                 <ArrowRight className="w-4 h-4" />
               </button>
               <div className="text-[11px] text-emerald-200/90 text-center font-mono">
-                7 Bab AD (14 Pasal) • 6 Bab ART (16 Pasal)
+                7 Bab AD (14 Pasal) • 6 Bab ART (17 Pasal)
               </div>
             </div>
           </div>
@@ -83,7 +86,7 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
               className="text-xs font-bold text-emerald-700 hover:text-emerald-900 inline-flex items-center gap-1 hover:underline cursor-pointer self-start sm:self-center"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Baca Seluruh 30 Pasal Lengkap &rarr;</span>
+              <span>Baca Seluruh 31 Pasal Lengkap &rarr;</span>
             </button>
           </div>
 

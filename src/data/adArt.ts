@@ -44,7 +44,7 @@ export interface AdArtDocument {
 
 export const adArtData: AdArtDocument = {
   title: "Anggaran Dasar & Anggaran Rumah Tangga (AD/ART)",
-  subtitle: "Pedoman Konstitusi, Tata Kelola, Adab Musyawarah, dan Kemandirian Organisasi",
+  subtitle: "Aturan Dasar & Tata Tertib Organisasi",
   organization: "Dewan Kemakmuran Masjid (DKM) & Rukun Kematian Muslim (RKM) Masjid Nurul Falah Sukatani",
   address: "Kp. Sukatani, RT 05 RW 03, Desa Wangunsari, Kecamatan Cisolok, Kabupaten Sukabumi, Provinsi Jawa Barat 43366",
   establishedDate: "1 November 2026 M",
@@ -497,8 +497,8 @@ export const adArtData: AdArtDocument = {
       id: "art-bab-3",
       part: "ART",
       babNumber: "BAB III",
-      title: "Masa Jabatan dan Mekanisme Pergantian Pengurus",
-      summary: "Periode khidmat 10 tahun, kewajiban estafet program, perlindungan marwah pengurus dari kudeta sepihak, dan kebebasan generasi berikutnya.",
+      title: "Masa Jabatan, Penyelesaian Pelanggaran Etika, dan Pergantian Pengurus",
+      summary: "Periode khidmat 10 tahun, tata cara musyawarah etik bersama MUI (anti-tradisi barbar), perlindungan marwah pengurus, dan kebebasan generasi berikutnya.",
       pasals: [
         {
           number: "Pasal 9",
@@ -535,6 +535,38 @@ export const adArtData: AdArtDocument = {
             },
           ],
         },
+        {
+          number: "Pasal 11",
+          title: "Penyelesaian Pelanggaran Etika Pengurus & Peniadaan Tradisi Barbar",
+          highlight: true,
+          badge: "Mediasi MUI & Keadilan",
+          items: [
+            {
+              text: "Larangan Tradisi Barbar & Main Hakim Sendiri: Apabila terdapat seorang pengurus DKM atau RKM yang melakukan kekhilafan individu, seperti melontarkan bahasa atau ucapan yang dinilai kurang etis bagi warga, maka dilarang keras melakukan penghakiman massa, keributan sepihak, intimidasi, atau tradisi barbar di lingkungan masjid maupun kampung.",
+            },
+            {
+              text: "Wajib Melalui Musyawarah Resmi yang Dihadiri MUI: Tata cara menyikapi atau mengadili dugaan pelanggaran etika pengurus WAJIB ditempuh melalui forum Musyawarah Resmi yang tertib dan WAJIB dihadiri oleh perwakilan Majelis Ulama Indonesia (MUI) setempat sebagai penengah (mediator) serta pemberi pertimbangan hukum syar'i yang netral dan objektif.",
+            },
+            {
+              text: "Sanksi Proporsional & Tidak Serta-Merta Diberhentikan: Pengurus yang terbukti melakukan kekhilafan lisan atau etika TIDAK SERTA-MERTA DIBERHENTIKAN dari jabatannya, melainkan dipertimbangkan secara adil dan bijaksana berdasarkan bobot kesalahan individu tersebut:",
+              subItems: [
+                "Kekhilafan Lisan / Etika Ringan: Diselesaikan melalui tabayyun, nasihat/teguran kekeluargaan, permohonan maaf terbuka, dan ishlah (perdamaian) yang disaksikan oleh MUI.",
+                "Pelanggaran Sedang / Berulang: Diberikan teguran tertulis dan pembinaan adab di bawah bimbingan Dewan Penasehat serta MUI.",
+                "Pelanggaran Berat (Khianat Kas / Pelanggaran Syariat Berat): Dipertimbangkan sanksi pemberhentian secara terhormat atas rekomendasi MUI dalam Musyawarah Resmi.",
+              ],
+            },
+            {
+              text: "Pertanggungjawaban Bersifat Individual: Kekhilafan seorang pengurus merupakan tanggung jawab pribadi individu yang bersangkutan dan tidak dapat dijadikan alasan untuk merombak atau menjatuhkan kepengurusan DKM/RKM secara keseluruhan.",
+            },
+            {
+              text: "Penanganan Persoalan 100% Baru & Jaminan Perlindungan Marwah: Apabila ditemukan persoalan yang 100% baru dan belum pernah terjadi sebelumnya, maka pengurus DKM atau warga berhak meminta diadakannya Musyawarah Resmi untuk membahas kasus tersebut secara jernih dan mencarikan solusi yang tidak merugikan satu sama lain, dengan ketentuan:",
+              subItems: [
+                "Tetap melindungi marwah dan kehormatan masing-masing individu agar tidak menjadi faktor yang membebani warga yang berkeinginan menjadi anggota atau pengurus DKM/RKM karena hak harga dirinya dilindungi oleh AD/ART ini.",
+                "Apabila sanksi diperlukan, maka sanksi ditentukan secara proporsional sesuai tingkat kesalahan; misalnya jika kesalahan tersebut bukan merupakan tindak korupsi/penggelapan kas, maka sanksinya cukup berbentuk Surat Peringatan (SP) saja.",
+              ],
+            },
+          ],
+        },
       ],
     },
     {
@@ -545,7 +577,7 @@ export const adArtData: AdArtDocument = {
       summary: "Prosedur undangan H-3, alokasi waktu agenda, serta larangan keras menyerang pribadi (ad hominem) dan intimidasi.",
       pasals: [
         {
-          number: "Pasal 11",
+          number: "Pasal 12",
           title: "Prosedur Penyelenggaraan Musyawarah",
           highlight: true,
           badge: "SOP Musyawarah",
@@ -567,7 +599,7 @@ export const adArtData: AdArtDocument = {
           ],
         },
         {
-          number: "Pasal 12",
+          number: "Pasal 13",
           title: "Larangan di Dalam Musyawarah",
           highlight: true,
           badge: "Adab Majelis",
@@ -596,7 +628,7 @@ export const adArtData: AdArtDocument = {
       summary: "Kewajiban melanjutkan program jangka panjang lintas pengurus dengan sistem evaluasi konstruktif-berdasar, tahapan pembangunan anti-mangkrak, dan kode etik pendanaan.",
       pasals: [
         {
-          number: "Pasal 13",
+          number: "Pasal 14",
           title: "Kewajiban Melanjutkan Program Jangka Panjang & Sistem Evaluasi Konstruktif",
           highlight: true,
           badge: "Estafet & Evaluasi Objektif",
@@ -623,7 +655,7 @@ export const adArtData: AdArtDocument = {
           ],
         },
         {
-          number: "Pasal 14",
+          number: "Pasal 15",
           title: "Prinsip Pembangunan Bertahap & Anti-Mangkrak",
           highlight: true,
           badge: "Strategi Pembangunan",
@@ -644,7 +676,7 @@ export const adArtData: AdArtDocument = {
           ],
         },
         {
-          number: "Pasal 15",
+          number: "Pasal 16",
           title: "Kode Etik Penghimpunan Dana",
           items: [
             {
@@ -670,14 +702,17 @@ export const adArtData: AdArtDocument = {
       part: "ART",
       babNumber: "BAB VI",
       title: "Penutup",
-      summary: "Ketentuan peralihan dan mulai berlakunya AD/ART.",
+      summary: "Penanganan persoalan baru dengan perlindungan marwah individu dan mulai berlakunya AD/ART.",
       pasals: [
         {
-          number: "Pasal 16",
-          title: "Ketentuan Penutup",
+          number: "Pasal 17",
+          title: "Ketentuan Penutup & Penanganan Persoalan Baru",
           items: [
             {
               text: "Hal-hal teknis operasional yang belum diatur secara rinci dalam Anggaran Rumah Tangga ini akan ditetapkan melalui Keputusan Pengurus DKM Nurul Falah sepanjang tidak bertentangan dengan jiwa dan pasal-pasal AD/ART ini.",
+            },
+            {
+              text: "Apabila terdapat persoalan yang 100% baru dan tidak pernah terjadi sebelumnya, pengurus DKM atau warga berhak meminta diadakan musyawarah resmi untuk membahas kasus tersebut dan mencarikan solusi yang tidak merugikan satu sama lain. Jika sanksi diperlukan, maka sanksi ditentukan sesuai tingkat kesalahan (misalnya jika tidak korupsi, sanksinya cukup berbentuk Surat Peringatan saja), dengan tetap melindungi marwah masing-masing individu agar warga tidak terbebani untuk menjadi anggota atau pengurus DKM/RKM.",
             },
             {
               text: "Anggaran Dasar dan Anggaran Rumah Tangga ini mulai berlaku sejak tanggal ditetapkan.",

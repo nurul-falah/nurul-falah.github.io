@@ -134,12 +134,15 @@ export function AdArtPage({ onBackToHome }: AdArtPageProps) {
         <div className="max-w-7xl mx-auto relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-800/80 border border-emerald-600/50 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 print:hidden">
             <Scale className="w-3.5 h-3.5" />
-            <span>Dokumen Konstitusi &amp; Tata Tertib Resmi Organisasi</span>
+            <span>{adArtData.subtitle}</span>
           </div>
 
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto">
             {adArtData.title}
           </h1>
+          <div className="text-emerald-200 font-semibold text-sm sm:text-base mt-1.5 print:text-slate-700">
+            ({adArtData.subtitle})
+          </div>
           <p className="text-amber-300 font-bold text-sm sm:text-lg mt-2.5 print:text-slate-800">
             {adArtData.organization}
           </p>
@@ -152,12 +155,12 @@ export function AdArtPage({ onBackToHome }: AdArtPageProps) {
             <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-3.5">
               <div className="text-[11px] text-emerald-200 font-medium">Anggaran Dasar (AD)</div>
               <div className="text-lg sm:text-xl font-black text-white mt-0.5">7 Bab • 14 Pasal</div>
-              <div className="text-[10px] text-emerald-300/80 mt-0.5">Fondasi, Visi &amp; Kedaulatan</div>
+              <div className="text-[10px] text-emerald-300/80 mt-0.5">Aturan Dasar Organisasi</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-3.5">
               <div className="text-[11px] text-emerald-200 font-medium">Anggaran Rumah Tangga</div>
-              <div className="text-lg sm:text-xl font-black text-white mt-0.5">6 Bab • 16 Pasal</div>
-              <div className="text-[10px] text-emerald-300/80 mt-0.5">Tupoksi, Adab &amp; SOP Teknis</div>
+              <div className="text-lg sm:text-xl font-black text-white mt-0.5">6 Bab • 17 Pasal</div>
+              <div className="text-[10px] text-emerald-300/80 mt-0.5">Tata Tertib &amp; Aturan Pelaksana</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-3.5">
               <div className="text-[11px] text-amber-200 font-medium">Doktrin Nilai Dasar</div>
@@ -382,7 +385,7 @@ export function AdArtPage({ onBackToHome }: AdArtPageProps) {
                             </div>
                             <div>
                               <div className="text-[10px] font-mono uppercase tracking-widest text-amber-300 font-bold">
-                                {isAD ? "Bagian Pertama" : "Bagian Kedua"}
+                                {isAD ? "Bagian Pertama • Aturan Dasar Organisasi" : "Bagian Kedua • Tata Tertib & Aturan Pelaksana"}
                               </div>
                               <h2 className="text-lg sm:text-xl font-extrabold tracking-tight">
                                 {isAD
@@ -392,7 +395,7 @@ export function AdArtPage({ onBackToHome }: AdArtPageProps) {
                             </div>
                           </div>
                           <span className="hidden sm:inline-block text-xs font-mono px-3 py-1 rounded-full bg-white/10 text-emerald-100">
-                            {isAD ? "Konstitusi Dasar" : "Aturan Pelaksana & Tata Tertib"}
+                            {isAD ? "Aturan Dasar Organisasi" : "Tata Tertib Organisasi"}
                           </span>
                         </div>
                       </div>
