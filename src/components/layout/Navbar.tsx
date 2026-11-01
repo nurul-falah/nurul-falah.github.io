@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import { HeartHandshake, Menu, X, TrendingUp } from "lucide-react";
+import { HeartHandshake, Menu, X, TrendingUp, Scale } from "lucide-react";
 
 export interface NavbarProps {
   onOpenInfaq?: () => void;
+  activePage?: "home" | "ad-art";
+  onNavigatePage?: (page: "home" | "ad-art", hash?: string) => void;
 }
 
-export function Navbar({ onOpenInfaq }: NavbarProps) {
+export function Navbar({ onOpenInfaq, activePage = "home", onNavigatePage }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { label: "Pilar Nilai", shortLabel: "Pilar", href: "#pilar" },
+    { label: "AD/ART", shortLabel: "AD/ART", href: "/ad-art", isAdArt: true },
     { label: "Program Rutin", shortLabel: "Program", href: "#program" },
     { label: "Program Jangka Panjang", shortLabel: "Roadmap", href: "#program-panjang", highlight: true },
     { label: "Desain Masjid", shortLabel: "Desain", href: "#desain-masjid" },
@@ -17,6 +20,30 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
     { label: "Skema Pendanaan", shortLabel: "Pendanaan", href: "#pendanaan" },
     { label: "Rekap Tugas", shortLabel: "Tugas", href: "#rekap-tugas" },
   ];
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    link: { href: string; isAdArt?: boolean }
+  ) => {
+    setMobileMenuOpen(false);
+    if (link.isAdArt && onNavigatePage) {
+      e.preventDefault();
+      onNavigatePage("ad-art");
+      return;
+    }
+    if (activePage !== "home" && onNavigatePage) {
+      e.preventDefault();
+      onNavigatePage("home", link.href);
+    }
+  };
+
+  const handleBrandClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setMobileMenuOpen(false);
+    if (activePage !== "home" && onNavigatePage) {
+      e.preventDefault();
+      onNavigatePage("home", "#beranda");
+    }
+  };
 
   const handleInfaqClick = () => {
     setMobileMenuOpen(false);
@@ -26,14 +53,18 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm border-b border-slate-100">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm border-b border-slate-100 print:hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* Brand Logo */}
-          <a href="#beranda" className="flex items-center gap-2.5 sm:gap-3 group text-left shrink-0">
+          <a
+            href="/"
+            onClick={handleBrandClick}
+            className="flex items-center gap-2.5 sm:gap-3 group text-left shrink-0"
+          >
             <img
-              src="./favicon.svg"
+              src="/favicon.svg"
               alt="Logo Masjid Nurul Falah"
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-md shadow-emerald-900/20 group-hover:scale-105 transition-transform"
             />
@@ -46,14 +77,32 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
           </a>
 
           {/* Right Group: Desktop & Tablet Nav Links & CTA Button */}
-          <div className="hidden lg:flex items-center gap-1.5 xl:gap-3">
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             <nav className="flex items-center gap-1 text-xs xl:text-sm font-semibold text-slate-600">
               {navLinks.map((link) => {
+                if (link.isAdArt) {
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={(e) => handleNavClick(e, link)}
+                      className={`px-2.5 xl:px-3 py-2 rounded-lg transition flex items-center gap-1 font-bold whitespace-nowrap ${
+                        activePage === "ad-art"
+                          ? "bg-emerald-700 text-white shadow-2xs"
+                          : "text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200/80"
+                      }`}
+                    >
+                      <Scale className="w-3.5 h-3.5 shrink-0" />
+                      <span>{link.label}</span>
+                    </a>
+                  );
+                }
                 if (link.highlight) {
                   return (
                     <a
                       key={link.label}
                       href={link.href}
+                      onClick={(e) => handleNavClick(e, link)}
                       className="px-2.5 xl:px-3 py-2 rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 transition flex items-center gap-1 font-bold whitespace-nowrap"
                     >
                       <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
@@ -65,6 +114,7 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
                   <a
                     key={link.label}
                     href={link.href}
+                    onClick={(e) => handleNavClick(e, link)}
                     className="px-2.5 xl:px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition whitespace-nowrap"
                   >
                     {link.label}
@@ -91,8 +141,13 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
                 <a
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link)}
                   className={`px-2 py-1.5 rounded-lg transition whitespace-nowrap ${
-                    link.highlight
+                    link.isAdArt
+                      ? activePage === "ad-art"
+                        ? "bg-emerald-700 text-white font-bold"
+                        : "text-amber-900 bg-amber-50 font-bold"
+                      : link.highlight
                       ? "text-emerald-800 bg-emerald-50 font-bold"
                       : "hover:text-emerald-700 hover:bg-emerald-50"
                   }`}
@@ -134,9 +189,11 @@ export function Navbar({ onOpenInfaq }: NavbarProps) {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link)}
                 className={`block px-4 py-2.5 rounded-xl text-base font-medium transition text-center ${
-                  link.highlight
+                  link.isAdArt
+                    ? "text-amber-900 bg-amber-50 font-bold border border-amber-200"
+                    : link.highlight
                     ? "text-emerald-800 bg-emerald-50 font-bold"
                     : "text-slate-700 hover:bg-emerald-50"
                 }`}
