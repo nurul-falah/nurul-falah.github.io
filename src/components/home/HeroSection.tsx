@@ -4,9 +4,16 @@ import masjidData from "@/data/masjid.json";
 
 export interface HeroSectionProps {
   onOpenInfaq?: () => void;
+  onNavigate?: (path: string) => void;
 }
 
-export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
+export function HeroSection({ onOpenInfaq, onNavigate }: HeroSectionProps) {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (onNavigate) {
+      e.preventDefault();
+      onNavigate(path);
+    }
+  };
   return (
     <section id="beranda" className="relative bg-pattern text-white pt-16 pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-[#064e3b]/90 via-transparent to-transparent pointer-events-none"></div>
@@ -31,13 +38,15 @@ export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
-                href="#program-panjang"
+                href="/program-panjang"
+                onClick={(e) => handleLinkClick(e, "/program-panjang")}
                 className="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold text-sm shadow-lg shadow-amber-500/30 transition flex items-center gap-2"
               >
                 <Compass className="w-4 h-4" /> Rencana & Pembangunan Masjid
               </a>
               <a
-                href="#program"
+                href="/program"
+                onClick={(e) => handleLinkClick(e, "/program")}
                 className="px-6 py-3 rounded-xl bg-emerald-800/70 hover:bg-emerald-800 border border-emerald-500/40 text-white font-semibold text-sm transition flex items-center gap-2"
               >
                 <Calendar className="w-4 h-4" /> Jadwal Kajian
@@ -50,7 +59,11 @@ export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
                 <div className="text-2xl sm:text-3xl font-bold text-white">450+</div>
                 <div className="text-xs text-emerald-200">Jamaah Aktif</div>
               </div>
-              <a href="#pilar" className="group block">
+              <a
+                href="/pilar"
+                onClick={(e) => handleLinkClick(e, "/pilar")}
+                className="group block"
+              >
                 <div className="text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-300 transition-colors">3 Pilar</div>
                 <div className="text-xs text-emerald-200">Doktrin &amp; Nilai Dasar</div>
               </a>
@@ -96,7 +109,8 @@ export function HeroSection({ onOpenInfaq }: HeroSectionProps) {
               </div>
 
               <a
-                href="#program-panjang"
+                href="/program-panjang"
+                onClick={(e) => handleLinkClick(e, "/program-panjang")}
                 className="w-full py-2.5 bg-white hover:bg-emerald-50 text-emerald-950 font-bold text-xs uppercase rounded-xl transition flex items-center justify-center gap-1.5 shadow"
               >
                 <Eye className="w-4 h-4 text-emerald-700" /> Pelajari Program Jangka Panjang

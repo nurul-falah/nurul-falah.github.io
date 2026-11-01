@@ -12,8 +12,18 @@ import {
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
-export function TaskRecapSection() {
-  const [isOpen, setIsOpen] = useState(false);
+export interface TaskRecapSectionProps {
+  defaultOpen?: boolean;
+}
+
+export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  React.useEffect(() => {
+    if (defaultOpen) {
+      setIsOpen(true);
+    }
+  }, [defaultOpen]);
   const [statusFilter, setStatusFilter] = useState<"all" | "Selesai" | "WIP" | "Belum">("all");
   const [priorityFilter, setPriorityFilter] = useState<"all" | "Tinggi" | "Rendah" | "none">("all");
   const [searchQuery, setSearchQuery] = useState("");

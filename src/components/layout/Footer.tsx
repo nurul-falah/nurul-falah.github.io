@@ -3,10 +3,17 @@ import { MessageCircle } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
 export interface FooterProps {
-  onNavigatePage?: (page: "home" | "ad-art", hash?: string) => void;
+  onNavigate?: (path: string) => void;
 }
 
-export function Footer({ onNavigatePage }: FooterProps) {
+export function Footer({ onNavigate }: FooterProps) {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (onNavigate) {
+      e.preventDefault();
+      onNavigate(path);
+    }
+  };
+
   return (
     <footer className="bg-[#064e3b] text-slate-300 text-xs pt-12 pb-8 border-t border-[#065f46] text-left print:hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,26 +39,14 @@ export function Footer({ onNavigatePage }: FooterProps) {
           <div>
             <h4 className="text-white font-bold mb-3 uppercase tracking-wider text-xs">Navigasi Utama</h4>
             <ul className="space-y-2">
-              <li><a href="/" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#beranda"); } }} className="hover:text-amber-300 transition">Beranda Utama</a></li>
-              <li><a href="/#pilar" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#pilar"); } }} className="hover:text-amber-300 transition">3 Pilar Nilai Dasar</a></li>
-              <li>
-                <a
-                  href="/ad-art"
-                  onClick={(e) => {
-                    if (onNavigatePage) {
-                      e.preventDefault();
-                      onNavigatePage("ad-art");
-                    }
-                  }}
-                  className="hover:text-amber-300 transition text-amber-300 font-bold"
-                >
-                  AD/ART Organisasi DKM &amp; RKM
-                </a>
-              </li>
-              <li><a href="/#jadwal" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#jadwal"); } }} className="hover:text-amber-300 transition">Jadwal Sholat Sukatani</a></li>
-              <li><a href="/#wakaf-pembangunan" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#wakaf-pembangunan"); } }} className="hover:text-amber-300 transition">Wakaf Pembangunan</a></li>
-              <li><a href="/#pendanaan" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#pendanaan"); } }} className="hover:text-amber-300 transition text-amber-200">Skema Pendanaan</a></li>
-              <li><a href="/#rekap-tugas" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#rekap-tugas"); } }} className="hover:text-amber-300 transition">Rekap Tugas DKM</a></li>
+              <li><a href="/" onClick={(e) => handleLinkClick(e, "/")} className="hover:text-amber-300 transition">Beranda Utama</a></li>
+              <li><a href="/pilar" onClick={(e) => handleLinkClick(e, "/pilar")} className="hover:text-amber-300 transition">3 Pilar Nilai Dasar</a></li>
+              <li><a href="/ad-art" onClick={(e) => handleLinkClick(e, "/ad-art")} className="hover:text-amber-300 transition text-amber-300 font-bold">AD/ART Organisasi DKM &amp; RKM</a></li>
+              <li><a href="/jadwal" onClick={(e) => handleLinkClick(e, "/jadwal")} className="hover:text-amber-300 transition">Jadwal Sholat Sukatani</a></li>
+              <li><a href="/desain-masjid" onClick={(e) => handleLinkClick(e, "/desain-masjid")} className="hover:text-amber-300 transition">Desain Masjid</a></li>
+              <li><a href="/wakaf-pembangunan" onClick={(e) => handleLinkClick(e, "/wakaf-pembangunan")} className="hover:text-amber-300 transition">Wakaf Pembangunan</a></li>
+              <li><a href="/pendanaan" onClick={(e) => handleLinkClick(e, "/pendanaan")} className="hover:text-amber-300 transition text-amber-200">Skema Pendanaan</a></li>
+              <li><a href="/rekap-tugas" onClick={(e) => handleLinkClick(e, "/rekap-tugas")} className="hover:text-amber-300 transition">Rekap Tugas DKM</a></li>
             </ul>
           </div>
 
@@ -71,28 +66,9 @@ export function Footer({ onNavigatePage }: FooterProps) {
 
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-3 text-slate-400">
-          <div className="text-center sm:text-left space-y-1">
-            <div>&copy; 2026 DKM Masjid Nurul Falah &amp; RKM. Seluruh hak cipta dilindungi.</div>
-            <div className="text-xs text-slate-500 font-mono tracking-wide">
-              {__COMMIT_HASH__ && __COMMIT_HASH__ !== "dev" ? (
-                <a
-                  href={`https://github.com/nurul-falah/nurul-falah.github.io/commit/${__COMMIT_HASH__}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-emerald-400 transition-colors inline-block"
-                  title="Lihat commit di GitHub"
-                >
-                  {__APP_VERSION__}
-                </a>
-              ) : (
-                <span>{__APP_VERSION__}</span>
-              )}
-            </div>
-          </div>
-          <div className="text-emerald-300 font-semibold text-center sm:text-right">
-            Amanah & Transparan Memakmurkan Masjid
-          </div>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-400">
+          <div>&copy; 2026 DKM Masjid Nurul Falah &amp; RKM. Seluruh hak cipta dilindungi.</div>
+          <div className="text-emerald-300 font-semibold">Amanah & Transparan Memakmurkan Masjid</div>
         </div>
       </div>
     </footer>

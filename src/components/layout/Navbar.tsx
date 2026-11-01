@@ -1,45 +1,36 @@
 import React, { useState } from "react";
-import { HeartHandshake, Menu, X, TrendingUp, Scale } from "lucide-react";
+import { HeartHandshake, Menu, X, TrendingUp } from "lucide-react";
 
 export interface NavbarProps {
   onOpenInfaq?: () => void;
-  activePage?: "home" | "ad-art";
-  onNavigatePage?: (page: "home" | "ad-art", hash?: string) => void;
+  currentPath?: string;
+  onNavigate?: (path: string) => void;
 }
 
-export function Navbar({ onOpenInfaq, activePage = "home", onNavigatePage }: NavbarProps) {
+export function Navbar({
+  onOpenInfaq,
+  currentPath = "/",
+  onNavigate,
+}: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Pilar Nilai", shortLabel: "Pilar", href: "#pilar" },
-    { label: "AD/ART", shortLabel: "AD/ART", href: "/ad-art", isAdArt: true },
-    { label: "Desain Masjid", shortLabel: "Desain", href: "#desain-masjid" },
-    { label: "Wakaf Pembangunan", shortLabel: "Wakaf", href: "#wakaf-pembangunan", highlight: true },
-    { label: "Skema Pendanaan", shortLabel: "Pendanaan", href: "#pendanaan" },
-    { label: "Rekap Tugas", shortLabel: "Tugas", href: "#rekap-tugas" },
+    { label: "Pilar Nilai", shortLabel: "Pilar", href: "/pilar" },
+    { label: "AD/ART", shortLabel: "AD/ART", href: "/ad-art" },
+    { label: "Desain Masjid", shortLabel: "Desain", href: "/desain-masjid" },
+    { label: "Wakaf Pembangunan", shortLabel: "Wakaf", href: "/wakaf-pembangunan", highlight: true },
+    { label: "Skema Pendanaan", shortLabel: "Pendanaan", href: "/pendanaan" },
+    { label: "Rekap Tugas", shortLabel: "Tugas", href: "/rekap-tugas" },
   ];
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    link: { href: string; isAdArt?: boolean }
+    href: string
   ) => {
     setMobileMenuOpen(false);
-    if (link.isAdArt && onNavigatePage) {
+    if (onNavigate) {
       e.preventDefault();
-      onNavigatePage("ad-art");
-      return;
-    }
-    if (activePage !== "home" && onNavigatePage) {
-      e.preventDefault();
-      onNavigatePage("home", link.href);
-    }
-  };
-
-  const handleBrandClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    setMobileMenuOpen(false);
-    if (activePage !== "home" && onNavigatePage) {
-      e.preventDefault();
-      onNavigatePage("home", "#beranda");
+      onNavigate(href);
     }
   };
 
@@ -58,7 +49,7 @@ export function Navbar({ onOpenInfaq, activePage = "home", onNavigatePage }: Nav
           {/* Brand Logo */}
           <a
             href="/"
-            onClick={handleBrandClick}
+            onClick={(e) => handleNavClick(e, "/")}
             className="flex items-center gap-2.5 sm:gap-3 group text-left shrink-0"
           >
             <img
@@ -78,32 +69,25 @@ export function Navbar({ onOpenInfaq, activePage = "home", onNavigatePage }: Nav
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             <nav className="flex items-center gap-1 text-xs xl:text-sm font-semibold text-slate-600">
               {navLinks.map((link) => {
-                if (link.isAdArt) {
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link)}
-                      className={`px-2.5 xl:px-3 py-2 rounded-lg transition flex items-center gap-1 font-bold whitespace-nowrap ${
-                        activePage === "ad-art"
-                          ? "bg-emerald-700 text-white shadow-2xs"
-                          : "text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200/80"
-                      }`}
-                    >
-                      <Scale className="w-3.5 h-3.5 shrink-0" />
-                      <span>{link.label}</span>
-                    </a>
-                  );
-                }
+                const isActive = currentPath === link.href;
+
                 if (link.highlight) {
                   return (
                     <a
                       key={link.label}
                       href={link.href}
-                      onClick={(e) => handleNavClick(e, link)}
-                      className="px-2.5 xl:px-3 py-2 rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 transition flex items-center gap-1 font-bold whitespace-nowrap"
+                      onClick={(e) => handleNavClick(e, link.href)}
+                      className={`px-2.5 xl:px-3 py-2 rounded-lg transition flex items-center gap-1 font-bold whitespace-nowrap ${
+                        isActive
+                          ? "bg-emerald-700 text-white shadow-2xs"
+                          : "text-emerald-800 bg-emerald-50 hover:bg-emerald-100"
+                      }`}
                     >
-                      <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <TrendingUp
+                        className={`w-3.5 h-3.5 shrink-0 ${
+                          isActive ? "text-amber-300" : "text-emerald-600"
+                        }`}
+                      />
                       <span>{link.label}</span>
                     </a>
                   );
@@ -112,8 +96,12 @@ export function Navbar({ onOpenInfaq, activePage = "home", onNavigatePage }: Nav
                   <a
                     key={link.label}
                     href={link.href}
-                    onClick={(e) => handleNavClick(e, link)}
-                    className="px-2.5 xl:px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50 transition whitespace-nowrap"
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`px-2.5 xl:px-3 py-2 rounded-lg transition whitespace-nowrap ${
+                      isActive
+                        ? "text-emerald-800 bg-emerald-50 font-bold"
+                        : "hover:text-emerald-700 hover:bg-emerald-50"
+                    }`}
                   >
                     {link.label}
                   </a>
@@ -135,25 +123,25 @@ export function Navbar({ onOpenInfaq, activePage = "home", onNavigatePage }: Nav
           {/* Tablet (md to lg) Navigation Bar with compact labels */}
           <div className="hidden md:flex lg:hidden items-center gap-1">
             <nav className="flex items-center gap-0.5 text-xs font-semibold text-slate-600">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={`px-2 py-1.5 rounded-lg transition whitespace-nowrap ${
-                    link.isAdArt
-                      ? activePage === "ad-art"
-                        ? "bg-emerald-700 text-white font-bold"
-                        : "text-amber-900 bg-amber-50 font-bold"
-                      : link.highlight
-                      ? "text-emerald-800 bg-emerald-50 font-bold"
-                      : "hover:text-emerald-700 hover:bg-emerald-50"
-                  }`}
-                  title={link.label}
-                >
-                  {link.shortLabel}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = currentPath === link.href;
+
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`px-2 py-1.5 rounded-lg transition whitespace-nowrap ${
+                      link.highlight || isActive
+                        ? "text-emerald-800 bg-emerald-50 font-bold"
+                        : "hover:text-emerald-700 hover:bg-emerald-50"
+                    }`}
+                    title={link.label}
+                  >
+                    {link.shortLabel}
+                  </a>
+                );
+              })}
             </nav>
             <button
               type="button"
@@ -183,22 +171,24 @@ export function Navbar({ onOpenInfaq, activePage = "home", onNavigatePage }: Nav
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-slate-100 py-4 space-y-2 text-center animate-in slide-in-from-top-2 duration-150">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link)}
-                className={`block px-4 py-2.5 rounded-xl text-base font-medium transition text-center ${
-                  link.isAdArt
-                    ? "text-amber-900 bg-amber-50 font-bold border border-amber-200"
-                    : link.highlight
-                    ? "text-emerald-800 bg-emerald-50 font-bold"
-                    : "text-slate-700 hover:bg-emerald-50"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = currentPath === link.href;
+
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`block px-4 py-2.5 rounded-xl text-base font-medium transition text-center ${
+                    link.highlight || isActive
+                      ? "text-emerald-800 bg-emerald-50 font-bold"
+                      : "text-slate-700 hover:bg-emerald-50"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             <div className="pt-2 px-2">
               <button
                 type="button"
