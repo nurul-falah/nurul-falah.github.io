@@ -13,8 +13,6 @@ export function Navbar({ onOpenInfaq, activePage = "home", onNavigatePage }: Nav
   const navLinks = [
     { label: "Pilar Nilai", shortLabel: "Pilar", href: "#pilar" },
     { label: "AD/ART", shortLabel: "AD/ART", href: "/ad-art", isAdArt: true },
-    { label: "Program Rutin", shortLabel: "Program", href: "#program" },
-    { label: "Program Jangka Panjang", shortLabel: "Roadmap", href: "#program-panjang", highlight: true },
     { label: "Desain Masjid", shortLabel: "Desain", href: "#desain-masjid" },
     { label: "Wakaf Pembangunan", shortLabel: "Wakaf", href: "#wakaf-pembangunan", highlight: true },
     { label: "Skema Pendanaan", shortLabel: "Pendanaan", href: "#pendanaan" },

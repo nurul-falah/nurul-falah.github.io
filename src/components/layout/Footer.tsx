@@ -49,8 +49,6 @@ export function Footer({ onNavigatePage }: FooterProps) {
                 </a>
               </li>
               <li><a href="/#jadwal" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#jadwal"); } }} className="hover:text-amber-300 transition">Jadwal Sholat Sukatani</a></li>
-              <li><a href="/#program" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#program"); } }} className="hover:text-amber-300 transition">Program Rutin</a></li>
-              <li><a href="/#program-panjang" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#program-panjang"); } }} className="hover:text-amber-300 transition text-amber-200">Program Jangka Panjang</a></li>
               <li><a href="/#wakaf-pembangunan" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#wakaf-pembangunan"); } }} className="hover:text-amber-300 transition">Wakaf Pembangunan</a></li>
               <li><a href="/#pendanaan" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#pendanaan"); } }} className="hover:text-amber-300 transition text-amber-200">Skema Pendanaan</a></li>
               <li><a href="/#rekap-tugas" onClick={(e) => { if (onNavigatePage) { e.preventDefault(); onNavigatePage("home", "#rekap-tugas"); } }} className="hover:text-amber-300 transition">Rekap Tugas DKM</a></li>
