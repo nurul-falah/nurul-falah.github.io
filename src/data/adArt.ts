@@ -554,6 +554,9 @@ export const adArtData: AdArtDocument = {
             {
               text: "Kebebasan Menerima Amanah Generasi Berikutnya: Jabatan di dalam DKM adalah amanah sukarela dan tidak boleh dipaksakan kepada siapapun (termasuk keluarga atau keturunan pengurus sebelumnya) apabila penunjukan tersebut tidak disertai dukungan ikhlas dan jaminan tata krama musyawarah yang sehat dari warga.",
             },
+            {
+              text: "Masa Transisi & Mekanisme Pengunduran Diri yang Manusiawi: Apabila seorang pengurus terbukti melakukan kesalahan fatal yang mengharuskan pergantian kepengurusan, proses pergantian wajib dilakukan secara manusiawi dan beradab melalui pemberian masa tenggang/transisi (1 hingga 3 bulan). Pengurus yang bersangkutan diberikan kesempatan untuk menyelesaikan laporan pertanggungjawaban serta mengundurkan diri atas kesadaran sendiri secara terhormat, guna menghindari stigma pengusiran sepihak dan menjaga keharmonisan sosial warga.",
+            },
           ],
         },
         {
@@ -563,17 +566,18 @@ export const adArtData: AdArtDocument = {
           badge: "Mediasi MUI & Keadilan",
           items: [
             {
-              text: "Larangan Tradisi Barbar & Main Hakim Sendiri: Apabila terdapat seorang pengurus DKM atau RKM yang melakukan kekhilafan individu, seperti melontarkan bahasa atau ucapan yang dinilai kurang etis bagi warga, maka dilarang keras melakukan penghakiman massa, keributan sepihak, intimidasi, atau tradisi barbar di lingkungan masjid maupun kampung.",
+              text: "Larangan Tradisi Barbar, Komplotan, & Main Hakim Sendiri: Apabila terdapat seorang pengurus DKM atau RKM yang melakukan kekhilafan individu, seperti melontarkan bahasa atau ucapan yang dinilai kurang etis bagi warga, maka dilarang keras melakukan penghakiman massa, penggalangan komplotan, penghasutan, petisi liar, keributan sepihak, intimidasi, demonstrasi/gerudukan, atau tradisi barbar di lingkungan masjid maupun kampung.",
             },
             {
               text: "Wajib Melalui Musyawarah Resmi yang Dihadiri MUI: Tata cara menyikapi atau mengadili dugaan pelanggaran etika pengurus WAJIB ditempuh melalui forum Musyawarah Resmi yang tertib dan WAJIB dihadiri oleh perwakilan Majelis Ulama Indonesia (MUI) setempat sebagai penengah (mediator) serta pemberi pertimbangan hukum syar'i yang netral dan objektif.",
             },
             {
-              text: "Sanksi Proporsional & Tidak Serta-Merta Diberhentikan: Pengurus yang terbukti melakukan kekhilafan lisan atau etika TIDAK SERTA-MERTA DIBERHENTIKAN dari jabatannya, melainkan dipertimbangkan secara adil dan bijaksana berdasarkan bobot kesalahan individu tersebut:",
+              text: "Sanksi Proporsional & Tolok Ukur Kesalahan (Bukan Pidana Fatal = Tidak Boleh Diturunkan): Pengurus yang terbukti melakukan kekhilafan lisan atau etika TIDAK SERTA-MERTA DIBERHENTIKAN dari jabatannya, melainkan dipertimbangkan secara adil dan bijaksana berdasarkan bobot kesalahan individu tersebut:",
               subItems: [
                 "Kekhilafan Lisan / Etika Ringan: Diselesaikan melalui tabayyun, nasihat/teguran kekeluargaan, permohonan maaf terbuka, dan ishlah (perdamaian) yang disaksikan oleh MUI.",
                 "Pelanggaran Sedang / Berulang: Diberikan teguran tertulis dan pembinaan adab di bawah bimbingan Dewan Penasehat serta MUI.",
-                "Pelanggaran Berat (Khianat Kas / Pelanggaran Syariat Berat): Dipertimbangkan sanksi pemberhentian secara terhormat atas rekomendasi MUI dalam Musyawarah Resmi.",
+                "Pelanggaran Administratif & Perdata Ringan: Tidak dapat dijadikan alasan untuk menurunkan pengurus dari jabatannya, melainkan diselesaikan secara musyawarah dan pemulihan keadaan.",
+                "Pelanggaran Fatal (Pidana Terbukti / Penggelapan Kas / Khianat Syariat Berat): Dipertimbangkan sanksi pengunduran diri secara terhormat melalui masa transisi beradab atas rekomendasi MUI dalam Musyawarah Resmi.",
               ],
             },
             {
