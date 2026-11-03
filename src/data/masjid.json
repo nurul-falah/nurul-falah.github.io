@@ -120,6 +120,7 @@
       "badge": "Tahap 4",
       "status": "Rencana",
       "timeline": "Maret - Agustus 2027",
+      "scheduleConfirmed": false,
       "quarter": "Q2 - Q3 2027",
       "targetBudget": "Rp 300.000.000",
       "milestone": "Pondasi cakar ayam, 16 kolom beton bertulang, balok sloof, & pengecoran plat dak lantai mezanin",
@@ -132,6 +133,7 @@
       "badge": "Tahap 5",
       "status": "Rencana",
       "timeline": "September 2027 - 2028",
+      "scheduleConfirmed": false,
       "quarter": "Q4 2027 - 2028",
       "targetBudget": "Rp 180.000.000",
       "milestone": "Dinding bata hebel, ornamen mihrab kayu jati / GRC islami, jendela alumunium, pengecatan & kubah",
@@ -263,7 +265,6 @@
     "balance": "Rp 59.161.373",
     "buildingFundAllocated": "Rp 57.391.000",
     "buildingFundTarget": "Rp 600.000.000",
-    "progressPercent": 10,
     "costCenter": {
       "infaqRenovasi": "Rp 57.391.000",
       "infaqUmum": "Rp 1.770.373"

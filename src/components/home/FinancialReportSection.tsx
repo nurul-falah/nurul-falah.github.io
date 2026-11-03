@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Download, QrCode, Copy, Check } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { construction } from "@/lib/construction";
 
 export function FinancialReportSection() {
   const [copied, setCopied] = useState(false);
@@ -62,7 +63,7 @@ export function FinancialReportSection() {
             <div className="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
               <div
                 className="bg-[#059669] h-full rounded-full transition-all duration-500"
-                style={{ width: `${fin.progressPercent}%` }}
+                style={{ width: `${construction.fund.percent}%` }}
               ></div>
             </div>
             <div className="text-[11px] text-slate-500 flex justify-between">

@@ -13,65 +13,29 @@ import {
   Building2,
   Users,
   Maximize2,
-  Droplets,
-  Layers,
-  Sparkles,
-  CheckCircle2,
-  Clock,
-  CircleDot,
-  Calendar,
   Camera,
-  ChevronDown,
   ChevronLeft,
   ChevronRight,
-  ZoomIn,
   X,
-  Play,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
-import tahap1UditchPhoto from "@/assets/construction/tahap-1-pembuatan-uditch.jpg";
-import tahap1Photo from "@/assets/construction/tahap-1-saluran-sanitasi.jpg";
-import tahap1InstalasiLanjutanPhoto from "@/assets/construction/tahap-1-instalasi-lanjutan.jpg";
-import tahap1HasilInstalasiPhoto from "@/assets/construction/tahap-1-hasil-instalasi.jpg";
-import tahap1JembatanPhoto from "@/assets/construction/tahap-1-jembatan-gang-rt5.jpg";
-import tahap1VideoPoster from "@/assets/construction/tahap-1-video-poster.jpg";
-import tahap2PengirimanPhoto from "@/assets/construction/tahap-2-pengiriman-baja-ringan.jpg";
-import tahap2Photo from "@/assets/construction/tahap-2-perakitan-rangka.jpg";
-import tahap2FabrikasiPhoto from "@/assets/construction/tahap-2-fabrikasi-rangka.jpg";
+import {
+  construction,
+  formatPercent,
+  formatRupiah,
+  formatRupiahShort,
+} from "@/lib/construction";
+import { ConstructionOverview } from "@/components/construction/ConstructionOverview";
+import { PhaseTimeline, type GalleryItem } from "@/components/construction/PhaseTimeline";
+import { statusStyle } from "@/components/construction/phaseStyle";
 
-export interface GalleryItem {
-  url: string;
-  title: string;
-  desc?: string;
-  phaseBadge?: string;
-}
-
-const phaseImageMap: Record<string, string> = {
-  "tahap-1-pembuatan-uditch.jpg": tahap1UditchPhoto,
-  "tahap-1-saluran-sanitasi.jpg": tahap1Photo,
-  "tahap-1-instalasi-lanjutan.jpg": tahap1InstalasiLanjutanPhoto,
-  "tahap-1-hasil-instalasi.jpg": tahap1HasilInstalasiPhoto,
-  "tahap-1-jembatan-gang-rt5.jpg": tahap1JembatanPhoto,
-  "tahap-1-video-poster.jpg": tahap1VideoPoster,
-  "tahap-2-pengiriman-baja-ringan.jpg": tahap2PengirimanPhoto,
-  "tahap-2-perakitan-rangka.jpg": tahap2Photo,
-  "tahap-2-fabrikasi-rangka.jpg": tahap2FabrikasiPhoto,
-};
+export type { GalleryItem };
 
 export interface WakafSectionProps {
   onOpenWakaf?: () => void;
 }
 
-const financial = masjidData.financial;
 const account = masjidData.bankAccounts[0];
-const phaseIcons = [Droplets, Layers, Sparkles, Building2, Hammer];
-
-const buildingItems = [
-  { label: "Pondasi & Struktur Beton", pct: 35 },
-  { label: "Dinding & Fasad", pct: 25 },
-  { label: "Atap & Interior", pct: 20 },
-  { label: "Plumbing, Listrik & Finishing", pct: 20 },
-];
 
 export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
   const [copiedAccount, setCopiedAccount] = useState(false);
@@ -212,7 +176,7 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
         </div>
 
         {/* Proposal Body */}
-        <div className="px-6 sm:px-8 py-6 space-y-6">
+        <div className="px-4 sm:px-8 py-6 space-y-6">
           {/* Latar Belakang */}
           <div>
             <h4 className="text-sm font-bold text-[#064e3b] mb-2 flex items-center gap-1.5">
@@ -300,513 +264,129 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
           </div>
 
           {/* Fase Pembangunan */}
-          <div>
-            <div className="flex items-center justify-between mb-3">
+          <div className="space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <h4 className="text-sm font-bold text-[#064e3b] flex items-center gap-1.5">
                 <span className="w-1 h-4 bg-emerald-600 rounded-full inline-block" />
-                Fase &amp; Rencana Garis Waktu Pembangunan
+                Tahapan &amp; Garis Waktu Pembangunan
               </h4>
-              <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-100/90 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                5 Tahapan Terencana (2026 – 2028)
+              <span className="self-start sm:self-auto text-[11px] font-semibold text-emerald-800 bg-emerald-100/90 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                {construction.counts.total} Tahap · {construction.period.start} – {construction.period.end}
               </span>
             </div>
 
-            {/* Visual Roadmap Timeline Stepper */}
-            <div className="mb-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950 via-[#064e3b] to-emerald-900 text-white shadow-sm border border-emerald-800/40">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3 pb-2.5 border-b border-emerald-800/60 text-xs">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-amber-300" />
-                  <span className="font-bold text-white tracking-wide text-xs sm:text-sm">
-                    Target Garis Waktu Konstruksi Fisik (Roadmap 2026 – 2028)
-                  </span>
-                </div>
-                <div className="text-[11px] text-emerald-200">
-                  Estimasi Total: <b className="text-white">±18 - 24 Bulan</b> • Target Biaya: <b className="text-amber-300 font-mono">Rp 600 Jt</b>
-                </div>
-              </div>
+            <ConstructionOverview onSelectPhase={scrollToPhase} />
 
-              {/* Overall Roadmap Progress Bar */}
-              <div className="mb-3.5 bg-emerald-950/60 p-2.5 sm:p-3 rounded-xl border border-emerald-700/40 space-y-1.5">
-                <div className="flex items-center justify-between text-[11px]">
-                  <span className="text-emerald-200">Realisasi Fisik Berjalan:</span>
-                  <span className="text-amber-300 font-bold font-mono">Tahap 1 Selesai • Tahap 2 Berjalan (33% Keseluruhan)</span>
-                </div>
-                <div className="w-full bg-emerald-900/80 h-2 rounded-full overflow-hidden">
-                  <div className="bg-gradient-to-r from-emerald-400 via-amber-400 to-amber-500 h-full rounded-full transition-all duration-700" style={{ width: "33%" }} />
-                </div>
-              </div>
-
-              {/* Step Markers Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-2.5">
-                {masjidData.constructionPhases.map((p) => {
-                  const isDone = p.status === "Selesai";
-                  const isOngoing = p.status === "Dalam Proses";
-                  const pTimeline = p as { timeline?: string; quarter?: string; targetBudget?: string };
-                  return (
-                    <button
-                      key={p.phase}
-                      type="button"
-                      onClick={() => scrollToPhase(p.phase)}
-                      className={`p-2.5 rounded-xl border text-left flex flex-col justify-between transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
-                        isDone
-                          ? "bg-emerald-800/50 border-emerald-400/50 text-emerald-100 hover:border-emerald-300"
-                          : isOngoing
-                          ? "bg-amber-500/25 border-amber-400/70 text-amber-100 ring-1 ring-amber-400/40 hover:border-amber-300"
-                          : "bg-white/5 border-white/10 text-slate-300 hover:border-white/30"
-                      }`}
-                      title={`Klik untuk lompat ke rincian Tahap ${p.phase}`}
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-1">
-                          <span
-                            className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
-                              isDone
-                                ? "bg-emerald-500/30 text-emerald-300"
-                                : isOngoing
-                                ? "bg-amber-400 text-slate-950 font-extrabold"
-                                : "bg-white/10 text-slate-300"
-                            }`}
-                          >
-                            Tahap {p.phase}
-                          </span>
-                          {isDone ? (
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                          ) : isOngoing ? (
-                            <Clock className="w-3.5 h-3.5 text-amber-300 animate-pulse shrink-0" />
-                          ) : (
-                            <CircleDot className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                          )}
-                        </div>
-                        <div className="font-bold text-xs text-white line-clamp-1">
-                          {pTimeline.quarter || p.badge}
-                        </div>
-                        {pTimeline.targetBudget && (
-                          <div className="text-[10px] text-amber-300/90 font-mono font-semibold mt-0.5">
-                            {pTimeline.targetBudget}
-                          </div>
-                        )}
-                      </div>
-                      <div className="text-[10px] text-emerald-200/90 mt-2 line-clamp-1 font-medium flex items-center justify-between">
-                        <span>{p.status === "Selesai" ? "✓ Selesai" : p.status === "Dalam Proses" ? "⚡ Berjalan" : "Rencana"}</span>
-                        <span className="text-[9px] text-emerald-300/70">Lihat ↓</span>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Filter Controls Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-              <div className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
-                <span>Daftar Rincian Tahap:</span>
-                {phaseFilter !== "all" && (
-                  <span className="text-[10px] font-normal text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                    Menampilkan: {phaseFilter}
-                  </span>
-                )}
-              </div>
-              <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs">
-                {[
-                  { id: "all", label: "Semua (5)" },
-                  { id: "Selesai", label: "✓ Selesai (1)" },
-                  { id: "Dalam Proses", label: "⚡ Berjalan (1)" },
-                  { id: "Rencana", label: "🎯 Rencana (3)" },
-                ].map((f) => (
-                  <button
-                    key={f.id}
-                    type="button"
-                    onClick={() => setPhaseFilter(f.id as any)}
-                    className={`px-2.5 py-1 rounded-lg font-semibold transition cursor-pointer text-[11px] ${
-                      phaseFilter === f.id
-                        ? "bg-[#064e3b] text-white shadow-xs"
-                        : "text-slate-600 hover:bg-white"
-                    }`}
-                  >
-                    {f.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid gap-2.5">
-              {masjidData.constructionPhases
-                .filter((phase) => phaseFilter === "all" || phase.status === phaseFilter)
-                .map((phase) => {
-                const Icon = phaseIcons[phase.phase - 1] || Hammer;
-                const isCompleted = phase.status === "Selesai";
-                const isInProgress = phase.status === "Dalam Proses";
-                const photos = (phase as { photos?: { title: string; desc: string; filename: string }[] }).photos;
-                const videos = (phase as { videos?: { title: string; desc: string; filename: string; poster?: string }[] }).videos;
-                const phaseTimeline = phase as {
-                  timeline?: string;
-                  quarter?: string;
-                  milestone?: string;
-                  targetBudget?: string;
-                  progressPercent?: number;
-                };
-                const hasMedia = (photos && photos.length > 0) || (videos && videos.length > 0);
-                const isPhotosOpen = !!openPhotoPhases[phase.phase];
-
-                return (
-                  <div
-                    key={phase.phase}
-                    id={`fase-${phase.phase}`}
-                    className={`flex flex-col gap-3 p-3.5 sm:p-4 rounded-xl border transition-all duration-300 scroll-mt-24 ${
-                      isCompleted
-                        ? "bg-emerald-50/70 border-emerald-300/80 shadow-2xs"
-                        : isInProgress
-                        ? "bg-amber-50/50 border-amber-200/90 shadow-2xs"
-                        : "bg-white/90 border-emerald-100/90 shadow-2xs"
-                    }`}
-                  >
-                    {/* Top Row: Phase Info & Status Badge */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                      {/* Left: Phase Number & Info */}
-                      <div className="flex items-start gap-3 min-w-0 flex-1">
-                        <div
-                          className={`w-8 h-8 rounded-xl text-white font-extrabold text-xs flex items-center justify-center shrink-0 shadow-sm mt-0.5 sm:mt-0 ${
-                            isCompleted
-                              ? "bg-emerald-600"
-                              : isInProgress
-                              ? "bg-amber-500"
-                              : "bg-gradient-to-br from-emerald-600 to-emerald-800"
-                          }`}
-                        >
-                          {phase.phase}
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <div className="flex flex-wrap items-center gap-2 mb-1">
-                            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md border border-emerald-200">
-                              <Icon className="w-3.5 h-3.5 text-emerald-700" />
-                              {phase.badge}
-                            </span>
-                            <span className="text-xs sm:text-sm font-bold text-slate-800 leading-snug">
-                              {phase.title}
-                            </span>
-                            {phaseTimeline.timeline && (
-                              <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-md border border-slate-200">
-                                <Calendar className="w-3 h-3 text-emerald-600 shrink-0" />
-                                <span>{phaseTimeline.timeline}</span>
-                                {phaseTimeline.quarter && (
-                                  <span className="text-emerald-800 font-bold font-mono">
-                                    ({phaseTimeline.quarter})
-                                  </span>
-                                )}
-                              </span>
-                            )}
-                            {phaseTimeline.targetBudget && (
-                              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 font-mono">
-                                <span>Alokasi: {phaseTimeline.targetBudget}</span>
-                              </span>
-                            )}
-                          </div>
-                          <p className="text-xs text-slate-600 leading-relaxed">
-                            {phase.desc}
-                          </p>
-
-                          {/* Mini Phase Progress Bar */}
-                          {typeof phaseTimeline.progressPercent === "number" && phaseTimeline.progressPercent > 0 && (
-                            <div className="space-y-1 pt-2">
-                              <div className="flex items-center justify-between text-[10px] text-slate-500 font-medium">
-                                <span>Progres Fisik Tahap Ini:</span>
-                                <span className="font-bold font-mono text-emerald-700">{phaseTimeline.progressPercent}%</span>
-                              </div>
-                              <div className="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden">
-                                <div
-                                  className={`h-full rounded-full transition-all duration-500 ${
-                                    isCompleted ? "bg-emerald-500" : "bg-amber-400"
-                                  }`}
-                                  style={{ width: `${phaseTimeline.progressPercent}%` }}
-                                />
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Right: Status Badge */}
-                      <div className="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
-                        <span className="sm:hidden text-[11px] text-slate-400 font-medium">
-                          Status:
-                        </span>
-                        {isCompleted ? (
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-2xs">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                            Selesai
-                          </span>
-                        ) : isInProgress ? (
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300 shadow-2xs">
-                            <Clock className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
-                            Dalam Proses
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">
-                            <CircleDot className="w-3.5 h-3.5 text-slate-400" />
-                            Rencana
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Accordion: Dokumentasi Kegiatan */}
-                    {hasMedia && (
-                      <div className={`mt-1 pt-2.5 border-t ${isCompleted ? "border-emerald-200/80" : "border-amber-200/70"}`}>
-                        <button
-                          type="button"
-                          onClick={() => togglePhotos(phase.phase)}
-                          className={`w-full flex items-center justify-between py-2 px-3 rounded-lg border text-xs font-semibold transition cursor-pointer ${
-                            isCompleted
-                              ? "bg-emerald-100/60 hover:bg-emerald-100/90 border-emerald-200/80 text-emerald-900"
-                              : "bg-amber-100/60 hover:bg-amber-100/90 border-amber-200/80 text-amber-900"
-                          }`}
-                          aria-expanded={isPhotosOpen}
-                        >
-                          <span className="flex items-center gap-2">
-                            <Camera className={`w-4 h-4 ${isCompleted ? "text-emerald-700" : "text-amber-700"}`} />
-                            <span className="font-bold">Dokumentasi Kegiatan</span>
-                            <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${
-                              isCompleted
-                                ? "bg-emerald-200/90 text-emerald-950 border-emerald-300/60"
-                                : "bg-amber-200/90 text-amber-950 border-amber-300/60"
-                            }`}>
-                              {photos?.length || 0} Foto{videos && videos.length > 0 ? ` • ${videos.length} Animasi GIF` : ""}
-                            </span>
-                          </span>
-                          <span className={`flex items-center gap-1 text-[11px] font-medium ${isCompleted ? "text-emerald-800" : "text-amber-800"}`}>
-                            <span>{isPhotosOpen ? "Tutup" : "Lihat"}</span>
-                            <ChevronDown
-                              className={`w-4 h-4 transition-transform duration-200 ${
-                                isPhotosOpen ? "rotate-180" : ""
-                              }`}
-                            />
-                          </span>
-                        </button>
-
-                        {isPhotosOpen && (
-                          <div className="mt-2.5 space-y-3">
-                            {/* Photos Grid */}
-                            {photos && photos.length > 0 && (() => {
-                              const phaseGalleryItems: GalleryItem[] = photos.map((item) => ({
-                                url: item.filename && phaseImageMap[item.filename]
-                                  ? phaseImageMap[item.filename]
-                                  : `./images/construction/${item.filename}`,
-                                title: item.title,
-                                desc: item.desc,
-                                phaseBadge: phase.badge,
-                              }));
-
-                              return (
-                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                  {phaseGalleryItems.map((p, pIdx) => {
-                                    return (
-                                      <div
-                                        key={pIdx}
-                                        className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
-                                          isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
-                                        }`}
-                                      >
-                                        <div
-                                          className="relative aspect-[4/3] bg-slate-900 overflow-hidden cursor-pointer"
-                                          onClick={() => openGallery(phaseGalleryItems, pIdx)}
-                                        >
-                                          <img
-                                            src={p.url}
-                                            alt={p.title}
-                                            className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
-                                            loading="lazy"
-                                          />
-                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors flex items-center justify-center">
-                                          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-xs text-white text-xs px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 shadow-lg">
-                                            <ZoomIn className={`w-3.5 h-3.5 ${isCompleted ? "text-emerald-300" : "text-amber-300"}`} /> Klik untuk perbesar
-                                          </span>
-                                        </div>
-                                      </div>
-                                      <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
-                                        <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
-                                          <span>{p.title}</span>
-                                          <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${
-                                            isCompleted ? "text-emerald-800 bg-emerald-100" : "text-amber-800 bg-amber-100"
-                                          }`}>
-                                            Dokumentasi Lapangan
-                                          </span>
-                                        </div>
-                                        <p className="text-[11px] text-slate-600 leading-relaxed">
-                                          {p.desc}
-                                        </p>
-                                      </div>
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                            );
-                          })()}
-
-                            {/* Video / GIF Animation Section (Displayed after photos) */}
-                            {videos && videos.length > 0 && (
-                              <div className="space-y-2 pt-1 border-t border-slate-200/60">
-                                <div className="grid sm:grid-cols-2 gap-3">
-                                  {videos.map((vid, vIdx) => {
-                                    const videoUrl = `./videos/construction/${vid.filename}`;
-                                    const posterUrl = vid.poster && phaseImageMap[vid.poster]
-                                      ? phaseImageMap[vid.poster]
-                                      : vid.poster
-                                      ? `./images/construction/${vid.poster}`
-                                      : undefined;
-                                    return (
-                                      <div
-                                        key={vIdx}
-                                        className={`group rounded-xl overflow-hidden border bg-white shadow-2xs hover:shadow-md transition ${
-                                          isCompleted ? "border-emerald-300/80" : "border-amber-300/80"
-                                        }`}
-                                      >
-                                        <div className="relative aspect-[4/3] bg-black overflow-hidden flex items-center justify-center">
-                                          <video
-                                            src={videoUrl}
-                                            poster={posterUrl}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            controls
-                                            preload="auto"
-                                            className="w-full h-full object-contain"
-                                          >
-                                            Browser Anda tidak mendukung pemutar video HTML5.
-                                          </video>
-                                        </div>
-                                        <div className={`p-3 ${isCompleted ? "bg-emerald-50/40" : "bg-amber-50/40"}`}>
-                                          <div className="text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
-                                            <span>{vid.title}</span>
-                                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-2xs ${
-                                              isCompleted ? "text-emerald-800 bg-emerald-100 border border-emerald-200" : "text-amber-800 bg-amber-100 border border-amber-200"
-                                            }`}>
-                                              <Sparkles className="w-2.5 h-2.5" /> Animasi GIF Loop (600 KB)
-                                            </span>
-                                          </div>
-                                          <p className="text-[11px] text-slate-600 leading-relaxed">
-                                            {vid.desc}
-                                          </p>
-                                        </div>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-
-                  </div>
-                );
-              })}
-
-            </div>
+            <PhaseTimeline
+              onOpenGallery={openGallery}
+              openMedia={openPhotoPhases}
+              onToggleMedia={togglePhotos}
+              filter={phaseFilter}
+              onFilterChange={setPhaseFilter}
+            />
           </div>
 
-          {/* Estimasi Biaya Banner */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#064e3b]/5 border border-emerald-200 rounded-2xl px-5 py-4">
-            <div>
-              <div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mb-0.5">
-                Total Estimasi Kebutuhan Dana
-              </div>
-              <div className="text-2xl font-extrabold font-mono text-[#064e3b]">
-                {masjidData.financial.buildingFundTarget}
-              </div>
-              <div className="text-[11px] text-slate-400 mt-0.5">
-                Sudah terkumpul:{" "}
-                <strong className="text-emerald-700">
-                  {masjidData.financial.buildingFundAllocated}
-                </strong>{" "}
-                ({masjidData.financial.progressPercent}%)
-              </div>
-            </div>
-            <div className="text-xs text-slate-500 leading-relaxed max-w-xs">
-              Dana dikelola secara transparan oleh DKM Nurul Falah dan dapat
-              dikonfirmasi langsung kepada pengurus masjid.
-            </div>
-          </div>
+          <p className="text-[11px] text-slate-500 leading-relaxed bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
+            Dana dikelola secara transparan oleh DKM Nurul Falah dan dapat dikonfirmasi langsung
+            kepada pengurus masjid. Jadwal &amp; anggaran bertanda <b>Belum dikonfirmasi</b> masih
+            berupa perkiraan perencanaan dan dapat berubah.
+          </p>
         </div>
       </div>
       {/* ── END PROPOSAL SUBSECTION ── */}
-
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left: Progress & Fund Allocation */}
-        <div className="flex flex-col gap-6">
-          {/* Progress Card */}
-          <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-[#064e3b] to-emerald-950 text-white p-6 shadow-xl border border-emerald-800/40 relative overflow-hidden">
-            <div className="absolute -top-16 -right-16 w-56 h-56 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="relative z-10">
-              <div className="flex items-center gap-2 mb-5">
-                <Target className="w-5 h-5 text-amber-300" />
-                <h3 className="font-bold text-base">Progress Dana Pembangunan</h3>
-              </div>
+        <div className="flex flex-col gap-6 min-w-0">
+          {/* Kebutuhan Dana per Tahap */}
+          <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-5 sm:p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <Hammer className="w-4 h-4 text-emerald-600" />
+              <h3 className="font-bold text-sm text-[#064e3b]">Kebutuhan Dana per Tahap</h3>
+            </div>
+            <div className="divide-y divide-slate-100">
+              {construction.phases.map((p) => {
+                const st = statusStyle[p.status];
+                return (
+                  <button
+                    key={p.phase}
+                    type="button"
+                    onClick={() => scrollToPhase(p.phase)}
+                    className="w-full text-left py-2.5 flex items-center gap-3 hover:bg-slate-50 rounded-lg px-1 -mx-1 transition cursor-pointer"
+                  >
+                    <span className={`w-6 h-6 rounded-full ring-2 flex items-center justify-center text-[10px] font-extrabold shrink-0 ${st.dot}`}>
+                      {p.phase}
+                    </span>
+                    <span className="flex-1 min-w-0">
+                      <span className="flex items-center justify-between gap-2 text-xs">
+                        <span className="font-semibold text-slate-700 truncate">{p.title}</span>
+                        <span className="font-mono font-bold text-slate-800 shrink-0">{formatRupiahShort(p.budget)}</span>
+                      </span>
+                      <span className="mt-1 block w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                        <span className={`block h-full rounded-full ${st.bar}`} style={{ width: `${p.budgetShare}%` }} />
+                      </span>
+                      <span className="mt-0.5 flex justify-between text-[10px] text-slate-400">
+                        <span>{p.quarter} · {st.label}</span>
+                        <span>{formatPercent(p.budgetShare)}%</span>
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="mt-3 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+              <span className="font-bold text-slate-700">Total</span>
+              <span className="font-mono font-extrabold text-[#064e3b]">{formatRupiah(construction.totalPhaseBudget)}</span>
+            </div>
+            {!construction.budgetMatchesTarget && (
+              <p className="mt-2 text-[11px] text-orange-700">
+                Total anggaran tahap berbeda dengan target {formatRupiah(construction.fund.target)}. Belum dikonfirmasi.
+              </p>
+            )}
+          </div>
 
-              {/* Big Numbers */}
-              <div className="flex items-end justify-between mb-4">
+          {/* Posisi Dana */}
+          <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-[#064e3b] to-emerald-950 text-white p-5 sm:p-6 shadow-xl border border-emerald-800/40 relative overflow-hidden">
+            <div className="absolute -top-16 -right-16 w-56 h-56 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-4">
+                <Target className="w-5 h-5 text-amber-300" />
+                <h3 className="font-bold text-base">Posisi Dana Pembangunan</h3>
+              </div>
+              <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-1 mb-3">
                 <div>
-                  <div className="text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-1">
-                    Terkumpul
-                  </div>
-                  <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
-                    {financial.buildingFundAllocated}
-                  </div>
+                  <div className="text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-1">Terkumpul</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold font-mono">{formatRupiah(construction.fund.raised)}</div>
                 </div>
                 <div className="text-right">
                   <div className="text-slate-400 text-xs mb-1">Target</div>
-                  <div className="text-lg font-bold font-mono text-amber-300">
-                    {financial.buildingFundTarget}
-                  </div>
+                  <div className="text-lg font-bold font-mono text-amber-300">{formatRupiah(construction.fund.target)}</div>
                 </div>
               </div>
-
-              {/* Progress Bar */}
               <div className="w-full bg-slate-700/60 h-3 rounded-full overflow-hidden mb-2">
                 <div
-                  className="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full transition-all"
-                  style={{ width: `${financial.progressPercent}%` }}
+                  className="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full"
+                  style={{ width: `${construction.fund.percent}%` }}
                 />
               </div>
-              <div className="flex items-center justify-between text-xs text-slate-400">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400 mb-4">
                 <span>
-                  <b className="text-white">{financial.progressPercent}%</b> tercapai
+                  <b className="text-white">{formatPercent(construction.fund.percent)}%</b> tercapai
                 </span>
                 <span className="flex items-center gap-1">
                   <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />
-                  Update: {financial.lastUpdate}
+                  Update: {construction.fund.lastUpdate}
                 </span>
               </div>
-            </div>
-          </div>
-
-          {/* Alokasi Dana */}
-          <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <Hammer className="w-4 h-4 text-emerald-600" />
-              <h3 className="font-bold text-sm text-[#064e3b]">
-                Rencana Alokasi Dana
-              </h3>
-            </div>
-            <div className="space-y-3.5">
-              {buildingItems.map((item) => (
-                <div key={item.label}>
-                  <div className="flex items-center justify-between text-xs mb-1">
-                    <span className="text-slate-600">{item.label}</span>
-                    <span className="font-bold text-slate-700">{item.pct}%</span>
-                  </div>
-                  <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                    <div
-                      className="bg-gradient-to-r from-emerald-500 to-emerald-600 h-full rounded-full"
-                      style={{ width: `${item.pct}%` }}
-                    />
-                  </div>
+              <dl className="grid grid-cols-2 gap-2 text-xs">
+                <div className="rounded-xl bg-white/5 border border-white/10 p-3">
+                  <dt className="text-emerald-200/80 text-[11px]">Terpakai Tahap 1–2</dt>
+                  <dd className="font-semibold text-amber-200 mt-0.5">Belum dikonfirmasi</dd>
                 </div>
-              ))}
+                <div className="rounded-xl bg-white/5 border border-white/10 p-3">
+                  <dt className="text-emerald-200/80 text-[11px]">Sisa dana</dt>
+                  <dd className="font-semibold text-amber-200 mt-0.5">Belum dikonfirmasi</dd>
+                </div>
+              </dl>
             </div>
           </div>
         </div>

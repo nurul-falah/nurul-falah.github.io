@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Compass, Layers, Maximize2, Users, ZoomIn, X } from "lucide-react";
+import { Compass, Layers, Maximize2, Users, ZoomIn, X, FileCheck2, Box, Camera, MapPin } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
 const specs = masjidData.specs;
@@ -37,6 +37,12 @@ const colorMap: Record<string, string> = {
   blue: "from-blue-500/20 to-blue-600/10 border-blue-400/30 text-blue-700",
   rose: "from-rose-500/20 to-rose-600/10 border-rose-400/30 text-rose-700",
 };
+
+const designDocs = [
+  { icon: FileCheck2, label: "Gambar CAD (denah & tampak)", available: true },
+  { icon: Box, label: "Render 3D", available: false },
+  { icon: Camera, label: "Foto visual / maket", available: false },
+];
 
 const cadLink = "https://burubur.github.io/drftr/?project=masjid";
 
@@ -128,6 +134,18 @@ export function DesainMasjidSection() {
               <strong>{specs.landAreaM2} m²</strong> untuk mewadahi seluruh
               kegiatan ibadah dan sosial jamaah Sukatani.
             </p>
+            <dl className="grid grid-cols-3 gap-2 mb-4 text-center">
+              {[
+                { k: "Lahan", v: `${specs.landAreaM2} m²` },
+                { k: "Bangunan", v: `${specs.buildingAreaM2} m²` },
+                { k: "Tapak lt. dasar", v: `${Math.round((specs.groundFloorM2 / specs.landAreaM2) * 100)}%` },
+              ].map((row) => (
+                <div key={row.k} className="rounded-lg bg-slate-50 border border-slate-100 py-2 px-1">
+                  <dt className="text-[10px] uppercase tracking-wide text-slate-400 font-semibold">{row.k}</dt>
+                  <dd className="text-sm font-extrabold font-mono text-[#064e3b]">{row.v}</dd>
+                </div>
+              ))}
+            </dl>
 
             <div className="grid grid-cols-2 gap-3">
               {highlights.map((item) => {
@@ -188,6 +206,40 @@ export function DesainMasjidSection() {
                 {specs.buildingAreaM2} m²
               </span>
             </div>
+          </div>
+
+          {/* Design documents status */}
+          <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+            <h3 className="text-base font-bold text-[#064e3b] mb-3">Dokumen Desain</h3>
+            <ul className="space-y-2">
+              {designDocs.map((doc) => {
+                const Icon = doc.icon;
+                return (
+                  <li key={doc.label} className="flex items-center justify-between gap-3 text-sm">
+                    <span className="flex items-center gap-2 text-slate-600 min-w-0">
+                      <Icon className={`w-4 h-4 shrink-0 ${doc.available ? "text-emerald-600" : "text-slate-400"}`} />
+                      <span className="truncate">{doc.label}</span>
+                    </span>
+                    {doc.available ? (
+                      <span className="shrink-0 text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        Tersedia
+                      </span>
+                    ) : (
+                      <span className="shrink-0 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-50 text-slate-500 border border-dashed border-slate-300">
+                        (menyusul)
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+            <a
+              href="#wakaf-pembangunan"
+              className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-900"
+            >
+              <MapPin className="w-3.5 h-3.5" />
+              Lihat tahapan pembangunan &amp; progres →
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Milestone, Hammer, BookMarked, CheckCircle2, Sparkles, Compass } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { construction, formatPercent } from "@/lib/construction";
 
 export interface LongTermProgramSectionProps {
   onOpenWakaf?: () => void;
@@ -139,10 +140,10 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
                 <span className="text-amber-300 font-bold font-mono">{masjidData.financial.buildingFundTarget}</span>
               </div>
               <div className="w-full bg-slate-700/60 h-2.5 rounded-full overflow-hidden mb-2">
-                <div className="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full" style={{ width: `${masjidData.financial.progressPercent}%` }}></div>
+                <div className="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full" style={{ width: `${construction.fund.percent}%` }}></div>
               </div>
               <div className="flex justify-between items-center text-[11px] text-slate-400">
-                <span>Terkumpul: <b className="text-white font-mono">{masjidData.financial.buildingFundAllocated}</b> ({masjidData.financial.progressPercent}%)</span>
+                <span>Terkumpul: <b className="text-white font-mono">{masjidData.financial.buildingFundAllocated}</b> ({formatPercent(construction.fund.percent)}%)</span>
                 <div className="flex items-center gap-3">
                   <a
                     href="https://burubur.github.io/drftr/?project=masjid"

@@ -1,6 +1,7 @@
 import React from "react";
 import { Compass, Calendar, ShieldCheck, Eye } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { construction, formatPercent } from "@/lib/construction";
 
 export interface HeroSectionProps {
   onOpenInfaq?: () => void;
@@ -97,13 +98,13 @@ export function HeroSection({ onOpenInfaq, onNavigate }: HeroSectionProps) {
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 sm:gap-3">
                   <span>Progres Wakaf Pembangunan:</span>
                   <span className="font-bold text-amber-300 font-mono sm:text-right">
-                    {masjidData.financial.progressPercent}% ({masjidData.financial.buildingFundAllocated} / {masjidData.financial.buildingFundTarget})
+                    {formatPercent(construction.fund.percent)}% ({masjidData.financial.buildingFundAllocated} / {masjidData.financial.buildingFundTarget})
                   </span>
                 </div>
                 <div className="w-full bg-emerald-900/80 h-2 rounded-full overflow-hidden">
                   <div
                     className="bg-amber-400 h-full rounded-full transition-all duration-500"
-                    style={{ width: `${masjidData.financial.progressPercent}%` }}
+                    style={{ width: `${construction.fund.percent}%` }}
                   ></div>
                 </div>
               </div>
