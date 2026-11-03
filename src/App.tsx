@@ -155,7 +155,7 @@ export function App() {
           {/* 2b. AD/ART Konstitusi Organisasi Preview & CTA */}
           <AdArtSection onOpenFullPage={() => handleNavigate("/ad-art")} />
 
-          {/* 2c. Struktur Organisasi DKM & RKM */}
+          {/* 2c. Struktur Organisasi DKM */}
           <StrukturOrganisasiSection onOpenAdArt={() => handleNavigate("/ad-art")} />
 
           {/* 3. Program Rutin */}

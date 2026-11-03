@@ -1,5 +1,5 @@
 {
-  "name": "Masjid Nurul Falah & RKM",
+  "name": "Masjid Nurul Falah",
   "arabicName": "مَسْجِدُ نُوْرِ الْفَلَاحِ",
   "tagline": "Pembangunan Masjid Permanen 2 Lantai & Pusat Dakwah Umat",
   "address": {
@@ -173,7 +173,7 @@
       "whatsapp": "6281573960016"
     },
     "funeralService": {
-      "role": "Pelayanan Jenazah / RKM",
+      "role": "Pelayanan Jenazah",
       "name": "Bpk. Dede Dzulkipli",
       "phone": "0856-4038-0652",
       "whatsapp": "6285640380652"
@@ -376,7 +376,7 @@
       { "id": 24, "task": "Pembuatan kursi mimbar", "status": "Selesai", "priority": "" },
       { "id": 25, "task": "Mengadakan musyawarah tahunan di bulan ramadhan", "status": "Selesai", "priority": "" },
       { "id": 26, "task": "Buka Puasa DKM & Anak Yatim", "status": "Selesai", "priority": "" },
-      { "id": 27, "task": "Penggabungan Pengurus dan Pelaporan Organisasi DKM & RKM", "status": "Selesai", "priority": "" },
+      { "id": 27, "task": "Penggabungan Pengurus dan Pelaporan Organisasi DKM", "status": "Selesai", "priority": "" },
       { "id": 28, "task": "Pembelian meja portabel untuk kegiatan UPZ", "status": "Selesai", "priority": "" },
       { "id": 29, "task": "Perbaikan Sebahagian Atap yang Rusak Parah", "status": "Selesai", "priority": "" },
       { "id": 30, "task": "Pembuatan Mimbar", "status": "Selesai", "priority": "" },
@@ -403,8 +403,8 @@
   },
   "organizationStructure": {
     "badge": "Kepengurusan Resmi",
-    "title": "Struktur Organisasi DKM & RKM",
-    "subtitle": "Susunan kepengurusan Dewan Kemakmuran Masjid (DKM) Nurul Falah yang terintegrasi dengan Rukun Kematian Muslim (RKM) Sukatani, sesuai Anggaran Dasar Pasal 9.",
+    "title": "Struktur Organisasi DKM",
+    "subtitle": "Susunan kepengurusan Dewan Kemakmuran Masjid (DKM) Nurul Falah, sesuai Anggaran Dasar Pasal 9.",
     "placeholder": "(menyusul)",
     "placeholderNote": "Nama pengurus yang bertanda (menyusul) akan dilengkapi setelah ditetapkan.",
     "source": "Mengacu pada AD Pasal 9 (Struktur Organisasi) dan ART BAB II (Tugas Pokok dan Wewenang Pengurus).",
@@ -431,7 +431,7 @@
           "role": "Ketua DKM",
           "contactKey": "dkmLeader",
           "icon": "UserCheck",
-          "duty": "Memimpin, mengoordinasikan, dan mengendalikan kebijakan strategis serta kegiatan DKM & RKM."
+          "duty": "Memimpin, mengoordinasikan, dan mengendalikan kebijakan strategis serta kegiatan DKM."
         },
         {
           "role": "Sekretaris DKM",
@@ -481,13 +481,13 @@
         ]
       },
       {
-        "id": "sosial-rkm",
-        "name": "Bidang Sosial & RKM",
+        "id": "sosial",
+        "name": "Bidang Sosial",
         "scope": "Pelayanan Jenazah / Fardhu Kifayah",
         "color": "blue",
         "icon": "HeartHandshake",
         "lead": {
-          "role": "Koordinator RKM",
+          "role": "Koordinator Bidang Sosial",
           "contactKey": "funeralService"
         },
         "members": [
@@ -498,8 +498,7 @@
         ],
         "duties": [
           "Pengurusan fardhu kifayah saat ada warga yang wafat",
-          "Perlengkapan pemulasaraan jenazah (keranda, kafan, pemandian)",
-          "Pelaporan terintegrasi di bawah DKM"
+          "Perlengkapan pemulasaraan jenazah (keranda, kafan, pemandian)"
         ]
       },
       {
@@ -568,7 +567,7 @@
         "points": [
           "Pertumbuhan SDM & Pemakmuran: TPA Al-Qur'an harian, pembiasaan shalat berjamaah, kaderisasi imam muda, dan majelis ilmu warga.",
           "Pembangunan Taktis Bertahap: Menyelesaikan saluran sanitasi dan selasar ibadah darurat sebelum membongkar bangunan utama.",
-          "Jaring Sosial & Estafet Sehat: Layanan RKM fardhu kifayah jenazah, Baitul Mal warga, serta mewariskan sistem beradab tanpa trauma konflik."
+          "Jaring Sosial & Estafet Sehat: Layanan fardhu kifayah jenazah, Baitul Mal warga, serta mewariskan sistem beradab tanpa trauma konflik."
         ]
       }
     ],

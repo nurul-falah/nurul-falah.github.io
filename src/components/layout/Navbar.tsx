@@ -59,7 +59,7 @@ export function Navbar({
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-md shadow-emerald-900/20 group-hover:scale-105 transition-transform"
             />
             <div>
-              <div className="font-bold text-base sm:text-lg leading-tight text-[#064e3b]">Masjid Nurul Falah &amp; RKM</div>
+              <div className="font-bold text-base sm:text-lg leading-tight text-[#064e3b]">Masjid Nurul Falah</div>
               <div className="text-[11px] sm:text-xs text-slate-500 font-medium tracking-wide">
                 Sukatani, Desa Wangunsari
               </div>
