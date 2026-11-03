@@ -26,7 +26,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 alt="Logo Masjid Nurul Falah"
                 className="w-7 h-7 rounded-lg shadow-sm"
               />
-              <span>Masjid Nurul Falah &amp; RKM</span>
+              <span>Masjid Nurul Falah</span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-md">
               Pusat ibadah dan pelatihan generasi madani.
@@ -41,7 +41,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-2">
               <li><a href="/" onClick={(e) => handleLinkClick(e, "/")} className="hover:text-amber-300 transition">Beranda Utama</a></li>
               <li><a href="/pilar" onClick={(e) => handleLinkClick(e, "/pilar")} className="hover:text-amber-300 transition">3 Pilar Nilai Dasar</a></li>
-              <li><a href="/ad-art" onClick={(e) => handleLinkClick(e, "/ad-art")} className="hover:text-amber-300 transition text-amber-300 font-bold">AD/ART Organisasi DKM &amp; RKM</a></li>
+              <li><a href="/ad-art" onClick={(e) => handleLinkClick(e, "/ad-art")} className="hover:text-amber-300 transition text-amber-300 font-bold">AD/ART Organisasi DKM</a></li>
               <li><a href="/struktur-organisasi" onClick={(e) => handleLinkClick(e, "/struktur-organisasi")} className="hover:text-amber-300 transition">Struktur Organisasi</a></li>
               <li><a href="/jadwal" onClick={(e) => handleLinkClick(e, "/jadwal")} className="hover:text-amber-300 transition">Jadwal Shalat Sukatani</a></li>
               <li><a href="/desain-masjid" onClick={(e) => handleLinkClick(e, "/desain-masjid")} className="hover:text-amber-300 transition">Desain Masjid</a></li>
@@ -68,7 +68,7 @@ export function Footer({ onNavigate }: FooterProps) {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-400">
-          <div>&copy; 2026 DKM Masjid Nurul Falah &amp; RKM. Seluruh hak cipta dilindungi.</div>
+          <div>&copy; 2026 DKM Masjid Nurul Falah. Seluruh hak cipta dilindungi.</div>
           <div className="text-emerald-300 font-semibold">Amanah & Transparan Memakmurkan Masjid</div>
         </div>
       </div>

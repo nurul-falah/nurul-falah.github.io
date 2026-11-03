@@ -15,9 +15,9 @@ export function OrganizationSection() {
   return (
     <section id="sekretariat" className="scroll-mt-20 py-14 max-w-6xl mx-auto px-4 sm:px-6 text-center">
       <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-        <h3 className="text-xl font-bold text-slate-900 mb-2">Sekretariat Masjid &amp; RKM</h3>
+        <h3 className="text-xl font-bold text-slate-900 mb-2">Sekretariat Masjid</h3>
         <p className="text-xs text-slate-500 max-w-xl mx-auto mb-6">
-          Informasi kepengurusan, kegiatan dakwah, dan pelayanan sosial di lingkungan Masjid Nurul Falah &amp; RKM Sukatani
+          Informasi kepengurusan, kegiatan dakwah, dan pelayanan sosial di lingkungan Masjid Nurul Falah Sukatani
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left text-xs">

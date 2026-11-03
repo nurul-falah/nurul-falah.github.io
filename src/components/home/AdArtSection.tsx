@@ -41,7 +41,7 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
                 <span>Aturan Dasar &amp; Tata Tertib Organisasi</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
-                AD/ART DKM &amp; RKM Masjid Nurul Falah
+                AD/ART DKM Masjid Nurul Falah
               </h2>
               <div className="text-amber-300/95 text-xs sm:text-sm font-semibold">
                 Anggaran Dasar &amp; Anggaran Rumah Tangga (Aturan Dasar &amp; Tata Tertib Organisasi)
