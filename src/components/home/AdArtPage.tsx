@@ -171,6 +171,9 @@ export function AdArtPage({ onBackToHome }: AdArtPageProps) {
               <div className="text-[11px] text-emerald-200 font-medium">Status Dokumen</div>
               <div className="text-lg sm:text-xl font-black text-emerald-300 mt-0.5">Aktif &amp; Mengikat</div>
               <div className="text-[10px] text-emerald-200/80 mt-0.5">{adArtData.establishedDate}</div>
+              {adArtData.amendedDate && (
+                <div className="text-[10px] text-emerald-200/80">Diamandemen: {adArtData.amendedDate}</div>
+              )}
             </div>
           </div>
         </div>
@@ -508,6 +511,11 @@ export function AdArtPage({ onBackToHome }: AdArtPageProps) {
                   <p className="text-xs text-slate-500 mt-1">
                     Ditetapkan di Kp. Sukatani, Desa Wangunsari, Kec. Cisolok, Kab. Sukabumi pada{" "}
                     <b>{adArtData.establishedDate}</b> ({adArtData.hijriDate}).
+                    {adArtData.amendedDate && (
+                      <>
+                        {" "}Diamandemen: <b>{adArtData.amendedDate}</b>.
+                      </>
+                    )}
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-emerald-800 bg-emerald-50 px-3.5 py-2 rounded-xl border border-emerald-200 shrink-0">
