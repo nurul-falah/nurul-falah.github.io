@@ -33,6 +33,8 @@ interface OrgDivision {
   color: string;
   icon: string;
   lead: OrgPosition;
+  /** Additional named members of the division, shown under the lead. */
+  members?: string[];
   duties: string[];
 }
 
@@ -242,6 +244,12 @@ export function StrukturOrganisasiSection({ onOpenAdArt }: StrukturOrganisasiSec
                 <div className="text-sm">
                   <PersonName contactKey={d.lead.contactKey} />
                 </div>
+                {d.members && d.members.length > 0 && (
+                  <div className="mt-2 pt-2 border-t border-slate-200">
+                    <div className="text-slate-500">Anggota</div>
+                    <div className="text-sm font-bold text-slate-900">{d.members.join(", ")}</div>
+                  </div>
+                )}
               </div>
               <ul className="space-y-1.5 text-xs text-slate-600">
                 {d.duties.map((duty) => (

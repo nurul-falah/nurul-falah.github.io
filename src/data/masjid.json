@@ -181,6 +181,10 @@
     "advisoryBoard": {
       "role": "Dewan Penasehat / Pembina",
       "name": "MUI Desa Wangunsari"
+    },
+    "riayahLead": {
+      "role": "Ketua Bidang Ri'ayah",
+      "name": "Bpk. Jaenudin"
     }
   },
   "routinePrograms": [
@@ -468,7 +472,7 @@
         "icon": "Wrench",
         "lead": {
           "role": "Ketua Bidang Ri'ayah",
-          "contactKey": null
+          "contactKey": "riayahLead"
         },
         "duties": [
           "Pengawasan tahapan pembangunan fisik masjid",
@@ -486,6 +490,12 @@
           "role": "Koordinator RKM",
           "contactKey": "funeralService"
         },
+        "members": [
+          "RT Sadam",
+          "RT Armat",
+          "RT Angga",
+          "RT Dede"
+        ],
         "duties": [
           "Pengurusan fardhu kifayah saat ada warga yang wafat",
           "Perlengkapan pemulasaraan jenazah (keranda, kafan, pemandian)",
