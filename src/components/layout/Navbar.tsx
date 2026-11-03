@@ -17,6 +17,7 @@ export function Navbar({
   const navLinks = [
     { label: "Pilar Nilai", shortLabel: "Pilar", href: "/pilar" },
     { label: "AD/ART", shortLabel: "AD/ART", href: "/ad-art" },
+    { label: "Struktur Organisasi", shortLabel: "Struktur", href: "/struktur-organisasi" },
     { label: "Desain Masjid", shortLabel: "Desain", href: "/desain-masjid" },
     { label: "Wakaf Pembangunan", shortLabel: "Wakaf", href: "/wakaf-pembangunan", highlight: true },
     { label: "Skema Pendanaan", shortLabel: "Pendanaan", href: "/pendanaan" },
@@ -77,6 +78,7 @@ export function Navbar({
                       key={link.label}
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
+                      title={link.label}
                       className={`px-2.5 xl:px-3 py-2 rounded-lg transition flex items-center gap-1 font-bold whitespace-nowrap ${
                         isActive
                           ? "bg-emerald-700 text-white shadow-2xs"
@@ -88,7 +90,8 @@ export function Navbar({
                           isActive ? "text-amber-300" : "text-emerald-600"
                         }`}
                       />
-                      <span>{link.label}</span>
+                      <span className="min-[1360px]:hidden">{link.shortLabel}</span>
+                      <span className="hidden min-[1360px]:inline">{link.label}</span>
                     </a>
                   );
                 }
@@ -102,8 +105,10 @@ export function Navbar({
                         ? "text-emerald-800 bg-emerald-50 font-bold"
                         : "hover:text-emerald-700 hover:bg-emerald-50"
                     }`}
+                    title={link.label}
                   >
-                    {link.label}
+                    <span className="min-[1360px]:hidden">{link.shortLabel}</span>
+                    <span className="hidden min-[1360px]:inline">{link.label}</span>
                   </a>
                 );
               })}

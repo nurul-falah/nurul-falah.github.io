@@ -12,13 +12,13 @@ export function PrayerTimesWidget() {
   ];
 
   return (
-    <section id="jadwal" className="relative -mt-16 max-w-6xl mx-auto px-4 sm:px-6 z-20">
+    <section id="jadwal" className="scroll-mt-20 relative -mt-16 max-w-6xl mx-auto px-4 sm:px-6 z-20">
       <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-4 sm:p-6 text-left">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 pb-3 border-b border-slate-100">
           <div>
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
               <SunMedium className="w-5 h-5 text-amber-500" />
-              Jadwal Sholat Hari Ini — Wilayah Sukatani
+              Jadwal Shalat Hari Ini — Wilayah Sukatani
             </h2>
             <p className="text-xs text-slate-500">
               Waktu otomatis disesuaikan dengan koordinat Sukatani dan Kemenag RI

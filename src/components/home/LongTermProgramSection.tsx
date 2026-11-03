@@ -9,7 +9,7 @@ export interface LongTermProgramSectionProps {
 
 export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermProgramSectionProps) {
   return (
-    <section id="program-panjang" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+    <section id="program-panjang" className="scroll-mt-20 py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
       <div className="bg-gradient-to-br from-slate-900 via-[#064e3b] to-emerald-950 rounded-3xl text-white p-6 sm:p-10 shadow-2xl relative overflow-hidden border border-emerald-800/40">
         
         {/* Accent background lights */}

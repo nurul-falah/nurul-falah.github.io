@@ -60,7 +60,7 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
   });
 
   return (
-    <section id="rekap-tugas" className="pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+    <section id="rekap-tugas" className="scroll-mt-20 pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
       {/* Container Accordion Utama */}
       <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
         

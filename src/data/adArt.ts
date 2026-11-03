@@ -306,7 +306,7 @@ export const adArtData: AdArtDocument = {
               text: "Penyimpanan dana wajib mengutamakan rekening bank syariah resmi atas nama masjid (Bank Syariah Indonesia / BSI No. Rek. 7203516578 a.n. MASJID NURUL FALAH SUKATANI).",
             },
             {
-              text: "Status Mutlak Aset Wakaf & Infaq: Seluruh lahan, bangunan, material, inventaris, maupun dana yang telah diserahkan kepada DKM/RKM Nurul Falah sebagai wakaf atau infaq otomatis berstatus milik Allah SWT untuk kemaslahatan umat, sehingga tidak dapat ditarik kembali atau diklaim kepemilikan pribadinya oleh siapapun (baik oleh donatur, ahli waris, maupun pengurus) dalam kondisi apapun.",
+              text: "Status Mutlak Aset Wakaf & Infaq: Seluruh lahan, bangunan, material, inventaris, maupun dana yang telah diserahkan kepada DKM/RKM Nurul Falah sebagai wakaf atau infaq otomatis berstatus milik Allah SWT untuk kemaslahatan umat, sehingga tidak dapat ditarik kembali atau diklaim kepemilikan pribadinya oleh siapa pun (baik oleh donatur, ahli waris, maupun pengurus) dalam kondisi apa pun.",
             },
           ],
         },
@@ -447,7 +447,7 @@ export const adArtData: AdArtDocument = {
               text: "Mempublikasikan laporan posisi saldo, pemasukan, dan pengeluaran secara rutin di mading fisik masjid dan menyerahkan datanya untuk diperbarui di portal digital.",
             },
             {
-              text: "Bersama pengurus DKM atau RKM bersedia menunjukkan uang fisik disaat ada warga yang meminta, tanpa merasa tersinggung, karena mengetahui keamanan keuangan adalah hak bagi setiap jamaah.",
+              text: "Bersama pengurus DKM atau RKM bersedia menunjukkan uang fisik di saat ada warga yang meminta, tanpa merasa tersinggung, karena mengetahui keamanan keuangan adalah hak bagi setiap jamaah.",
             },
           ],
         },
@@ -552,7 +552,7 @@ export const adArtData: AdArtDocument = {
               text: "Setiap upaya penggulingan, penyidangan sepihak, atau pemaksaan pergantian pengurus melalui rapat mendadak tanpa kehadiran dan persetujuan yang bersangkutan adalah BATAL DEMI HUKUM ORGANISASI dan merupakan pelanggaran berat terhadap adab kemasjidan.",
             },
             {
-              text: "Kebebasan Menerima Amanah Generasi Berikutnya: Jabatan di dalam DKM adalah amanah sukarela dan tidak boleh dipaksakan kepada siapapun (termasuk keluarga atau keturunan pengurus sebelumnya) apabila penunjukan tersebut tidak disertai dukungan ikhlas dan jaminan tata krama musyawarah yang sehat dari warga.",
+              text: "Kebebasan Menerima Amanah Generasi Berikutnya: Jabatan di dalam DKM adalah amanah sukarela dan tidak boleh dipaksakan kepada siapa pun (termasuk keluarga atau keturunan pengurus sebelumnya) apabila penunjukan tersebut tidak disertai dukungan ikhlas dan jaminan tata krama musyawarah yang sehat dari warga.",
             },
             {
               text: "Masa Transisi & Mekanisme Pengunduran Diri yang Manusiawi: Apabila seorang pengurus terbukti melakukan kesalahan fatal yang mengharuskan pergantian kepengurusan, proses pergantian wajib dilakukan secara manusiawi dan beradab melalui pemberian masa tenggang/transisi (1 hingga 3 bulan). Pengurus yang bersangkutan diberikan kesempatan untuk menyelesaikan laporan pertanggungjawaban serta mengundurkan diri atas kesadaran sendiri secara terhormat, guna menghindari stigma pengusiran sepihak dan menjaga keharmonisan sosial warga.",

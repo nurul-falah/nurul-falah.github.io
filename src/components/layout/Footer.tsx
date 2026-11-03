@@ -42,10 +42,11 @@ export function Footer({ onNavigate }: FooterProps) {
               <li><a href="/" onClick={(e) => handleLinkClick(e, "/")} className="hover:text-amber-300 transition">Beranda Utama</a></li>
               <li><a href="/pilar" onClick={(e) => handleLinkClick(e, "/pilar")} className="hover:text-amber-300 transition">3 Pilar Nilai Dasar</a></li>
               <li><a href="/ad-art" onClick={(e) => handleLinkClick(e, "/ad-art")} className="hover:text-amber-300 transition text-amber-300 font-bold">AD/ART Organisasi DKM &amp; RKM</a></li>
-              <li><a href="/jadwal" onClick={(e) => handleLinkClick(e, "/jadwal")} className="hover:text-amber-300 transition">Jadwal Sholat Sukatani</a></li>
+              <li><a href="/struktur-organisasi" onClick={(e) => handleLinkClick(e, "/struktur-organisasi")} className="hover:text-amber-300 transition">Struktur Organisasi</a></li>
+              <li><a href="/jadwal" onClick={(e) => handleLinkClick(e, "/jadwal")} className="hover:text-amber-300 transition">Jadwal Shalat Sukatani</a></li>
               <li><a href="/desain-masjid" onClick={(e) => handleLinkClick(e, "/desain-masjid")} className="hover:text-amber-300 transition">Desain Masjid</a></li>
               <li><a href="/wakaf-pembangunan" onClick={(e) => handleLinkClick(e, "/wakaf-pembangunan")} className="hover:text-amber-300 transition">Wakaf Pembangunan</a></li>
-              <li><a href="/pendanaan" onClick={(e) => handleLinkClick(e, "/pendanaan")} className="hover:text-amber-300 transition text-amber-200">Skema Pendanaan</a></li>
+              <li><a href="/pendanaan" onClick={(e) => handleLinkClick(e, "/pendanaan")} className="hover:text-amber-300 transition">Skema Pendanaan</a></li>
               <li><a href="/rekap-tugas" onClick={(e) => handleLinkClick(e, "/rekap-tugas")} className="hover:text-amber-300 transition">Rekap Tugas DKM</a></li>
             </ul>
           </div>

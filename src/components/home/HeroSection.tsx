@@ -79,11 +79,11 @@ export function HeroSection({ onOpenInfaq, onNavigate }: HeroSectionProps) {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/20 text-white shadow-2xl relative overflow-hidden">
               <div className="absolute -top-12 -right-12 w-36 h-36 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"></div>
 
-              <div className="flex items-center justify-between mb-4">
-                <span className="bg-amber-500 text-slate-950 font-bold text-xs uppercase px-2.5 py-1 rounded-md tracking-wider">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span className="bg-amber-500 text-slate-950 font-bold text-xs uppercase px-2.5 py-1 rounded-md tracking-wider whitespace-nowrap">
                   Program Strategis 2026-2028
                 </span>
-                <span className="text-xs text-emerald-200 flex items-center gap-1">
+                <span className="text-xs text-emerald-200 flex items-center gap-1 whitespace-nowrap">
                   <ShieldCheck className="w-3.5 h-3.5" /> Visi Madani
                 </span>
               </div>
@@ -94,9 +94,9 @@ export function HeroSection({ onOpenInfaq, onNavigate }: HeroSectionProps) {
               </p>
 
               <div className="space-y-2 bg-emerald-950/40 p-3.5 rounded-xl border border-emerald-500/20 text-xs text-emerald-100 mb-5">
-                <div className="flex items-center justify-between">
-                  <span>Progress Wakaf Pembangunan:</span>
-                  <span className="font-bold text-amber-300 font-mono">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 sm:gap-3">
+                  <span>Progres Wakaf Pembangunan:</span>
+                  <span className="font-bold text-amber-300 font-mono sm:text-right">
                     {masjidData.financial.progressPercent}% ({masjidData.financial.buildingFundAllocated} / {masjidData.financial.buildingFundTarget})
                   </span>
                 </div>
