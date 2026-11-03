@@ -6,6 +6,7 @@ import { copyFileSync, mkdirSync, existsSync } from "node:fs";
 
 const SPA_ROUTES = [
   "ad-art",
+  "history",
   "pilar",
   "jadwal",
   "program",

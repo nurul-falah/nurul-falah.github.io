@@ -5,6 +5,7 @@ import { PrayerTimesWidget } from "@/components/home/PrayerTimesWidget";
 import { PilarSection } from "@/components/home/PilarSection";
 import { AdArtSection } from "@/components/home/AdArtSection";
 import { AdArtPage } from "@/components/home/AdArtPage";
+import { HistoryPage } from "@/components/history/HistoryPage";
 import { RoutineProgramSection } from "@/components/home/RoutineProgramSection";
 import { LongTermProgramSection } from "@/components/home/LongTermProgramSection";
 import { DesainMasjidSection } from "@/components/home/DesainMasjidSection";
@@ -63,7 +64,7 @@ export function App() {
 
   // Handle initial load for direct route visits (/pilar, /desain-masjid, etc.) or legacy hashes
   useEffect(() => {
-    if (currentPath === "/ad-art") {
+    if (currentPath === "/ad-art" || currentPath === "/history") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -86,7 +87,7 @@ export function App() {
     const handlePopState = () => {
       const path = getInitialPath();
       setCurrentPath(path);
-      if (path === "/ad-art") {
+      if (path === "/ad-art" || path === "/history") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         scrollToSectionByPath(window.location.hash || path);
@@ -110,7 +111,7 @@ export function App() {
     setCurrentPath(cleanTarget);
     window.history.pushState({ path: cleanTarget }, "", cleanTarget);
 
-    if (cleanTarget === "/ad-art") {
+    if (cleanTarget === "/ad-art" || cleanTarget === "/history") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       scrollToSectionByPath(cleanTarget);
@@ -126,10 +127,14 @@ export function App() {
         onNavigate={handleNavigate}
       />
 
-      {/* 2. Main Content: Switch between /ad-art Page & Home Landing Page */}
+      {/* 2. Main Content: Switch between Pages (/ad-art, /history) & Home Landing Page */}
       {currentPath === "/ad-art" ? (
         <main className="flex-1">
           <AdArtPage onBackToHome={() => handleNavigate("/")} />
+        </main>
+      ) : currentPath === "/history" ? (
+        <main className="flex-1">
+          <HistoryPage onBackToHome={() => handleNavigate("/")} />
         </main>
       ) : (
         <main className="flex-1">
