@@ -13,6 +13,7 @@ import { WakafPembangunanSection } from "@/components/home/WakafPembangunanSecti
 import { PendanaanSection } from "@/components/home/PendanaanSection";
 import { TaskRecapSection } from "@/components/home/TaskRecapSection";
 import { OrganizationSection } from "@/components/home/OrganizationSection";
+import { StrukturOrganisasiSection } from "@/components/home/StrukturOrganisasiSection";
 import { Footer } from "@/components/layout/Footer";
 import { InfaqModal } from "@/components/infaq/InfaqModal";
 import { LayananModal } from "@/components/home/LayananModal";
@@ -26,6 +27,7 @@ const SECTION_PATH_MAP: Record<string, string> = {
   "/wakaf-pembangunan": "#wakaf-pembangunan",
   "/pendanaan": "#pendanaan",
   "/rekap-tugas": "#rekap-tugas",
+  "/struktur-organisasi": "#struktur-organisasi",
 };
 
 function getInitialPath(): string {
@@ -152,6 +154,9 @@ export function App() {
 
           {/* 2b. AD/ART Konstitusi Organisasi Preview & CTA */}
           <AdArtSection onOpenFullPage={() => handleNavigate("/ad-art")} />
+
+          {/* 2c. Struktur Organisasi DKM & RKM */}
+          <StrukturOrganisasiSection onOpenAdArt={() => handleNavigate("/ad-art")} />
 
           {/* 3. Program Rutin */}
           <RoutineProgramSection />

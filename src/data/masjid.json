@@ -393,6 +393,119 @@
       { "id": 49, "task": "Pemindahan toilet dari belakang ke depan masjid", "status": "Belum", "priority": "Rendah" }
     ]
   },
+  "organizationStructure": {
+    "badge": "Kepengurusan Resmi",
+    "title": "Struktur Organisasi DKM & RKM",
+    "subtitle": "Susunan kepengurusan Dewan Kemakmuran Masjid (DKM) Nurul Falah yang terintegrasi dengan Rukun Kematian Muslim (RKM) Sukatani, sesuai Anggaran Dasar Pasal 9.",
+    "placeholder": "(menyusul)",
+    "placeholderNote": "Nama pengurus yang bertanda (menyusul) akan dilengkapi setelah ditetapkan.",
+    "source": "Mengacu pada AD Pasal 9 (Struktur Organisasi) dan ART BAB II (Tugas Pokok dan Wewenang Pengurus).",
+    "term": "Masa khidmat kepengurusan 10 tahun per periode dan dapat dipilih kembali melalui musyawarah (ART Pasal 9).",
+    "forum": {
+      "name": "Musyawarah Pleno",
+      "desc": "Forum tertinggi untuk memilih atau menetapkan Ketua DKM (ART Pasal 10)."
+    },
+    "advisory": {
+      "name": "Dewan Penasehat / Pembina",
+      "desc": "Tokoh agama, sesepuh masyarakat, dan aparatur lingkungan setempat yang memberikan nasihat syar'i dan pertimbangan kebijaksanaan.",
+      "members": [
+        {
+          "role": "Anggota Dewan Penasehat",
+          "contactKey": null
+        }
+      ]
+    },
+    "executive": {
+      "name": "Pengurus Harian",
+      "desc": "Pelaksana harian organisasi yang terdiri atas Ketua, Sekretaris, dan Bendahara DKM.",
+      "members": [
+        {
+          "role": "Ketua DKM",
+          "contactKey": "dkmLeader",
+          "icon": "UserCheck",
+          "duty": "Memimpin, mengoordinasikan, dan mengendalikan kebijakan strategis serta kegiatan DKM & RKM."
+        },
+        {
+          "role": "Sekretaris DKM",
+          "contactKey": "secretary",
+          "icon": "ScrollText",
+          "duty": "Menjalankan administrasi kesekretariatan dan meneruskan arahan kebijakan kepada pengurus serta warga."
+        },
+        {
+          "role": "Bendahara DKM",
+          "contactKey": null,
+          "icon": "HandCoins",
+          "duty": "Menerima, menyimpan, membukukan, dan melaporkan kas DKM secara berkala dengan pos dana yang terpisah."
+        }
+      ]
+    },
+    "divisions": [
+      {
+        "id": "imarah",
+        "name": "Bidang Imarah",
+        "scope": "Dakwah, Ibadah, Pendidikan TPA & Remaja/Risma",
+        "color": "emerald",
+        "icon": "BookOpen",
+        "lead": {
+          "role": "Bidang Imarah",
+          "contactKey": "secretariat"
+        },
+        "duties": [
+          "Jadwal imam rawatib, khatib Jum'at, dan muadzin",
+          "TPA anak-anak, kajian rutin, dan kaderisasi imam muda",
+          "Syiar Ramadhan dan Hari Besar Islam (PHBI)"
+        ]
+      },
+      {
+        "id": "riayah",
+        "name": "Bidang Ri'ayah",
+        "scope": "Pembangunan, Pemeliharaan Sarana & Kebersihan/Marbot",
+        "color": "amber",
+        "icon": "Wrench",
+        "lead": {
+          "role": "Ketua Bidang Ri'ayah",
+          "contactKey": null
+        },
+        "duties": [
+          "Pengawasan tahapan pembangunan fisik masjid",
+          "Pemeliharaan listrik, tata suara, wudhu, dan sanitasi",
+          "Koordinasi marbot dan pencatatan inventaris"
+        ]
+      },
+      {
+        "id": "sosial-rkm",
+        "name": "Bidang Sosial & RKM",
+        "scope": "Pelayanan Jenazah / Fardhu Kifayah",
+        "color": "blue",
+        "icon": "HeartHandshake",
+        "lead": {
+          "role": "Koordinator RKM",
+          "contactKey": "funeralService"
+        },
+        "duties": [
+          "Pengurusan fardhu kifayah saat ada warga yang wafat",
+          "Perlengkapan pemulasaraan jenazah (keranda, kafan, pemandian)",
+          "Pelaporan terintegrasi di bawah DKM"
+        ]
+      },
+      {
+        "id": "zakat-baitul-mal",
+        "name": "Bidang Zakat & Baitul Mal",
+        "scope": "UPZ & Pinjaman Kebajikan Warga",
+        "color": "indigo",
+        "icon": "HandCoins",
+        "lead": {
+          "role": "Ketua Bidang Zakat & Baitul Mal",
+          "contactKey": null
+        },
+        "duties": [
+          "Penghimpunan dan penyaluran zakat fitrah dan zakat maal (UPZ)",
+          "Pendataan mustahiq secara objektif melalui musyawarah",
+          "Pinjaman kebajikan tanpa riba (Qardhul Hasan)"
+        ]
+      }
+    ]
+  },
   "pillars": {
     "badge": "Doktrin & Nilai Dasar",
     "title": "3 Pilar Nilai",

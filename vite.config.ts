@@ -15,6 +15,7 @@ const SPA_ROUTES = [
   "wakaf-pembangunan",
   "pendanaan",
   "rekap-tugas",
+  "struktur-organisasi",
 ];
 
 export default defineConfig({
