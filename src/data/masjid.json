@@ -177,6 +177,10 @@
       "name": "Bpk. Dede Dzulkipli",
       "phone": "0856-4038-0652",
       "whatsapp": "6285640380652"
+    },
+    "advisoryBoard": {
+      "role": "Dewan Penasehat / Pembina",
+      "name": "MUI Desa Wangunsari"
     }
   },
   "routinePrograms": [
@@ -410,8 +414,8 @@
       "desc": "Tokoh agama, sesepuh masyarakat, dan aparatur lingkungan setempat yang memberikan nasihat syar'i dan pertimbangan kebijaksanaan.",
       "members": [
         {
-          "role": "Anggota Dewan Penasehat",
-          "contactKey": null
+          "role": "Dewan Penasehat / Pembina",
+          "contactKey": "advisoryBoard"
         }
       ]
     },
