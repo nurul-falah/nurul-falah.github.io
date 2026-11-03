@@ -18,7 +18,7 @@ export function PrayerTimesWidget() {
           <div>
             <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
               <SunMedium className="w-5 h-5 text-amber-500" />
-              Jadwal Sholat Hari Ini — Wilayah Sukatani
+              Jadwal Shalat Hari Ini — Wilayah Sukatani
             </h2>
             <p className="text-xs text-slate-500">
               Waktu otomatis disesuaikan dengan koordinat Sukatani dan Kemenag RI

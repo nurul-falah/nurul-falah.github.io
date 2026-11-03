@@ -146,7 +146,7 @@ export function App() {
             onNavigate={handleNavigate}
           />
 
-          {/* 1. Jadwal Sholat */}
+          {/* 1. Jadwal Shalat */}
           <PrayerTimesWidget />
 
           {/* 2. 3 Pilar Nilai */}

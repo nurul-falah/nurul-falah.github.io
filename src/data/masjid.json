@@ -75,7 +75,7 @@
     {
       "phase": 2,
       "title": "Pembangunan Teras Masjid Sisi Utara (Area Jum'atan Sementara)",
-      "desc": "Pembuatan selasar teras utara beratap kokoh sebagai ruang sholat darurat agar ibadah sholat 5 waktu dan sholat Jum'at berjamaah tetap berjalan lancar.",
+      "desc": "Pembuatan selasar teras utara beratap kokoh sebagai ruang shalat darurat agar ibadah shalat 5 waktu dan shalat Jum'at berjamaah tetap berjalan lancar.",
       "badge": "Tahap 2",
       "status": "Dalam Proses",
       "timeline": "Oktober - November 2026",
@@ -183,7 +183,7 @@
     {
       "id": "ngaji-anak",
       "title": "Belajar Mengaji Anak-anak",
-      "desc": "Pembinaan baca tulis Al-Qur'an, Iqro, tajwid, adab, dan setoran hafalan surat pendek bagi anak-anak setiap hari setelah sholat Maghrib hingga Isya.",
+      "desc": "Pembinaan baca tulis Al-Qur'an, Iqro, tajwid, adab, dan setoran hafalan surat pendek bagi anak-anak setiap hari setelah shalat Maghrib hingga Isya.",
       "badge": "Setiap Hari (Ba'da Maghrib - Isya)",
       "icon": "BookOpen",
       "color": "emerald"
@@ -262,7 +262,7 @@
     },
     "recentTransactions": [
       {
-        "title": "Infaq Tromol Kotak Jumat (28/08)",
+        "title": "Infaq Tromol Kotak Jum'at (28/08)",
         "amount": "+ Rp 4.350.000",
         "type": "in"
       },
@@ -552,7 +552,7 @@
         "icon": "Milestone",
         "desc": "Memadukan pertumbuhan manusia yang hidup (anak-anak, pemuda, majelis, dan jaring pengaman sosial) dengan strategi pembangunan fisik bertahap yang rasional, bebas utang, dan pantang mangkrak di tengah jalan.",
         "points": [
-          "Pertumbuhan SDM & Pemakmuran: TPA Al-Qur'an harian, pembiasaan sholat berjamaah, kaderisasi imam muda, dan majelis ilmu warga.",
+          "Pertumbuhan SDM & Pemakmuran: TPA Al-Qur'an harian, pembiasaan shalat berjamaah, kaderisasi imam muda, dan majelis ilmu warga.",
           "Pembangunan Taktis Bertahap: Menyelesaikan saluran sanitasi dan selasar ibadah darurat sebelum membongkar bangunan utama.",
           "Jaring Sosial & Estafet Sehat: Layanan RKM fardhu kifayah jenazah, Baitul Mal warga, serta mewariskan sistem beradab tanpa trauma konflik."
         ]

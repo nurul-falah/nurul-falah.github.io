@@ -153,7 +153,7 @@ export function HistoryPage({ onBackToHome }: HistoryPageProps) {
                 Refleksi & Keyakinan Niat Baik:
               </h4>
               <ul className="space-y-1.5 text-xs sm:text-sm text-slate-600 list-disc list-inside">
-                <li>Apapun yang telah terjadi, kami meyakini kuat bahwa semua didasari niat baik.</li>
+                <li>Apa pun yang telah terjadi, kami meyakini kuat bahwa semua didasari niat baik.</li>
                 <li>Hal-hal yang kurang baik terjadi murni akibat miskomunikasi dan perbedaan persepsi antar sesama.</li>
                 <li>
                   Keterbatasan waktu 24 jam sehari di samping kewajiban bekerja di perusahaan luar membuat banyak ide sulit disampaikan secara virtual,
@@ -285,7 +285,7 @@ export function HistoryPage({ onBackToHome }: HistoryPageProps) {
             <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
               <p className="text-xs sm:text-sm text-emerald-950 font-medium">
                 <strong>Filosofi Kemakmuran:</strong> Gagasan hakiki masjid bukan semata-mata berlomba memegahkan fisik bangunan,
-                melainkan bagaimana <em>ngisian masjid</em> (memakmurkan sholat berjamaah, membina ta&apos;lim, dan memberdayakan warga).
+                melainkan bagaimana <em>ngisian masjid</em> (memakmurkan shalat berjamaah, membina ta&apos;lim, dan memberdayakan warga).
               </p>
             </div>
 
@@ -315,7 +315,7 @@ export function HistoryPage({ onBackToHome }: HistoryPageProps) {
               <h4 className="font-bold text-purple-950 mb-2">Pesan Kepada Anak Cucu:</h4>
               <p className="text-xs sm:text-sm text-purple-900 leading-relaxed">
                 &ldquo;Jika di kemudian hari anak keturunan kami memutuskan untuk menetap di kampung ini,
-                jangan sekali-kali bersedia ditunjuk memegang jabatan apapun jika penunjukan tersebut hanya
+                jangan sekali-kali bersedia ditunjuk memegang jabatan apa pun jika penunjukan tersebut hanya
                 dijadikan ajang pencarian kesalahan, penghinaan, caci maki, ataupun proses penyidangan sepihak
                 yang mengintimidasi keluarga di bawah kedok musyawarah dadakan yang tidak adil.&rdquo;
               </p>
@@ -359,7 +359,7 @@ export function HistoryPage({ onBackToHome }: HistoryPageProps) {
               </div>
               <p>
                 Cara-cara anarkis semacam ini menorehkan trauma sosial yang sangat buruk bagi generasi penerus. Warga menjadi enggan tampil
-                mengabdi sebagai ketua lingkungan maupun pengurus organisasi masyarakat karena insentif dan resiko yang dihadapi tidak sebanding.
+                mengabdi sebagai ketua lingkungan maupun pengurus organisasi masyarakat karena insentif dan risiko yang dihadapi tidak sebanding.
               </p>
             </div>
 
