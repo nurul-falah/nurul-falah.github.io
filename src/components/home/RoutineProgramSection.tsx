@@ -12,7 +12,7 @@ export function RoutineProgramSection() {
   };
 
   return (
-    <section id="program" className="pt-16 pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+    <section id="program" className="scroll-mt-20 pt-16 pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
       <div className="text-center max-w-2xl mx-auto mb-10">
         <span className="text-[#059669] font-semibold text-xs uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
           Pilar Kemakmuran Rutin

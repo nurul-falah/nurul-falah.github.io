@@ -40,7 +40,7 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
   };
 
   return (
-    <section id="pendanaan" className="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+    <section id="pendanaan" className="scroll-mt-20 pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
       {/* Header Section */}
       <div className="text-center max-w-3xl mx-auto mb-12">
         <span className="text-[#059669] font-semibold text-xs uppercase tracking-wider bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 inline-flex items-center gap-1.5 shadow-2xs">

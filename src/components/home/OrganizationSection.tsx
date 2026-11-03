@@ -13,7 +13,7 @@ export function OrganizationSection() {
   ].filter(Boolean);
 
   return (
-    <section className="py-14 max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <section id="sekretariat" className="scroll-mt-20 py-14 max-w-6xl mx-auto px-4 sm:px-6 text-center">
       <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
         <h3 className="text-xl font-bold text-slate-900 mb-2">Sekretariat Masjid &amp; RKM</h3>
         <p className="text-xs text-slate-500 max-w-xl mx-auto mb-6">
