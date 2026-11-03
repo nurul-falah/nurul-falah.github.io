@@ -25,6 +25,7 @@ export interface AdArtDocument {
   address: string;
   establishedDate: string;
   hijriDate: string;
+  amendedDate?: string;
   mukadimah: {
     bismillah: string;
     opening: string;
@@ -45,10 +46,11 @@ export interface AdArtDocument {
 export const adArtData: AdArtDocument = {
   title: "Anggaran Dasar & Anggaran Rumah Tangga (AD/ART)",
   subtitle: "Aturan Dasar & Tata Tertib Organisasi",
-  organization: "Dewan Kemakmuran Masjid (DKM) & Rukun Kematian Muslim (RKM) Masjid Nurul Falah Sukatani",
+  organization: "Dewan Kemakmuran Masjid (DKM) Masjid Nurul Falah Sukatani",
   address: "Kp. Sukatani, RT 05 RW 03, Desa Wangunsari, Kecamatan Cisolok, Kabupaten Sukabumi, Provinsi Jawa Barat 43366",
   establishedDate: "1 November 2026 M",
   hijriDate: "21 Jumadil Awal 1448 H",
+  amendedDate: "3 November 2026 M",
   mukadimah: {
     bismillah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
     opening:
@@ -59,7 +61,7 @@ export const adArtData: AdArtDocument = {
     },
     body: [
       "Masjid bukan sekadar bangunan fisik tempat bersujud, melainkan pusat peradaban, pembinaan akhlak dan generasi, pemberdayaan ekonomi umat, serta jaring pengaman sosial masyarakat. Demi mewujudkan tata kelola masjid yang Murni dalam niat dan adab, Mandiri dalam kehormatan dan ekonomi, serta Tumbuh Berkelanjutan dalam pembinaan sumber daya manusia dan pembangunan fisik yang terukur, maka diperlukan pedoman organisasi yang jelas, adil, transparan, dan mengikat seluruh elemen pengurus serta jamaah.",
-      "Dengan mengharap ridha dan pertolongan Allah Subhanahu wa Ta'ala, jamaah dan pengurus Masjid Nurul Falah Sukatani menetapkan Anggaran Dasar dan Anggaran Rumah Tangga (AD/ART) Dewan Kemakmuran Masjid (DKM) & Rukun Kematian Muslim (RKM) Masjid Nurul Falah Sukatani sebagai berikut:",
+      "Dengan mengharap ridha dan pertolongan Allah Subhanahu wa Ta'ala, jamaah dan pengurus Masjid Nurul Falah Sukatani menetapkan Anggaran Dasar dan Anggaran Rumah Tangga (AD/ART) Dewan Kemakmuran Masjid (DKM) Masjid Nurul Falah Sukatani sebagai berikut:",
     ],
   },
   babs: [
@@ -69,14 +71,14 @@ export const adArtData: AdArtDocument = {
       part: "AD",
       babNumber: "BAB I",
       title: "Nama, Waktu, dan Kedudukan",
-      summary: "Identitas resmi kelembagaan DKM & RKM Nurul Falah serta kedudukan hukumnya di Kp. Sukatani.",
+      summary: "Identitas resmi kelembagaan DKM Nurul Falah serta kedudukan hukumnya di Kp. Sukatani.",
       pasals: [
         {
           number: "Pasal 1",
           title: "Nama Organisasi",
           items: [
             {
-              text: "Organisasi ini bernama Dewan Kemakmuran Masjid (DKM) Masjid Nurul Falah Sukatani, yang terintegrasi secara kelembagaan dengan Rukun Kematian Muslim (RKM) Nurul Falah Sukatani, selanjutnya dalam AD/ART ini disebut DKM Nurul Falah.",
+              text: "Organisasi ini bernama Dewan Kemakmuran Masjid (DKM) Masjid Nurul Falah Sukatani, selanjutnya dalam AD/ART ini disebut DKM Nurul Falah.",
             },
           ],
         },
@@ -182,7 +184,7 @@ export const adArtData: AdArtDocument = {
               text: "Ri'ayah (Pembangunan & Pemeliharaan Fisik): Melaksanakan pembangunan dan pemeliharaan Masjid Nurul Falah 2 lantai beserta sarana pendukungnya (sanitasi, tempat wudhu, selasar ibadah) secara bertahap dan berkualitas.",
             },
             {
-              text: "Ijtima'iyah & Muamalah (Sosial, RKM & Baitul Mal): Mengelola layanan fardhu kifayah pengurusan jenazah (RKM), penyaluran zakat/infaq (UPZ), serta pinjaman kebajikan warga tanpa riba (Qardhul Hasan melalui Baitul Mal).",
+              text: "Ijtima'iyah & Muamalah (Sosial & Baitul Mal): Mengelola layanan fardhu kifayah pengurusan jenazah melalui Bidang Sosial, penyaluran zakat/infaq (UPZ), serta pinjaman kebajikan warga tanpa riba (Qardhul Hasan melalui Baitul Mal).",
             },
           ],
         },
@@ -193,7 +195,7 @@ export const adArtData: AdArtDocument = {
       part: "AD",
       babNumber: "BAB IV",
       title: "Kedaulatan, Keanggotaan, dan Kepengurusan",
-      summary: "Definisi jamaah dan susunan struktur organisasi DKM & RKM Nurul Falah.",
+      summary: "Definisi jamaah dan susunan struktur organisasi DKM Nurul Falah.",
       pasals: [
         {
           number: "Pasal 8",
@@ -219,7 +221,7 @@ export const adArtData: AdArtDocument = {
               subItems: [
                 "Bidang Imarah (Dakwah, Ibadah, Pendidikan TPA & Remaja/Risma)",
                 "Bidang Ri'ayah (Pembangunan, Pemeliharaan Sarana & Kebersihan/Marbot)",
-                "Bidang Sosial & RKM (Pelayanan Jenazah / Fardhu Kifayah)",
+                "Bidang Sosial (Pelayanan Jenazah / Fardhu Kifayah)",
                 "Bidang Zakat & Baitul Mal (UPZ & Pinjaman Kebajikan Warga)",
               ],
             },
@@ -280,7 +282,7 @@ export const adArtData: AdArtDocument = {
           title: "Sumber Dana",
           items: [
             {
-              text: "Swadaya Jamaah Sukatani: Infaq kotak amal Jum'at/pengajian (penggabungan kas bapak-bapak dan ibu-ibu), iuran sukarela warga, iuran RKM, serta gotong royong tenaga dan material.",
+              text: "Swadaya Jamaah Sukatani: Infaq kotak amal Jum'at/pengajian (penggabungan kas bapak-bapak dan ibu-ibu), iuran sukarela warga, serta gotong royong tenaga dan material.",
             },
             {
               text: "Donatur & Wakaf Umat: Wakaf tunai, wakaf material, dan infaq jariyah dari para muhsinin/simpatisan luar maupun dalam daerah yang tidak mengikat.",
@@ -297,7 +299,7 @@ export const adArtData: AdArtDocument = {
           badge: "Hak Keuangan Jamaah",
           items: [
             {
-              text: "Kesiapan Menunjukkan Uang Fisik: Pengurus DKM maupun RKM wajib bersedia menunjukkan uang fisik kas dan/atau bukti mutasi rekening kapan pun diminta oleh warga, dengan sikap terbuka dan tanpa merasa tersinggung, karena mengetahui keamanan keuangan adalah hak bagi setiap jamaah.",
+              text: "Kesiapan Menunjukkan Uang Fisik: Seluruh pengurus DKM wajib bersedia menunjukkan uang fisik kas dan/atau bukti mutasi rekening kapan pun diminta oleh warga, dengan sikap terbuka dan tanpa merasa tersinggung, karena mengetahui keamanan keuangan adalah hak bagi setiap jamaah.",
             },
             {
               text: "Seluruh dana infaq operasional dan pembangunan masjid (baik dari jamaah bapak-bapak maupun ibu-ibu) disatukan dalam satu kesatuan kas DKM Nurul Falah.",
@@ -306,7 +308,7 @@ export const adArtData: AdArtDocument = {
               text: "Penyimpanan dana wajib mengutamakan rekening bank syariah resmi atas nama masjid (Bank Syariah Indonesia / BSI No. Rek. 7203516578 a.n. MASJID NURUL FALAH SUKATANI).",
             },
             {
-              text: "Status Mutlak Aset Wakaf & Infaq: Seluruh lahan, bangunan, material, inventaris, maupun dana yang telah diserahkan kepada DKM/RKM Nurul Falah sebagai wakaf atau infaq otomatis berstatus milik Allah SWT untuk kemaslahatan umat, sehingga tidak dapat ditarik kembali atau diklaim kepemilikan pribadinya oleh siapa pun (baik oleh donatur, ahli waris, maupun pengurus) dalam kondisi apa pun.",
+              text: "Status Mutlak Aset Wakaf & Infaq: Seluruh lahan, bangunan, material, inventaris, maupun dana yang telah diserahkan kepada DKM Nurul Falah sebagai wakaf atau infaq otomatis berstatus milik Allah SWT untuk kemaslahatan umat, sehingga tidak dapat ditarik kembali atau diklaim kepemilikan pribadinya oleh siapa pun (baik oleh donatur, ahli waris, maupun pengurus) dalam kondisi apa pun.",
             },
           ],
         },
@@ -347,9 +349,9 @@ export const adArtData: AdArtDocument = {
               text: "Hak Jamaah:",
               subItems: [
                 "Menggunakan fasilitas Masjid Nurul Falah untuk ibadah, pengajian, dan kegiatan keislaman sesuai tata tertib masjid.",
-                "Mendapatkan pelayanan sosial keagamaan, termasuk layanan RKM (pengurusan jenazah) dan akses program Baitul Mal sesuai ketentuan yang berlaku.",
+                "Mendapatkan pelayanan sosial keagamaan, termasuk layanan pengurusan jenazah melalui Bidang Sosial dan akses program Baitul Mal sesuai ketentuan yang berlaku.",
                 "Memperoleh informasi laporan keuangan dan perkembangan pembangunan secara transparan melalui mading masjid dan portal web resmi.",
-                "Meminta pengurus DKM atau RKM untuk menunjukkan uang fisik kas maupun bukti saldo rekening guna memastikan keamanan keuangan masjid.",
+                "Meminta pengurus DKM untuk menunjukkan uang fisik kas maupun bukti saldo rekening guna memastikan keamanan keuangan masjid.",
                 "Menyampaikan saran, masukan, atau pertanyaan secara santun, beradab, dan konstruktif di dalam forum resmi maupun langsung kepada pengurus.",
               ],
             },
@@ -397,7 +399,7 @@ export const adArtData: AdArtDocument = {
           title: "Ketua DKM",
           items: [
             {
-              text: "Memimpin, mengoordinasikan, dan mengendalikan seluruh kebijakan strategis serta kegiatan DKM & RKM Nurul Falah.",
+              text: "Memimpin, mengoordinasikan, dan mengendalikan seluruh kebijakan strategis serta kegiatan DKM Nurul Falah.",
             },
             {
               text: "Menetapkan visi, tahapan prioritas pembangunan, serta mengesahkan pengangkatan/pergantian pengurus bidang dan marbot.",
@@ -409,7 +411,7 @@ export const adArtData: AdArtDocument = {
               text: "Mengingat kesibukan kerja profesional Ketua DKM, pelaksanaan teknis harian di lapangan didelegasikan kepada Sekretaris dan Ketua-Ketua Bidang sesuai porsi tanggung jawab masing-masing dengan tetap berada dalam garis koordinasi Ketua DKM.",
             },
             {
-              text: "Keabsahan Koordinasi Daring/Virtual: Mengingat seluruh pengurus DKM/RKM mengabdi secara sukarela tanpa gaji (non-profit) dan memiliki kewajiban mencari nafkah bagi keluarganya, maka koordinasi, arahan kebijakan, maupun rapat yang dilakukan secara daring/virtual (melalui WhatsApp, telepon, atau dokumen digital) memiliki kekuatan hukum yang sama sahnya dengan kehadiran fisik.",
+              text: "Keabsahan Koordinasi Daring/Virtual: Mengingat seluruh pengurus DKM mengabdi secara sukarela tanpa gaji (non-profit) dan memiliki kewajiban mencari nafkah bagi keluarganya, maka koordinasi, arahan kebijakan, maupun rapat yang dilakukan secara daring/virtual (melalui WhatsApp, telepon, atau dokumen digital) memiliki kekuatan hukum yang sama sahnya dengan kehadiran fisik.",
             },
           ],
         },
@@ -441,13 +443,13 @@ export const adArtData: AdArtDocument = {
               text: "Menerima, menyimpan, membukukan, dan mengeluarkan dana kas DKM atas sepengetahuan dan persetujuan Ketua DKM.",
             },
             {
-              text: "Menyusun laporan keuangan berkala (bulanan/tahunan) yang memisahkan dengan jelas antara Pos Dana Pembangunan/Renovasi Masjid, Pos Dana Operasional/Infaq Umum Masjid, dan Pos Dana Sosial / RKM / Baitul Mal / UPZ.",
+              text: "Menyusun laporan keuangan berkala (bulanan/tahunan) yang memisahkan dengan jelas antara Pos Dana Pembangunan/Renovasi Masjid, Pos Dana Operasional/Infaq Umum Masjid, dan Pos Dana Sosial / Pelayanan Jenazah / Baitul Mal / UPZ.",
             },
             {
               text: "Mempublikasikan laporan posisi saldo, pemasukan, dan pengeluaran secara rutin di mading fisik masjid dan menyerahkan datanya untuk diperbarui di portal digital.",
             },
             {
-              text: "Bersama pengurus DKM atau RKM bersedia menunjukkan uang fisik di saat ada warga yang meminta, tanpa merasa tersinggung, karena mengetahui keamanan keuangan adalah hak bagi setiap jamaah.",
+              text: "Bersama pengurus DKM bersedia menunjukkan uang fisik di saat ada warga yang meminta, tanpa merasa tersinggung, karena mengetahui keamanan keuangan adalah hak bagi setiap jamaah.",
             },
           ],
         },
@@ -483,19 +485,19 @@ export const adArtData: AdArtDocument = {
               text: "Mengoordinasikan tugas Marbot Masjid dalam menjaga kebersihan harian, pembukaan/penutupan masjid, dan kesiapan sarana sebelum waktu shalat.",
             },
             {
-              text: "Tata Tertib Pengeras Suara (Audio Indoor & Outdoor): Penggunaan pengeras suara luar (outdoor) diatur secara tertib dan santun (untuk adzan, iqomah, pengumuman penting/kematian RKM, dan syiar yang terukur) serta hanya boleh dioperasikan oleh petugas yang berwenang.",
+              text: "Tata Tertib Pengeras Suara (Audio Indoor & Outdoor): Penggunaan pengeras suara luar (outdoor) diatur secara tertib dan santun (untuk adzan, iqomah, pengumuman penting/kematian, dan syiar yang terukur) serta hanya boleh dioperasikan oleh petugas yang berwenang.",
             },
             {
-              text: "Perlindungan Inventaris Masjid & RKM: Seluruh inventaris masjid dan RKM (keranda, meja portabel UPZ, peralatan audio, lemari, perkakas bangunan) adalah harta wakaf/umat yang wajib dicatat, dirawat, dan dilarang dibawa pulang atau digunakan untuk kepentingan pribadi tanpa izin resmi pengurus.",
+              text: "Perlindungan Inventaris Masjid: Seluruh inventaris masjid (keranda dan perlengkapan pelayanan jenazah yang dikelola oleh Bidang Sosial, meja portabel UPZ, peralatan audio, lemari, perkakas bangunan) adalah harta wakaf/umat yang wajib dicatat, dirawat, dan dilarang dibawa pulang atau digunakan untuk kepentingan pribadi tanpa izin resmi pengurus.",
             },
           ],
         },
         {
           number: "Pasal 8",
-          title: "Bidang Pelayanan Jenazah (RKM) & Baitul Mal / UPZ",
+          title: "Bidang Sosial (Pelayanan Jenazah) & Baitul Mal / UPZ",
           items: [
             {
-              text: "Rukun Kematian Muslim (RKM): Mengelola perlengkapan pemulasaraan jenazah (keranda, kain kafan, pemandian, liang lahat) dan mengoordinasikan fardhu kifayah saat ada warga yang wafat, dengan pelaporan yang terintegrasi di bawah DKM.",
+              text: "Pelayanan Jenazah (Bidang Sosial): Mengelola perlengkapan pemulasaraan jenazah (keranda, kain kafan, pemandian, liang lahat) dan mengoordinasikan fardhu kifayah saat ada warga yang wafat, dengan pelaporan kepada Pengurus Harian DKM.",
             },
             {
               text: "Unit Pengumpul Zakat (UPZ): Menghimpun, mendata mustahiq secara objektif dan adil, serta mendistribusikan zakat fitrah dan zakat maal sesuai ketentuan syariat:",
@@ -566,7 +568,7 @@ export const adArtData: AdArtDocument = {
           badge: "Mediasi MUI & Keadilan",
           items: [
             {
-              text: "Larangan Tradisi Barbar, Komplotan, & Main Hakim Sendiri: Apabila terdapat seorang pengurus DKM atau RKM yang melakukan kekhilafan individu, seperti melontarkan bahasa atau ucapan yang dinilai kurang etis bagi warga, maka dilarang keras melakukan penghakiman massa, penggalangan komplotan, penghasutan, petisi liar, keributan sepihak, intimidasi, demonstrasi/gerudukan, atau tradisi barbar di lingkungan masjid maupun kampung.",
+              text: "Larangan Tradisi Barbar, Komplotan, & Main Hakim Sendiri: Apabila terdapat seorang pengurus DKM yang melakukan kekhilafan individu, seperti melontarkan bahasa atau ucapan yang dinilai kurang etis bagi warga, maka dilarang keras melakukan penghakiman massa, penggalangan komplotan, penghasutan, petisi liar, keributan sepihak, intimidasi, demonstrasi/gerudukan, atau tradisi barbar di lingkungan masjid maupun kampung.",
             },
             {
               text: "Wajib Melalui Musyawarah Resmi yang Dihadiri MUI: Tata cara menyikapi atau mengadili dugaan pelanggaran etika pengurus WAJIB ditempuh melalui forum Musyawarah Resmi yang tertib dan WAJIB dihadiri oleh perwakilan Majelis Ulama Indonesia (MUI) setempat sebagai penengah (mediator) serta pemberi pertimbangan hukum syar'i yang netral dan objektif.",
@@ -581,12 +583,12 @@ export const adArtData: AdArtDocument = {
               ],
             },
             {
-              text: "Pertanggungjawaban Bersifat Individual: Kekhilafan seorang pengurus merupakan tanggung jawab pribadi individu yang bersangkutan dan tidak dapat dijadikan alasan untuk merombak atau menjatuhkan kepengurusan DKM/RKM secara keseluruhan.",
+              text: "Pertanggungjawaban Bersifat Individual: Kekhilafan seorang pengurus merupakan tanggung jawab pribadi individu yang bersangkutan dan tidak dapat dijadikan alasan untuk merombak atau menjatuhkan kepengurusan DKM secara keseluruhan.",
             },
             {
               text: "Penanganan Persoalan 100% Baru & Jaminan Perlindungan Marwah: Apabila ditemukan persoalan yang 100% baru dan belum pernah terjadi sebelumnya, maka pengurus DKM atau warga berhak meminta diadakannya Musyawarah Resmi untuk membahas kasus tersebut secara jernih dan mencarikan solusi yang tidak merugikan satu sama lain, dengan ketentuan:",
               subItems: [
-                "Tetap melindungi marwah dan kehormatan masing-masing individu agar tidak menjadi faktor yang membebani warga yang berkeinginan menjadi anggota atau pengurus DKM/RKM karena hak harga dirinya dilindungi oleh AD/ART ini.",
+                "Tetap melindungi marwah dan kehormatan masing-masing individu agar tidak menjadi faktor yang membebani warga yang berkeinginan menjadi anggota atau pengurus DKM karena hak harga dirinya dilindungi oleh AD/ART ini.",
                 "Apabila sanksi diperlukan, maka sanksi ditentukan secara proporsional sesuai tingkat kesalahan; misalnya jika kesalahan tersebut bukan merupakan tindak korupsi/penggelapan kas, maka sanksinya cukup berbentuk Surat Peringatan (SP) saja.",
               ],
             },
@@ -662,14 +664,14 @@ export const adArtData: AdArtDocument = {
           badge: "Estafet & Evaluasi Objektif",
           items: [
             {
-              text: "Kewajiban Keberlanjutan Lintas Kepengurusan: Siapa pun yang menjabat sebagai Pengurus DKM maupun RKM wajib melanjutkan Program Kerja Jangka Panjang (Visi Strategis 3–10 Tahun) yang telah ditetapkan, sehingga pergantian pengurus tidak menghentikan pembangunan masjid maupun program pembinaan umat yang sedang berjalan.",
+              text: "Kewajiban Keberlanjutan Lintas Kepengurusan: Siapa pun yang menjabat sebagai Pengurus DKM wajib melanjutkan Program Kerja Jangka Panjang (Visi Strategis 3–10 Tahun) yang telah ditetapkan, sehingga pergantian pengurus tidak menghentikan pembangunan masjid maupun program pembinaan umat yang sedang berjalan.",
             },
             {
               text: "Lingkup Program Jangka Panjang yang Wajib Dilanjutkan:",
               subItems: [
                 "Program Kajian & Pembinaan SDM Jangka Panjang: Pelatihan baca-tulis Al-Qur'an anak-anak setiap hari, pembiasaan shalat berjamaah Maghrib, kaderisasi imam shalat Isya bagi generasi muda, pelatihan pengajar Al-Qur'an (ToT), serta kajian rutin mingguan bapak-bapak, ibu-ibu, dan kajian bulanan.",
                 "Program Pembangunan & Revitalisasi Masjid: Penyelesaian tahapan pembangunan fisik Masjid Nurul Falah 2 lantai beserta fasilitas sanitasi, tempat wudhu, dan sarana belajar sesuai blueprint teknis.",
-                "Program Layanan Sosial & Keumatan: Pengelolaan kas satu pintu, pelayanan jenazah RKM, UPZ, serta Baitul Mal pinjaman warga.",
+                "Program Layanan Sosial & Keumatan: Pengelolaan kas satu pintu, pelayanan jenazah oleh Bidang Sosial, UPZ, serta Baitul Mal pinjaman warga.",
               ],
             },
             {
@@ -740,7 +742,7 @@ export const adArtData: AdArtDocument = {
               text: "Hal-hal teknis operasional yang belum diatur secara rinci dalam Anggaran Rumah Tangga ini akan ditetapkan melalui Keputusan Pengurus DKM Nurul Falah sepanjang tidak bertentangan dengan jiwa dan pasal-pasal AD/ART ini.",
             },
             {
-              text: "Apabila terdapat persoalan yang 100% baru dan tidak pernah terjadi sebelumnya, pengurus DKM atau warga berhak meminta diadakan musyawarah resmi untuk membahas kasus tersebut dan mencarikan solusi yang tidak merugikan satu sama lain. Jika sanksi diperlukan, maka sanksi ditentukan sesuai tingkat kesalahan (misalnya jika tidak korupsi, sanksinya cukup berbentuk Surat Peringatan saja), dengan tetap melindungi marwah masing-masing individu agar warga tidak terbebani untuk menjadi anggota atau pengurus DKM/RKM.",
+              text: "Apabila terdapat persoalan yang 100% baru dan tidak pernah terjadi sebelumnya, pengurus DKM atau warga berhak meminta diadakan musyawarah resmi untuk membahas kasus tersebut dan mencarikan solusi yang tidak merugikan satu sama lain. Jika sanksi diperlukan, maka sanksi ditentukan sesuai tingkat kesalahan (misalnya jika tidak korupsi, sanksinya cukup berbentuk Surat Peringatan saja), dengan tetap melindungi marwah masing-masing individu agar warga tidak terbebani untuk menjadi anggota atau pengurus DKM.",
             },
             {
               text: "Anggaran Dasar dan Anggaran Rumah Tangga ini mulai berlaku sejak tanggal ditetapkan.",
@@ -767,7 +769,7 @@ export const adArtData: AdArtDocument = {
       status: "Dakwah & Kemakmuran",
     },
     {
-      role: "Koordinator RKM",
+      role: "Koordinator Bidang Sosial",
       name: "Bpk. Dede Dzulkipli",
       status: "Pelayanan Sosial & Jenazah",
     },
