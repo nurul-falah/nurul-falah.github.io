@@ -1,15 +1,19 @@
 import React from "react";
-import { ShieldCheck, Flame, Users, Milestone, Sparkles, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Flame, Users, Milestone, Sparkles, CheckCircle2, Award, ChartColumn, Eye, Landmark } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
 export function PilarSection() {
   const { pillars } = masjidData;
+  const { governance } = pillars;
 
   const iconMap: Record<string, React.ReactNode> = {
     ShieldCheck: <ShieldCheck className="w-6 h-6" />,
     Flame: <Flame className="w-6 h-6" />,
     Users: <Users className="w-6 h-6" />,
     Milestone: <Milestone className="w-6 h-6" />,
+    Award: <Award className="w-6 h-6" />,
+    ChartColumn: <ChartColumn className="w-6 h-6" />,
+    Eye: <Eye className="w-6 h-6" />,
   };
 
   const colorStyles: Record<
@@ -153,6 +157,82 @@ export function PilarSection() {
             </div>
           );
         })}
+      </div>
+
+      {/* Prinsip Tata Kelola Lembaga */}
+      <div id="tata-kelola" className="mt-14 scroll-mt-24">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <span className="text-[#059669] font-bold text-xs uppercase tracking-wider bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 inline-flex items-center gap-1.5 shadow-sm">
+            <Landmark className="w-3.5 h-3.5 text-emerald-600" />
+            {governance.badge}
+          </span>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 tracking-tight">
+            {governance.title}
+          </h3>
+          <p className="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+            {governance.subtitle}
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          {governance.items.map((principle) => {
+            const style = colorStyles[principle.color] || colorStyles.emerald;
+
+            return (
+              <div
+                key={principle.id}
+                className={`bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group relative overflow-hidden ${style.borderHover}`}
+              >
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${style.accentLine}`} />
+
+                <div className="flex items-center justify-between mb-4 mt-1">
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-bold shadow-sm transition-transform group-hover:scale-105 ${style.iconBg}`}>
+                    {iconMap[principle.icon] || <Sparkles className="w-6 h-6" />}
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-2xl font-black font-mono text-slate-300 group-hover:text-slate-400 transition-colors">
+                      {principle.number}
+                    </span>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${style.badgeBg} ${style.badgeText}`}>
+                      {principle.badge}
+                    </span>
+                  </div>
+                </div>
+
+                <h4 className="text-2xl font-black text-slate-900 mb-1 group-hover:text-emerald-900 transition-colors">
+                  {principle.name}
+                </h4>
+                <div className="text-xs font-semibold text-slate-500 mb-3.5">
+                  {principle.tagline}
+                </div>
+
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5 bg-slate-50/70 p-3.5 rounded-xl border border-slate-100">
+                  {principle.desc}
+                </p>
+
+                <ul className="space-y-2.5 text-xs text-slate-700">
+                  {principle.points.map((pt, idx) => {
+                    const [title, ...rest] = pt.split(":");
+                    const detail = rest.join(":");
+                    return (
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${style.bulletColor}`} />
+                        <span className="leading-snug">
+                          <strong className="text-slate-900">{title}:</strong>
+                          <span className="text-slate-600">{detail}</span>
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+
+        <p className="text-center text-[11px] sm:text-xs text-slate-500 italic mt-6">
+          {governance.attribution}
+        </p>
       </div>
     </section>
   );
