@@ -46,7 +46,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <li><a href="/jadwal" onClick={(e) => handleLinkClick(e, "/jadwal")} className="hover:text-amber-300 transition">Jadwal Sholat Sukatani</a></li>
               <li><a href="/desain-masjid" onClick={(e) => handleLinkClick(e, "/desain-masjid")} className="hover:text-amber-300 transition">Desain Masjid</a></li>
               <li><a href="/wakaf-pembangunan" onClick={(e) => handleLinkClick(e, "/wakaf-pembangunan")} className="hover:text-amber-300 transition">Wakaf Pembangunan</a></li>
-              <li><a href="/pendanaan" onClick={(e) => handleLinkClick(e, "/pendanaan")} className="hover:text-amber-300 transition text-amber-200">Skema Pendanaan</a></li>
+              <li><a href="/pendanaan" onClick={(e) => handleLinkClick(e, "/pendanaan")} className="hover:text-amber-300 transition">Skema Pendanaan</a></li>
               <li><a href="/rekap-tugas" onClick={(e) => handleLinkClick(e, "/rekap-tugas")} className="hover:text-amber-300 transition">Rekap Tugas DKM</a></li>
             </ul>
           </div>
