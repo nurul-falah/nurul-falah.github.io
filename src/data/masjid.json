@@ -444,6 +444,59 @@
           "Jaring Sosial & Estafet Sehat: Layanan RKM fardhu kifayah jenazah, Baitul Mal warga, serta mewariskan sistem beradab tanpa trauma konflik."
         ]
       }
-    ]
+    ],
+    "governance": {
+      "badge": "Tata Kelola Lembaga",
+      "title": "3 Prinsip Tata Kelola",
+      "subtitle": "Pilar nilai dijaga oleh cara kerja yang benar. Tiga prinsip ini menjadi pegangan DKM dalam menempatkan amanah, menyusun program, dan mempertanggungjawabkan kepengurusan kepada jamaah.",
+      "attribution": "Terinspirasi dari gagasan Anies Baswedan tentang tata kelola lembaga.",
+      "items": [
+        {
+          "id": "meritokrasi",
+          "number": "01",
+          "name": "Meritokrasi",
+          "tagline": "Amanah untuk yang Kompeten",
+          "badge": "Kompetensi & Rekam Jejak",
+          "color": "emerald",
+          "icon": "Award",
+          "desc": "Jabatan dan tanggung jawab diberikan kepada orang yang memiliki kompetensi dan rekam jejak, bukan kepada mereka yang sekadar punya kedekatan atau koneksi.",
+          "points": [
+            "Kompetensi & Rekam Jejak: Penunjukan pengurus dan penanggung jawab program didasarkan pada kemampuan dan bukti kerja nyata.",
+            "Bebas Nepotisme: Kedekatan keluarga, pertemanan, atau koneksi tidak menjadi alasan untuk memegang amanah.",
+            "Kaderisasi Terbuka: Setiap warga dan pemuda punya kesempatan yang sama untuk dibina dan dipercaya memegang tugas."
+          ]
+        },
+        {
+          "id": "teknokrasi",
+          "number": "02",
+          "name": "Teknokrasi",
+          "tagline": "Keputusan Berbasis Data & Perencanaan",
+          "badge": "Data & Proses yang Benar",
+          "color": "amber",
+          "icon": "ChartColumn",
+          "desc": "Keputusan dan program disusun berdasarkan data, perencanaan yang matang, dan proses yang benar, bukan berdasarkan popularitas atau desakan sesaat.",
+          "points": [
+            "Data Sebelum Keputusan: Kebutuhan jamaah, kondisi bangunan, dan posisi kas dihitung dan dipetakan sebelum program diputuskan.",
+            "Perencanaan Matang: Setiap pekerjaan memiliki RAB, tahapan, dan penanggung jawab yang jelas sebelum dimulai.",
+            "Proses yang Benar: Keputusan diambil melalui musyawarah dan mekanisme AD/ART, bukan karena suara paling keras atau paling populer."
+          ]
+        },
+        {
+          "id": "transparansi",
+          "number": "03",
+          "name": "Transparansi",
+          "tagline": "Terbuka & Dapat Dipertanggungjawabkan",
+          "badge": "Akuntabilitas kepada Jamaah",
+          "color": "indigo",
+          "icon": "Eye",
+          "desc": "Keputusan, keuangan, dan penunjukan pengurus terbuka bagi jamaah, sehingga jamaah dapat ikut mengawasi dan meminta pertanggungjawaban kepengurusan.",
+          "points": [
+            "Keputusan Terbuka: Hasil musyawarah dan alasan di balik setiap keputusan penting disampaikan kepada jamaah.",
+            "Keuangan Terbuka: Pemasukan dan pengeluaran dilaporkan secara rutin di mading fisik dan portal web.",
+            "Penunjukan Terbuka: Siapa memegang amanah apa, dan atas dasar apa, diumumkan secara jelas kepada jamaah."
+          ]
+        }
+      ]
+    }
   }
 }
