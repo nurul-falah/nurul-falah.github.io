@@ -194,7 +194,21 @@
       "desc": "Pembinaan baca tulis Al-Qur'an, Iqro, tajwid, adab, dan setoran hafalan surat pendek bagi anak-anak setiap hari setelah shalat Maghrib hingga Isya.",
       "badge": "Setiap Hari (Ba'da Maghrib - Isya)",
       "icon": "BookOpen",
-      "color": "emerald"
+      "color": "emerald",
+      "photos": [
+        {
+          "src": "/images/program/ngaji-1.webp",
+          "fallback": "/images/program/ngaji-1.jpg",
+          "alt": "Anak-anak putri dan putra duduk di meja kecil sambil mengaji di serambi Masjid Nurul Falah pada malam hari",
+          "caption": "Kegiatan mengaji anak-anak di serambi Masjid Nurul Falah"
+        },
+        {
+          "src": "/images/program/ngaji-2.webp",
+          "fallback": "/images/program/ngaji-2.jpg",
+          "alt": "Anak-anak laki-laki mengaji bersama ustadz di serambi Masjid Nurul Falah pada malam hari",
+          "caption": "Anak-anak mengaji bersama ustadz di serambi Masjid Nurul Falah"
+        }
+      ]
     },
     {
       "id": "kajian-bapak",

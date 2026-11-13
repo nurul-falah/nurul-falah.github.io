@@ -2,6 +2,17 @@ import React from "react";
 import { BookOpen, Users, Sparkles, HandHeart, Calendar } from "lucide-react";
 import masjidData from "@/data/masjid.json";
 
+interface ProgramPhoto {
+  src: string;
+  fallback: string;
+  alt: string;
+  caption: string;
+}
+
+type RoutineProgram = (typeof masjidData.routinePrograms)[number] & {
+  photos?: ProgramPhoto[];
+};
+
 export function RoutineProgramSection() {
   const iconMap: Record<string, React.ReactNode> = {
     BookOpen: <BookOpen className="w-6 h-6" />,
@@ -10,6 +21,9 @@ export function RoutineProgramSection() {
     HandHeart: <HandHeart className="w-6 h-6" />,
     Calendar: <Calendar className="w-6 h-6" />,
   };
+
+  const programs = masjidData.routinePrograms as RoutineProgram[];
+  const ngajiPhotos = programs.find((prog) => prog.id === "ngaji-anak")?.photos ?? [];
 
   return (
     <section id="program" className="scroll-mt-20 pt-16 pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
@@ -24,7 +38,7 @@ export function RoutineProgramSection() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {masjidData.routinePrograms.map((prog) => {
+        {programs.map((prog) => {
           let iconBg = "bg-emerald-100 text-[#047857]";
           let badgeColor = "text-[#047857] bg-emerald-50";
 
@@ -58,6 +72,47 @@ export function RoutineProgramSection() {
           );
         })}
       </div>
+
+      {ngajiPhotos.length > 0 && (
+        <div id="dokumentasi-ngaji" className="mt-10">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-100 text-[#047857]">
+              <BookOpen className="w-4 h-4" />
+            </span>
+            <div>
+              <h3 className="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">
+                Dokumentasi Belajar Mengaji Anak-anak
+              </h3>
+              <p className="text-xs text-slate-600 mt-0.5">
+                Kegiatan harian ba'da Maghrib hingga Isya di serambi masjid.
+              </p>
+            </div>
+          </div>
+          <ul className="grid sm:grid-cols-2 gap-4 lg:gap-5">
+            {ngajiPhotos.map((photo) => (
+              <li key={photo.src}>
+                <figure className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden h-full">
+                  <picture>
+                    <source type="image/webp" srcSet={photo.src} />
+                    <img
+                      src={photo.fallback}
+                      alt={photo.alt}
+                      width={960}
+                      height={1280}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-auto aspect-[3/4] object-cover object-center bg-slate-100"
+                    />
+                  </picture>
+                  <figcaption className="text-xs sm:text-sm text-slate-600 leading-relaxed px-4 py-3">
+                    {photo.caption}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </section>
   );
 }
