@@ -97,11 +97,9 @@ export function RoutineProgramSection() {
                     <img
                       src={photo.fallback}
                       alt={photo.alt}
-                      width={960}
-                      height={1280}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-auto aspect-[3/4] object-cover object-center bg-slate-100"
+                      className="w-full h-auto bg-slate-100"
                     />
                   </picture>
                   <figcaption className="text-xs sm:text-sm text-slate-600 leading-relaxed px-4 py-3">
