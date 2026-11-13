@@ -389,8 +389,8 @@ function Divisions() {
       </div>
       <div className="relative lg:mt-6">
         {/* Desktop bus bar spanning the centres of the first and last column */}
-        <span aria-hidden="true" className={`hidden lg:block absolute -top-6 left-[12.5%] right-[12.5%] h-0.5 ${LINE}`} />
-        <ul className="grid lg:grid-cols-4 gap-x-4 lg:gap-x-5 lg:gap-y-0">
+        <span aria-hidden="true" className={`hidden lg:block absolute -top-6 left-[16.67%] right-[16.67%] h-0.5 ${LINE}`} />
+        <ul className="grid lg:grid-cols-3 gap-x-4 lg:gap-x-5 lg:gap-y-0">
           {divisions.map((d) => (
             <li key={d.id} className="group/tree relative pl-8 pt-3 lg:pl-0 lg:pt-0">
               {/* mobile spine + elbow */}
