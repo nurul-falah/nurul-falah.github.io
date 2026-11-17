@@ -274,13 +274,13 @@
     "lastUpdate": "30 Agustus 2026",
     "income": "Rp 24.850.000",
     "expense": "Rp 16.320.000",
-    "balance": "Rp 59.161.373",
+    "balance": "Rp 78.994.973",
     "buildingFundAllocated": "Rp 57.391.000",
     "buildingFundTarget": "Rp 600.000.000",
     "progressPercent": 10,
     "costCenter": {
-      "infaqRenovasi": "Rp 57.391.000",
-      "infaqUmum": "Rp 1.770.373"
+      "infaqRenovasi": "Rp 77.391.000",
+      "infaqUmum": "Rp 1.603.973"
     },
     "recentTransactions": [
       {

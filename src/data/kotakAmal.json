@@ -1,0 +1,4116 @@
+{
+  "id": "kotak-amal",
+  "title": "Laporan Kas Infaq Kotak Amal",
+  "subtitle": "Infaq Ghoir Muqayyad",
+  "asOf": "13 November 2026",
+  "latestBalance": 1603973,
+  "totalMasuk": 50190900,
+  "totalKeluar": 52072527,
+  "sourceNote": "Sumber: Jurnal Kas Kotak Amal DKM, disalin apa adanya.",
+  "rowCount": 455,
+  "defaultExpandedYears": [
+    2026
+  ],
+  "defaultExpandedMonths": [
+    "2026-11",
+    "2026-10",
+    "2026-09"
+  ],
+  "entries": [
+    {
+      "date": "06-01-2023",
+      "description": "koropak Bapak-bapak",
+      "masuk": 113000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 1
+    },
+    {
+      "date": "12-01-2023",
+      "description": "beli perlengkapan masjid",
+      "masuk": null,
+      "keluar": 56000,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 1
+    },
+    {
+      "date": "13-01-2023",
+      "description": "koropak Bapak-bapak",
+      "masuk": 112500,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 1
+    },
+    {
+      "date": "20-01-2023",
+      "description": "koropak Bapak-bapak",
+      "masuk": 101500,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 1
+    },
+    {
+      "date": "27-01-2023",
+      "description": "koropak Bapak-bapak",
+      "masuk": 101000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 1
+    },
+    {
+      "date": "27-01-2023",
+      "description": "koropak ibu ibu dalam satu bulan",
+      "masuk": 390000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 1
+    },
+    {
+      "date": "27-01-2023",
+      "description": "uang dari penjualan Kenteng",
+      "masuk": 100000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 1
+    },
+    {
+      "date": "02-02-2023",
+      "description": "intensif Ustadz",
+      "masuk": null,
+      "keluar": 120000,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "02-02-2023",
+      "description": "intensif Ustadz",
+      "masuk": null,
+      "keluar": 120000,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "02-02-2023",
+      "description": "marbot",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "03-02-2023",
+      "description": "koropak ibu ibu",
+      "masuk": 87000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "03-02-2023",
+      "description": "koropak Bapak-bapak",
+      "masuk": 115000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "10-02-2023",
+      "description": "koropak ibu ibu",
+      "masuk": 83000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "10-02-2023",
+      "description": "koropak Bapak-bapak",
+      "masuk": 104400,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "14-02-2023",
+      "description": "kabel dan lampu",
+      "masuk": null,
+      "keluar": 110000,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "17-02-2023",
+      "description": "koropak ibu ibu",
+      "masuk": 54000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "17-02-2023",
+      "description": "koropak Bapak-bapak",
+      "masuk": 175000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "24-02-2023",
+      "description": "koropak ibu ibu",
+      "masuk": 69000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "24-02-2023",
+      "description": "koropak Bapak-bapak",
+      "masuk": 62000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 2
+    },
+    {
+      "date": "01-03-2023",
+      "description": "intensif Ustadz dua orang",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-03-2023",
+      "description": "marbot",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-03-2023",
+      "description": "Dari Bu Aas sewa semawar",
+      "masuk": 35000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "03-03-2023",
+      "description": "Koropak jema'ah bpk&ibu gabung",
+      "masuk": 408500,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "10-03-2023",
+      "description": "Koropak jema'ah bpk&ibu gabung",
+      "masuk": 234000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "11-03-2023",
+      "description": "Beli MCB dan saklar",
+      "masuk": null,
+      "keluar": 70000,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "17-03-2023",
+      "description": "Koropak jema'ah bpk&ibu gabung",
+      "masuk": 150000,
+      "keluar": null,
+      "saldo": null,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "11-02-2023",
+      "description": "Saldo Terkumpul",
+      "masuk": null,
+      "keluar": null,
+      "saldo": 5055500,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "18-03-2023",
+      "description": "Beli gerendel",
+      "masuk": null,
+      "keluar": 85000,
+      "saldo": 4970500,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "24-03-2023",
+      "description": "koropak bp dan ibu",
+      "masuk": 276000,
+      "keluar": null,
+      "saldo": 5246500,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "31-03-2023",
+      "description": "koropak bp dan ibu",
+      "masuk": 313000,
+      "keluar": null,
+      "saldo": 5559500,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "13-03-2023",
+      "description": "Beli sound",
+      "masuk": null,
+      "keluar": 4000000,
+      "saldo": 1559500,
+      "groupYear": 2023,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-04-2023",
+      "description": "Insentif ustadz (2 Orang)",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 1319500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "04-04-2023",
+      "description": "Bayar Tunggakan Air Pam Masjid",
+      "masuk": null,
+      "keluar": 262300,
+      "saldo": 1057200,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "04-04-2023",
+      "description": "Penyesuaian selisih (kelebihan saldo)",
+      "masuk": 150300,
+      "keluar": null,
+      "saldo": 1207500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "07-04-2023",
+      "description": "Koropak bpk&ibu",
+      "masuk": 304000,
+      "keluar": null,
+      "saldo": 1511500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "14-04-2023",
+      "description": "Koropak bpk&ibu",
+      "masuk": 302000,
+      "keluar": null,
+      "saldo": 1813500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "20-04-2023",
+      "description": "Pembelian stempel DKM",
+      "masuk": null,
+      "keluar": 85000,
+      "saldo": 1728500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "21-04-2023",
+      "description": "Koropak (Jum'at)",
+      "masuk": 368000,
+      "keluar": null,
+      "saldo": 2096500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "22-04-2023",
+      "description": "Koropak (Iedul Fitri)",
+      "masuk": 1022000,
+      "keluar": null,
+      "saldo": 3118500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "22-04-2023",
+      "description": "Insentif Imam Shalat Ied",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 2918500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "21-04-2023",
+      "description": "beli kresek untuk beras zakat",
+      "masuk": null,
+      "keluar": 42000,
+      "saldo": 2876500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "24-04-2023",
+      "description": "beli Saklar broco untuk pipir & lampu mimbar",
+      "masuk": null,
+      "keluar": 20000,
+      "saldo": 2856500,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "28-04-2023",
+      "description": "Koropak(jum'at)",
+      "masuk": 238500,
+      "keluar": null,
+      "saldo": 3095000,
+      "groupYear": 2023,
+      "groupMonth": 4
+    },
+    {
+      "date": "01-05-2023",
+      "description": "insentif ustadz (2 orang)",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 2855000,
+      "groupYear": 2023,
+      "groupMonth": 5
+    },
+    {
+      "date": "05-05-2023",
+      "description": "Koropak (jum'at I)",
+      "masuk": 263000,
+      "keluar": null,
+      "saldo": 3118000,
+      "groupYear": 2023,
+      "groupMonth": 5
+    },
+    {
+      "date": "10-05-2023",
+      "description": "Beli sapu ijuk 2",
+      "masuk": null,
+      "keluar": 30000,
+      "saldo": 3088000,
+      "groupYear": 2023,
+      "groupMonth": 5
+    },
+    {
+      "date": "12-05-2023",
+      "description": "koropak Jum'at II",
+      "masuk": 159500,
+      "keluar": null,
+      "saldo": 3247500,
+      "groupYear": 2023,
+      "groupMonth": 5
+    },
+    {
+      "date": "19-05-2023",
+      "description": "koropak jum'at III",
+      "masuk": 668500,
+      "keluar": null,
+      "saldo": 3916000,
+      "groupYear": 2023,
+      "groupMonth": 5
+    },
+    {
+      "date": "26-05-2023",
+      "description": "koropak Jum'at IV",
+      "masuk": 205000,
+      "keluar": null,
+      "saldo": 4121000,
+      "groupYear": 2023,
+      "groupMonth": 5
+    },
+    {
+      "date": "31-05-2023",
+      "description": "Beli selang, wipol, terminal listrik",
+      "masuk": null,
+      "keluar": 262000,
+      "saldo": 3859000,
+      "groupYear": 2023,
+      "groupMonth": 5
+    },
+    {
+      "date": "01-06-2023",
+      "description": "insentif ust 2 orang",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 3619000,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "02-06-2023",
+      "description": "koropak Jum'at I",
+      "masuk": 237500,
+      "keluar": null,
+      "saldo": 3856500,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "09-06-2023",
+      "description": "Beli batu batre abc 2 biji",
+      "masuk": null,
+      "keluar": 6000,
+      "saldo": 3850500,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "09-06-2023",
+      "description": "Koropak jum'at II",
+      "masuk": 323500,
+      "keluar": null,
+      "saldo": 4174000,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "15-06-2023",
+      "description": "Beli kabel 100m+lakban+paku",
+      "masuk": null,
+      "keluar": 325000,
+      "saldo": 3849000,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "16-06-2023",
+      "description": "Koropak jum'at III",
+      "masuk": 257000,
+      "keluar": null,
+      "saldo": 4106000,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "23-06-2023",
+      "description": "koropak Jum'at IV",
+      "masuk": 229500,
+      "keluar": null,
+      "saldo": 4335500,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "29-06-2023",
+      "description": "koropak idul adha bapak bapak",
+      "masuk": 186000,
+      "keluar": null,
+      "saldo": 4521500,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "29-06-2023",
+      "description": "Koropak idul Adha ibu ibu",
+      "masuk": 210000,
+      "keluar": null,
+      "saldo": 4731500,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "29-06-2023",
+      "description": "Insentif imam sholat ied adha",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 4631500,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "30-06-2023",
+      "description": "koropak Jum'at V",
+      "masuk": 111000,
+      "keluar": null,
+      "saldo": 4742500,
+      "groupYear": 2023,
+      "groupMonth": 6
+    },
+    {
+      "date": "01-07-2023",
+      "description": "insentif ust 2 orang",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 4502500,
+      "groupYear": 2023,
+      "groupMonth": 7
+    },
+    {
+      "date": "01-07-2023",
+      "description": "Bu Aas sewa smawar",
+      "masuk": 50000,
+      "keluar": null,
+      "saldo": 4552500,
+      "groupYear": 2023,
+      "groupMonth": 7
+    },
+    {
+      "date": "01-07-2023",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 4352500,
+      "groupYear": 2023,
+      "groupMonth": 7
+    },
+    {
+      "date": "07-07-2023",
+      "description": "koropak Jum'at I",
+      "masuk": 216000,
+      "keluar": null,
+      "saldo": 4568500,
+      "groupYear": 2023,
+      "groupMonth": 7
+    },
+    {
+      "date": "14-07-2023",
+      "description": "koropak jum'at II",
+      "masuk": 172500,
+      "keluar": null,
+      "saldo": 4741000,
+      "groupYear": 2023,
+      "groupMonth": 7
+    },
+    {
+      "date": "21-07-2023",
+      "description": "koropak jum'at III",
+      "masuk": 254500,
+      "keluar": null,
+      "saldo": 4995500,
+      "groupYear": 2023,
+      "groupMonth": 7
+    },
+    {
+      "date": "28-07-2023",
+      "description": "koropak Jum'at IV",
+      "masuk": 223500,
+      "keluar": null,
+      "saldo": 5219000,
+      "groupYear": 2023,
+      "groupMonth": 7
+    },
+    {
+      "date": "01-08-2023",
+      "description": "Insentif ust 2 org",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 4979000,
+      "groupYear": 2023,
+      "groupMonth": 8
+    },
+    {
+      "date": "01-08-2023",
+      "description": "insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 4779000,
+      "groupYear": 2023,
+      "groupMonth": 8
+    },
+    {
+      "date": "04-08-2023",
+      "description": "Koropak jum'at I",
+      "masuk": 211000,
+      "keluar": null,
+      "saldo": 4990000,
+      "groupYear": 2023,
+      "groupMonth": 8
+    },
+    {
+      "date": "07-08-2023",
+      "description": "Beli pipa, sambungan pipa, Lem",
+      "masuk": null,
+      "keluar": 281000,
+      "saldo": 4709000,
+      "groupYear": 2023,
+      "groupMonth": 8
+    },
+    {
+      "date": "11-08-2023",
+      "description": "koropak Jum'at II",
+      "masuk": 271000,
+      "keluar": null,
+      "saldo": 4980000,
+      "groupYear": 2023,
+      "groupMonth": 8
+    },
+    {
+      "date": "18-08-2023",
+      "description": "Koropak Jum'at III",
+      "masuk": 283000,
+      "keluar": null,
+      "saldo": 5263000,
+      "groupYear": 2023,
+      "groupMonth": 8
+    },
+    {
+      "date": "25-08-2023",
+      "description": "koropak Jum'at IV",
+      "masuk": 217000,
+      "keluar": null,
+      "saldo": 5480000,
+      "groupYear": 2023,
+      "groupMonth": 8
+    },
+    {
+      "date": "01-09-2023",
+      "description": "insentif dua orang ustadz",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 5240000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "01-09-2023",
+      "description": "insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 5040000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "01-09-2023",
+      "description": "koropak Jum'at I",
+      "masuk": 201500,
+      "keluar": null,
+      "saldo": 5241500,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "08-09-2023",
+      "description": "koropak Jum'at II",
+      "masuk": 211500,
+      "keluar": null,
+      "saldo": 5453000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "12-09-2023",
+      "description": "Beli Lampu depan 20 Watt merk Lancar",
+      "masuk": null,
+      "keluar": 20000,
+      "saldo": 5433000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "15-09-2023",
+      "description": "koropak Jum'at III",
+      "masuk": 199000,
+      "keluar": null,
+      "saldo": 5632000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "22-09-2023",
+      "description": "koropak Jum'at IV",
+      "masuk": 131000,
+      "keluar": null,
+      "saldo": 5763000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "23-09-2023",
+      "description": "Beli 1 Pc keran wudhu",
+      "masuk": null,
+      "keluar": 15000,
+      "saldo": 5748000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "27-09-2023",
+      "description": "beli dua pc lampu AokiTitan45watt @75.000",
+      "masuk": null,
+      "keluar": 150000,
+      "saldo": 5598000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "27-09-2023",
+      "description": "kekurangan biaya maulid nabi",
+      "masuk": null,
+      "keluar": 700000,
+      "saldo": 4898000,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "29-09-2023",
+      "description": "kooropak jumat IV",
+      "masuk": 286500,
+      "keluar": null,
+      "saldo": 5184500,
+      "groupYear": 2023,
+      "groupMonth": 9
+    },
+    {
+      "date": "01-10-2023",
+      "description": "insentif dua ust",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 4944500,
+      "groupYear": 2023,
+      "groupMonth": 10
+    },
+    {
+      "date": "01-10-2023",
+      "description": "insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 4744500,
+      "groupYear": 2023,
+      "groupMonth": 10
+    },
+    {
+      "date": "06-10-2023",
+      "description": "Koropak Jum'at I",
+      "masuk": 204000,
+      "keluar": null,
+      "saldo": 4948500,
+      "groupYear": 2023,
+      "groupMonth": 10
+    },
+    {
+      "date": "07-10-2023",
+      "description": "bayar air PDAM",
+      "masuk": null,
+      "keluar": 80000,
+      "saldo": 4868500,
+      "groupYear": 2023,
+      "groupMonth": 10
+    },
+    {
+      "date": "13-10-2023",
+      "description": "Koropak Jum'at II",
+      "masuk": 211500,
+      "keluar": null,
+      "saldo": 5080000,
+      "groupYear": 2023,
+      "groupMonth": 10
+    },
+    {
+      "date": "20-10-2023",
+      "description": "Koropak Jum'at III",
+      "masuk": 97000,
+      "keluar": null,
+      "saldo": 5177000,
+      "groupYear": 2023,
+      "groupMonth": 10
+    },
+    {
+      "date": "27-10-2023",
+      "description": "koropak Jum'at IV",
+      "masuk": 280000,
+      "keluar": null,
+      "saldo": 5457000,
+      "groupYear": 2023,
+      "groupMonth": 10
+    },
+    {
+      "date": "01-11-2023",
+      "description": "Insentif ustadz dua orang",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 5217000,
+      "groupYear": 2023,
+      "groupMonth": 11
+    },
+    {
+      "date": "01-11-2023",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 5017000,
+      "groupYear": 2023,
+      "groupMonth": 11
+    },
+    {
+      "date": "03-11-2023",
+      "description": "koropak jumat I",
+      "masuk": 192000,
+      "keluar": null,
+      "saldo": 5209000,
+      "groupYear": 2023,
+      "groupMonth": 11
+    },
+    {
+      "date": "10-11-2023",
+      "description": "Koropak Jumat II",
+      "masuk": 230000,
+      "keluar": null,
+      "saldo": 5439000,
+      "groupYear": 2023,
+      "groupMonth": 11
+    },
+    {
+      "date": "14-11-2023",
+      "description": "Bayar PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 5359100,
+      "groupYear": 2023,
+      "groupMonth": 11
+    },
+    {
+      "date": "17-11-2023",
+      "description": "Koropak Jum'at III",
+      "masuk": 250000,
+      "keluar": null,
+      "saldo": 5609100,
+      "groupYear": 2023,
+      "groupMonth": 11
+    },
+    {
+      "date": "24-11-2023",
+      "description": "Koropak Jum'at IV",
+      "masuk": 202000,
+      "keluar": null,
+      "saldo": 5811100,
+      "groupYear": 2023,
+      "groupMonth": 11
+    },
+    {
+      "date": "01-12-2023",
+      "description": "koropak Jum'at I",
+      "masuk": 232500,
+      "keluar": null,
+      "saldo": 6043600,
+      "groupYear": 2023,
+      "groupMonth": 12
+    },
+    {
+      "date": "01-12-2023",
+      "description": "Insentif dua Ustadz",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 5803600,
+      "groupYear": 2023,
+      "groupMonth": 12
+    },
+    {
+      "date": "01-12-2023",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 5603600,
+      "groupYear": 2023,
+      "groupMonth": 12
+    },
+    {
+      "date": "05-12-2023",
+      "description": "Bayar air PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 5523700,
+      "groupYear": 2023,
+      "groupMonth": 12
+    },
+    {
+      "date": "08-12-2023",
+      "description": "koropak Jum'at II",
+      "masuk": 253500,
+      "keluar": null,
+      "saldo": 5777200,
+      "groupYear": 2023,
+      "groupMonth": 12
+    },
+    {
+      "date": "15-12-2023",
+      "description": "koropak Jum'at III",
+      "masuk": 200000,
+      "keluar": null,
+      "saldo": 5977200,
+      "groupYear": 2023,
+      "groupMonth": 12
+    },
+    {
+      "date": "22-12-2023",
+      "description": "Koropak Jum'at IV",
+      "masuk": 167000,
+      "keluar": null,
+      "saldo": 6144200,
+      "groupYear": 2023,
+      "groupMonth": 12
+    },
+    {
+      "date": "29-12-2023",
+      "description": "Koropak jum'at V",
+      "masuk": 297000,
+      "keluar": null,
+      "saldo": 6441200,
+      "groupYear": 2023,
+      "groupMonth": 12
+    },
+    {
+      "date": "01-01-2024",
+      "description": "Insentif dua Ustadz @Rp 120.000",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 6201200,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "01-01-2024",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 6001200,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "03-01-2024",
+      "description": "beli kipas dinding sanex 16 inch",
+      "masuk": null,
+      "keluar": 163500,
+      "saldo": 5837700,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "05-01-2024",
+      "description": "koropak jum'at I",
+      "masuk": 252000,
+      "keluar": null,
+      "saldo": 6089700,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "09-01-2024",
+      "description": "Bayar PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 6009800,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "12-01-2024",
+      "description": "koropak jum'at II",
+      "masuk": 215500,
+      "keluar": null,
+      "saldo": 6225300,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "19-01-2024",
+      "description": "Koropak jum'at III",
+      "masuk": 92500,
+      "keluar": null,
+      "saldo": 6317800,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "20-01-2024",
+      "description": "Beli 12pc paku beton @Rp1000, buatpasang 4pc soket kipas@3pc",
+      "masuk": null,
+      "keluar": 12000,
+      "saldo": 6305800,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "20-01-2024",
+      "description": "Hamba Allah Infaq 4pc Kipas Angin Snilai +/-Rp1jt",
+      "masuk": 0,
+      "keluar": 0,
+      "saldo": 6305800,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "26-01-2024",
+      "description": "Pembelian Kursi Untuk Difabel",
+      "masuk": null,
+      "keluar": 290124,
+      "saldo": 6015676,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "26-01-2024",
+      "description": "koropak jum'at IV",
+      "masuk": 209000,
+      "keluar": null,
+      "saldo": 6224676,
+      "groupYear": 2024,
+      "groupMonth": 1
+    },
+    {
+      "date": "01-02-2024",
+      "description": "insentif 2 ustadz, @120.000",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 5984676,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "01-02-2024",
+      "description": "insentif marbot,",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 5784676,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "02-02-2024",
+      "description": "Koropak jumat I",
+      "masuk": 203000,
+      "keluar": null,
+      "saldo": 5987676,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "03-02-2024",
+      "description": "Beli kanebo lap kaca 16rb.cling7rb",
+      "masuk": null,
+      "keluar": 23000,
+      "saldo": 5964676,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "07-02-2024",
+      "description": "Beli 2Lampu,45watt,@85rb+paku beton5Rb",
+      "masuk": null,
+      "keluar": 175000,
+      "saldo": 5789676,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "09-02-2024",
+      "description": "Koropak jumat II",
+      "masuk": 288500,
+      "keluar": null,
+      "saldo": 6078176,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "13-02-2024",
+      "description": "Bayar air PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 5998276,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "16-02-2024",
+      "description": "Koropak jum'at III",
+      "masuk": 420000,
+      "keluar": null,
+      "saldo": 6418276,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "17-02-2024",
+      "description": "Pembelian bahan kayu untuk pintu",
+      "masuk": null,
+      "keluar": 400000,
+      "saldo": 6018276,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "17-02-2024",
+      "description": "Jasa pembuatan dan instalasi pintu",
+      "masuk": null,
+      "keluar": 250000,
+      "saldo": 5768276,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "23-02-2024",
+      "description": "Koropak jumat IV",
+      "masuk": 214000,
+      "keluar": null,
+      "saldo": 5982276,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "25-02-2024",
+      "description": "Beli cat kayu untuk pintu",
+      "masuk": null,
+      "keluar": 85000,
+      "saldo": 5897276,
+      "groupYear": 2024,
+      "groupMonth": 2
+    },
+    {
+      "date": "01-03-2024",
+      "description": "Beli 3 colokan untuk kipas @10.000",
+      "masuk": null,
+      "keluar": 30000,
+      "saldo": 5867276,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-03-2024",
+      "description": "Insentif 2 ustadz @120.000",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 5627276,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-03-2024",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 5427276,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-03-2024",
+      "description": "Koropak Jumat I",
+      "masuk": 214500,
+      "keluar": null,
+      "saldo": 5641776,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "09-03-2024",
+      "description": "Jasa perbaikan audio",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 5541776,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "08-03-2024",
+      "description": "Koropak jum'at II",
+      "masuk": 193000,
+      "keluar": null,
+      "saldo": 5734776,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "13-03-2024",
+      "description": "Bayar air PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 5654876,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "15-03-2024",
+      "description": "Beli microphone",
+      "masuk": null,
+      "keluar": 210000,
+      "saldo": 5444876,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "15-03-2024",
+      "description": "Koropak Jumat III",
+      "masuk": 242000,
+      "keluar": null,
+      "saldo": 5686876,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "22-03-2024",
+      "description": "Koropak IV",
+      "masuk": 264500,
+      "keluar": null,
+      "saldo": 5951376,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "29-03-2024",
+      "description": "Koropak V",
+      "masuk": 280500,
+      "keluar": null,
+      "saldo": 6231876,
+      "groupYear": 2024,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-04-2024",
+      "description": "Insentif 2ustadz",
+      "masuk": null,
+      "keluar": 240000,
+      "saldo": 5991876,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "01-04-2024",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 5791876,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "05-04-2024",
+      "description": "Koropak Jum'at I",
+      "masuk": 313500,
+      "keluar": null,
+      "saldo": 6105376,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "05-04-2024",
+      "description": "Infaq hamba Allah",
+      "masuk": 89000,
+      "keluar": null,
+      "saldo": 6194376,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "05-04-2024",
+      "description": "cod dinamo kipas",
+      "masuk": null,
+      "keluar": 53000,
+      "saldo": 6141376,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "08-04-2024",
+      "description": "Bayar pDAm",
+      "masuk": null,
+      "keluar": 134500,
+      "saldo": 6006876,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "10-04-2024",
+      "description": "koropak iedul Fitri",
+      "masuk": 944500,
+      "keluar": null,
+      "saldo": 6951376,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "12-04-2024",
+      "description": "Koropak Jum'at II",
+      "masuk": 244500,
+      "keluar": null,
+      "saldo": 7195876,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "19-04-2024",
+      "description": "Koropak jum'at III",
+      "masuk": 307000,
+      "keluar": null,
+      "saldo": 7502876,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "01-04-2024",
+      "description": "pembelian meja lipat portabel",
+      "masuk": null,
+      "keluar": 650000,
+      "saldo": 6852876,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "26-04-2024",
+      "description": "Koropak jum'at IV",
+      "masuk": 481500,
+      "keluar": null,
+      "saldo": 7334376,
+      "groupYear": 2024,
+      "groupMonth": 4
+    },
+    {
+      "date": "01-05-2024",
+      "description": "Insentif dua orang ustadz",
+      "masuk": null,
+      "keluar": 300000,
+      "saldo": 7034376,
+      "groupYear": 2024,
+      "groupMonth": 5
+    },
+    {
+      "date": "01-05-2024",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 6834376,
+      "groupYear": 2024,
+      "groupMonth": 5
+    },
+    {
+      "date": "03-05-2024",
+      "description": "Koropak jum'at I",
+      "masuk": 246000,
+      "keluar": null,
+      "saldo": 7080376,
+      "groupYear": 2024,
+      "groupMonth": 5
+    },
+    {
+      "date": "10-05-2024",
+      "description": "Koropak jum'at II",
+      "masuk": 339000,
+      "keluar": null,
+      "saldo": 7419376,
+      "groupYear": 2024,
+      "groupMonth": 5
+    },
+    {
+      "date": "13-05-2024",
+      "description": "bayar PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 7339476,
+      "groupYear": 2024,
+      "groupMonth": 5
+    },
+    {
+      "date": "17-05-2024",
+      "description": "Koropak jum'at III",
+      "masuk": 293000,
+      "keluar": null,
+      "saldo": 7632476,
+      "groupYear": 2024,
+      "groupMonth": 5
+    },
+    {
+      "date": "24-05-2024",
+      "description": "Koropak jum'at IV",
+      "masuk": 284000,
+      "keluar": null,
+      "saldo": 7925476,
+      "groupYear": 2024,
+      "groupMonth": 5
+    },
+    {
+      "date": "31-05-2024",
+      "description": "Koropak Jum'at V",
+      "masuk": 282000,
+      "keluar": null,
+      "saldo": 8207476,
+      "groupYear": 2024,
+      "groupMonth": 5
+    },
+    {
+      "date": "01-06-2024",
+      "description": "Insentif ust",
+      "masuk": null,
+      "keluar": 300000,
+      "saldo": 7907476,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "01-06-2024",
+      "description": "Insentif Marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 7707476,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "07-06-2024",
+      "description": "Koropak Jum'at I",
+      "masuk": 422000,
+      "keluar": null,
+      "saldo": 8129476,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "14-06-2024",
+      "description": "bayar PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 8049576,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "14-06-2024",
+      "description": "Koropak jum'at II",
+      "masuk": 207000,
+      "keluar": null,
+      "saldo": 8256576,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "17-06-2024",
+      "description": "Koropak Idul Adha",
+      "masuk": 471000,
+      "keluar": null,
+      "saldo": 8727576,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "17-06-2024",
+      "description": "Insentif imam dan Khotib Idul Adha @50.000",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 8627576,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "21-06-2024",
+      "description": "Koropak jum'at III",
+      "masuk": 204000,
+      "keluar": null,
+      "saldo": 8831576,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "28-06-2024",
+      "description": "Koropak jum'at IV",
+      "masuk": 344000,
+      "keluar": null,
+      "saldo": 9175576,
+      "groupYear": 2024,
+      "groupMonth": 6
+    },
+    {
+      "date": "01-07-2024",
+      "description": "Insentif ustadz dua orang",
+      "masuk": null,
+      "keluar": 300000,
+      "saldo": 8875576,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "01-07-2024",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 8675576,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "05-07-2024",
+      "description": "Koropak jum'at I",
+      "masuk": 199000,
+      "keluar": null,
+      "saldo": 8874576,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "08-07-2024",
+      "description": "Uang dari Bu Aas Sewa kompor",
+      "masuk": 50000,
+      "keluar": null,
+      "saldo": 8924576,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "12-07-2024",
+      "description": "bayar PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 8844676,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "12-07-2024",
+      "description": "Koropak jum'at II",
+      "masuk": 268000,
+      "keluar": null,
+      "saldo": 9112676,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "19-07-2024",
+      "description": "Koropak jum'at III",
+      "masuk": 162000,
+      "keluar": null,
+      "saldo": 9274676,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "24-07-2024",
+      "description": "spidol white board",
+      "masuk": null,
+      "keluar": 10000,
+      "saldo": 9264676,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "26-07-2024",
+      "description": "Koropak jum'at IV",
+      "masuk": 187500,
+      "keluar": null,
+      "saldo": 9452176,
+      "groupYear": 2024,
+      "groupMonth": 7
+    },
+    {
+      "date": "01-08-2024",
+      "description": "Insentif dua orang Ustadz",
+      "masuk": null,
+      "keluar": 300000,
+      "saldo": 9152176,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "02-08-2024",
+      "description": "Koropak jum'at I",
+      "masuk": 187000,
+      "keluar": null,
+      "saldo": 9339176,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "07-08-2024",
+      "description": "beli Dua dus airatu",
+      "masuk": null,
+      "keluar": 32000,
+      "saldo": 9307176,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "08-08-2024",
+      "description": "Percobaan Bu Elis cuci satu karpet",
+      "masuk": null,
+      "keluar": 20000,
+      "saldo": 9287176,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "09-08-2024",
+      "description": "Koropak jum'at II",
+      "masuk": 226000,
+      "keluar": null,
+      "saldo": 9513176,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "10-08-2024",
+      "description": "Beli kemoceng langit-langit 2.8meter",
+      "masuk": null,
+      "keluar": 35000,
+      "saldo": 9478176,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "12-08-2024",
+      "description": "Bayar PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 9398276,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "16-08-2024",
+      "description": "Koropak jum'at III",
+      "masuk": 162000,
+      "keluar": null,
+      "saldo": 9560276,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "23-08-2024",
+      "description": "Pembelian dispenser air galon",
+      "masuk": null,
+      "keluar": 887720,
+      "saldo": 8672556,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "23-08-2024",
+      "description": "Koropak Jum'at IV",
+      "masuk": 160000,
+      "keluar": null,
+      "saldo": 8832556,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "30-08-2024",
+      "description": "Koropak Jum'at V",
+      "masuk": 204100,
+      "keluar": null,
+      "saldo": 9036656,
+      "groupYear": 2024,
+      "groupMonth": 8
+    },
+    {
+      "date": "01-09-2024",
+      "description": "Insentif 2 ustadz @Rp150.000",
+      "masuk": null,
+      "keluar": 300000,
+      "saldo": 8736656,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "04-09-2024",
+      "description": "COD fiting S794, 4 Lobang utk dipangimaran,",
+      "masuk": null,
+      "keluar": 33639,
+      "saldo": 8703017,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "04-09-2024",
+      "description": "1Dus Airatu",
+      "masuk": null,
+      "keluar": 15000,
+      "saldo": 8688017,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "05-09-2024",
+      "description": "beli dua bungkus gelas plastik ( utk kopi)",
+      "masuk": null,
+      "keluar": 12000,
+      "saldo": 8676017,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "06-09-2024",
+      "description": "Koropak jum'at I",
+      "masuk": 204100,
+      "keluar": null,
+      "saldo": 8880117,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "11-09-2024",
+      "description": "Bayar PDAM bocor",
+      "masuk": null,
+      "keluar": 242140,
+      "saldo": 8637977,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "13-09-2024",
+      "description": "Koropak jum'at II",
+      "masuk": 216500,
+      "keluar": null,
+      "saldo": 8854477,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "15-09-2024",
+      "description": "beli viskal pembersih wc",
+      "masuk": null,
+      "keluar": 5000,
+      "saldo": 8849477,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "20-09-2024",
+      "description": "Koropak jum'at III",
+      "masuk": 225000,
+      "keluar": null,
+      "saldo": 9074477,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "20-09-2024",
+      "description": "Celengan ayam hamba Allah",
+      "masuk": 147000,
+      "keluar": null,
+      "saldo": 9221477,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "20-09-2024",
+      "description": "COD Serok Pengki Dragon",
+      "masuk": null,
+      "keluar": 54586,
+      "saldo": 9166891,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "21-09-2024",
+      "description": "Alokasi anggaran untuk acara maulid nabi",
+      "masuk": null,
+      "keluar": 2000000,
+      "saldo": 7166891,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "23-09-2024",
+      "description": "Jual beras sisa muludan 9liter@10.000",
+      "masuk": 90000,
+      "keluar": null,
+      "saldo": 7256891,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "27-09-2024",
+      "description": "Koropak jum'at IV",
+      "masuk": 198500,
+      "keluar": null,
+      "saldo": 7455391,
+      "groupYear": 2024,
+      "groupMonth": 9
+    },
+    {
+      "date": "01-10-2024",
+      "description": "Insentif 2 Ustadz @200.000",
+      "masuk": null,
+      "keluar": 400000,
+      "saldo": 7055391,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "03-10-2024",
+      "description": "Biaya cuci semua karpet",
+      "masuk": null,
+      "keluar": 300000,
+      "saldo": 6755391,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "04-10-2024",
+      "description": "Koropak jum'at I",
+      "masuk": 311500,
+      "keluar": null,
+      "saldo": 7066891,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "05-10-2024",
+      "description": "Jual 6 dus airatu sisa mulud",
+      "masuk": 90000,
+      "keluar": null,
+      "saldo": 7156891,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "10-10-2024",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 7076991,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "11-10-2024",
+      "description": "Koropak jum'at II",
+      "masuk": 209000,
+      "keluar": null,
+      "saldo": 7285991,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "18-10-2024",
+      "description": "Koropak jumat III",
+      "masuk": 210000,
+      "keluar": null,
+      "saldo": 7495991,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "25-10-2024",
+      "description": "Koropak jumat IV",
+      "masuk": 195000,
+      "keluar": null,
+      "saldo": 7690991,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "28-10-2024",
+      "description": "Beli Soklin lantai",
+      "masuk": null,
+      "keluar": 7500,
+      "saldo": 7683491,
+      "groupYear": 2024,
+      "groupMonth": 10
+    },
+    {
+      "date": "01-11-2024",
+      "description": "Insentif dua Ustadz @175.",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 7333491,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "01-11-2024",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 7233491,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "01-11-2024",
+      "description": "Koropak jum'at I",
+      "masuk": 245500,
+      "keluar": null,
+      "saldo": 7478991,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "08-11-2024",
+      "description": "Koropak jumat II",
+      "masuk": 188000,
+      "keluar": null,
+      "saldo": 7666991,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "08-11-2024",
+      "description": "PDAM jebol",
+      "masuk": null,
+      "keluar": 284260,
+      "saldo": 7382731,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "15-11-2024",
+      "description": "Koropak juma'at III",
+      "masuk": 171500,
+      "keluar": null,
+      "saldo": 7554231,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "22-11-2024",
+      "description": "Koropak juma'at IV",
+      "masuk": 267000,
+      "keluar": null,
+      "saldo": 7821231,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "29-11-2024",
+      "description": "Koropak jumat V",
+      "masuk": 159000,
+      "keluar": null,
+      "saldo": 7980231,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "01-11-2024",
+      "description": "Insentif dua Ustadz @175.000",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 7630231,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "01-11-2024",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 120000,
+      "saldo": 7510231,
+      "groupYear": 2024,
+      "groupMonth": 11
+    },
+    {
+      "date": "06-12-2024",
+      "description": "Koropak juma'at I",
+      "masuk": 133500,
+      "keluar": null,
+      "saldo": 7643731,
+      "groupYear": 2024,
+      "groupMonth": 12
+    },
+    {
+      "date": "12-12-2024",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 223420,
+      "saldo": 7420311,
+      "groupYear": 2024,
+      "groupMonth": 12
+    },
+    {
+      "date": "13-12-2024",
+      "description": "koropak Jumat II",
+      "masuk": 222000,
+      "keluar": null,
+      "saldo": 7642311,
+      "groupYear": 2024,
+      "groupMonth": 12
+    },
+    {
+      "date": "13-12-2024",
+      "description": "Dari sewa kompor smawar Bu Titin",
+      "masuk": 50000,
+      "keluar": null,
+      "saldo": 7692311,
+      "groupYear": 2024,
+      "groupMonth": 12
+    },
+    {
+      "date": "20-12-2024",
+      "description": "Koropak Jumat II",
+      "masuk": 166000,
+      "keluar": null,
+      "saldo": 7858311,
+      "groupYear": 2024,
+      "groupMonth": 12
+    },
+    {
+      "date": "27-12-2014",
+      "description": "Koropak Jumat IV",
+      "masuk": 185000,
+      "keluar": null,
+      "saldo": 8043311,
+      "groupYear": 2024,
+      "groupMonth": 12
+    },
+    {
+      "date": "01-01-2025",
+      "description": "Insentif 2 ustadz @Rp175.000.",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 7693311,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "01-01-2025",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 125000,
+      "saldo": 7568311,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "03-01-2025",
+      "description": "Koropak Jumat I",
+      "masuk": 399000,
+      "keluar": null,
+      "saldo": 7967311,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "10-01-2025",
+      "description": "Koropak Jumat II",
+      "masuk": 228000,
+      "keluar": null,
+      "saldo": 8195311,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "12-01-2025",
+      "description": "Pembelian Hiasan Kaligrafi",
+      "masuk": null,
+      "keluar": 411000,
+      "saldo": 7784311,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "13-01-2025",
+      "description": "bayar PDAM",
+      "masuk": null,
+      "keluar": 150100,
+      "saldo": 7634211,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "13-01-2025",
+      "description": "Pembelian mimbar kayu jati",
+      "masuk": null,
+      "keluar": 1900000,
+      "saldo": 5734211,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "17-01-2025",
+      "description": "Koropak Jumat III",
+      "masuk": 195500,
+      "keluar": null,
+      "saldo": 5929711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "18-01-2025",
+      "description": "Beli sapu dan kanebo @Rp 15.000",
+      "masuk": null,
+      "keluar": 30000,
+      "saldo": 5899711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "23-01-2025",
+      "description": "Beli tinta isi ulang untuk white board spidol",
+      "masuk": null,
+      "keluar": 20000,
+      "saldo": 5879711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "24-01-2025",
+      "description": "Koropak Jumat IV",
+      "masuk": 152000,
+      "keluar": null,
+      "saldo": 6031711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "25-01-2025",
+      "description": "1 pak Amplop",
+      "masuk": null,
+      "keluar": 15000,
+      "saldo": 6016711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "25-01-2025",
+      "description": "4pc balpoin untuk para ket Rt",
+      "masuk": null,
+      "keluar": 12000,
+      "saldo": 6004711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "26-01-2025",
+      "description": "Pengeluaran Rajaban",
+      "masuk": null,
+      "keluar": 1500000,
+      "saldo": 4504711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "27-01-2025",
+      "description": "jual 5,5Lt beras sisa rojaban",
+      "masuk": 55000,
+      "keluar": null,
+      "saldo": 4559711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "31-01-2025",
+      "description": "Koropak Jumat V",
+      "masuk": 347000,
+      "keluar": null,
+      "saldo": 4906711,
+      "groupYear": 2025,
+      "groupMonth": 1
+    },
+    {
+      "date": "01-02-2025",
+      "description": "Insentif 2 Ustadz",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 4556711,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "01-02-2025",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 125000,
+      "saldo": 4431711,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "01-02-2025",
+      "description": "Beli So klin lantai",
+      "masuk": null,
+      "keluar": 8500,
+      "saldo": 4423211,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "05-02-2025",
+      "description": "beli lakban anti bocor waterproofing 5mx50cm",
+      "masuk": null,
+      "keluar": 134856,
+      "saldo": 4288355,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "07-01-2025",
+      "description": "Koropak jumat I",
+      "masuk": 241000,
+      "keluar": null,
+      "saldo": 4529355,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "14-02-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 4449455,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "14-02-2025",
+      "description": "Koropak jum'at II",
+      "masuk": 233000,
+      "keluar": null,
+      "saldo": 4682455,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "21-02-2025",
+      "description": "Koropak jumat III",
+      "masuk": 216500,
+      "keluar": null,
+      "saldo": 4898955,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "28-02-2025",
+      "description": "Koropak Jumat IV",
+      "masuk": 244000,
+      "keluar": null,
+      "saldo": 5142955,
+      "groupYear": 2025,
+      "groupMonth": 2
+    },
+    {
+      "date": "01-03-2025",
+      "description": "Insentif ustadz dua orang @175.000",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 4792955,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-03-2025",
+      "description": "Insentif Marbot",
+      "masuk": null,
+      "keluar": 125000,
+      "saldo": 4667955,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "07-03-2025",
+      "description": "Koropak jumat I",
+      "masuk": 137000,
+      "keluar": null,
+      "saldo": 4804955,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "14-03-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 204700,
+      "saldo": 4600255,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "14-03-2025",
+      "description": "beli dua keran @10.000",
+      "masuk": null,
+      "keluar": 20000,
+      "saldo": 4580255,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "14-03-2025",
+      "description": "Koropak jumat II",
+      "masuk": 156500,
+      "keluar": null,
+      "saldo": 4736755,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "21-03-2025",
+      "description": "Koropak jumat III",
+      "masuk": 194000,
+      "keluar": null,
+      "saldo": 4930755,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "28-05-2025",
+      "description": "Koropak jumat IV",
+      "masuk": 252000,
+      "keluar": null,
+      "saldo": 5182755,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "31-03-2025",
+      "description": "Koropak iedul Fitri",
+      "masuk": 1033000,
+      "keluar": null,
+      "saldo": 6215755,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "31-03-2025",
+      "description": "Insentif iedul Fitri buat 2 Ustadz @100.000",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 6015755,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "31-03-2025",
+      "description": "insentif marbot & asisten (mg Endut @50.000",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 5915755,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "31-03-2025",
+      "description": "insentif imam ied",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 5815755,
+      "groupYear": 2025,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-04-2025",
+      "description": "Insentif bulanan ustadz",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 5465755,
+      "groupYear": 2025,
+      "groupMonth": 4
+    },
+    {
+      "date": "01-04-2025",
+      "description": "Insentif bulanan marbot",
+      "masuk": null,
+      "keluar": 125000,
+      "saldo": 5340755,
+      "groupYear": 2025,
+      "groupMonth": 4
+    },
+    {
+      "date": "04-04-2025",
+      "description": "Koropak jumat I",
+      "masuk": 344500,
+      "keluar": null,
+      "saldo": 5685255,
+      "groupYear": 2025,
+      "groupMonth": 4
+    },
+    {
+      "date": "11-04-2025",
+      "description": "Koropak jumat II",
+      "masuk": 228000,
+      "keluar": null,
+      "saldo": 5913255,
+      "groupYear": 2025,
+      "groupMonth": 4
+    },
+    {
+      "date": "14-04-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 176620,
+      "saldo": 5736635,
+      "groupYear": 2025,
+      "groupMonth": 4
+    },
+    {
+      "date": "18-04-2025",
+      "description": "Koropak jumat III",
+      "masuk": 257000,
+      "keluar": null,
+      "saldo": 5993635,
+      "groupYear": 2025,
+      "groupMonth": 4
+    },
+    {
+      "date": "25-04-2025",
+      "description": "Koropak jumat IV",
+      "masuk": 180000,
+      "keluar": null,
+      "saldo": 6173635,
+      "groupYear": 2025,
+      "groupMonth": 4
+    },
+    {
+      "date": "01-05-2025",
+      "description": "Insentif ustadz @175rb",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 5823635,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "01-05-2025",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 135000,
+      "saldo": 5688635,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "02-04-2025",
+      "description": "Koropak jumat I",
+      "masuk": 165500,
+      "keluar": null,
+      "saldo": 5854135,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "09-05-2025",
+      "description": "Koropak jumat II",
+      "masuk": 605000,
+      "keluar": null,
+      "saldo": 6459135,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "13-05-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 393460,
+      "saldo": 6065675,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "16-05-2015",
+      "description": "Koropak jumat III",
+      "masuk": 166000,
+      "keluar": null,
+      "saldo": 6231675,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "26-04-2015",
+      "description": "Pembelian Torn Air & Pelampung Otomatis",
+      "masuk": null,
+      "keluar": 2093000,
+      "saldo": 4138675,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "21-05-2025",
+      "description": "Beli So klin lantai",
+      "masuk": null,
+      "keluar": 7000,
+      "saldo": 4131675,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "23-05-2025",
+      "description": "Koropak jumat IV",
+      "masuk": 157000,
+      "keluar": null,
+      "saldo": 4288675,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "30-05-2025",
+      "description": "Koropak jumat V",
+      "masuk": 162000,
+      "keluar": null,
+      "saldo": 4450675,
+      "groupYear": 2025,
+      "groupMonth": 5
+    },
+    {
+      "date": "01-06-2025",
+      "description": "Insentif ustadz",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 4100675,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "01-06-2025",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 135000,
+      "saldo": 3965675,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "06-06-2025",
+      "description": "Koropak iedul adhha",
+      "masuk": 386000,
+      "keluar": null,
+      "saldo": 4351675,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "06-06-2025",
+      "description": "Imam dan khotib Idul adhha",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 4151675,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "07-06-2025",
+      "description": "beli TtimbanganDigitalBenz.DanPandascale",
+      "masuk": null,
+      "keluar": 349900,
+      "saldo": 3801775,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "10-06-2025",
+      "description": "bongkar Koropak jumat I",
+      "masuk": 84000,
+      "keluar": null,
+      "saldo": 3885775,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "11-06-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 251500,
+      "saldo": 3634275,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "13-06-2025",
+      "description": "Koropak jumat II",
+      "masuk": 165500,
+      "keluar": null,
+      "saldo": 3799775,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "20-06-2025",
+      "description": "Koropak jumat III",
+      "masuk": 196000,
+      "keluar": null,
+      "saldo": 3995775,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "27-06-2025",
+      "description": "Koropak jumat IV",
+      "masuk": 218000,
+      "keluar": null,
+      "saldo": 4213775,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "01-06-2025",
+      "description": "insentif dua ustadz",
+      "masuk": null,
+      "keluar": 350000,
+      "saldo": 3863775,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "01-06-2025",
+      "description": "insentif marbot",
+      "masuk": null,
+      "keluar": 135000,
+      "saldo": 3728775,
+      "groupYear": 2025,
+      "groupMonth": 6
+    },
+    {
+      "date": "04-07-2025",
+      "description": "Koropak jumat I",
+      "masuk": 241500,
+      "keluar": null,
+      "saldo": 3970275,
+      "groupYear": 2025,
+      "groupMonth": 7
+    },
+    {
+      "date": "10-07-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 3890375,
+      "groupYear": 2025,
+      "groupMonth": 7
+    },
+    {
+      "date": "11-07-2025",
+      "description": "Koropak jumat II",
+      "masuk": 233000,
+      "keluar": null,
+      "saldo": 4123375,
+      "groupYear": 2025,
+      "groupMonth": 7
+    },
+    {
+      "date": "18-07-2025",
+      "description": "Koropak jumat III",
+      "masuk": 83000,
+      "keluar": null,
+      "saldo": 4206375,
+      "groupYear": 2025,
+      "groupMonth": 7
+    },
+    {
+      "date": "25-07-2025",
+      "description": "Koropak jumat IV",
+      "masuk": 207000,
+      "keluar": null,
+      "saldo": 4413375,
+      "groupYear": 2025,
+      "groupMonth": 7
+    },
+    {
+      "date": "01-08-2025",
+      "description": "Insentif ustadz @180.000",
+      "masuk": null,
+      "keluar": 360000,
+      "saldo": 4053375,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "01-08-2025",
+      "description": "Insentif  Marbot",
+      "masuk": null,
+      "keluar": 140000,
+      "saldo": 3913375,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "01-08-2025",
+      "description": "Koropak jumat I",
+      "masuk": 188000,
+      "keluar": null,
+      "saldo": 4101375,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "08-08-2025",
+      "description": "Koropak jumat II",
+      "masuk": 184000,
+      "keluar": null,
+      "saldo": 4285375,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "14-08-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 87700,
+      "saldo": 4197675,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "15-08-2025",
+      "description": "Koropak jumat II",
+      "masuk": 103500,
+      "keluar": null,
+      "saldo": 4301175,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "20-08-2025",
+      "description": "Beli sapu plastik",
+      "masuk": null,
+      "keluar": 25000,
+      "saldo": 4276175,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "22-08-2025",
+      "description": "Koropak jumat III",
+      "masuk": 243000,
+      "keluar": null,
+      "saldo": 4519175,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "28-08-2025",
+      "description": "Beli rak besi 5 susun untuk di gudang",
+      "masuk": null,
+      "keluar": 526772,
+      "saldo": 3992403,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "29-08-2025",
+      "description": "Kotak jumat IV",
+      "masuk": 158000,
+      "keluar": null,
+      "saldo": 4150403,
+      "groupYear": 2025,
+      "groupMonth": 8
+    },
+    {
+      "date": "05-09-2025",
+      "description": "Kotak jumat I",
+      "masuk": 172000,
+      "keluar": null,
+      "saldo": 4322403,
+      "groupYear": 2025,
+      "groupMonth": 9
+    },
+    {
+      "date": "07-09-2025",
+      "description": "beli sapu lidi",
+      "masuk": null,
+      "keluar": 5000,
+      "saldo": 4317403,
+      "groupYear": 2025,
+      "groupMonth": 9
+    },
+    {
+      "date": "12-09-2025",
+      "description": "Kotak jumat II",
+      "masuk": 79000,
+      "keluar": null,
+      "saldo": 4396403,
+      "groupYear": 2025,
+      "groupMonth": 9
+    },
+    {
+      "date": "15-09-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 4316503,
+      "groupYear": 2025,
+      "groupMonth": 9
+    },
+    {
+      "date": "19-09-2025",
+      "description": "Kotak jumat III",
+      "masuk": 160500,
+      "keluar": null,
+      "saldo": 4477003,
+      "groupYear": 2025,
+      "groupMonth": 9
+    },
+    {
+      "date": "26-09-2025",
+      "description": "Kotak jumat IV",
+      "masuk": 158000,
+      "keluar": null,
+      "saldo": 4635003,
+      "groupYear": 2025,
+      "groupMonth": 9
+    },
+    {
+      "date": "27-09-2025",
+      "description": "Beli Lemari kitab-kitab dan peralatan mesjid",
+      "masuk": null,
+      "keluar": 1381200,
+      "saldo": 3253803,
+      "groupYear": 2025,
+      "groupMonth": 9
+    },
+    {
+      "date": "01-10-2025",
+      "description": "Insentif ustadz dan marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 2753803,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "01-10-2025",
+      "description": "Wipol karbol R750, dan so klin lantai R700",
+      "masuk": null,
+      "keluar": 30000,
+      "saldo": 2723803,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "02-10-2025",
+      "description": "Beli speaker toa. zh 5050m",
+      "masuk": null,
+      "keluar": 1154640,
+      "saldo": 1569163,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "03-10-2025",
+      "description": "Kotak jumat I",
+      "masuk": 156000,
+      "keluar": null,
+      "saldo": 1725163,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "10-10-2025",
+      "description": "Kotak jumat II",
+      "masuk": 154000,
+      "keluar": null,
+      "saldo": 1879163,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "13-10-2025",
+      "description": "Beli 1pc keran",
+      "masuk": null,
+      "keluar": 10000,
+      "saldo": 1869163,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "15-10-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 1789263,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "17-10-2025",
+      "description": "kotak jumat III",
+      "masuk": 121000,
+      "keluar": null,
+      "saldo": 1910263,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "22-10-2025",
+      "description": "beli Lampu emergency",
+      "masuk": null,
+      "keluar": 55000,
+      "saldo": 1855263,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "24-10-2025",
+      "description": "kotak jumat III",
+      "masuk": 138500,
+      "keluar": null,
+      "saldo": 1993763,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "31-10-2025",
+      "description": "Kotak jumat IV",
+      "masuk": 159000,
+      "keluar": null,
+      "saldo": 2152763,
+      "groupYear": 2025,
+      "groupMonth": 10
+    },
+    {
+      "date": "01-11-2025",
+      "description": "insentif ustadz & marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 1652763,
+      "groupYear": 2025,
+      "groupMonth": 11
+    },
+    {
+      "date": "07-11-2025",
+      "description": "Kotak jumat I",
+      "masuk": 163000,
+      "keluar": null,
+      "saldo": 1815763,
+      "groupYear": 2025,
+      "groupMonth": 11
+    },
+    {
+      "date": "12-11-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 118900,
+      "saldo": 1696863,
+      "groupYear": 2025,
+      "groupMonth": 11
+    },
+    {
+      "date": "14-11-2025",
+      "description": "Kotak jumat II",
+      "masuk": 355000,
+      "keluar": null,
+      "saldo": 2051863,
+      "groupYear": 2025,
+      "groupMonth": 11
+    },
+    {
+      "date": "21-11-2025",
+      "description": "Kotak jumat III",
+      "masuk": 126000,
+      "keluar": null,
+      "saldo": 2177863,
+      "groupYear": 2025,
+      "groupMonth": 11
+    },
+    {
+      "date": "28-11-2025",
+      "description": "kotak jumat IV",
+      "masuk": 140500,
+      "keluar": null,
+      "saldo": 2318363,
+      "groupYear": 2025,
+      "groupMonth": 11
+    },
+    {
+      "date": "01-12-2025",
+      "description": "Insentif ustadz &marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 1818363,
+      "groupYear": 2025,
+      "groupMonth": 12
+    },
+    {
+      "date": "01-12-2025",
+      "description": "COD jek output ke salon speaker imam",
+      "masuk": null,
+      "keluar": 10000,
+      "saldo": 1808363,
+      "groupYear": 2025,
+      "groupMonth": 12
+    },
+    {
+      "date": "05-12-2025",
+      "description": "Koropak jumat I",
+      "masuk": 173500,
+      "keluar": null,
+      "saldo": 1981863,
+      "groupYear": 2025,
+      "groupMonth": 12
+    },
+    {
+      "date": "12-12-2025",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 1901963,
+      "groupYear": 2025,
+      "groupMonth": 12
+    },
+    {
+      "date": "12-12-2025",
+      "description": "Kotak jumat II",
+      "masuk": 154000,
+      "keluar": null,
+      "saldo": 2055963,
+      "groupYear": 2025,
+      "groupMonth": 12
+    },
+    {
+      "date": "19-12-2025",
+      "description": "Kotak jumat III",
+      "masuk": 225500,
+      "keluar": null,
+      "saldo": 2281463,
+      "groupYear": 2025,
+      "groupMonth": 12
+    },
+    {
+      "date": "26-12-2025",
+      "description": "Kotak jumat IV",
+      "masuk": 173500,
+      "keluar": null,
+      "saldo": 2454963,
+      "groupYear": 2025,
+      "groupMonth": 12
+    },
+    {
+      "date": "01-01-2026",
+      "description": "Insentif ustadz dan marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 1954963,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "02-01-2026",
+      "description": "Kotak jumat I",
+      "masuk": 359000,
+      "keluar": null,
+      "saldo": 2313963,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "08-01-2026",
+      "description": "So klin lantai 800ml",
+      "masuk": null,
+      "keluar": 17000,
+      "saldo": 2296963,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "08-01-2026",
+      "description": "Tinta snowman white board",
+      "masuk": null,
+      "keluar": 20000,
+      "saldo": 2276963,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "09-01-2026",
+      "description": "Kotak jumat II",
+      "masuk": 173500,
+      "keluar": null,
+      "saldo": 2450463,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "10-01-2026",
+      "description": "Beli burner komporgas cod",
+      "masuk": null,
+      "keluar": 17500,
+      "saldo": 2432963,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "14-01-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 2353063,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "16-01-2025",
+      "description": "Kotak jumat II",
+      "masuk": 276000,
+      "keluar": null,
+      "saldo": 2629063,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "23-01-2026",
+      "description": "kotak jumat III",
+      "masuk": 153000,
+      "keluar": null,
+      "saldo": 2782063,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "27-01-2026",
+      "description": "Beli 2pc keran @10.000",
+      "masuk": null,
+      "keluar": 20000,
+      "saldo": 2762063,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "30-01-2026",
+      "description": "kotak jumat IV",
+      "masuk": 161000,
+      "keluar": null,
+      "saldo": 2923063,
+      "groupYear": 2026,
+      "groupMonth": 1
+    },
+    {
+      "date": "01-02-2026",
+      "description": "Insentif ustadz & marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 2423063,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "02-02-2026",
+      "description": "spidol white board",
+      "masuk": null,
+      "keluar": 10000,
+      "saldo": 2413063,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "06-02-2026",
+      "description": "Kotak jumat I",
+      "masuk": 124000,
+      "keluar": null,
+      "saldo": 2537063,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "09-02-2026",
+      "description": "lampu wc 20 watt",
+      "masuk": null,
+      "keluar": 15000,
+      "saldo": 2522063,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "11-02-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 2442163,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "11-02-2026",
+      "description": "COD kulit bedug",
+      "masuk": null,
+      "keluar": 269250,
+      "saldo": 2172913,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "11-02-2026",
+      "description": "COD kabel mikropon standar japan 10 meter",
+      "masuk": null,
+      "keluar": 160600,
+      "saldo": 2012313,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "13-02-2026",
+      "description": "kotak jumat II",
+      "masuk": 276000,
+      "keluar": null,
+      "saldo": 2288313,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "20-02-2026",
+      "description": "Kotak jumat III",
+      "masuk": 105000,
+      "keluar": null,
+      "saldo": 2393313,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "20-02-2026",
+      "description": "Bengkel microphone mg Roki",
+      "masuk": null,
+      "keluar": 50000,
+      "saldo": 2343313,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "27-02-2026",
+      "description": "kotak jumat IV",
+      "masuk": 220000,
+      "keluar": null,
+      "saldo": 2563313,
+      "groupYear": 2026,
+      "groupMonth": 2
+    },
+    {
+      "date": "01-03-2026",
+      "description": "insentif ustadz dan  marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 2063313,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "03-03-2026",
+      "description": "Beli 1 iket kawat tali bedug toko pencay",
+      "masuk": null,
+      "keluar": 25000,
+      "saldo": 2038313,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "03-03-2026",
+      "description": "Nitto lakban listrik  3/4",
+      "masuk": null,
+      "keluar": 12500,
+      "saldo": 2025813,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "06-03-2026",
+      "description": "Upah pasang kulit bedug ( bah Dasep & Mg Endut)",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 1925813,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "06-03-2026",
+      "description": "Kotak jumat I",
+      "masuk": 147000,
+      "keluar": null,
+      "saldo": 2072813,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "13-03-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 111100,
+      "saldo": 1961713,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "13-03-2026",
+      "description": "Kotak jumat II",
+      "masuk": 245000,
+      "keluar": null,
+      "saldo": 2206713,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "20-03-2026",
+      "description": "Kotak jumat III",
+      "masuk": 272000,
+      "keluar": null,
+      "saldo": 2478713,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "21-03-2026",
+      "description": "Kotak idul fitri",
+      "masuk": 940500,
+      "keluar": null,
+      "saldo": 3419213,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "",
+      "description": "Insentif dua Ustadz, @100rb",
+      "masuk": null,
+      "keluar": 200000,
+      "saldo": 3219213,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "",
+      "description": "Insentif Imam, Ust Sumitra",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 3119213,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "",
+      "description": "Insentif marbot",
+      "masuk": null,
+      "keluar": 50000,
+      "saldo": 3069213,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "27-03-2026",
+      "description": "Kotak jumat IV",
+      "masuk": 156500,
+      "keluar": null,
+      "saldo": 3225713,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "31-03-2026",
+      "description": "COD 1 PC rekal alquran",
+      "masuk": null,
+      "keluar": 22000,
+      "saldo": 3203713,
+      "groupYear": 2026,
+      "groupMonth": 3
+    },
+    {
+      "date": "01-04-2026",
+      "description": "insentif ustadz dan marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 2703713,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "03-04-2026",
+      "description": "Kotak jumat I",
+      "masuk": 221500,
+      "keluar": null,
+      "saldo": 2925213,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "10-04-2026",
+      "description": "Kotak jumat II",
+      "masuk": 479000,
+      "keluar": null,
+      "saldo": 3404213,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "10-04-2026",
+      "description": "konsumsi bakti II (rokok belanja Pk Armat",
+      "masuk": null,
+      "keluar": 29000,
+      "saldo": 3375213,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "14-04-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 150100,
+      "saldo": 3225113,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "17-04-2026",
+      "description": "Kotak jumat III",
+      "masuk": 206500,
+      "keluar": null,
+      "saldo": 3431613,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "17-04-2026",
+      "description": "Konsumsi bakti jumat III belanja DZ",
+      "masuk": null,
+      "keluar": 73000,
+      "saldo": 3358613,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "20-04-2026",
+      "description": "So klin lantai",
+      "masuk": null,
+      "keluar": 17000,
+      "saldo": 3341613,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "24-04-2026",
+      "description": "Konsumsi bakti",
+      "masuk": null,
+      "keluar": 97000,
+      "saldo": 3244613,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "24-04-2026",
+      "description": "Rokok kopi stok.",
+      "masuk": null,
+      "keluar": 129000,
+      "saldo": 3115613,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "24-04-2026",
+      "description": "KotAk jumat IV",
+      "masuk": 179000,
+      "keluar": null,
+      "saldo": 3294613,
+      "groupYear": 2026,
+      "groupMonth": 4
+    },
+    {
+      "date": "01-05-2026",
+      "description": "Insentif Ust&Mar",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 2794613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "01-05-2026",
+      "description": "Belanja dapur rokok kopi",
+      "masuk": null,
+      "keluar": 162000,
+      "saldo": 2632613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "01-05-2026",
+      "description": "Kotak jumat I",
+      "masuk": 215000,
+      "keluar": null,
+      "saldo": 2847613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "08-05-2026",
+      "description": "Beli Triplek bor informasi renovasi toko bu Neng",
+      "masuk": null,
+      "keluar": 145000,
+      "saldo": 2702613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "08-05-2026",
+      "description": "Bumbu masak bakti dll",
+      "masuk": null,
+      "keluar": 42000,
+      "saldo": 2660613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "08-05-2026",
+      "description": "Kotak jumat II",
+      "masuk": 174000,
+      "keluar": null,
+      "saldo": 2834613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "10-05-2026",
+      "description": "Mama lemon besar untuk cuci piring bakti",
+      "masuk": null,
+      "keluar": 15000,
+      "saldo": 2819613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "14-05-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 80000,
+      "saldo": 2739613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "15-05-2026",
+      "description": "Konsumsi. bumbu rokok kopi",
+      "masuk": null,
+      "keluar": 150000,
+      "saldo": 2589613,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "15-05-2026",
+      "description": "Kotak jumat III",
+      "masuk": 152500,
+      "keluar": null,
+      "saldo": 2742113,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "22-05-2026",
+      "description": "Gas3kg. bumbu roko kopi bakti",
+      "masuk": null,
+      "keluar": 105000,
+      "saldo": 2637113,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "22-05-2026",
+      "description": "kotak jumat Iv",
+      "masuk": 177000,
+      "keluar": null,
+      "saldo": 2814113,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "27-05-2026",
+      "description": "kotak idul adha",
+      "masuk": 679000,
+      "keluar": null,
+      "saldo": 3493113,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "29-05-2026",
+      "description": "insentif imam khotib marbot idul adha",
+      "masuk": null,
+      "keluar": 250000,
+      "saldo": 3243113,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "29-05-2026",
+      "description": "Kotak jumat IV",
+      "masuk": 140000,
+      "keluar": null,
+      "saldo": 3383113,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "29-05-2026",
+      "description": "beli 1pk amplop +spidol white board",
+      "masuk": null,
+      "keluar": 28000,
+      "saldo": 3355113,
+      "groupYear": 2026,
+      "groupMonth": 5
+    },
+    {
+      "date": "01-06-2026",
+      "description": "Insentif ustadz dan marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 2855113,
+      "groupYear": 2026,
+      "groupMonth": 6
+    },
+    {
+      "date": "05-06-2026",
+      "description": "Kotak jumat I",
+      "masuk": 177000,
+      "keluar": null,
+      "saldo": 3032113,
+      "groupYear": 2026,
+      "groupMonth": 6
+    },
+    {
+      "date": "12-06-2026",
+      "description": "Kotak jum'at II",
+      "masuk": 173000,
+      "keluar": null,
+      "saldo": 3205113,
+      "groupYear": 2026,
+      "groupMonth": 6
+    },
+    {
+      "date": "15-06-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 134500,
+      "saldo": 3070613,
+      "groupYear": 2026,
+      "groupMonth": 6
+    },
+    {
+      "date": "19-06-2026",
+      "description": "Kotak jum'at III",
+      "masuk": 194500,
+      "keluar": null,
+      "saldo": 3265113,
+      "groupYear": 2026,
+      "groupMonth": 6
+    },
+    {
+      "date": "19-06-2026",
+      "description": "beli 10 pc karet silikon keran",
+      "masuk": null,
+      "keluar": 6890,
+      "saldo": 3258223,
+      "groupYear": 2026,
+      "groupMonth": 6
+    },
+    {
+      "date": "24-06-2026",
+      "description": "Beli kabel microphone canare 10 m",
+      "masuk": null,
+      "keluar": 134100,
+      "saldo": 3124123,
+      "groupYear": 2026,
+      "groupMonth": 6
+    },
+    {
+      "date": "26-06-2026",
+      "description": "Kotak juga Jumat IV",
+      "masuk": 221000,
+      "keluar": null,
+      "saldo": 3345123,
+      "groupYear": 2026,
+      "groupMonth": 6
+    },
+    {
+      "date": "01-07-2027",
+      "description": "Insentif Ustadz dan marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 2845123,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "03-06-2026",
+      "description": "Koropak jumat I",
+      "masuk": 221000,
+      "keluar": null,
+      "saldo": 3066123,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "10-07-2026",
+      "description": "Koropak jumat II",
+      "masuk": 182000,
+      "keluar": null,
+      "saldo": 3248123,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "13-07-2026",
+      "description": "beli bulkhead, selotip, lem, sok drat, alat-alat torn",
+      "masuk": null,
+      "keluar": 43850,
+      "saldo": 3204273,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "14-07-2026",
+      "description": "PDAM msjid",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 3124373,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "17-07-2026",
+      "description": "kotak jumat III",
+      "masuk": 186000,
+      "keluar": null,
+      "saldo": 3310373,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "24-07-2026",
+      "description": "Kotak jumat IV",
+      "masuk": 168000,
+      "keluar": null,
+      "saldo": 3478373,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "31-07-2026",
+      "description": "3 bungkus jarcok bakti, asin dan sambeleun",
+      "masuk": null,
+      "keluar": 74000,
+      "saldo": 3404373,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "31-07-2026",
+      "description": "Kotak jumat V",
+      "masuk": 187500,
+      "keluar": null,
+      "saldo": 3591873,
+      "groupYear": 2026,
+      "groupMonth": 7
+    },
+    {
+      "date": "01-08-2026",
+      "description": "Insentif Ustadz dan marbut",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 3091873,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "03-08-2026",
+      "description": "COD artco gerobak sorong original",
+      "masuk": null,
+      "keluar": 871300,
+      "saldo": 2220573,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "07-08-2026",
+      "description": "Belanja bakti 3 jarcok, asin, sambel, trigu, minyak sayur",
+      "masuk": null,
+      "keluar": 90000,
+      "saldo": 2130573,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "07-08-2026",
+      "description": "Kotak jumat I",
+      "masuk": 174000,
+      "keluar": null,
+      "saldo": 2304573,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "14-08-2026",
+      "description": "konsumsi bakti cor tutup got 3 jcoklat. dll",
+      "masuk": null,
+      "keluar": 99000,
+      "saldo": 2205573,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "14-08-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 2125673,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "14-09-2026",
+      "description": "Kotak jumat II",
+      "masuk": 219500,
+      "keluar": null,
+      "saldo": 2345173,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "21-08-2026",
+      "description": "Kotak jumat III",
+      "masuk": 150500,
+      "keluar": null,
+      "saldo": 2495673,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "28-08-2026",
+      "description": "insentif ustadz sukawayana",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 2395673,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "28-09-2026",
+      "description": "Kotak jumat IV",
+      "masuk": 150000,
+      "keluar": null,
+      "saldo": 2545673,
+      "groupYear": 2026,
+      "groupMonth": 8
+    },
+    {
+      "date": "01-09-2026",
+      "description": "Insentif dua ustadz  @180.000",
+      "masuk": null,
+      "keluar": 360000,
+      "saldo": 2185673,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "01-09-2026",
+      "description": "insentif marbot",
+      "masuk": null,
+      "keluar": 140000,
+      "saldo": 2045673,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "04-09-2026",
+      "description": "Kotak Jumat",
+      "masuk": 139500,
+      "keluar": null,
+      "saldo": 2185173,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "04-09-2026",
+      "description": "COD sok lin lantai",
+      "masuk": null,
+      "keluar": 10500,
+      "saldo": 2174673,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "05-09-2026",
+      "description": "saklar dua knop",
+      "masuk": null,
+      "keluar": 22000,
+      "saldo": 2152673,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "05-09-2026",
+      "description": "Subsidi muludan",
+      "masuk": null,
+      "keluar": 550000,
+      "saldo": 1602673,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "05-09-2026",
+      "description": "Beli baskom untuk rojaban muludan",
+      "masuk": null,
+      "keluar": 112000,
+      "saldo": 1490673,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "11-09-2026",
+      "description": "Kotak jumat II",
+      "masuk": 149000,
+      "keluar": null,
+      "saldo": 1639673,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "15-09-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 1559773,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "18-09-2026",
+      "description": "Kotak jumat III",
+      "masuk": 108000,
+      "keluar": null,
+      "saldo": 1667773,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "25-09-2026",
+      "description": "Kotak jumat IV",
+      "masuk": 217000,
+      "keluar": null,
+      "saldo": 1884773,
+      "groupYear": 2026,
+      "groupMonth": 9
+    },
+    {
+      "date": "01-10-2026",
+      "description": "Insentif ustadz dan marbot",
+      "masuk": null,
+      "keluar": 500000,
+      "saldo": 1384773,
+      "groupYear": 2026,
+      "groupMonth": 10
+    },
+    {
+      "date": "02-10-2026",
+      "description": "kotak jumat I",
+      "masuk": 94500,
+      "keluar": null,
+      "saldo": 1479273,
+      "groupYear": 2026,
+      "groupMonth": 10
+    },
+    {
+      "date": "09-10-2026",
+      "description": "Kotak jumat II",
+      "masuk": 133000,
+      "keluar": null,
+      "saldo": 1612273,
+      "groupYear": 2026,
+      "groupMonth": 10
+    },
+    {
+      "date": "14-10-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 1532373,
+      "groupYear": 2026,
+      "groupMonth": 10
+    },
+    {
+      "date": "16-10-2026",
+      "description": "Kotak jumat III",
+      "masuk": 88000,
+      "keluar": null,
+      "saldo": 1620373,
+      "groupYear": 2026,
+      "groupMonth": 10
+    },
+    {
+      "date": "23-10-2026",
+      "description": "Kotak jumat IV",
+      "masuk": 150000,
+      "keluar": null,
+      "saldo": 1770373,
+      "groupYear": 2026,
+      "groupMonth": 10
+    },
+    {
+      "date": "30-10-2026",
+      "description": "Kotak jum'at V",
+      "masuk": 68000,
+      "keluar": null,
+      "saldo": 1838373,
+      "groupYear": 2026,
+      "groupMonth": 10
+    },
+    {
+      "date": "01-11-2026",
+      "description": "Insentif dua kgotib /ustadz @150.000",
+      "masuk": null,
+      "keluar": 300000,
+      "saldo": 1538373,
+      "groupYear": 2026,
+      "groupMonth": 11
+    },
+    {
+      "date": "01-11-2026",
+      "description": "insentif Marbot",
+      "masuk": null,
+      "keluar": 100000,
+      "saldo": 1438373,
+      "groupYear": 2026,
+      "groupMonth": 11
+    },
+    {
+      "date": "06-11-2026",
+      "description": "Annaba sewa prabot",
+      "masuk": 50000,
+      "keluar": null,
+      "saldo": 1488373,
+      "groupYear": 2026,
+      "groupMonth": 11
+    },
+    {
+      "date": "06-11-2026",
+      "description": "Kotak jum'at I",
+      "masuk": 108000,
+      "keluar": null,
+      "saldo": 1596373,
+      "groupYear": 2026,
+      "groupMonth": 11
+    },
+    {
+      "date": "13-11-2026",
+      "description": "PDAM",
+      "masuk": null,
+      "keluar": 79900,
+      "saldo": 1516473,
+      "groupYear": 2026,
+      "groupMonth": 11
+    },
+    {
+      "date": "13-11-2026",
+      "description": "Kotak jum'at II",
+      "masuk": 87500,
+      "keluar": null,
+      "saldo": 1603973,
+      "groupYear": 2026,
+      "groupMonth": 11
+    }
+  ]
+}
