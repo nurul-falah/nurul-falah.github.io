@@ -15,6 +15,9 @@ import {
   Landmark,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import kotakAmal from "@/data/kotakAmal.json";
+import bangunanMasjid from "@/data/bangunanMasjid.json";
+import { KasLedgerSection } from "./KasLedgerSection";
 
 export interface PendanaanSectionProps {
   onOpenWakaf?: () => void;
@@ -262,6 +265,9 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
           </div>
         </div>
       )}
+
+      <KasLedgerSection data={kotakAmal} variant="kotak" />
+      <KasLedgerSection data={bangunanMasjid} variant="bangunan" />
 
       {/* Summary Action Banner */}
       <div className="bg-gradient-to-br from-[#064e3b] via-[#047857] to-emerald-950 rounded-2xl text-white p-6 sm:p-8 shadow-xl border border-emerald-700/50 flex flex-col lg:flex-row items-center justify-between gap-6">
