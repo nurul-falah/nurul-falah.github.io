@@ -1,5 +1,6 @@
 import React from "react";
 import { ChevronDown, CalendarDays, Wallet } from "lucide-react";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface LedgerEntry {
   no?: string;
@@ -128,6 +129,8 @@ export function KasLedgerSection({
   data: LedgerReport;
   variant: "kotak" | "bangunan";
 }) {
+  const { tx, locale } = useI18n();
+
   const groups = React.useMemo(() => groupEntries(data.entries), [data.entries]);
   const [openYears, setOpenYears] = React.useState<Set<number>>(
     () => new Set(data.defaultExpandedYears),
@@ -165,38 +168,38 @@ export function KasLedgerSection({
         <div>
           <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1.5">
             <Wallet className="w-3.5 h-3.5 text-emerald-600" />
-            {data.subtitle}
+            {tx(data.subtitle)}
           </div>
-          <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5">{data.title}</h3>
+          <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5">{tx(data.title)}</h3>
         </div>
         <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-600 bg-slate-50 px-3 py-1 rounded-full border border-slate-200 self-start">
           <CalendarDays className="w-3.5 h-3.5 text-emerald-600" />
-          Per {data.asOf}
+          {tx("Per {date}", { date: data.asOf })}
         </span>
       </div>
 
       <div className={`grid grid-cols-2 ${data.openingBalance != null ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-3 mb-5`}>
         <div className="col-span-2 sm:col-span-1 rounded-xl bg-gradient-to-br from-emerald-50 via-white to-emerald-50/40 border border-emerald-200/90 p-3.5">
-          <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">Saldo terakhir</div>
+          <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">{tx("Saldo terakhir")}</div>
           <div className="mt-1 text-xl sm:text-2xl font-black font-mono text-[#064e3b] tabular-nums">
             {formatRp(data.latestBalance)}
           </div>
         </div>
         <div className="rounded-xl bg-white border border-slate-200 p-3.5">
-          <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Total Masuk</div>
+          <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">{tx("Total Masuk")}</div>
           <div className="mt-1 text-base sm:text-lg font-bold font-mono text-emerald-700 tabular-nums">
             {formatRp(data.totalMasuk)}
           </div>
         </div>
         <div className="rounded-xl bg-white border border-slate-200 p-3.5">
-          <div className="text-[10px] font-bold uppercase tracking-wider text-red-700">Total Keluar</div>
+          <div className="text-[10px] font-bold uppercase tracking-wider text-red-700">{tx("Total Keluar")}</div>
           <div className="mt-1 text-base sm:text-lg font-bold font-mono text-red-600 tabular-nums">
             {formatRp(data.totalKeluar)}
           </div>
         </div>
         {data.openingBalance != null && (
           <div className="rounded-xl bg-slate-50 border border-slate-200 p-3.5 col-span-2 lg:col-span-1">
-            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-600">Saldo awal</div>
+            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-600">{tx("Saldo awal")}</div>
             <div className="mt-1 text-base sm:text-lg font-bold font-mono text-slate-800 tabular-nums">
               {formatRp(data.openingBalance)}
             </div>
@@ -216,11 +219,11 @@ export function KasLedgerSection({
                 type="button"
                 aria-expanded={yearOpen}
                 onClick={() => toggleYear(yearGroup.year)}
-                className="w-full flex items-center justify-between gap-3 px-3.5 py-2.5 bg-slate-50 hover:bg-slate-100 transition text-left cursor-pointer"
+                className="w-full flex items-center justify-between gap-3 px-3.5 py-2.5 bg-slate-50 hover:bg-slate-100 transition text-start cursor-pointer"
               >
                 <span className="font-extrabold text-slate-900">{yearGroup.year}</span>
                 <span className="flex items-center gap-2 text-[11px] font-medium text-slate-500">
-                  {yearGroup.count} entri
+                  {tx("{count} entri", { count: yearGroup.count })}
                   <ChevronDown
                     className={`w-4 h-4 text-slate-500 transition-transform ${yearOpen ? "rotate-180" : ""}`}
                   />
@@ -237,11 +240,11 @@ export function KasLedgerSection({
                           type="button"
                           aria-expanded={monthOpen}
                           onClick={() => toggleMonth(monthGroup.key)}
-                          className="w-full flex items-center justify-between gap-3 px-3.5 py-2 hover:bg-emerald-50/50 transition text-left cursor-pointer"
+                          className="w-full flex items-center justify-between gap-3 px-3.5 py-2 hover:bg-emerald-50/50 transition text-start cursor-pointer"
                         >
-                          <span className="text-sm font-bold text-slate-800">{monthGroup.label}</span>
+                          <span className="text-sm font-bold text-slate-800">{tx(MONTHS_ID[monthGroup.month])} {monthGroup.key.slice(0, 4)}</span>
                           <span className="flex items-center gap-2 text-[11px] font-medium text-slate-500">
-                            {monthGroup.entries.length} entri
+                            {tx("{count} entri", { count: monthGroup.entries.length })}
                             <ChevronDown
                               className={`w-4 h-4 text-slate-400 transition-transform ${monthOpen ? "rotate-180" : ""}`}
                             />
@@ -260,9 +263,9 @@ export function KasLedgerSection({
                                   <div className="min-w-0">
                                     {showExtraCols && (entry.no || entry.rt) && (
                                       <div className="text-[10px] font-medium text-slate-500 mb-0.5">
-                                        {entry.no ? `No. ${entry.no}` : ""}
+                                        {entry.no ? `${tx("No.")} ${entry.no}` : ""}
                                         {entry.no && entry.rt ? " · " : ""}
-                                        {entry.rt ? `RT ${entry.rt}` : ""}
+                                        {entry.rt ? `${tx("RT")} ${entry.rt}` : ""}
                                       </div>
                                     )}
                                     <div className="text-sm font-semibold text-slate-900 leading-snug">
@@ -280,15 +283,15 @@ export function KasLedgerSection({
                                 </div>
                                 <dl className="mt-2 grid grid-cols-3 gap-2 text-xs">
                                   <div>
-                                    <dt className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Masuk</dt>
+                                    <dt className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">{tx("Masuk")}</dt>
                                     <dd className="mt-0.5"><Amount value={entry.masuk} tone="in" /></dd>
                                   </div>
                                   <div>
-                                    <dt className="text-[10px] font-bold uppercase tracking-wider text-red-700">Keluar</dt>
+                                    <dt className="text-[10px] font-bold uppercase tracking-wider text-red-700">{tx("Keluar")}</dt>
                                     <dd className="mt-0.5"><Amount value={entry.keluar} tone="out" /></dd>
                                   </div>
-                                  <div className="text-right">
-                                    <dt className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Saldo</dt>
+                                  <div className="text-end">
+                                    <dt className="text-[10px] font-bold uppercase tracking-wider text-slate-500">{tx("Saldo")}</dt>
                                     <dd className="mt-0.5"><Amount value={entry.saldo} tone="saldo" /></dd>
                                   </div>
                                 </dl>
@@ -300,18 +303,18 @@ export function KasLedgerSection({
                               <thead className="sticky top-0 z-10 bg-white">
                                 <tr className="text-[10px] uppercase tracking-wider text-slate-500">
                                   {showExtraCols && (
-                                    <th className="text-left font-bold px-3 py-2 w-12">No.</th>
+                                    <th className="text-start font-bold px-3 py-2 w-12">{tx("No.")}</th>
                                   )}
-                                  <th className="text-left font-bold px-3 py-2 w-28">Tanggal</th>
+                                  <th className="text-start font-bold px-3 py-2 w-28">{tx("Tanggal")}</th>
                                   {showExtraCols && (
-                                    <th className="text-left font-bold px-3 py-2 w-16">RT</th>
+                                    <th className="text-start font-bold px-3 py-2 w-16">{tx("RT")}</th>
                                   )}
-                                  <th className="text-left font-bold px-3 py-2">
+                                  <th className="text-start font-bold px-3 py-2">
                                     {showExtraCols ? "Nama" : "Keterangan"}
                                   </th>
-                                  <th className="text-right font-bold px-3 py-2 w-36">Masuk</th>
-                                  <th className="text-right font-bold px-3 py-2 w-36">Keluar</th>
-                                  <th className="text-right font-bold px-3 py-2 w-36">Saldo</th>
+                                  <th className="text-end font-bold px-3 py-2 w-36">{tx("Masuk")}</th>
+                                  <th className="text-end font-bold px-3 py-2 w-36">{tx("Keluar")}</th>
+                                  <th className="text-end font-bold px-3 py-2 w-36">{tx("Saldo")}</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -341,13 +344,13 @@ export function KasLedgerSection({
                                         </span>
                                       )}
                                     </td>
-                                    <td className="px-3 py-2 text-right whitespace-nowrap">
+                                    <td className="px-3 py-2 text-end whitespace-nowrap">
                                       <Amount value={entry.masuk} tone="in" />
                                     </td>
-                                    <td className="px-3 py-2 text-right whitespace-nowrap">
+                                    <td className="px-3 py-2 text-end whitespace-nowrap">
                                       <Amount value={entry.keluar} tone="out" />
                                     </td>
-                                    <td className="px-3 py-2 text-right whitespace-nowrap">
+                                    <td className="px-3 py-2 text-end whitespace-nowrap">
                                       <Amount value={entry.saldo} tone="saldo" />
                                     </td>
                                   </tr>
@@ -367,7 +370,12 @@ export function KasLedgerSection({
         })}
       </div>
 
-      <p className="mt-4 text-[11px] text-slate-500 leading-relaxed">{data.sourceNote}</p>
+      <p className="mt-4 text-[11px] text-slate-500 leading-relaxed">{tx(data.sourceNote)}</p>
+      {locale !== "id" && (
+        <p className="mt-1 text-[11px] text-slate-500 leading-relaxed">
+          {tx("Uraian tiap baris jurnal ditampilkan sesuai catatan asli berbahasa Indonesia, tanpa diubah.")}
+        </p>
+      )}
     </section>
   );
 }

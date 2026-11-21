@@ -11,12 +11,15 @@ import {
   BarChart3,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface TaskRecapSectionProps {
   defaultOpen?: boolean;
 }
 
 export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps) {
+  const { tx } = useI18n();
+
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   React.useEffect(() => {
@@ -54,13 +57,14 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
         : t.priority === priorityFilter;
     const matchesSearch =
       searchQuery.trim() === "" ||
-      t.task.toLowerCase().includes(searchQuery.toLowerCase());
+      t.task.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tx(t.task).toLowerCase().includes(searchQuery.toLowerCase());
 
     return matchesStatus && matchesPriority && matchesSearch;
   });
 
   return (
-    <section id="rekap-tugas" className="scroll-mt-20 pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+    <section id="rekap-tugas" className="scroll-mt-20 pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-start">
       {/* Container Accordion Utama */}
       <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
         
@@ -68,7 +72,7 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 text-left cursor-pointer transition bg-gradient-to-r from-slate-50 via-white to-emerald-50/40 hover:bg-slate-100/70"
+          className="w-full p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 text-start cursor-pointer transition bg-gradient-to-r from-slate-50 via-white to-emerald-50/40 hover:bg-slate-100/70"
           aria-expanded={isOpen}
         >
           <div className="space-y-2 flex-1 min-w-0">
@@ -91,9 +95,9 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
           <div className="flex items-center gap-4 self-start md:self-center shrink-0">
             {/* Mini Progress Card */}
             <div className="bg-white border border-slate-200 px-4 py-2.5 rounded-2xl shadow-2xs flex items-center gap-3">
-              <div className="text-right">
+              <div className="text-end">
                 <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
-                  Realisasi Selesai
+                  {tx("Realisasi Selesai")}
                 </div>
                 <div className="text-base font-extrabold text-emerald-700 font-mono">
                   {completedCount}/{totalTasks} ({percentage}%)
@@ -128,8 +132,8 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                   {totalTasks}
                 </div>
                 <div>
-                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Total Agenda</div>
-                  <div className="text-xs font-bold text-slate-800">100% Agenda Kerja</div>
+                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">{tx("Total Agenda")}</div>
+                  <div className="text-xs font-bold text-slate-800">{tx("100% Agenda Kerja")}</div>
                 </div>
               </div>
 
@@ -138,8 +142,8 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                   <CheckCircle2 className="w-4 h-4 text-emerald-700" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Selesai</div>
-                  <div className="text-xs font-bold text-emerald-900">{completedCount} Tugas ({percentage}%)</div>
+                  <div className="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">{tx("Selesai")}</div>
+                  <div className="text-xs font-bold text-emerald-900">{completedCount} {tx("Tugas")} ({percentage}%)</div>
                 </div>
               </div>
 
@@ -148,8 +152,8 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                   <Clock className="w-4 h-4 text-amber-700 animate-pulse" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sedang Berjalan (WIP)</div>
-                  <div className="text-xs font-bold text-amber-900">{wipCount} Tugas</div>
+                  <div className="text-[10px] text-amber-700 font-bold uppercase tracking-wider">{tx("Sedang Berjalan (WIP)")}</div>
+                  <div className="text-xs font-bold text-amber-900">{wipCount} {tx("Tugas")}</div>
                 </div>
               </div>
 
@@ -158,8 +162,8 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                   <AlertCircle className="w-4 h-4 text-slate-500" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Belum Dikerjakan</div>
-                  <div className="text-xs font-bold text-slate-700">{pendingCount} Tugas</div>
+                  <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">{tx("Belum Dikerjakan")}</div>
+                  <div className="text-xs font-bold text-slate-700">{pendingCount} {tx("Tugas")}</div>
                 </div>
               </div>
             </div>
@@ -168,26 +172,26 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
             <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 mb-5">
               {/* Search Box */}
               <div className="relative flex-1 max-w-md">
-                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Search className="w-4 h-4 text-slate-400 absolute start-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
-                  placeholder="Cari tugas / agenda kegiatan..."
+                  placeholder={tx("Cari tugas / agenda kegiatan...")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 bg-white text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-2xs transition"
+                  className="w-full ps-9 pe-4 py-2 rounded-xl border border-slate-200 bg-white text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-2xs transition"
                 />
               </div>
 
-              {/* Status Filter Tabs */}
+              {/* {tx("Status")} Filter Tabs */}
               <div className="flex flex-wrap items-center gap-1.5 bg-white p-1 rounded-xl border border-slate-200 shadow-2xs text-xs">
                 <span className="text-[10px] font-bold text-slate-400 px-2 flex items-center gap-1">
-                  <Filter className="w-3 h-3" /> Status:
+                  <Filter className="w-3 h-3" /> {tx("Status:")}
                 </span>
                 {[
-                  { id: "all", label: `Semua (${totalTasks})` },
-                  { id: "Selesai", label: `Selesai (${completedCount})` },
-                  { id: "WIP", label: `WIP (${wipCount})` },
-                  { id: "Belum", label: `Belum (${pendingCount})` },
+                  { id: "all", label: `${tx("Semua")} (${totalTasks})` },
+                  { id: "Selesai", label: `${tx("Selesai")} (${completedCount})` },
+                  { id: "WIP", label: `${tx("WIP")} (${wipCount})` },
+                  { id: "Belum", label: `${tx("Belum")} (${pendingCount})` },
                 ].map((f) => (
                   <button
                     key={f.id}
@@ -208,20 +212,20 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
             {/* Table Container */}
             <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs">
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse text-xs">
+                <table className="w-full text-start border-collapse text-xs">
                   <thead>
                     <tr className="bg-slate-100/80 text-slate-700 border-b border-slate-200">
-                      <th className="py-3 px-4 font-bold w-12 text-center text-slate-500">No.</th>
-                      <th className="py-3 px-4 font-bold">Agenda Kegiatan</th>
-                      <th className="py-3 px-4 font-bold w-32 text-center">Status</th>
-                      <th className="py-3 px-4 font-bold w-32 text-center">Prioritas</th>
+                      <th className="py-3 px-4 font-bold w-12 text-center text-slate-500">{tx("No.")}</th>
+                      <th className="py-3 px-4 font-bold">{tx("Agenda Kegiatan")}</th>
+                      <th className="py-3 px-4 font-bold w-32 text-center">{tx("Status")}</th>
+                      <th className="py-3 px-4 font-bold w-32 text-center">{tx("Prioritas")}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
                     {filteredTasks.length === 0 ? (
                       <tr>
                         <td colSpan={4} className="py-8 text-center text-slate-400 text-xs font-medium">
-                          Tidak ada agenda tugas yang cocok dengan pencarian / filter ini.
+                          {tx("Tidak ada agenda tugas yang cocok dengan pencarian / filter ini.")}
                         </td>
                       </tr>
                     ) : (
@@ -229,7 +233,7 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                         let statusBadge = (
                           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
                             <CheckCircle2 className="w-3 h-3 text-emerald-700 shrink-0" />
-                            Selesai
+                            {tx("Selesai")}
                           </span>
                         );
 
@@ -237,14 +241,14 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                           statusBadge = (
                             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
                               <Clock className="w-3 h-3 text-amber-700 shrink-0 animate-pulse" />
-                              WIP
+                              {tx("WIP")}
                             </span>
                           );
                         } else if (t.status === "Belum") {
                           statusBadge = (
                             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-slate-100 text-slate-600 border border-slate-200">
                               <AlertCircle className="w-3 h-3 text-slate-400 shrink-0" />
-                              Belum
+                              {tx("Belum")}
                             </span>
                           );
                         }
@@ -253,13 +257,13 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                         if (t.priority === "Tinggi") {
                           priorityBadge = (
                             <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">
-                              Tinggi
+                              {tx("Tinggi")}
                             </span>
                           );
                         } else if (t.priority === "Rendah") {
                           priorityBadge = (
                             <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-slate-100 text-slate-600 border border-slate-200">
-                              Rendah
+                              {tx("Rendah")}
                             </span>
                           );
                         }
@@ -275,7 +279,7 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                               {idx + 1}
                             </td>
                             <td className="py-2.5 px-4 font-medium text-slate-800">
-                              {t.task}
+                              {tx(t.task)}
                             </td>
                             <td className="py-2.5 px-4 text-center">
                               {statusBadge}
@@ -297,7 +301,7 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
                   Menampilkan <b>{filteredTasks.length}</b> dari total <b>{totalTasks}</b> agenda
                 </span>
                 <span className="font-semibold text-emerald-800">
-                  {completedCount} Selesai • {wipCount} Sedang Dikerjakan (WIP) • {pendingCount} Belum
+                  {completedCount} {tx("Selesai")} • {wipCount} Sedang Dikerjakan (WIP) • {pendingCount} {tx("Belum")}
                 </span>
               </div>
             </div>

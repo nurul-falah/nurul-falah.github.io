@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Search, User, MapPin, Bell, UserPlus, Edit3, CalendarX, Calendar } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface AgendaSectionProps {
   onRegisterEvent?: (eventTitle: string) => void;
 }
 
 export function AgendaSection({ onRegisterEvent }: AgendaSectionProps) {
+  const { tx } = useI18n();
+
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -20,16 +23,16 @@ export function AgendaSection({ onRegisterEvent }: AgendaSectionProps) {
   });
 
   return (
-    <section id="agenda" className="py-16 bg-slate-100/70 border-y border-slate-200 text-left">
+    <section id="agenda" className="py-16 bg-slate-100/70 border-y border-slate-200 text-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
             <span className="text-[#059669] font-semibold text-xs uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-              Jadwal Terjadwal
+              {tx("Jadwal Terjadwal")}
             </span>
-            <h2 className="text-3xl font-extrabold text-slate-900 mt-2">Rencana Agenda & Publikasi Kegiatan</h2>
-            <p className="text-slate-600 text-sm mt-1">Ikuti berbagai kegiatan keislaman dan silaturahmi warga Sukatani</p>
+            <h2 className="text-3xl font-extrabold text-slate-900 mt-2">{tx("Rencana Agenda & Publikasi Kegiatan")}</h2>
+            <p className="text-slate-600 text-sm mt-1">{tx("Ikuti berbagai kegiatan keislaman dan silaturahmi warga Sukatani")}</p>
           </div>
 
           {/* Search & Filter Controls */}
@@ -39,10 +42,10 @@ export function AgendaSection({ onRegisterEvent }: AgendaSectionProps) {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Cari kegiatan/ustadz..."
-                className="pl-9 pr-4 py-2 rounded-xl text-xs bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-44 sm:w-56"
+                placeholder={tx("Cari kegiatan/ustadz...")}
+                className="ps-9 pe-4 py-2 rounded-xl text-xs bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-44 sm:w-56"
               />
-              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+              <Search className="w-4 h-4 text-slate-400 absolute start-3 top-2.5" />
             </div>
 
             <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-slate-200">
@@ -109,11 +112,11 @@ export function AgendaSection({ onRegisterEvent }: AgendaSectionProps) {
                     <div className="p-5 space-y-2">
                       <div className="flex items-center gap-2 text-xs text-slate-600">
                         <User className="w-3.5 h-3.5 text-[#059669] shrink-0" />
-                        <span>Narasumber: <b>{event.speaker}</b></span>
+                        <span>{tx("Narasumber:")} <b>{event.speaker}</b></span>
                       </div>
                       <div className="flex items-center gap-2 text-xs text-slate-600">
                         <MapPin className="w-3.5 h-3.5 text-[#059669] shrink-0" />
-                        <span>Lokasi: {event.location}</span>
+                        <span>{tx("Lokasi:")} {event.location}</span>
                       </div>
                       <p className="text-xs text-slate-500 pt-1">{event.desc}</p>
                     </div>
@@ -136,7 +139,7 @@ export function AgendaSection({ onRegisterEvent }: AgendaSectionProps) {
         ) : (
           <div className="text-center py-12">
             <CalendarX className="w-12 h-12 text-slate-400 mx-auto mb-2" />
-            <p className="text-sm text-slate-500">Tidak ada kegiatan yang sesuai kata kunci pencarian.</p>
+            <p className="text-sm text-slate-500">{tx("Tidak ada kegiatan yang sesuai kata kunci pencarian.")}</p>
           </div>
         )}
 

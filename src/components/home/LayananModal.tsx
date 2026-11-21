@@ -2,6 +2,7 @@ import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Users, MessageCircle } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface LayananModalProps {
   open: boolean;
@@ -9,21 +10,23 @@ export interface LayananModalProps {
 }
 
 export function LayananModal({ open, onOpenChange }: LayananModalProps) {
+  const { tx } = useI18n();
+
   const contacts = masjidData.contacts;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent onClose={() => onOpenChange(false)} className="max-w-md">
-        <div className="text-left">
+        <div className="text-start">
           <div className="w-12 h-12 rounded-xl bg-emerald-100 text-[#047857] flex items-center justify-center mb-3">
             <Users className="w-6 h-6" />
           </div>
 
           <h3 className="text-lg font-bold text-slate-900 mb-1">
-            Partisipasi Relawan Pengajar
+            {tx("Partisipasi Relawan Pengajar")}
           </h3>
           <p className="text-xs text-slate-500 mb-4">
-            Bagi warga Sukatani yang ingin berkontribusi sebagai tenaga pengajar atau pembimbing Al-Qur'an dan generasi madani:
+            {tx("Bagi warga Sukatani yang ingin berkontribusi sebagai tenaga pengajar atau pembimbing Al-Qur'an dan generasi madani:")}
           </p>
 
           <div className="space-y-3 text-xs text-slate-700">

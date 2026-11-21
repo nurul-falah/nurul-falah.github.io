@@ -10,12 +10,14 @@ import {
   FileText,
 } from "lucide-react";
 import { adArtData } from "@/data/adArt";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface AdArtSectionProps {
   onOpenFullPage: () => void;
 }
 
 export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
+  const { tx } = useI18n();
   const highlightedPasals = adArtData.babs.flatMap((bab) =>
     bab.pasals
       .filter((p) => p.highlight)
@@ -28,7 +30,7 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
   );
 
   return (
-    <section id="ad-art" className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left scroll-mt-20">
+    <section id="ad-art" className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-start scroll-mt-20">
       <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
         {/* Top Banner */}
         <div className="bg-gradient-to-r from-[#064e3b] via-emerald-900 to-slate-900 p-6 sm:p-8 lg:p-10 text-white relative overflow-hidden">
@@ -38,16 +40,16 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
             <div className="space-y-3 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/90 border border-emerald-600/50 text-amber-300 text-xs font-bold uppercase tracking-wider">
                 <Scale className="w-3.5 h-3.5" />
-                <span>Aturan Dasar &amp; Tata Tertib Organisasi</span>
+                <span>{tx("Aturan Dasar & Tata Tertib Organisasi")}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
-                AD/ART DKM Masjid Nurul Falah
+                {tx("AD/ART DKM Masjid Nurul Falah")}
               </h2>
               <div className="text-amber-300/95 text-xs sm:text-sm font-semibold">
-                Anggaran Dasar &amp; Anggaran Rumah Tangga (Aturan Dasar &amp; Tata Tertib Organisasi)
+                {tx("Anggaran Dasar & Anggaran Rumah Tangga (Aturan Dasar & Tata Tertib Organisasi)")}
               </div>
               <p className="text-emerald-100/90 text-xs sm:text-sm leading-relaxed">
-                Landasan aturan organisasi yang menjamin kemurnian niat (bebas politisasi), kemandirian marwah (pantang mengemis di jalanan), ketertiban musyawarah yang beradab tanpa penghakiman sepihak, serta transparansi kas satu pintu.
+                {tx("Landasan aturan organisasi yang menjamin kemurnian niat (bebas politisasi), kemandirian marwah (pantang mengemis di jalanan), ketertiban musyawarah yang beradab tanpa penghakiman sepihak, serta transparansi kas satu pintu.")}
               </p>
             </div>
 
@@ -58,11 +60,11 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm shadow-lg shadow-amber-500/20 transition cursor-pointer active:scale-95"
               >
                 <BookOpen className="w-4 h-4" />
-                <span>Buka Halaman Lengkap AD/ART</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>{tx("Buka Halaman Lengkap AD/ART")}</span>
+                <ArrowRight className="w-4 h-4 rtl:-scale-x-100" />
               </button>
               <div className="text-[11px] text-emerald-200/90 text-center font-mono">
-                7 Bab AD (14 Pasal) • 6 Bab ART (17 Pasal)
+                {tx("7 Bab AD (14 Pasal) • 6 Bab ART (17 Pasal)")}
               </div>
             </div>
           </div>
@@ -74,10 +76,10 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
             <div>
               <h3 className="text-base sm:text-lg font-extrabold text-slate-900 flex items-center gap-2">
                 <Gavel className="w-5 h-5 text-emerald-700" />
-                <span>Pokok-Pokok Ketentuan Krusial dalam AD/ART</span>
+                <span>{tx("Pokok-Pokok Ketentuan Krusial dalam AD/ART")}</span>
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
-                Pasal-pasal utama yang mengikat tata kelola pengurus, adab musyawarah warga, dan tahapan pembangunan masjid.
+                {tx("Pasal-pasal utama yang mengikat tata kelola pengurus, adab musyawarah warga, dan tahapan pembangunan masjid.")}
               </p>
             </div>
             <button
@@ -86,7 +88,7 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
               className="text-xs font-bold text-emerald-700 hover:text-emerald-900 inline-flex items-center gap-1 hover:underline cursor-pointer self-start sm:self-center"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Baca Seluruh 31 Pasal Lengkap &rarr;</span>
+              <span>{tx("Baca Seluruh 31 Pasal Lengkap →")}</span>
             </button>
           </div>
 
@@ -105,28 +107,28 @@ export function AdArtSection({ onOpenFullPage }: AdArtSectionProps) {
                     {pasal.badge && (
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 inline-flex items-center gap-1">
                         <Sparkles className="w-2.5 h-2.5 text-amber-600" />
-                        {pasal.badge}
+                        {tx(pasal.badge)}
                       </span>
                     )}
                   </div>
 
                   <h4 className="text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors mb-2">
-                    {pasal.title}
+                    {tx(pasal.title)}
                   </h4>
 
                   <ul className="space-y-1.5 text-xs text-slate-600">
                     {pasal.items.slice(0, 2).map((it, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span className="line-clamp-3 leading-relaxed">{it.text}</span>
+                        <span className="line-clamp-3 leading-relaxed">{tx(it.text)}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-emerald-700">
-                  <span>{pasal.babNumber}: {pasal.babTitle}</span>
-                  <span className="group-hover:translate-x-0.5 transition-transform">Detail &rarr;</span>
+                  <span>{tx(pasal.babNumber)}: {tx(pasal.babTitle)}</span>
+                  <span className="group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform">{tx("Detail →")}</span>
                 </div>
               </div>
             ))}

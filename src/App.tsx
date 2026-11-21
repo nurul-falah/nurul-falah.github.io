@@ -17,6 +17,7 @@ import { StrukturOrganisasiSection } from "@/components/home/StrukturOrganisasiS
 import { Footer } from "@/components/layout/Footer";
 import { InfaqModal } from "@/components/infaq/InfaqModal";
 import { LayananModal } from "@/components/home/LayananModal";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 const SECTION_PATH_MAP: Record<string, string> = {
   "/pilar": "#pilar",
@@ -60,6 +61,7 @@ function scrollToSectionByPath(path: string) {
 }
 
 export function App() {
+  const { tx } = useI18n();
   const [isInfaqOpen, setIsInfaqOpen] = useState(false);
   const [isLayananOpen, setIsLayananOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState<string>(getInitialPath);
@@ -122,6 +124,12 @@ export function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-slate-50 text-slate-800 selection:bg-emerald-600 selection:text-white font-sans antialiased">
+      <a
+        href="#konten"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:start-2 focus:z-50 focus:bg-white focus:text-emerald-900 focus:px-3 focus:py-2 focus:rounded-lg"
+      >
+        {tx("Lewati ke konten")}
+      </a>
       {/* 1. Header Navigation Bar */}
       <Navbar
         onOpenInfaq={() => setIsInfaqOpen(true)}
@@ -131,15 +139,15 @@ export function App() {
 
       {/* 2. Main Content: Switch between Pages (/ad-art, /history) & Home Landing Page */}
       {currentPath === "/ad-art" ? (
-        <main className="flex-1">
+        <main id="konten" className="flex-1">
           <AdArtPage onBackToHome={() => handleNavigate("/")} />
         </main>
       ) : currentPath === "/history" ? (
-        <main className="flex-1">
+        <main id="konten" className="flex-1">
           <HistoryPage onBackToHome={() => handleNavigate("/")} />
         </main>
       ) : (
-        <main className="flex-1">
+        <main id="konten" className="flex-1">
           {/* Hero Section */}
           <HeroSection
             onOpenInfaq={() => setIsInfaqOpen(true)}

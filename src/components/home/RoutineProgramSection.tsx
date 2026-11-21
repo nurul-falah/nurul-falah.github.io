@@ -1,6 +1,7 @@
 import React from "react";
 import { BookOpen, Users, Sparkles, HandHeart, Calendar } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 interface ProgramPhoto {
   src: string;
@@ -14,6 +15,8 @@ type RoutineProgram = (typeof masjidData.routinePrograms)[number] & {
 };
 
 export function RoutineProgramSection() {
+  const { tx } = useI18n();
+
   const iconMap: Record<string, React.ReactNode> = {
     BookOpen: <BookOpen className="w-6 h-6" />,
     Users: <Users className="w-6 h-6" />,
@@ -26,14 +29,14 @@ export function RoutineProgramSection() {
   const ngajiPhotos = programs.find((prog) => prog.id === "ngaji-anak")?.photos ?? [];
 
   return (
-    <section id="program" className="scroll-mt-20 pt-16 pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+    <section id="program" className="scroll-mt-20 pt-16 pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-start">
       <div className="text-center max-w-2xl mx-auto mb-10">
         <span className="text-[#059669] font-semibold text-xs uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-          Pilar Kemakmuran Rutin
+          {tx("Pilar Kemakmuran Rutin")}
         </span>
-        <h2 className="text-3xl font-extrabold text-slate-900 mt-2">Program Rutin</h2>
+        <h2 className="text-3xl font-extrabold text-slate-900 mt-2">{tx("Program Rutin")}</h2>
         <p className="text-slate-600 text-sm mt-1">
-          Aktivitas harian dan mingguan yang sedang aktif di Masjid Nurul Falah Sukatani.
+          {tx("Aktivitas harian dan mingguan yang sedang aktif di Masjid Nurul Falah Sukatani.")}
         </p>
       </div>
 
@@ -62,11 +65,11 @@ export function RoutineProgramSection() {
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${iconBg}`}>
                   {iconMap[prog.icon] || <Sparkles className="w-6 h-6" />}
                 </div>
-                <h3 className="font-bold text-slate-800 text-lg mb-2">{prog.title}</h3>
-                <p className="text-slate-600 text-xs leading-relaxed mb-4">{prog.desc}</p>
+                <h3 className="font-bold text-slate-800 text-lg mb-2">{tx(prog.title)}</h3>
+                <p className="text-slate-600 text-xs leading-relaxed mb-4">{tx(prog.desc)}</p>
               </div>
               <span className={`text-xs font-medium px-2.5 py-1 rounded-md self-start ${badgeColor}`}>
-                {prog.badge}
+                {tx(prog.badge)}
               </span>
             </div>
           );
@@ -81,10 +84,10 @@ export function RoutineProgramSection() {
             </span>
             <div>
               <h3 className="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">
-                Dokumentasi Belajar Mengaji Anak-anak
+                {tx("Dokumentasi Belajar Mengaji Anak-anak")}
               </h3>
               <p className="text-xs text-slate-600 mt-0.5">
-                Kegiatan harian ba'da Maghrib hingga Isya di serambi masjid.
+                {tx("Kegiatan harian ba'da Maghrib hingga Isya di serambi masjid.")}
               </p>
             </div>
           </div>
@@ -96,14 +99,14 @@ export function RoutineProgramSection() {
                     <source type="image/webp" srcSet={photo.src} />
                     <img
                       src={photo.fallback}
-                      alt={photo.alt}
+                      alt={tx(photo.alt)}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-auto bg-slate-100"
                     />
                   </picture>
                   <figcaption className="text-xs sm:text-sm text-slate-600 leading-relaxed px-4 py-3">
-                    {photo.caption}
+                    {tx(photo.caption)}
                   </figcaption>
                 </figure>
               </li>

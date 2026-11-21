@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Compass, Layers, Maximize2, Users, ZoomIn, X } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 const specs = masjidData.specs;
 
@@ -41,6 +42,8 @@ const colorMap: Record<string, string> = {
 const cadLink = "https://burubur.github.io/drftr/?project=masjid";
 
 export function DesainMasjidSection() {
+  const { tx } = useI18n();
+
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   return (
@@ -52,15 +55,13 @@ export function DesainMasjidSection() {
       <div className="text-center max-w-2xl mx-auto mb-10">
         <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 mb-3">
           <Compass className="w-3.5 h-3.5" />
-          Rancang Bangun & Arsitektur
+          {tx("Rancang Bangun & Arsitektur")}
         </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-[#064e3b] tracking-tight mb-3">
-          Desain Masjid
+          {tx("Desain Masjid")}
         </h2>
         <p className="text-slate-500 text-sm leading-relaxed">
-          Rancangan arsitektur Masjid Nurul Falah Sukatani — bangunan permanen 2
-          lantai yang dirancang untuk menjadi pusat ibadah, pendidikan, dan
-          layanan sosial umat.
+          {tx("Rancangan arsitektur Masjid Nurul Falah Sukatani — bangunan permanen 2 lantai yang dirancang untuk menjadi pusat ibadah, pendidikan, dan layanan sosial umat.")}
         </p>
       </div>
 
@@ -76,12 +77,12 @@ export function DesainMasjidSection() {
             <div
               className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/20 cursor-pointer"
               onClick={() => setLightboxOpen(true)}
-              title="Lihat desain penuh"
+              title={tx("Lihat desain penuh")}
             >
               <div className="relative w-full" style={{ paddingBottom: "60%" }}>
                 <iframe
                   src={cadLink}
-                  title="CAD Desain Masjid Nurul Falah"
+                  title={tx("CAD Desain Masjid Nurul Falah")}
                   className="absolute inset-0 w-full h-full border-0 rounded-2xl pointer-events-none"
                   loading="lazy"
                 />
@@ -89,7 +90,7 @@ export function DesainMasjidSection() {
                 <div className="absolute inset-0 flex items-end justify-end p-3">
                   <span className="inline-flex items-center gap-1.5 bg-black/60 backdrop-blur text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20">
                     <ZoomIn className="w-3.5 h-3.5" />
-                    Buka Penuh
+                    {tx("Buka Penuh")}
                   </span>
                 </div>
               </div>
@@ -103,7 +104,7 @@ export function DesainMasjidSection() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#059669] hover:bg-emerald-500 text-white font-semibold text-sm shadow transition active:scale-95"
               >
                 <Compass className="w-4 h-4" />
-                Buka Desain CAD
+                {tx("Buka Desain CAD")}
               </a>
               <button
                 type="button"
@@ -111,7 +112,7 @@ export function DesainMasjidSection() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition active:scale-95"
               >
                 <Maximize2 className="w-4 h-4" />
-                Tampilan Layar Penuh
+                {tx("Tampilan Layar Penuh")}
               </button>
             </div>
           </div>
@@ -121,12 +122,10 @@ export function DesainMasjidSection() {
         <div className="lg:col-span-2 flex flex-col gap-4">
           <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
             <h3 className="text-base font-bold text-[#064e3b] mb-1">
-              Spesifikasi Bangunan
+              {tx("Spesifikasi Bangunan")}
             </h3>
             <p className="text-xs text-slate-500 mb-5 leading-relaxed">
-              Masjid permanen dua lantai dibangun di atas lahan seluas{" "}
-              <strong>{specs.landAreaM2} m²</strong> untuk mewadahi seluruh
-              kegiatan ibadah dan sosial jamaah Sukatani.
+              {tx("Masjid permanen dua lantai dibangun di atas lahan seluas {area} m² untuk mewadahi seluruh kegiatan ibadah dan sosial jamaah Sukatani.", { area: specs.landAreaM2 })}
             </p>
 
             <div className="grid grid-cols-2 gap-3">
@@ -140,9 +139,15 @@ export function DesainMasjidSection() {
                   >
                     <Icon className="w-5 h-5" />
                     <div className="text-slate-900 font-extrabold text-sm leading-tight">
-                      {item.label}
+                      {item.label.endsWith(" Jamaah")
+                        ? tx("{count} Jamaah", { count: specs.capacity })
+                        : tx(item.label)}
                     </div>
-                    <div className="text-slate-500 text-[11px]">{item.desc}</div>
+                    <div className="text-slate-500 text-[11px]">
+                      {item.desc.startsWith("Azimuth")
+                        ? tx("Azimuth {deg}°", { deg: masjidData.coordinates.qiblaAzimuth })
+                        : tx(item.desc)}
+                    </div>
                   </div>
                 );
               })}
@@ -152,10 +157,10 @@ export function DesainMasjidSection() {
           {/* Floor breakdown */}
           <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 space-y-3">
             <h3 className="text-base font-bold text-[#064e3b] mb-1">
-              Distribusi Lantai
+              {tx("Distribusi Lantai")}
             </h3>
             <div className="flex items-center justify-between text-sm">
-              <span className="text-slate-600">Lantai Dasar</span>
+              <span className="text-slate-600">{tx("Lantai Dasar")}</span>
               <span className="font-bold text-emerald-700 font-mono">
                 {specs.groundFloorM2} m²
               </span>
@@ -169,7 +174,7 @@ export function DesainMasjidSection() {
               />
             </div>
             <div className="flex items-center justify-between text-sm">
-              <span className="text-slate-600">Lantai Mezanin</span>
+              <span className="text-slate-600">{tx("Lantai Mezanin")}</span>
               <span className="font-bold text-amber-600 font-mono">
                 {specs.mezzanineFloorM2} m²
               </span>
@@ -183,7 +188,7 @@ export function DesainMasjidSection() {
               />
             </div>
             <div className="border-t border-slate-100 pt-3 flex items-center justify-between text-sm font-bold">
-              <span className="text-slate-700">Total Bangunan</span>
+              <span className="text-slate-700">{tx("Total Bangunan")}</span>
               <span className="text-[#064e3b] font-mono">
                 {specs.buildingAreaM2} m²
               </span>
@@ -206,14 +211,14 @@ export function DesainMasjidSection() {
               type="button"
               onClick={() => setLightboxOpen(false)}
               className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white/90 shadow hover:bg-white transition"
-              title="Tutup"
+              title={tx("Tutup")}
             >
               <X className="w-5 h-5 text-slate-700" />
             </button>
             <div className="relative w-full" style={{ paddingBottom: "65%" }}>
               <iframe
                 src={cadLink}
-                title="CAD Desain Masjid Nurul Falah - Fullscreen"
+                title={tx("CAD Desain Masjid Nurul Falah - Fullscreen")}
                 className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
               />

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface DialogProps {
   open: boolean;
@@ -49,10 +50,11 @@ export function DialogContent({
   onClose,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & { onClose?: () => void }) {
+  const { tx } = useI18n();
   return (
     <div
       className={cn(
-        "relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-2xl text-slate-900 text-left",
+        "relative rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-2xl text-slate-900 text-start",
         className
       )}
       {...props}
@@ -61,8 +63,8 @@ export function DialogContent({
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-xl p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
-          aria-label="Tutup"
+          className="absolute end-4 top-4 rounded-xl p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+          aria-label={tx("Tutup")}
         >
           <X className="h-5 w-5" />
         </button>
@@ -78,7 +80,7 @@ export function DialogHeader({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("flex flex-col space-y-1.5 text-left mb-4", className)}
+      className={cn("flex flex-col space-y-1.5 text-start mb-4", className)}
       {...props}
     />
   );

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { HeartHandshake, Menu, X, TrendingUp } from "lucide-react";
+import { useI18n } from "@/i18n/LanguageProvider";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
 export interface NavbarProps {
   onOpenInfaq?: () => void;
@@ -12,16 +14,17 @@ export function Navbar({
   currentPath = "/",
   onNavigate,
 }: NavbarProps) {
+  const { tx } = useI18n();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Pilar Nilai", shortLabel: "Pilar", href: "/pilar" },
+    { label: tx("Pilar Nilai"), shortLabel: tx("Pilar"), href: "/pilar" },
     { label: "AD/ART", shortLabel: "AD/ART", href: "/ad-art" },
-    { label: "Struktur Organisasi", shortLabel: "Struktur", href: "/struktur-organisasi" },
-    { label: "Desain Masjid", shortLabel: "Desain", href: "/desain-masjid" },
-    { label: "Wakaf Pembangunan", shortLabel: "Wakaf", href: "/wakaf-pembangunan", highlight: true },
-    { label: "Skema Pendanaan", shortLabel: "Pendanaan", href: "/pendanaan" },
-    { label: "Rekap Tugas", shortLabel: "Tugas", href: "/rekap-tugas" },
+    { label: tx("Struktur Organisasi"), shortLabel: tx("Struktur"), href: "/struktur-organisasi" },
+    { label: tx("Desain Masjid"), shortLabel: tx("Desain"), href: "/desain-masjid" },
+    { label: tx("Wakaf Pembangunan"), shortLabel: tx("Wakaf"), href: "/wakaf-pembangunan", highlight: true },
+    { label: tx("Skema Pendanaan"), shortLabel: tx("Pendanaan"), href: "/pendanaan" },
+    { label: tx("Rekap Tugas"), shortLabel: tx("Tugas"), href: "/rekap-tugas" },
   ];
 
   const handleNavClick = (
@@ -43,7 +46,7 @@ export function Navbar({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm border-b border-slate-100 print:hidden">
+            <header className="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm border-b border-slate-100 print:hidden pt-[env(safe-area-inset-top)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -51,17 +54,19 @@ export function Navbar({
           <a
             href="/"
             onClick={(e) => handleNavClick(e, "/")}
-            className="flex items-center gap-2.5 sm:gap-3 group text-left shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3 group text-start shrink-0"
           >
             <img
               src="/favicon.svg"
-              alt="Logo Masjid Nurul Falah"
+              alt={tx("Logo Masjid Nurul Falah")}
+              width={48}
+              height={48}
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-md shadow-emerald-900/20 group-hover:scale-105 transition-transform"
             />
             <div>
               <div className="font-bold text-base sm:text-lg leading-tight text-[#064e3b]">Masjid Nurul Falah</div>
               <div className="text-[11px] sm:text-xs text-slate-500 font-medium tracking-wide">
-                Sukatani, Desa Wangunsari
+                {tx("Sukatani, Desa Wangunsari")}
               </div>
             </div>
           </a>
@@ -114,15 +119,16 @@ export function Navbar({
               })}
             </nav>
 
-            {/* CTA Infaq Button */}
+            {/* CTA {tx("Infaq")} Button */}
             <button
               type="button"
               onClick={handleInfaqClick}
-              className="inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-semibold text-xs xl:text-sm shadow-sm hover:shadow-md transition cursor-pointer active:scale-95 ml-1 whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-semibold text-xs xl:text-sm shadow-sm hover:shadow-md transition cursor-pointer active:scale-95 ms-1 whitespace-nowrap shrink-0"
             >
               <HeartHandshake className="w-4 h-4 text-amber-300" />
-              <span>Infaq / Wakaf</span>
+              <span>{tx("Infaq / Wakaf")}</span>
             </button>
+            <LanguageSwitcher className="ms-1" />
           </div>
 
           {/* Tablet (md to lg) Navigation Bar with compact labels */}
@@ -151,26 +157,31 @@ export function Navbar({
             <button
               type="button"
               onClick={handleInfaqClick}
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white font-semibold text-xs shadow-xs transition cursor-pointer active:scale-95 ml-1 shrink-0"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white font-semibold text-xs shadow-xs transition cursor-pointer active:scale-95 ms-1 shrink-0"
             >
               <HeartHandshake className="w-3.5 h-3.5 text-amber-300" />
-              <span>Infaq</span>
+              <span>{tx("Infaq")}</span>
             </button>
+            <LanguageSwitcher className="ms-1" />
           </div>
 
           {/* Mobile Menu Toggle (below md) */}
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none"
-            aria-label="Toggle Mobile Menu"
-          >
+          <div className="md:hidden flex items-center gap-1">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none"
+              aria-label={mobileMenuOpen ? tx("Tutup menu") : tx("Buka menu")}
+              aria-expanded={mobileMenuOpen}
+            >
             {mobileMenuOpen ? (
               <X className="w-6 h-6 text-emerald-700" />
             ) : (
               <Menu className="w-6 h-6" />
             )}
-          </button>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Dropdown */}
@@ -201,7 +212,7 @@ export function Navbar({
                 className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-medium text-sm shadow cursor-pointer active:scale-95 text-center"
               >
                 <HeartHandshake className="w-4 h-4 text-amber-300" />
-                <span>Infaq &amp; Wakaf</span>
+                <span>{tx("Infaq & Wakaf")}</span>
               </button>
             </div>
           </div>
