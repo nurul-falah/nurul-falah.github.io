@@ -140,7 +140,7 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                   {tx(sub.title)}
                 </h3>
                 <div className="text-[11px] font-semibold text-slate-500 mt-0.5 mb-3">
-                  {sub.tagline}
+                  {tx(sub.tagline)}
                 </div>
 
                 {/* {tx("Nominal Sementara")} Callout (if amount exists) */}
@@ -149,10 +149,10 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                     <div className="flex items-center justify-between gap-1.5">
                       <div className={`text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 min-w-0 ${themeClasses.amountLabelText}`}>
                         <span className={`w-1.5 h-1.5 rounded-full shrink-0 animate-pulse ${themeClasses.amountDot}`}></span>
-                        <span className="truncate">{(sub as any).amountLabel || "Nominal Sementara"}</span>
+                        <span className="truncate">{tx((sub as any).amountLabel || "Nominal Sementara")}</span>
                       </div>
                       <span className={`text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs shrink-0 whitespace-nowrap ${themeClasses.amountBadgeBg}`}>
-                        {(sub as any).amountBadge || "Aktif"}
+                        {tx((sub as any).amountBadge || "Aktif")}
                       </span>
                     </div>
                     <div className={`text-base sm:text-xl font-bold font-mono tracking-tight mt-0.5 ${themeClasses.amountValueText}`}>
@@ -160,7 +160,7 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                     </div>
                     {(sub as any).amountNote && (
                       <div className={`text-[10px] sm:text-[11px] font-medium leading-tight pt-1.5 border-t border-black/5 ${themeClasses.amountNoteText}`}>
-                        {(sub as any).amountNote}
+                        {tx((sub as any).amountNote)}
                       </div>
                     )}
                   </div>
@@ -179,7 +179,7 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                   {sub.points.map((pt, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
                       <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${themeClasses.pointIcon}`} />
-                      <span className="leading-snug">{pt}</span>
+                      <span className="leading-snug">{tx(pt)}</span>
                     </div>
                   ))}
                 </div>
@@ -191,7 +191,7 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                   {tx("Transparan & Berkelanjutan")}
                 </span>
-                <span className="font-semibold text-slate-400">Bagian {sub.number}/03</span>
+                <span className="font-semibold text-slate-400">{tx("Bagian {number}/03", { number: sub.number })}</span>
               </div>
             </div>
           );
@@ -319,7 +319,7 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-5 py-3 rounded-xl shadow-lg transition active:scale-95 cursor-pointer text-xs sm:text-sm whitespace-nowrap"
               >
                 <span>{tx("Wakaf Sekarang")}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 rtl:-scale-x-100" />
               </button>
             )}
 

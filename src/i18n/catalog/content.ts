@@ -107,7 +107,7 @@ export const content: CatalogPart = {
   ),
   "30% Alokasi": e("30% allocated", "تخصيص 30%"),
   "Total profit unit usaha saat ini: Rp 3.000.000 / bulan": e(
-    "Current enterprise profit: Rp 3,000,000 / month",
+    "Current enterprise profit: Rp 3.000.000 / month",
     "ربح الوحدة حالياً: 3.000.000 روبية / شهر",
   ),
   "Dukungan mandiri berkelanjutan yang diinisiasi oleh Ketua DKM (Bpk. Burhan Mubarok, S.Kom) melalui model pertanian terpadu (Integrated Farming). Memadukan budidaya organik, peternakan, dan pemanfaatan lahan secara sirkular untuk menghasilkan dana produktif bagi pembangunan fisik masjid.": e(
@@ -115,7 +115,7 @@ export const content: CatalogPart = {
     "دعم ذاتي مستمر بدأه رئيس الهيئة (السيد برهان مبارك) عبر الزراعة المتكاملة: زراعة عضوية وتربية ماشية واستخدام دائري للأرض، لتمويل بناء المسجد.",
   ),
   "Total profit unit saat ini Rp 3.000.000/bulan dengan 30% (Rp 900.000) dialokasikan langsung untuk pembangunan masjid": e(
-    "Current unit profit is Rp 3,000,000/month, of which 30% (Rp 900,000) goes straight to building the mosque",
+    "Current unit profit is Rp 3.000.000/month, of which 30% (Rp 900.000) goes straight to building the mosque",
     "ربح الوحدة حالياً 3.000.000 روبية/شهر، يُخصص 30% منها (900.000 روبية) مباشرة لبناء المسجد",
   ),
   "Mewujudkan model kemandirian finansial masjid berbasis aset produktif": e(
@@ -147,6 +147,12 @@ export const content: CatalogPart = {
   "Pencatatan dan pelaporan keuangan yang transparan serta dapat dipertanggungjawabkan": e(
     "Financial records and reports that are open and answerable",
     "قيد وتقارير مالية شفافة يمكن المساءلة عنها",
+  ),
+  "Rekap Pelaksanaan Tugas": e("Record of work carried out", "سجل تنفيذ المهام"),
+  "Transparansi & Akuntabilitas DKM": e("DKM transparency and accountability", "شفافية الهيئة ومساءلتها"),
+  "Daftar rekapitulasi realisasi agenda kerja, pembenahan fasilitas, dan rencana aksi DKM Masjid Nurul Falah Sukatani.": e(
+    "A record of completed work, facility repairs, and the action plan of DKM Masjid Nurul Falah Sukatani.",
+    "قائمة بإنجاز جدول العمل وإصلاح المرافق وخطة عمل هيئة مسجد نور الفلاح سوكاتاني.",
   ),
   "Penyusunan Struktur Organisasi DKM": e("Drawing up the DKM organisation chart", "إعداد الهيكل التنظيمي للهيئة"),
   "Pembuatan Rekening Masjid": e("Opening the mosque bank account", "فتح حساب المسجد"),

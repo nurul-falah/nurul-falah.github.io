@@ -279,8 +279,8 @@ export function HistoryPage({ onBackToHome }: HistoryPageProps) {
 
             <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
               <p className="text-xs sm:text-sm text-emerald-950 font-medium">
-                <strong>{tx("Filosofi Kemakmuran:")}</strong> Gagasan hakiki masjid bukan semata-mata berlomba memegahkan fisik bangunan,
-                melainkan bagaimana <em>ngisian masjid</em> (memakmurkan shalat berjamaah, membina ta&apos;lim, dan memberdayakan warga).
+                <strong>{tx("Filosofi Kemakmuran:")}</strong>{" "}
+                {tx("Gagasan hakiki masjid bukan semata-mata berlomba memegahkan fisik bangunan, melainkan bagaimana ngisian masjid (memakmurkan shalat berjamaah, membina ta'lim, dan memberdayakan warga).")}
               </p>
             </div>
 
@@ -337,8 +337,7 @@ export function HistoryPage({ onBackToHome }: HistoryPageProps) {
 
           <div className="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
             <p>
-              Di masa lampau, saat <strong>Bpk. Sugandi</strong> menjabat sebagai Ketua RW, terjadi sebuah permasalahan berskala kecil.
-              Namun warga saat itu berkomplot dan berdemo hingga menumbangkan Ketua RW dari jabatannya. Kejadian serupa berulang pula di era kepemimpinan <strong>Bpk. Oleh</strong>.
+              {tx("Di masa lampau, saat Bpk. Sugandi menjabat sebagai Ketua RW, terjadi sebuah permasalahan berskala kecil. Namun warga saat itu berkomplot dan berdemo hingga menumbangkan Ketua RW dari jabatannya. Kejadian serupa berulang pula di era kepemimpinan Bpk. Oleh.")}
             </p>
 
             <div className="p-4 bg-rose-50 border border-rose-200 rounded-xl text-rose-950 text-xs sm:text-sm space-y-2">

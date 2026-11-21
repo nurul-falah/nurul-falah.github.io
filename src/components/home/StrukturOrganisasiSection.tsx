@@ -437,10 +437,10 @@ export function StrukturOrganisasiSection({ onOpenAdArt }: StrukturOrganisasiSec
       <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
         <span className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs uppercase tracking-wider bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
           <Network className="w-3.5 h-3.5" />
-          {structure.badge}
+          {tx(structure.badge)}
         </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">{tx(structure.title)}</h2>
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{structure.subtitle}</p>
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{tx(structure.subtitle)}</p>
       </div>
 
       {/* Legend */}
@@ -453,7 +453,7 @@ export function StrukturOrganisasiSection({ onOpenAdArt }: StrukturOrganisasiSec
         </span>
         <span className="inline-flex items-center gap-2">
           <span className="italic text-[11px] px-1.5 rounded border border-dashed border-slate-300 text-slate-600">
-            {structure.placeholder}
+            {tx(structure.placeholder)}
           </span>
           {tx("Belum ditetapkan")}
         </span>
@@ -468,9 +468,9 @@ export function StrukturOrganisasiSection({ onOpenAdArt }: StrukturOrganisasiSec
         <div className="flex items-start gap-2.5 text-xs text-slate-700 leading-relaxed">
           <Info className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <p>{structure.source}</p>
-            <p>{structure.term}</p>
-            <p className="italic text-slate-600">{structure.placeholderNote}</p>
+            <p>{tx(structure.source)}</p>
+            <p>{tx(structure.term)}</p>
+            <p className="italic text-slate-600">{tx(structure.placeholderNote)}</p>
           </div>
         </div>
         <button

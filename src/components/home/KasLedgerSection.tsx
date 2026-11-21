@@ -204,7 +204,7 @@ export function KasLedgerSection({
               {formatRp(data.openingBalance)}
             </div>
             {data.openingBalanceAsOf && (
-              <div className="text-[11px] text-slate-500 mt-0.5">Per {data.openingBalanceAsOf}</div>
+              <div className="text-[11px] text-slate-500 mt-0.5">{tx("Per {date}", { date: data.openingBalanceAsOf })}</div>
             )}
           </div>
         )}
@@ -273,7 +273,7 @@ export function KasLedgerSection({
                                     </div>
                                     {entry.isOpening && data.openingBalanceAsOf && (
                                       <div className="text-[11px] text-slate-500 font-medium">
-                                        Per {data.openingBalanceAsOf}
+                                        {tx("Per {date}", { date: data.openingBalanceAsOf })}
                                       </div>
                                     )}
                                   </div>
@@ -310,7 +310,7 @@ export function KasLedgerSection({
                                     <th className="text-start font-bold px-3 py-2 w-16">{tx("RT")}</th>
                                   )}
                                   <th className="text-start font-bold px-3 py-2">
-                                    {showExtraCols ? "Nama" : "Keterangan"}
+                                    {showExtraCols ? tx("Nama") : tx("Keterangan")}
                                   </th>
                                   <th className="text-end font-bold px-3 py-2 w-36">{tx("Masuk")}</th>
                                   <th className="text-end font-bold px-3 py-2 w-36">{tx("Keluar")}</th>
@@ -340,7 +340,7 @@ export function KasLedgerSection({
                                       {entry.description}
                                       {entry.isOpening && data.openingBalanceAsOf && (
                                         <span className="block text-[11px] text-slate-500 font-medium">
-                                          Per {data.openingBalanceAsOf}
+                                          {tx("Per {date}", { date: data.openingBalanceAsOf })}
                                         </span>
                                       )}
                                     </td>

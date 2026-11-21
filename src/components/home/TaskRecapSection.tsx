@@ -78,16 +78,16 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
           <div className="space-y-2 flex-1 min-w-0">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-800 bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200/80">
               <ClipboardCheck className="w-3.5 h-3.5 text-emerald-700" />
-              <span>{taskRecap.badge}</span>
+              <span>{tx(taskRecap.badge)}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-              <span>{taskRecap.title}</span>
+              <span>{tx(taskRecap.title)}</span>
               <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
-                {totalTasks} Agenda
+                {tx("{total} Agenda", { total: totalTasks })}
               </span>
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-3xl">
-              {taskRecap.subtitle}
+              {tx(taskRecap.subtitle)}
             </p>
           </div>
 
@@ -298,10 +298,17 @@ export function TaskRecapSection({ defaultOpen = false }: TaskRecapSectionProps)
               {/* Table Footer Summary */}
               <div className="py-2.5 px-4 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between text-[11px] text-slate-500">
                 <span>
-                  Menampilkan <b>{filteredTasks.length}</b> dari total <b>{totalTasks}</b> agenda
+                  {tx("Menampilkan {shown} dari total {total} agenda", {
+                    shown: filteredTasks.length,
+                    total: totalTasks,
+                  })}
                 </span>
                 <span className="font-semibold text-emerald-800">
-                  {completedCount} {tx("Selesai")} • {wipCount} Sedang Dikerjakan (WIP) • {pendingCount} {tx("Belum")}
+                  {tx("{done} Selesai • {wip} Sedang Dikerjakan (WIP) • {pending} Belum", {
+                    done: completedCount,
+                    wip: wipCount,
+                    pending: pendingCount,
+                  })}
                 </span>
               </div>
             </div>
