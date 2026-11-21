@@ -1,6 +1,7 @@
 import React from "react";
 import { Compass, Calendar, ShieldCheck, Eye } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface HeroSectionProps {
   onOpenInfaq?: () => void;
@@ -8,6 +9,7 @@ export interface HeroSectionProps {
 }
 
 export function HeroSection({ onOpenInfaq, onNavigate }: HeroSectionProps) {
+  const { tx } = useI18n();
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     if (onNavigate) {
       e.preventDefault();
@@ -21,19 +23,19 @@ export function HeroSection({ onOpenInfaq, onNavigate }: HeroSectionProps) {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="lg:col-span-7 space-y-6 text-start">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-800/80 border border-emerald-600/40 text-amber-300 text-xs font-semibold uppercase tracking-wider">
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-              Pusat Dakwah & Kegiatan Umat Sukatani
+              {tx("Pusat Dakwah & Kegiatan Umat Sukatani")}
             </div>
 
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Membangun Generasi Madani, Memakmurkan Masjid{" "}
+              {tx("Membangun Generasi Madani, Memakmurkan Masjid")}{" "}
               <span className="text-amber-300">Nurul Falah</span>
             </h1>
 
             <p className="text-emerald-100 text-base sm:text-lg max-w-2xl leading-relaxed">
-              Wadah informasi, publikasi syiar Islam, kajian rutin, layanan sosial, dan transparansi kegiatan ibadah bersama warga lingkungan Sukatani.
+              {tx("Wadah informasi, publikasi syiar Islam, kajian rutin, layanan sosial, dan transparansi kegiatan ibadah bersama warga lingkungan Sukatani.")}
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -42,61 +44,61 @@ export function HeroSection({ onOpenInfaq, onNavigate }: HeroSectionProps) {
                 onClick={(e) => handleLinkClick(e, "/program-panjang")}
                 className="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold text-sm shadow-lg shadow-amber-500/30 transition flex items-center gap-2"
               >
-                <Compass className="w-4 h-4" /> Rencana & Pembangunan Masjid
+                <Compass className="w-4 h-4" /> {tx("Rencana & Pembangunan Masjid")}
               </a>
               <a
                 href="/program"
                 onClick={(e) => handleLinkClick(e, "/program")}
                 className="px-6 py-3 rounded-xl bg-emerald-800/70 hover:bg-emerald-800 border border-emerald-500/40 text-white font-semibold text-sm transition flex items-center gap-2"
               >
-                <Calendar className="w-4 h-4" /> Jadwal Kajian
+                <Calendar className="w-4 h-4" /> {tx("Jadwal Kajian")}
               </a>
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-emerald-800/60 text-center sm:text-left">
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-emerald-800/60 text-center sm:text-start">
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-white">450+</div>
-                <div className="text-xs text-emerald-200">Jamaah Aktif</div>
+                <div className="text-xs text-emerald-200">{tx("Jamaah Aktif")}</div>
               </div>
               <a
                 href="/pilar"
                 onClick={(e) => handleLinkClick(e, "/pilar")}
                 className="group block"
               >
-                <div className="text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-300 transition-colors">3 Pilar</div>
-                <div className="text-xs text-emerald-200">Doktrin &amp; Nilai Dasar</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-300 transition-colors">{tx("3 Pilar")}</div>
+                <div className="text-xs text-emerald-200">{tx("Doktrin & Nilai Dasar")}</div>
               </a>
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-white">100%</div>
-                <div className="text-xs text-emerald-200">Kas Transparan</div>
+                <div className="text-xs text-emerald-200">{tx("Kas Transparan")}</div>
               </div>
             </div>
           </div>
 
           {/* Highlight Card (Hero Right) */}
-          <div className="lg:col-span-5 text-left">
+          <div className="lg:col-span-5 text-start">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/20 text-white shadow-2xl relative overflow-hidden">
               <div className="absolute -top-12 -right-12 w-36 h-36 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"></div>
 
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="bg-amber-500 text-slate-950 font-bold text-xs uppercase px-2.5 py-1 rounded-md tracking-wider whitespace-nowrap">
-                  Program Strategis 2026-2028
+                  {tx("Program Strategis 2026-2028")}
                 </span>
                 <span className="text-xs text-emerald-200 flex items-center gap-1 whitespace-nowrap">
-                  <ShieldCheck className="w-3.5 h-3.5" /> Visi Madani
+                  <ShieldCheck className="w-3.5 h-3.5" /> {tx("Visi Madani")}
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold mb-2">Pembangunan & Revitalisasi Sarana Masjid</h3>
+              <h3 className="text-xl font-bold mb-2">{tx("Pembangunan & Revitalisasi Sarana Masjid")}</h3>
               <p className="text-slate-200 text-sm mb-4 line-clamp-2">
-                Konstruksi lanjutan untuk area ibadah dan pembelajaran yang lebih berkualitas
+                {tx("Konstruksi lanjutan untuk area ibadah dan pembelajaran yang lebih berkualitas")}
               </p>
 
               <div className="space-y-2 bg-emerald-950/40 p-3.5 rounded-xl border border-emerald-500/20 text-xs text-emerald-100 mb-5">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 sm:gap-3">
-                  <span>Progres Wakaf Pembangunan:</span>
-                  <span className="font-bold text-amber-300 font-mono sm:text-right">
+                  <span>{tx("Progres Wakaf Pembangunan:")}</span>
+                  <span className="font-bold text-amber-300 font-mono sm:text-end">
                     {masjidData.financial.progressPercent}% ({masjidData.financial.buildingFundAllocated} / {masjidData.financial.buildingFundTarget})
                   </span>
                 </div>
@@ -113,7 +115,7 @@ export function HeroSection({ onOpenInfaq, onNavigate }: HeroSectionProps) {
                 onClick={(e) => handleLinkClick(e, "/program-panjang")}
                 className="w-full py-2.5 bg-white hover:bg-emerald-50 text-emerald-950 font-bold text-xs uppercase rounded-xl transition flex items-center justify-center gap-1.5 shadow"
               >
-                <Eye className="w-4 h-4 text-emerald-700" /> Pelajari Program Jangka Panjang
+                <Eye className="w-4 h-4 text-emerald-700" /> {tx("Pelajari Program Jangka Panjang")}
               </a>
             </div>
           </div>

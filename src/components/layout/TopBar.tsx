@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { MapPin } from "lucide-react";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export function TopBar() {
+  const { tx } = useI18n();
+
   const [timeStr, setTimeStr] = useState<string>("");
 
   useEffect(() => {
@@ -22,15 +25,15 @@ export function TopBar() {
       <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5 text-emerald-300">
-            <MapPin className="w-3.5 h-3.5" /> Kp. Sukatani, RT 05 RW 03, Desa Wangunsari
+            <MapPin className="w-3.5 h-3.5" /> {tx("Kp. Sukatani, RT 05 RW 03, Desa Wangunsari")}
           </span>
           <span className="hidden sm:inline-block text-emerald-600">•</span>
-          <span className="text-amber-300 font-medium">14 Safar 1448 H</span>
+          <span className="text-amber-300 font-medium">{tx("14 Safar 1448 H")}</span>
         </div>
         <div className="flex items-center gap-4 font-mono">
           <span className="text-emerald-200">{timeStr || "00:00:00 WIB"}</span>
           <span className="bg-emerald-800/80 px-2.5 py-0.5 rounded text-[11px] text-amber-200 border border-emerald-700/50 font-sans">
-            Menuju Dzuhur: <b className="font-mono text-amber-300">01:24:10</b>
+            {tx("Menuju Dzuhur:")} <b className="font-mono text-amber-300">01:24:10</b>
           </span>
         </div>
       </div>

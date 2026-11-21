@@ -27,3 +27,35 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+html {
+  overflow-x: clip;
+}
+
+html[lang="ar"] body {
+  font-family: "Amiri", "Noto Naskh Arabic", Tahoma, sans-serif;
+  line-height: 1.75;
+}
+
+html[dir="rtl"] .font-mono {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+@media (max-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-ping,
+  .animate-pulse {
+    animation: none;
+  }
+}

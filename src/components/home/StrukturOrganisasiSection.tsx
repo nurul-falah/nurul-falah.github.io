@@ -15,6 +15,7 @@ import {
   UserRound,
 } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 type ContactKey = keyof typeof masjidData.contacts;
 
@@ -131,6 +132,7 @@ function TierLabel({ children, className = "" }: { children: React.ReactNode; cl
 /* ---------- Nodes ---------- */
 
 function ForumNode() {
+  const { tx } = useI18n();
   const { forum } = structure;
   return (
     <div className="bg-gradient-to-r from-[#064e3b] via-emerald-900 to-slate-900 text-white rounded-2xl px-5 py-4 shadow-sm flex items-start gap-3">
@@ -138,14 +140,15 @@ function ForumNode() {
         <Users className="w-5 h-5" />
       </div>
       <div className="min-w-0">
-        <div className="font-bold text-amber-300 text-sm uppercase tracking-wider">{forum.name}</div>
-        <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed mt-0.5">{forum.desc}</p>
+        <div className="font-bold text-amber-300 text-sm uppercase tracking-wider">{tx(forum.name)}</div>
+        <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed mt-0.5">{tx(forum.desc)}</p>
       </div>
     </div>
   );
 }
 
 function AdvisoryNode() {
+  const { tx } = useI18n();
   const { advisory } = structure;
   return (
     <div className="bg-amber-50 border-2 border-dashed border-amber-300 rounded-2xl px-4 py-3.5 flex items-start gap-3">
@@ -153,19 +156,20 @@ function AdvisoryNode() {
         <Landmark className="w-5 h-5" />
       </div>
       <div className="min-w-0">
-        <div className="text-[11px] font-bold uppercase tracking-wider text-amber-800">{advisory.name}</div>
+        <div className="text-[11px] font-bold uppercase tracking-wider text-amber-800">{tx(advisory.name)}</div>
         {advisory.members.map((m, idx) => (
           <div key={idx} className="text-sm leading-snug mt-0.5">
             <PersonName contactKey={m.contactKey} />
           </div>
         ))}
-        <p className="text-xs text-slate-700 leading-relaxed mt-1.5">{advisory.desc}</p>
+        <p className="text-xs text-slate-700 leading-relaxed mt-1.5">{tx(advisory.desc)}</p>
       </div>
     </div>
   );
 }
 
 function ExecutiveNode({ member, lead = false }: { member: OrgPosition; lead?: boolean }) {
+  const { tx } = useI18n();
   return (
     <div
       className={`rounded-2xl p-4 border flex flex-col gap-2 ${
@@ -183,18 +187,20 @@ function ExecutiveNode({ member, lead = false }: { member: OrgPosition; lead?: b
           {iconMap[member.icon ?? ""] ?? <UserRound className="w-5 h-5" />}
         </div>
         <div className="min-w-0">
-          <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800">{member.role}</div>
+          <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800">{tx(member.role)}</div>
           <div className={lead ? "text-base leading-snug" : "text-sm leading-snug"}>
             <PersonName contactKey={member.contactKey} />
           </div>
         </div>
       </div>
-      {member.duty && <p className="text-xs text-slate-600 leading-relaxed">{member.duty}</p>}
+      {member.duty && <p className="text-xs text-slate-600 leading-relaxed">{tx(member.duty)}</p>}
     </div>
   );
 }
 
 function DivisionCard({ d }: { d: OrgDivision }) {
+  const { tx } = useI18n();
+
   const style = colorStyles[d.color] ?? colorStyles.emerald;
   return (
     <div
@@ -206,19 +212,19 @@ function DivisionCard({ d }: { d: OrgDivision }) {
         <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${style.iconBg}`}>
           {iconMap[d.icon] ?? <Users className="w-6 h-6" />}
         </div>
-        <h4 className="text-base font-extrabold text-slate-900 leading-tight">{d.name}</h4>
+        <h4 className="text-base font-extrabold text-slate-900 leading-tight">{tx(d.name)}</h4>
       </div>
       <span className={`self-start text-[11px] font-semibold px-2.5 py-1 rounded-full border mb-3 leading-snug ${style.badgeText}`}>
-        {d.scope}
+        {tx(d.scope)}
       </span>
       <div className="rounded-xl bg-slate-50 border border-slate-200 px-3 py-2.5 mb-3">
-        <div className="text-[11px] font-semibold text-slate-600">{d.lead.role}</div>
+        <div className="text-[11px] font-semibold text-slate-600">{tx(d.lead.role)}</div>
         <div className="text-sm leading-snug">
           <PersonName contactKey={d.lead.contactKey} />
         </div>
         {d.members && d.members.length > 0 && (
           <div className="mt-2 pt-2 border-t border-slate-200">
-            <div className="text-[11px] font-semibold text-slate-600 mb-1">Anggota</div>
+            <div className="text-[11px] font-semibold text-slate-600 mb-1">{tx("Anggota")}</div>
             <ul className="flex flex-wrap gap-1.5">
               {d.members.map((name) => (
                 <li
@@ -258,14 +264,14 @@ function TreeItem({
   continues?: boolean;
 }) {
   return (
-    <li className="group/tree relative pl-8 pt-3">
+    <li className="group/tree relative ps-8 pt-3">
       <span
         aria-hidden="true"
-        className={`absolute left-3 top-0 bottom-0 w-0.5 ${LINE} ${continues ? "" : "group-last/tree:bottom-auto group-last/tree:h-9"}`}
+        className={`absolute start-3 top-0 bottom-0 w-0.5 ${LINE} ${continues ? "" : "group-last/tree:bottom-auto group-last/tree:h-9"}`}
       />
       <span
         aria-hidden="true"
-        className={`absolute left-3 top-9 w-5 ${dashed ? "border-t-2 border-dashed border-amber-400" : `h-0.5 ${LINE}`}`}
+        className={`absolute start-3 top-9 w-5 ${dashed ? "border-t-2 border-dashed border-amber-400" : `h-0.5 ${LINE}`}`}
       />
       {children}
     </li>
@@ -273,6 +279,8 @@ function TreeItem({
 }
 
 function MobileTree() {
+  const { tx } = useI18n();
+
   const { advisory, executive } = structure;
   const [ketua, ...staff] = executive.members;
   return (
@@ -280,15 +288,15 @@ function MobileTree() {
       <ForumNode />
       <ul aria-label={`Di bawah ${structure.forum.name}`}>
         <TreeItem dashed continues>
-          <TierLabel className="mb-1.5 text-amber-800">Garis nasihat</TierLabel>
+          <TierLabel className="mb-1.5 text-amber-800">{tx("Garis nasihat")}</TierLabel>
           <AdvisoryNode />
         </TreeItem>
       </ul>
-      {/* Spine continues into the Pengurus Harian panel */}
-      <div aria-hidden="true" className={`ml-3 w-0.5 h-4 ${LINE}`} />
+      {/* Spine continues into the {tx("Pengurus Harian")} panel */}
+      <div aria-hidden="true" className={`ms-3 w-0.5 h-4 ${LINE}`} />
       <div className="rounded-2xl border border-emerald-200 bg-emerald-50/40 p-3 sm:p-4">
-        <TierLabel className="mb-0.5">{executive.name}</TierLabel>
-        <p className="text-xs text-slate-600 mb-3">{executive.desc}</p>
+        <TierLabel className="mb-0.5">{tx(executive.name)}</TierLabel>
+        <p className="text-xs text-slate-600 mb-3">{tx(executive.desc)}</p>
         <ExecutiveNode member={ketua} lead />
         <ul aria-label={`Di bawah ${ketua.role}`}>
           {staff.map((m) => (
@@ -305,6 +313,7 @@ function MobileTree() {
 /* ---------- Desktop chart (lg and up) ---------- */
 
 function DesktopChart() {
+  const { tx } = useI18n();
   const { executive } = structure;
   const [ketua, sekretaris, bendahara] = executive.members;
   return (
@@ -317,9 +326,9 @@ function DesktopChart() {
       <div className="relative rounded-3xl border border-emerald-200 bg-emerald-50/40 px-6 pb-6">
         {/* Panel header on the left; trunk keeps running through the centre */}
         <div className="grid grid-cols-[1fr_2px_1fr]">
-          <div className="pt-4 pb-4 pr-6">
-            <TierLabel>{executive.name}</TierLabel>
-            <p className="text-xs text-slate-600 mt-0.5 max-w-sm">{executive.desc}</p>
+          <div className="pt-4 pb-4 pe-6">
+            <TierLabel>{tx(executive.name)}</TierLabel>
+            <p className="text-xs text-slate-600 mt-0.5 max-w-sm">{tx(executive.desc)}</p>
           </div>
           <div aria-hidden="true" className={LINE} />
           <div />
@@ -375,16 +384,18 @@ function DesktopChart() {
 /* ---------- Divisions: bus connector on desktop, tree on mobile ---------- */
 
 function Divisions() {
+  const { tx } = useI18n();
+
   const { divisions } = structure;
   return (
     <div>
-      {/* Mobile: spine from Pengurus Harian into the list */}
-      <div aria-hidden="true" className={`lg:hidden ml-3 w-0.5 h-4 ${LINE}`} />
-      <div className="lg:text-center pl-8 lg:pl-0 relative">
-        <span aria-hidden="true" className={`lg:hidden absolute left-3 top-0 bottom-0 w-0.5 ${LINE}`} />
+      {/* Mobile: spine from {tx("Pengurus Harian")} into the list */}
+      <div aria-hidden="true" className={`lg:hidden ms-3 w-0.5 h-4 ${LINE}`} />
+      <div className="lg:text-center ps-8 lg:ps-0 relative">
+        <span aria-hidden="true" className={`lg:hidden absolute start-3 top-0 bottom-0 w-0.5 ${LINE}`} />
         <div className="inline-flex items-center gap-2 rounded-full bg-white border border-emerald-200 px-3.5 py-1.5 shadow-sm">
           <Network className="w-3.5 h-3.5 text-emerald-700" />
-          <h3 className="text-sm font-extrabold text-slate-900">Bidang-Bidang Pelaksana</h3>
+          <h3 className="text-sm font-extrabold text-slate-900">{tx("Bidang-Bidang Pelaksana")}</h3>
         </div>
       </div>
       <div className="relative lg:mt-6">
@@ -392,13 +403,13 @@ function Divisions() {
         <span aria-hidden="true" className={`hidden lg:block absolute -top-6 left-[16.67%] right-[16.67%] h-0.5 ${LINE}`} />
         <ul className="grid lg:grid-cols-3 gap-x-4 lg:gap-x-5 lg:gap-y-0">
           {divisions.map((d) => (
-            <li key={d.id} className="group/tree relative pl-8 pt-3 lg:pl-0 lg:pt-0">
+            <li key={d.id} className="group/tree relative ps-8 pt-3 lg:ps-0 lg:pt-0">
               {/* mobile spine + elbow */}
               <span
                 aria-hidden="true"
-                className={`lg:hidden absolute left-3 top-0 bottom-0 w-0.5 ${LINE} group-last/tree:bottom-auto group-last/tree:h-9`}
+                className={`lg:hidden absolute start-3 top-0 bottom-0 w-0.5 ${LINE} group-last/tree:bottom-auto group-last/tree:h-9`}
               />
-              <span aria-hidden="true" className={`lg:hidden absolute left-3 top-9 w-5 h-0.5 ${LINE}`} />
+              <span aria-hidden="true" className={`lg:hidden absolute start-3 top-9 w-5 h-0.5 ${LINE}`} />
               {/* desktop drop from bus */}
               <span aria-hidden="true" className={`hidden lg:block absolute -top-6 left-1/2 -translate-x-1/2 h-6 w-0.5 ${LINE}`} />
               <DivisionCard d={d} />
@@ -415,34 +426,36 @@ export interface StrukturOrganisasiSectionProps {
 }
 
 export function StrukturOrganisasiSection({ onOpenAdArt }: StrukturOrganisasiSectionProps) {
+  const { tx } = useI18n();
+
   return (
     <section
       id="struktur-organisasi"
-      className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left scroll-mt-20"
+      className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-start scroll-mt-20"
     >
       {/* Section header */}
       <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
         <span className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs uppercase tracking-wider bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
           <Network className="w-3.5 h-3.5" />
-          {structure.badge}
+          {tx(structure.badge)}
         </span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">{structure.title}</h2>
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{structure.subtitle}</p>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">{tx(structure.title)}</h2>
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{tx(structure.subtitle)}</p>
       </div>
 
       {/* Legend */}
       <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-slate-700 mb-6">
         <span className="inline-flex items-center gap-2">
-          <span aria-hidden="true" className={`inline-block w-6 h-0.5 ${LINE}`} /> Garis komando
+          <span aria-hidden="true" className={`inline-block w-6 h-0.5 ${LINE}`} /> {tx("Garis komando")}
         </span>
         <span className="inline-flex items-center gap-2">
-          <span aria-hidden="true" className="inline-block w-6 border-t-2 border-dashed border-amber-400" /> Garis nasihat
+          <span aria-hidden="true" className="inline-block w-6 border-t-2 border-dashed border-amber-400" /> {tx("Garis nasihat")}
         </span>
         <span className="inline-flex items-center gap-2">
           <span className="italic text-[11px] px-1.5 rounded border border-dashed border-slate-300 text-slate-600">
-            {structure.placeholder}
+            {tx(structure.placeholder)}
           </span>
-          Belum ditetapkan
+          {tx("Belum ditetapkan")}
         </span>
       </div>
 
@@ -455,9 +468,9 @@ export function StrukturOrganisasiSection({ onOpenAdArt }: StrukturOrganisasiSec
         <div className="flex items-start gap-2.5 text-xs text-slate-700 leading-relaxed">
           <Info className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <p>{structure.source}</p>
-            <p>{structure.term}</p>
-            <p className="italic text-slate-600">{structure.placeholderNote}</p>
+            <p>{tx(structure.source)}</p>
+            <p>{tx(structure.term)}</p>
+            <p className="italic text-slate-600">{tx(structure.placeholderNote)}</p>
           </div>
         </div>
         <button
@@ -465,7 +478,7 @@ export function StrukturOrganisasiSection({ onOpenAdArt }: StrukturOrganisasiSec
           onClick={onOpenAdArt}
           className="inline-flex items-center justify-center gap-1.5 shrink-0 px-4 py-2.5 rounded-xl bg-[#064e3b] hover:bg-emerald-800 text-white text-xs font-bold transition"
         >
-          Baca AD/ART Lengkap <ArrowRight className="w-3.5 h-3.5" />
+          {tx("Baca AD/ART Lengkap")} <ArrowRight className="w-3.5 h-3.5 rtl:-scale-x-100" />
         </button>
       </div>
     </section>

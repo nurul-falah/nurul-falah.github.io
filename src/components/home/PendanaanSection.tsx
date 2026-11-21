@@ -18,12 +18,15 @@ import masjidData from "@/data/masjid.json";
 import kotakAmal from "@/data/kotakAmal.json";
 import bangunanMasjid from "@/data/bangunanMasjid.json";
 import { KasLedgerSection } from "./KasLedgerSection";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface PendanaanSectionProps {
   onOpenWakaf?: () => void;
 }
 
 export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
+  const { tx } = useI18n();
+
   const [copied, setCopied] = React.useState(false);
   const account = masjidData.bankAccounts?.[0];
 
@@ -43,18 +46,18 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
   };
 
   return (
-    <section id="pendanaan" className="scroll-mt-20 pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+    <section id="pendanaan" className="scroll-mt-20 pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-start">
       {/* Header Section */}
       <div className="text-center max-w-3xl mx-auto mb-12">
         <span className="text-[#059669] font-semibold text-xs uppercase tracking-wider bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 inline-flex items-center gap-1.5 shadow-2xs">
           <Coins className="w-3.5 h-3.5 text-emerald-600" />
-          {funding.badge}
+          {tx(funding.badge)}
         </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">
-          {funding.title}
+          {tx(funding.title)}
         </h2>
         <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
-          {funding.subtitle}
+          {tx(funding.subtitle)}
         </p>
       </div>
 
@@ -124,7 +127,7 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${themeClasses.badge}`}>
-                      {sub.badge}
+                      {tx(sub.badge)}
                     </span>
                     <span className={`text-xl font-extrabold ${themeClasses.numberText}`}>
                       {sub.number}
@@ -134,22 +137,22 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
 
                 {/* Title & Tagline */}
                 <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-900 transition-colors leading-snug">
-                  {sub.title}
+                  {tx(sub.title)}
                 </h3>
                 <div className="text-[11px] font-semibold text-slate-500 mt-0.5 mb-3">
-                  {sub.tagline}
+                  {tx(sub.tagline)}
                 </div>
 
-                {/* Nominal Sementara Callout (if amount exists) */}
+                {/* {tx("Nominal Sementara")} Callout (if amount exists) */}
                 {"amount" in sub && Boolean((sub as any).amount) && (
                   <div className={`mb-4 p-3 sm:p-3.5 rounded-xl border flex flex-col gap-1 shadow-2xs ${themeClasses.amountBg}`}>
                     <div className="flex items-center justify-between gap-1.5">
                       <div className={`text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 min-w-0 ${themeClasses.amountLabelText}`}>
                         <span className={`w-1.5 h-1.5 rounded-full shrink-0 animate-pulse ${themeClasses.amountDot}`}></span>
-                        <span className="truncate">{(sub as any).amountLabel || "Nominal Sementara"}</span>
+                        <span className="truncate">{tx((sub as any).amountLabel || "Nominal Sementara")}</span>
                       </div>
                       <span className={`text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs shrink-0 whitespace-nowrap ${themeClasses.amountBadgeBg}`}>
-                        {(sub as any).amountBadge || "Aktif"}
+                        {tx((sub as any).amountBadge || "Aktif")}
                       </span>
                     </div>
                     <div className={`text-base sm:text-xl font-bold font-mono tracking-tight mt-0.5 ${themeClasses.amountValueText}`}>
@@ -157,7 +160,7 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                     </div>
                     {(sub as any).amountNote && (
                       <div className={`text-[10px] sm:text-[11px] font-medium leading-tight pt-1.5 border-t border-black/5 ${themeClasses.amountNoteText}`}>
-                        {(sub as any).amountNote}
+                        {tx((sub as any).amountNote)}
                       </div>
                     )}
                   </div>
@@ -165,18 +168,18 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
 
                 {/* Description */}
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
-                  {sub.desc}
+                  {tx(sub.desc)}
                 </p>
 
                 {/* Highlights / Points */}
                 <div className="space-y-2.5 pt-4 border-t border-slate-100">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
-                    Bentuk Dukungan:
+                    {tx("Bentuk Dukungan:")}
                   </span>
                   {sub.points.map((pt, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
                       <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${themeClasses.pointIcon}`} />
-                      <span className="leading-snug">{pt}</span>
+                      <span className="leading-snug">{tx(pt)}</span>
                     </div>
                   ))}
                 </div>
@@ -186,9 +189,9 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
               <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-500 font-medium flex items-center justify-between">
                 <span className="inline-flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  Transparan &amp; Berkelanjutan
+                  {tx("Transparan & Berkelanjutan")}
                 </span>
-                <span className="font-semibold text-slate-400">Bagian {sub.number}/03</span>
+                <span className="font-semibold text-slate-400">{tx("Bagian {number}/03", { number: sub.number })}</span>
               </div>
             </div>
           );
@@ -202,61 +205,61 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
             <div>
               <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1.5">
                 <Wallet className="w-3.5 h-3.5 text-emerald-600" />
-                Pemisahan Pos Keuangan (Cost Center)
+                {tx("Pemisahan Pos Keuangan (Cost Center)")}
               </div>
               <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5">
-                Alokasi Saldo Berdasarkan Cost Center
+                {tx("Alokasi Saldo Berdasarkan Cost Center")}
               </h3>
             </div>
             <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
               <span className="text-[11px] font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
-                Total Saldo Kas: <span className="font-mono text-emerald-800">{masjidData.financial.balance}</span>
+                {tx("Total Saldo Kas:")} <span className="font-mono text-emerald-800">{masjidData.financial.balance}</span>
               </span>
               <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-full border border-slate-200 hidden sm:inline-block">
-                Amanah &amp; Akuntabel
+                {tx("Amanah & Akuntabel")}
               </span>
             </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            {/* Cost Center 1: Kas Infaq Renovasi */}
+            {/* Cost Center 1: {tx("Kas Infaq Renovasi")} */}
             <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-br from-emerald-50 via-white to-emerald-50/40 border border-emerald-200/90 flex flex-col justify-between shadow-2xs hover:border-emerald-400 transition">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                    Pos Pembangunan
+                    {tx("Pos Pembangunan")}
                   </span>
                   <Landmark className="w-4 h-4 text-emerald-700" />
                 </div>
-                <div className="text-sm font-bold text-slate-900">Kas Infaq Renovasi</div>
+                <div className="text-sm font-bold text-slate-900">{tx("Kas Infaq Renovasi")}</div>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Dana khusus yang dialokasikan dan disalurkan langsung untuk pembiayaan konstruksi, material, dan renovasi fisik masjid.
+                  {tx("Dana khusus yang dialokasikan dan disalurkan langsung untuk pembiayaan konstruksi, material, dan renovasi fisik masjid.")}
                 </p>
               </div>
               <div className="mt-4 pt-3 border-t border-emerald-100/90 flex items-baseline justify-between">
-                <span className="text-[11px] text-slate-500 font-medium">Saldo Terhimpun:</span>
+                <span className="text-[11px] text-slate-500 font-medium">{tx("Saldo Terhimpun:")}</span>
                 <span className="text-xl sm:text-2xl font-black font-mono text-[#064e3b]">
                   {masjidData.financial.costCenter.infaqRenovasi}
                 </span>
               </div>
             </div>
 
-            {/* Cost Center 2: Kas Infaq Umum */}
+            {/* Cost Center 2: {tx("Kas Infaq Umum")} */}
             <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-br from-blue-50 via-white to-blue-50/40 border border-blue-200/90 flex flex-col justify-between shadow-2xs hover:border-blue-400 transition">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-blue-800 bg-blue-100/80 px-2.5 py-0.5 rounded-full border border-blue-200">
-                    Pos Operasional
+                    {tx("Pos Operasional")}
                   </span>
                   <Wallet className="w-4 h-4 text-blue-700" />
                 </div>
-                <div className="text-sm font-bold text-slate-900">Kas Infaq Umum</div>
+                <div className="text-sm font-bold text-slate-900">{tx("Kas Infaq Umum")}</div>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Dana operasional rutin untuk kelistrikan, kebersihan, pemeliharaan sarana harian, dan kegiatan taklim/dakwah masjid.
+                  {tx("Dana operasional rutin untuk kelistrikan, kebersihan, pemeliharaan sarana harian, dan kegiatan taklim/dakwah masjid.")}
                 </p>
               </div>
               <div className="mt-4 pt-3 border-t border-blue-100/90 flex items-baseline justify-between">
-                <span className="text-[11px] text-slate-500 font-medium">Saldo Aktif:</span>
+                <span className="text-[11px] text-slate-500 font-medium">{tx("Saldo Aktif:")}</span>
                 <span className="text-xl sm:text-2xl font-black font-mono text-blue-900">
                   {masjidData.financial.costCenter.infaqUmum}
                 </span>
@@ -271,23 +274,23 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
 
       {/* Summary Action Banner */}
       <div className="bg-gradient-to-br from-[#064e3b] via-[#047857] to-emerald-950 rounded-2xl text-white p-6 sm:p-8 shadow-xl border border-emerald-700/50 flex flex-col lg:flex-row items-center justify-between gap-6">
-        <div className="space-y-2 max-w-2xl text-center lg:text-left">
+        <div className="space-y-2 max-w-2xl text-center lg:text-start">
           <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-300 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-600/60">
             <TrendingUp className="w-3.5 h-3.5" />
-            Saluran Wakaf &amp; Infaq Resmi
+            {tx("Saluran Wakaf & Infaq Resmi")}
           </div>
           <h4 className="text-xl sm:text-2xl font-bold">
-            Turut Berpartisipasi dalam Pembangunan Masjid
+            {tx("Turut Berpartisipasi dalam Pembangunan Masjid")}
           </h4>
           <p className="text-emerald-100 text-xs sm:text-sm leading-relaxed">
-            Setiap rupiah infaq dan wakaf yang diamanahkan dicatat transparan demi mewujudkan sarana ibadah 2 lantai yang representatif bagi generasi madani di Kp. Sukatani.
+            {tx("Setiap rupiah infaq dan wakaf yang diamanahkan dicatat transparan demi mewujudkan sarana ibadah 2 lantai yang representatif bagi generasi madani di Kp. Sukatani.")}
           </p>
         </div>
 
         {/* Bank & CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0">
           {account && (
-            <div className="bg-white/10 backdrop-blur border border-white/20 rounded-xl px-4 py-2.5 text-center sm:text-left w-full sm:w-auto">
+            <div className="bg-white/10 backdrop-blur border border-white/20 rounded-xl px-4 py-2.5 text-center sm:text-start w-full sm:w-auto">
               <div className="text-[10px] text-emerald-200 font-medium">{account.bankName}</div>
               <div className="flex items-center justify-center sm:justify-start gap-2 mt-0.5">
                 <span className="font-mono font-extrabold text-white text-base tracking-wider">
@@ -297,13 +300,13 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                   type="button"
                   onClick={handleCopy}
                   className="p-1 hover:bg-white/20 rounded transition text-emerald-200 hover:text-white cursor-pointer"
-                  title="Salin Nomor Rekening"
+                  title={tx("Salin Nomor Rekening")}
                 >
                   {copied ? <Check className="w-4 h-4 text-emerald-300" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
               <div className="text-[9px] text-emerald-300/80 truncate max-w-[200px]">
-                a.n {account.accountHolder}
+                {tx("a.n")} {account.accountHolder}
               </div>
             </div>
           )}
@@ -315,8 +318,8 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
                 onClick={onOpenWakaf}
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-5 py-3 rounded-xl shadow-lg transition active:scale-95 cursor-pointer text-xs sm:text-sm whitespace-nowrap"
               >
-                <span>Wakaf Sekarang</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>{tx("Wakaf Sekarang")}</span>
+                <ArrowRight className="w-4 h-4 rtl:-scale-x-100" />
               </button>
             )}
 
@@ -325,10 +328,10 @@ export function PendanaanSection({ onOpenWakaf }: PendanaanSectionProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-3 rounded-xl border border-white/20 transition active:scale-95 cursor-pointer text-xs sm:text-sm whitespace-nowrap"
-              title="Konfirmasi via WhatsApp"
+              title={tx("Konfirmasi via WhatsApp")}
             >
               <MessageCircle className="w-4 h-4 text-emerald-300" />
-              <span>Konfirmasi</span>
+              <span>{tx("Konfirmasi")}</span>
             </a>
           </div>
         </div>
