@@ -132,13 +132,22 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
                     <p className="text-slate-300 text-[11px]">{tx("Penataan sarana TPA & Tahfidz & Layanan Sosial masyarakat")}</p>
                   </div>
                 </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="text-white font-semibold text-xs">{tx("Acuan resmi bangunan")}</div>
+                    <p className="text-slate-300 text-[11px]">
+                      {tx("Tapak 24 × 17 m (408 m²), dua lantai penuh, pelayanan 300 kepala keluarga. RAB Tahap 1 struktur beton {budget}: foot plat 150 × 150 cm, 36 titik, beton K-250, sloof, kolom, dak lantai 2, dan ring balk.", { budget: masjidData.plan.tahap1Budget })}
+                    </p>
+                  </div>
+                </li>
               </ul>
             </div>
 
             {/* Progress Donasi Pembangunan */}
             <div className="bg-black/30 p-4 rounded-xl border border-white/10 mt-2">
               <div className="flex justify-between items-center text-xs mb-2">
-                <span className="text-slate-300 font-medium">{tx("Estimasi Kebutuhan Biaya Fisik")}</span>
+                <span className="text-slate-300 font-medium">{tx("Progres Wakaf Pembangunan")}</span>
                 <span className="text-amber-300 font-bold font-mono">{masjidData.financial.buildingFundTarget}</span>
               </div>
               <div className="w-full bg-slate-700/60 h-2.5 rounded-full overflow-hidden mb-2">

@@ -619,17 +619,8 @@ export const content: CatalogPart = {
     "Separate wudu for men and women, 4 toilets, a water tower, and an automatic pump",
     "وضوء منفصل للرجال والنساء، و4 دورات مياه، وخزان علوي، ومضخة آلية",
   ),
-  "Pembangunan Struktur Bangunan Utama": e("Building the main structure", "بناء الهيكل الرئيس"),
-  "Pengerjaan pondasi tapak cakar ayam bertulang, tiang kolom struktur utama 2 lantai, sloof balok penopang, dan cor plat dak mezzanine.": e(
-    "Reinforced cakar-ayam footings, the two-storey main columns, ground beams, and the cast mezzanine slab.",
-    "أساسات مخلب الدجاجة المسلحة، وأعمدة الهيكل لطابقين، وكمرات الأرض، وصب بلاطة الميزانين.",
-  ),
   "Tahap 4": e("Phase 4", "المرحلة 4"),
   "Maret - Agustus 2027": e("March–August 2027", "مارس – أغسطس 2027"),
-  "Pondasi cakar ayam, 16 kolom beton bertulang, balok sloof, & pengecoran plat dak lantai mezanin": e(
-    "Cakar-ayam footings, 16 reinforced columns, ground beams, and casting the mezzanine slab",
-    "أساسات مخلب الدجاجة، و16 عموداً مسلحاً، وكمرات أرض، وصب بلاطة الميزانين",
-  ),
   "Pembangunan Dinding dan Fasad": e("Building the walls and facade", "بناء الجدران والواجهة"),
   "Pemasangan dinding bata ringan keliling, plester acian halus, ornamen arsitektur fasad modern islami, kusen jendela, dan ornamen mihrab.": e(
     "Lightweight block walls all round, fine plaster, a modern Islamic facade, window frames, and the mihrab ornament.",
@@ -704,4 +695,54 @@ export const content: CatalogPart = {
     "Stipend for teachers and the children's class (20/08)",
     "مكافأة الأساتذة ومعلمي الحلقة (20/08)",
   ),
+  "Tanah yang dicatat di situs ini mengikuti satu sertifikat, Sertipikat Wakaf No. 215/Wakaf, Desa Cisolok, Kantor Pertanahan Kabupaten Sukabumi, terbit 22 Agustus 1992, kode 10.11.10.04.1.00215, Surat Ukur No. 3320/1992, seluas 265 m². Tapak bangunan yang direncanakan, 24 × 17 m (408 m²), lebih luas daripada lahan pada sertifikat itu. Perbedaan luas ini masih terbuka.": e(
+    "The land recorded on this site follows one certificate: Waqf Certificate No. 215/Wakaf, Cisolok Village, Land Office of Sukabumi Regency, issued 22 August 1992, code 10.11.10.04.1.00215, Survey Letter No. 3320/1992, area 265 m². The planned building footprint, 24 × 17 m (408 m²), is larger than the land on that certificate. The difference in area remains open.",
+    "الأرض المقيدة في هذا الموقع تتبع شهادة واحدة: شهادة الوقف رقم 215/وقف، قرية تشيسولوك، مكتب الأراضي لمحافظة سوكابومي، الصادرة في 22 أغسطس 1992، الرمز 10.11.10.04.1.00215، خطاب القياس رقم 3320/1992، المساحة 265 م². مسقط المبنى المخطط، 24 × 17 م (408 م²)، أوسع من الأرض في تلك الشهادة. فرق المساحة ما زال أمراً مفتوحاً.",
+  ),
+  "Foot plat 150 × 150 cm, 36 titik, beton K-250, sloof, kolom, dak lantai 2, dan ring balk": e(
+    "Foot plat pads 150 × 150 cm, 36 points, K-250 concrete, ground beams, columns, the second-floor slab, and ring beams",
+    "قواعد foot plat بمقاس 150 × 150 سم، 36 نقطة، خرسانة K-250، وميدات وأعمدة وبلاطة الطابق الثاني وكمرة رابطة",
+  ),
+  "Struktur Beton Dua Lantai": e("Two-storey concrete structure", "هيكل خرساني من طابقين"),
+  "Struktur beton untuk bangunan dua lantai penuh: foot plat 150 × 150 cm sebanyak 36 titik, beton K-250, sloof, kolom, dak lantai 2, dan ring balk.": e(
+    "The concrete structure for a building of two full storeys: foot plat pads 150 × 150 cm at 36 points, K-250 concrete, ground beams, columns, the second-floor slab, and ring beams.",
+    "الهيكل الخرساني لمبنى من طابقين كاملين: قواعد foot plat بمقاس 150 × 150 سم في 36 نقطة، خرسانة K-250، وميدات وأعمدة وبلاطة الطابق الثاني وكمرة رابطة.",
+  ),
+  "Enam pos RAB Tahap 1 berjumlah Rp 762.000.000: persiapan, sub-struktur, sloof dan kolom lantai 1, balok dan dak lantai 2, kolom dan ring balk lantai 2, serta penunjang dan K3.": e(
+    "The six items of the Phase 1 budget total Rp 762,000,000: preparation, substructure, ground beams and ground-floor columns, beams and the second-floor slab, second-floor columns and ring beams, and support works including site safety.",
+    "بنود ميزانية المرحلة 1 الستة مجموعها 762.000.000 روبية: التجهيز، والبنية التحتية، والميدات وأعمدة الطابق الأول، والكمرات وبلاطة الطابق الثاني، وأعمدة الطابق الثاني والكمرة الرابطة، والأعمال المساندة وسلامة الموقع.",
+  ),
+  "Dinding dan Kusen": e("Walls and frames", "الجدران والإطارات"),
+  "Dinding dan kusen, menyusul struktur beton Tahap 1.": e(
+    "Walls and frames, after the Phase 1 concrete structure.",
+    "الجدران والإطارات، بعد الهيكل الخرساني للمرحلة 1.",
+  ),
+  "Atap dan Plafon": e("Roof and ceiling", "السقف والبطانة"),
+  "Atap dan plafon, menyusul dinding dan kusen.": e(
+    "Roof and ceiling, after the walls and frames.",
+    "السقف والبطانة، بعد الجدران والإطارات.",
+  ),
+  "Sanitasi dan Elektrikal": e("Sanitation and electrical", "الصرف والكهرباء"),
+  "Sanitasi dan elektrikal pada urutan proposal. Saluran yang sudah dikerjakan di lapangan dicatat terpisah, bukan sebagai anggaran tahap ini.": e(
+    "Sanitation and electrical work in the proposal's order. The channel already built on site is recorded separately, and is not the budget for this stage.",
+    "الصرف والكهرباء بحسب ترتيب المقترح. القناة التي نُفذت في الموقع مسجلة على حدة، وليست ميزانية هذه المرحلة.",
+  ),
+  "Arsitektural dan Finishing": e("Architecture and finishing", "الأعمال المعمارية والتشطيب"),
+  "Pekerjaan arsitektural dan finishing.": e(
+    "Architectural work and finishing.",
+    "الأعمال المعمارية والتشطيب.",
+  ),
+  "Pekerjaan lapangan": e("Work on site", "عمل في الموقع"),
+  Persiapan: e("Preparation", "التجهيز"),
+  "Sub-struktur": e("Substructure", "البنية التحتية"),
+  "Sloof dan kolom lantai 1": e(
+    "Ground beams and ground-floor columns",
+    "الميدات وأعمدة الطابق الأول",
+  ),
+  "Balok dan dak lantai 2": e("Beams and the second-floor slab", "الكمرات وبلاطة الطابق الثاني"),
+  "Kolom dan ring balk lantai 2": e(
+    "Second-floor columns and ring beams",
+    "أعمدة الطابق الثاني والكمرة الرابطة",
+  ),
+  "Penunjang dan K3": e("Support works and site safety", "الأعمال المساندة وسلامة الموقع"),
 };

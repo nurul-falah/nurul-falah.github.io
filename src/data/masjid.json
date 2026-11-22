@@ -17,22 +17,119 @@
     "qiblaAzimuth": 294.5
   },
   "specs": {
-    "landAreaM2": 500.0,
-    "buildingAreaM2": 344.0,
-    "groundFloorM2": 224.0,
-    "mezzanineFloorM2": 120.0,
-    "capacity": 360
+    "footprintLengthM": 24,
+    "footprintWidthM": 17,
+    "footprintM2": 408,
+    "storeys": 2,
+    "householdsServed": 300,
+    "structure": "Foot plat 150 × 150 cm, 36 titik, beton K-250, sloof, kolom, dak lantai 2, dan ring balk"
+  },
+  "land": {
+    "instrument": "Sertipikat Wakaf",
+    "number": "215/Wakaf",
+    "village": "Desa Cisolok",
+    "office": "Kantor Pertanahan Kabupaten Sukabumi",
+    "issued": "22 Agustus 1992",
+    "code": "10.11.10.04.1.00215",
+    "surveyNumber": "3320/1992",
+    "areaM2": 265,
+    "statement": "Tanah yang dicatat di situs ini mengikuti satu sertifikat, Sertipikat Wakaf No. 215/Wakaf, Desa Cisolok, Kantor Pertanahan Kabupaten Sukabumi, terbit 22 Agustus 1992, kode 10.11.10.04.1.00215, Surat Ukur No. 3320/1992, seluas 265 m². Tapak bangunan yang direncanakan, 24 × 17 m (408 m²), lebih luas daripada lahan pada sertifikat itu. Perbedaan luas ini masih terbuka."
+  },
+  "plan": {
+    "decidedOn": "22 November 2026",
+    "tahap1Budget": "Rp 762.000.000",
+    "tahap1BudgetWords": "Tujuh Ratus Enam Puluh Dua Juta Rupiah",
+    "rab": [
+      {
+        "code": "I",
+        "name": "Persiapan",
+        "amount": 28500000,
+        "label": "Rp 28.500.000"
+      },
+      {
+        "code": "II",
+        "name": "Sub-struktur",
+        "amount": 182200000,
+        "label": "Rp 182.200.000"
+      },
+      {
+        "code": "III",
+        "name": "Sloof dan kolom lantai 1",
+        "amount": 218800000,
+        "label": "Rp 218.800.000"
+      },
+      {
+        "code": "IV",
+        "name": "Balok dan dak lantai 2",
+        "amount": 215000000,
+        "label": "Rp 215.000.000"
+      },
+      {
+        "code": "V",
+        "name": "Kolom dan ring balk lantai 2",
+        "amount": 99500000,
+        "label": "Rp 99.500.000"
+      },
+      {
+        "code": "VI",
+        "name": "Penunjang dan K3",
+        "amount": 18000000,
+        "label": "Rp 18.000.000"
+      }
+    ]
   },
   "constructionPhases": [
     {
       "phase": 1,
+      "title": "Struktur Beton Dua Lantai",
+      "desc": "Struktur beton untuk bangunan dua lantai penuh: foot plat 150 × 150 cm sebanyak 36 titik, beton K-250, sloof, kolom, dak lantai 2, dan ring balk.",
+      "badge": "Tahap 1",
+      "status": "Rencana",
+      "targetBudget": "Rp 762.000.000",
+      "milestone": "Enam pos RAB Tahap 1 berjumlah Rp 762.000.000: persiapan, sub-struktur, sloof dan kolom lantai 1, balok dan dak lantai 2, kolom dan ring balk lantai 2, serta penunjang dan K3.",
+      "progressPercent": 0
+    },
+    {
+      "phase": 2,
+      "title": "Dinding dan Kusen",
+      "desc": "Dinding dan kusen, menyusul struktur beton Tahap 1.",
+      "badge": "Tahap 2",
+      "status": "Rencana",
+      "progressPercent": 0
+    },
+    {
+      "phase": 3,
+      "title": "Atap dan Plafon",
+      "desc": "Atap dan plafon, menyusul dinding dan kusen.",
+      "badge": "Tahap 3",
+      "status": "Rencana",
+      "progressPercent": 0
+    },
+    {
+      "phase": 4,
+      "title": "Sanitasi dan Elektrikal",
+      "desc": "Sanitasi dan elektrikal pada urutan proposal. Saluran yang sudah dikerjakan di lapangan dicatat terpisah, bukan sebagai anggaran tahap ini.",
+      "badge": "Tahap 4",
+      "status": "Rencana",
+      "progressPercent": 0
+    },
+    {
+      "phase": 5,
+      "title": "Arsitektural dan Finishing",
+      "desc": "Pekerjaan arsitektural dan finishing.",
+      "badge": "Tahap 5",
+      "status": "Rencana",
+      "progressPercent": 0
+    }
+  ],
+  "fieldWork": [
+    {
       "title": "Pembangunan Jalur Sanitasi/Irigasi Air",
       "desc": "Penataan saluran sanitasi pembuangan dan perpipaan irigasi lingkungan agar tapak lahan masjid stabil, kering, dan bebas genangan.",
-      "badge": "Tahap 1",
+      "badge": "Pekerjaan lapangan",
       "status": "Selesai",
       "timeline": "Agustus - September 2026",
       "quarter": "Q3 2026",
-      "targetBudget": "Rp 25.000.000",
       "milestone": "Saluran buis beton U-Ditch 40m & cor jembatan gang akses warga RT 5",
       "progressPercent": 100,
       "photos": [
@@ -70,17 +167,16 @@
           "poster": "tahap-1-video-poster.jpg",
           "isLoopGif": true
         }
-      ]
+      ],
+      "id": "sanitasi"
     },
     {
-      "phase": 2,
       "title": "Pembangunan Teras Masjid Sisi Utara (Area Jum'atan Sementara)",
       "desc": "Pembuatan selasar teras utara beratap kokoh sebagai ruang shalat darurat agar ibadah shalat 5 waktu dan shalat Jum'at berjamaah tetap berjalan lancar.",
-      "badge": "Tahap 2",
+      "badge": "Pekerjaan lapangan",
       "status": "Dalam Proses",
       "timeline": "Oktober - November 2026",
       "quarter": "Q4 2026",
-      "targetBudget": "Rp 35.000.000",
       "milestone": "Rangka profil kanal C baja ringan, penutup atap spandek, & perataan lantai selasar darurat",
       "progressPercent": 65,
       "photos": [
@@ -99,43 +195,8 @@
           "desc": "Batang kanal C baja ringan 75x0.75 yang telah dipotong dan dirakit menjadi modul tiang penopang teras utara yang kokoh, siap untuk dipasang.",
           "filename": "tahap-2-fabrikasi-rangka.jpg"
         }
-      ]
-    },
-    {
-      "phase": 3,
-      "title": "Pembangunan Area Wudhu dan Kamar Mandi",
-      "desc": "Penyediaan sarana tempat wudhu higienis terpisah dan toilet modern yang siap digunakan sebelum pembongkaran bangunan utama lama.",
-      "badge": "Tahap 3",
-      "status": "Rencana",
-      "timeline": "Desember 2026 - Februari 2027",
-      "quarter": "Q1 2027",
-      "targetBudget": "Rp 60.000.000",
-      "milestone": "Tempat wudhu terpisah ikhwan/akhwat, 4 unit toilet, toren tandon air, & sistem pompa otomatis",
-      "progressPercent": 0
-    },
-    {
-      "phase": 4,
-      "title": "Pembangunan Struktur Bangunan Utama",
-      "desc": "Pengerjaan pondasi tapak cakar ayam bertulang, tiang kolom struktur utama 2 lantai, sloof balok penopang, dan cor plat dak mezzanine.",
-      "badge": "Tahap 4",
-      "status": "Rencana",
-      "timeline": "Maret - Agustus 2027",
-      "quarter": "Q2 - Q3 2027",
-      "targetBudget": "Rp 300.000.000",
-      "milestone": "Pondasi cakar ayam, 16 kolom beton bertulang, balok sloof, & pengecoran plat dak lantai mezanin",
-      "progressPercent": 0
-    },
-    {
-      "phase": 5,
-      "title": "Pembangunan Dinding dan Fasad",
-      "desc": "Pemasangan dinding bata ringan keliling, plester acian halus, ornamen arsitektur fasad modern islami, kusen jendela, dan ornamen mihrab.",
-      "badge": "Tahap 5",
-      "status": "Rencana",
-      "timeline": "September 2027 - 2028",
-      "quarter": "Q4 2027 - 2028",
-      "targetBudget": "Rp 180.000.000",
-      "milestone": "Dinding bata hebel, ornamen mihrab kayu jati / GRC islami, jendela alumunium, pengecatan & kubah",
-      "progressPercent": 0
+      ],
+      "id": "teras-utara"
     }
   ],
   "bankAccounts": [
@@ -272,8 +333,6 @@
   ],
   "financial": {
     "lastUpdate": "30 Agustus 2026",
-    "income": "Rp 24.850.000",
-    "expense": "Rp 16.320.000",
     "balance": "Rp 78.994.973",
     "buildingFundAllocated": "Rp 57.391.000",
     "buildingFundTarget": "Rp 600.000.000",
@@ -281,24 +340,7 @@
     "costCenter": {
       "infaqRenovasi": "Rp 77.391.000",
       "infaqUmum": "Rp 1.603.973"
-    },
-    "recentTransactions": [
-      {
-        "title": "Infaq Tromol Kotak Jum'at (28/08)",
-        "amount": "+ Rp 4.350.000",
-        "type": "in"
-      },
-      {
-        "title": "Listrik & Kebersihan Masjid (25/08)",
-        "amount": "- Rp 2.100.000",
-        "type": "out"
-      },
-      {
-        "title": "Honor Ustadz & Pengajar TPA (20/08)",
-        "amount": "- Rp 4.500.000",
-        "type": "out"
-      }
-    ]
+    }
   },
   "funding": {
     "title": "Skema Pendanaan",
