@@ -4,24 +4,26 @@ import masjidData from "@/data/masjid.json";
 import { useI18n } from "@/i18n/LanguageProvider";
 
 const specs = masjidData.specs;
+const plan = masjidData.plan;
+const land = masjidData.land;
 
 const highlights = [
   {
     icon: Layers,
     label: "2 Lantai",
-    desc: "Lantai dasar & mezanin",
+    desc: "Dua lantai penuh",
     color: "emerald",
   },
   {
     icon: Maximize2,
-    label: `${specs.buildingAreaM2} m²`,
-    desc: "Luas bangunan total",
+    label: "24 × 17 m",
+    desc: "Tapak bangunan 408 m²",
     color: "amber",
   },
   {
     icon: Users,
-    label: `${specs.capacity} Jamaah`,
-    desc: "Kapasitas penuh",
+    label: "300 Kepala Keluarga",
+    desc: "Lingkup pelayanan rencana ini",
     color: "blue",
   },
   {
@@ -125,7 +127,11 @@ export function DesainMasjidSection() {
               {tx("Spesifikasi Bangunan")}
             </h3>
             <p className="text-xs text-slate-500 mb-5 leading-relaxed">
-              {tx("Masjid permanen dua lantai dibangun di atas lahan seluas {area} m² untuk mewadahi seluruh kegiatan ibadah dan sosial jamaah Sukatani.", { area: specs.landAreaM2 })}
+              {tx("Rencana bangunan permanen dua lantai penuh berukuran 24 × 17 m, tapak {area} m², untuk melayani {households} kepala keluarga. Angka ini acuan resmi {date}.", {
+                area: specs.footprintM2,
+                households: specs.householdsServed,
+                date: plan.decidedOn,
+              })}
             </p>
 
             <div className="grid grid-cols-2 gap-3">
@@ -139,9 +145,7 @@ export function DesainMasjidSection() {
                   >
                     <Icon className="w-5 h-5" />
                     <div className="text-slate-900 font-extrabold text-sm leading-tight">
-                      {item.label.endsWith(" Jamaah")
-                        ? tx("{count} Jamaah", { count: specs.capacity })
-                        : tx(item.label)}
+                      {tx(item.label)}
                     </div>
                     <div className="text-slate-500 text-[11px]">
                       {item.desc.startsWith("Azimuth")
@@ -154,45 +158,41 @@ export function DesainMasjidSection() {
             </div>
           </div>
 
-          {/* Floor breakdown */}
           <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 space-y-3">
             <h3 className="text-base font-bold text-[#064e3b] mb-1">
-              {tx("Distribusi Lantai")}
+              {tx("Acuan Bangunan")}
             </h3>
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-slate-600">{tx("Lantai Dasar")}</span>
-              <span className="font-bold text-emerald-700 font-mono">
-                {specs.groundFloorM2} m²
-              </span>
-            </div>
-            <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-              <div
-                className="bg-gradient-to-r from-emerald-500 to-emerald-600 h-full rounded-full"
-                style={{
-                  width: `${(specs.groundFloorM2 / specs.buildingAreaM2) * 100}%`,
-                }}
-              />
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-slate-600">{tx("Lantai Mezanin")}</span>
-              <span className="font-bold text-amber-600 font-mono">
-                {specs.mezzanineFloorM2} m²
-              </span>
-            </div>
-            <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-              <div
-                className="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full"
-                style={{
-                  width: `${(specs.mezzanineFloorM2 / specs.buildingAreaM2) * 100}%`,
-                }}
-              />
-            </div>
-            <div className="border-t border-slate-100 pt-3 flex items-center justify-between text-sm font-bold">
-              <span className="text-slate-700">{tx("Total Bangunan")}</span>
-              <span className="text-[#064e3b] font-mono">
-                {specs.buildingAreaM2} m²
-              </span>
-            </div>
+            <dl className="space-y-2.5 text-sm">
+              <div className="flex items-start justify-between gap-3">
+                <dt className="text-slate-600">{tx("Tapak rencana")}</dt>
+                <dd className="font-bold text-emerald-700 font-mono text-end">24 m × 17 m</dd>
+              </div>
+              <div className="flex items-start justify-between gap-3">
+                <dt className="text-slate-600">{tx("Luas tapak")}</dt>
+                <dd className="font-bold text-emerald-700 font-mono text-end">{specs.footprintM2} m²</dd>
+              </div>
+              <div className="flex items-start justify-between gap-3">
+                <dt className="text-slate-600">{tx("Lantai")}</dt>
+                <dd className="font-bold text-slate-800 text-end">{tx("Dua lantai penuh")}</dd>
+              </div>
+              <div className="flex items-start justify-between gap-3">
+                <dt className="text-slate-600">{tx("RAB Tahap 1")}</dt>
+                <dd className="font-bold text-[#064e3b] font-mono text-end">{plan.tahap1Budget}</dd>
+              </div>
+              <div className="flex items-start justify-between gap-3">
+                <dt className="text-slate-600 shrink-0">{tx("Lahan bersertifikat")}</dt>
+                <dd className="font-bold text-amber-700 font-mono text-end">{land.areaM2} m²</dd>
+              </div>
+            </dl>
+            <p className="text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              {tx(specs.structure)}
+            </p>
+            <p className="text-xs text-slate-600 leading-relaxed bg-amber-50/80 border border-amber-200 rounded-xl p-3">
+              {tx(land.statement)}
+            </p>
+            <p className="text-[11px] text-slate-500 leading-relaxed">
+              {tx("Angka pada panel ini adalah acuan resmi {date}. Penampil CAD di samping adalah tautan gambar yang sudah terbit di situs.", { date: plan.decidedOn })}
+            </p>
           </div>
         </div>
       </div>

@@ -43,12 +43,12 @@ export function FinancialReportSection() {
 
           <div className="grid grid-cols-3 gap-3 mb-6">
             <div className="p-4 bg-emerald-50/70 border border-emerald-100 rounded-xl text-center">
-              <div className="text-xs text-emerald-800 font-medium">{tx("Pemasukan Bulan Ini")}</div>
-              <div className="text-base sm:text-lg font-bold text-[#047857] mt-1 font-mono">{fin.income}</div>
+              <div className="text-xs text-emerald-800 font-medium">{tx("Kas Infaq Renovasi")}</div>
+              <div className="text-base sm:text-lg font-bold text-[#047857] mt-1 font-mono">{fin.costCenter.infaqRenovasi}</div>
             </div>
-            <div className="p-4 bg-rose-50/70 border border-rose-100 rounded-xl text-center">
-              <div className="text-xs text-rose-800 font-medium">{tx("Pengeluaran Operasional")}</div>
-              <div className="text-base sm:text-lg font-bold text-rose-700 mt-1 font-mono">{fin.expense}</div>
+            <div className="p-4 bg-blue-50/70 border border-blue-100 rounded-xl text-center">
+              <div className="text-xs text-blue-800 font-medium">{tx("Kas Infaq Umum")}</div>
+              <div className="text-base sm:text-lg font-bold text-blue-800 mt-1 font-mono">{fin.costCenter.infaqUmum}</div>
             </div>
             <div className="p-4 bg-amber-50/70 border border-amber-100 rounded-xl text-center">
               <div className="text-xs text-amber-800 font-medium">{tx("Saldo Kas Aktif")}</div>
@@ -56,10 +56,9 @@ export function FinancialReportSection() {
             </div>
           </div>
 
-          {/* {tx("Target")} Renovasi / Program */}
           <div className="space-y-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
             <div className="flex justify-between items-center text-xs font-bold text-slate-700">
-              <span>{tx("Alokasi Dana Khusus Proyek Pembangunan Lantai 2")}</span>
+              <span>{tx("Progres Wakaf Pembangunan")}</span>
               <span className="text-[#047857] font-mono">{fin.buildingFundAllocated}</span>
             </div>
             <div className="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
@@ -69,23 +68,8 @@ export function FinancialReportSection() {
               ></div>
             </div>
             <div className="text-[11px] text-slate-500 flex justify-between">
-              <span>{tx("Target Total:")} <b className="font-mono">{fin.buildingFundTarget}</b></span>
-              <span>{tx("Target Groundbreaking: Akhir 2026")}</span>
-            </div>
-          </div>
-
-          {/* Mutasi Terakhir */}
-          <div className="mt-6">
-            <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">{tx("Catatan Transaksi Terakhir")}</h4>
-            <div className="space-y-2 text-xs">
-              {fin.recentTransactions.map((tx, idx) => (
-                <div key={idx} className="flex justify-between items-center py-2 border-b border-slate-100">
-                  <span className="text-slate-600">{tx.title}</span>
-                  <span className={`font-bold font-mono ${tx.type === "in" ? "text-emerald-600" : "text-rose-600"}`}>
-                    {tx.amount}
-                  </span>
-                </div>
-              ))}
+              <span>{tx("Progres Wakaf Pembangunan")} <b className="font-mono">{fin.buildingFundAllocated} / {fin.buildingFundTarget}</b></span>
+              <span>{tx("Update: {date}", { date: fin.lastUpdate })}</span>
             </div>
           </div>
         </div>
