@@ -13,8 +13,10 @@
 
 .bg-pattern {
   background-color: #064e3b;
-  background-image: 
-    radial-gradient(#10b981 0.75px, transparent 0.75px), 
+  /* Outer stop must stay zero-alpha green. `transparent` compiles to #0000,
+     which Safari paints as an opaque black rectangle over the top-left tiles. */
+  background-image:
+    radial-gradient(#10b981 0.75px, rgb(6 78 59 / 0) 0.75px),
     radial-gradient(#10b981 0.75px, #064e3b 0.75px);
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
