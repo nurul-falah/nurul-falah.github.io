@@ -82,7 +82,9 @@ export function HistoryPage({ onBackToHome }: HistoryPageProps) {
 
       {/* 2. Hero / Header Statement */}
       <header className="relative bg-gradient-to-b from-amber-950 via-slate-900 to-slate-900 text-white pt-16 pb-20 px-4 sm:px-6 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+        {/* Outer stop must stay zero-alpha amber-950. `transparent` compiles to #0000,
+            which Safari paints as an opaque black rectangle over the top-left tiles. */}
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,rgb(70_25_1/0)_1px)] [background-size:20px_20px] pointer-events-none" />
         
         <div className="max-w-4xl mx-auto relative z-10 text-center sm:text-start">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold tracking-wide uppercase border border-amber-500/30 mb-4">
