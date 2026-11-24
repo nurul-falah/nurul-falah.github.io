@@ -6,6 +6,7 @@ import { PilarSection } from "@/components/home/PilarSection";
 import { AdArtSection } from "@/components/home/AdArtSection";
 import { AdArtPage } from "@/components/home/AdArtPage";
 import { HistoryPage } from "@/components/history/HistoryPage";
+import { ProgramMasjidPage } from "@/components/program/ProgramMasjidPage";
 import { RoutineProgramSection } from "@/components/home/RoutineProgramSection";
 import { LongTermProgramSection } from "@/components/home/LongTermProgramSection";
 import { DesainMasjidSection } from "@/components/home/DesainMasjidSection";
@@ -18,6 +19,12 @@ import { Footer } from "@/components/layout/Footer";
 import { InfaqModal } from "@/components/infaq/InfaqModal";
 import { LayananModal } from "@/components/home/LayananModal";
 import { useI18n } from "@/i18n/LanguageProvider";
+
+const STANDALONE_PAGES = new Set(["/ad-art", "/history", "/program-masjid"]);
+
+function isStandalonePage(path: string): boolean {
+  return STANDALONE_PAGES.has(path);
+}
 
 const SECTION_PATH_MAP: Record<string, string> = {
   "/pilar": "#pilar",
@@ -68,7 +75,7 @@ export function App() {
 
   // Handle initial load for direct route visits (/pilar, /desain-masjid, etc.) or legacy hashes
   useEffect(() => {
-    if (currentPath === "/ad-art" || currentPath === "/history") {
+    if (isStandalonePage(currentPath)) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -91,7 +98,7 @@ export function App() {
     const handlePopState = () => {
       const path = getInitialPath();
       setCurrentPath(path);
-      if (path === "/ad-art" || path === "/history") {
+      if (isStandalonePage(path)) {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         scrollToSectionByPath(window.location.hash || path);
@@ -115,7 +122,7 @@ export function App() {
     setCurrentPath(cleanTarget);
     window.history.pushState({ path: cleanTarget }, "", cleanTarget);
 
-    if (cleanTarget === "/ad-art" || cleanTarget === "/history") {
+    if (isStandalonePage(cleanTarget)) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       scrollToSectionByPath(cleanTarget);
@@ -137,7 +144,7 @@ export function App() {
         onNavigate={handleNavigate}
       />
 
-      {/* 2. Main Content: Switch between Pages (/ad-art, /history) & Home Landing Page */}
+      {/* 2. Main Content: Switch between standalone pages and the home landing page */}
       {currentPath === "/ad-art" ? (
         <main id="konten" className="flex-1">
           <AdArtPage onBackToHome={() => handleNavigate("/")} />
@@ -145,6 +152,10 @@ export function App() {
       ) : currentPath === "/history" ? (
         <main id="konten" className="flex-1">
           <HistoryPage onBackToHome={() => handleNavigate("/")} />
+        </main>
+      ) : currentPath === "/program-masjid" ? (
+        <main id="konten" className="flex-1">
+          <ProgramMasjidPage onNavigate={handleNavigate} />
         </main>
       ) : (
         <main id="konten" className="flex-1">

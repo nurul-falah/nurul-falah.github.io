@@ -46,6 +46,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-2">
               <li><a href="/" onClick={(e) => handleLinkClick(e, "/")} className="hover:text-amber-300 transition">{tx("Beranda Utama")}</a></li>
               <li><a href="/pilar" onClick={(e) => handleLinkClick(e, "/pilar")} className="hover:text-amber-300 transition">{tx("3 Pilar Nilai Dasar")}</a></li>
+              <li><a href="/program-masjid" onClick={(e) => handleLinkClick(e, "/program-masjid")} className="hover:text-amber-300 transition">{tx("Program Masjid")}</a></li>
               <li><a href="/ad-art" onClick={(e) => handleLinkClick(e, "/ad-art")} className="hover:text-amber-300 transition text-amber-300 font-bold">{tx("AD/ART Organisasi DKM")}</a></li>
               <li><a href="/struktur-organisasi" onClick={(e) => handleLinkClick(e, "/struktur-organisasi")} className="hover:text-amber-300 transition">{tx("Struktur Organisasi")}</a></li>
               <li><a href="/jadwal" onClick={(e) => handleLinkClick(e, "/jadwal")} className="hover:text-amber-300 transition">{tx("Jadwal Shalat Sukatani")}</a></li>
