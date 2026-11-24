@@ -21,7 +21,7 @@
 
 ## 🏛️ Acuan bangunan (22 November 2026)
 
-Angka di bawah ini adalah acuan resmi yang ditetapkan Ketua DKM. Bilah progres di situs tetap pembaruan 30 Agustus 2026: Rp 57.391.000 / Rp 600.000.000.
+Angka di bawah ini adalah acuan resmi yang ditetapkan Ketua DKM. Bilah progres di situs tetap pembaruan 30 Agustus 2026: Rp 57.391.000 / Rp 762.000.000.
 
 * **Tapak rencana:** 24 m × 17 m, luas tapak 408 m², dua lantai penuh
 * **Pelayanan:** 300 kepala keluarga
