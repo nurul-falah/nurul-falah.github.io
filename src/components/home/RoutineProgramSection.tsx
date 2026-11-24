@@ -8,6 +8,8 @@ interface ProgramPhoto {
   fallback: string;
   alt: string;
   caption: string;
+  width?: number;
+  height?: number;
 }
 
 type RoutineProgram = (typeof masjidData.routinePrograms)[number] & {
@@ -100,6 +102,8 @@ export function RoutineProgramSection() {
                     <img
                       src={photo.fallback}
                       alt={tx(photo.alt)}
+                      width={photo.width}
+                      height={photo.height}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-auto bg-slate-100"
