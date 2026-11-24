@@ -48,6 +48,32 @@ function getInitialPath(): string {
   return cleaned === "" ? "/" : cleaned;
 }
 
+function hashElementId(): string {
+  const raw = window.location.hash.startsWith("#") ? window.location.hash.slice(1) : "";
+  if (!raw) return "";
+  try {
+    return decodeURIComponent(raw);
+  } catch {
+    return raw;
+  }
+}
+
+function scrollStandalonePage(path: string) {
+  if (path !== "/program-masjid") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  const id = hashElementId();
+  setTimeout(() => {
+    const el = id ? document.getElementById(id) : null;
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, 60);
+}
+
 function scrollToSectionByPath(path: string) {
   if (!path || path === "/" || path === "#beranda") {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -76,7 +102,7 @@ export function App() {
   // Handle initial load for direct route visits (/pilar, /desain-masjid, etc.) or legacy hashes
   useEffect(() => {
     if (isStandalonePage(currentPath)) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollStandalonePage(currentPath);
       return;
     }
     if (currentPath !== "/" && SECTION_PATH_MAP[currentPath]) {
@@ -99,7 +125,7 @@ export function App() {
       const path = getInitialPath();
       setCurrentPath(path);
       if (isStandalonePage(path)) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        scrollStandalonePage(path);
       } else {
         scrollToSectionByPath(window.location.hash || path);
       }
@@ -123,7 +149,7 @@ export function App() {
     window.history.pushState({ path: cleanTarget }, "", cleanTarget);
 
     if (isStandalonePage(cleanTarget)) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollStandalonePage(cleanTarget);
     } else {
       scrollToSectionByPath(cleanTarget);
     }
