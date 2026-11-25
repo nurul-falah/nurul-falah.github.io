@@ -53,6 +53,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <li><a href="/desain-masjid" onClick={(e) => handleLinkClick(e, "/desain-masjid")} className="hover:text-amber-300 transition">{tx("Desain Masjid")}</a></li>
               <li><a href="/wakaf-pembangunan" onClick={(e) => handleLinkClick(e, "/wakaf-pembangunan")} className="hover:text-amber-300 transition">{tx("Wakaf Pembangunan")}</a></li>
               <li><a href="/pendanaan" onClick={(e) => handleLinkClick(e, "/pendanaan")} className="hover:text-amber-300 transition">{tx("Skema Pendanaan")}</a></li>
+              <li><a href="/cara-berdonasi" onClick={(e) => handleLinkClick(e, "/cara-berdonasi")} className="hover:text-amber-300 transition">{tx("Cara Berdonasi")}</a></li>
               <li><a href="/rekap-tugas" onClick={(e) => handleLinkClick(e, "/rekap-tugas")} className="hover:text-amber-300 transition">{tx("Rekap Tugas DKM")}</a></li>
             </ul>
           </div>
@@ -61,10 +62,11 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-white font-bold mb-3 uppercase tracking-wider text-xs">{tx("Kanal Informasi")}</h4>
             <div className="space-y-2">
               <a
+                id="kontak"
                 href={masjidData.contacts.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-white transition"
+                className="flex items-center gap-2 hover:text-white transition scroll-mt-36"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-400" /> {tx("WhatsApp Pengurus DKM")}
               </a>

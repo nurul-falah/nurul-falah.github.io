@@ -6,6 +6,7 @@ import { PilarSection } from "@/components/home/PilarSection";
 import { AdArtSection } from "@/components/home/AdArtSection";
 import { AdArtPage } from "@/components/home/AdArtPage";
 import { HistoryPage } from "@/components/history/HistoryPage";
+import { CaraBerdonasiPage } from "@/components/donate/CaraBerdonasiPage";
 import { ProgramMasjidPage } from "@/components/program/ProgramMasjidPage";
 import { RoutineProgramSection } from "@/components/home/RoutineProgramSection";
 import { LongTermProgramSection } from "@/components/home/LongTermProgramSection";
@@ -20,7 +21,7 @@ import { InfaqModal } from "@/components/infaq/InfaqModal";
 import { LayananModal } from "@/components/home/LayananModal";
 import { useI18n } from "@/i18n/LanguageProvider";
 
-const STANDALONE_PAGES = new Set(["/ad-art", "/history", "/program-masjid"]);
+const STANDALONE_PAGES = new Set(["/ad-art", "/history", "/program-masjid", "/cara-berdonasi"]);
 
 function isStandalonePage(path: string): boolean {
   return STANDALONE_PAGES.has(path);
@@ -37,6 +38,25 @@ const SECTION_PATH_MAP: Record<string, string> = {
   "/rekap-tugas": "#rekap-tugas",
   "/struktur-organisasi": "#struktur-organisasi",
 };
+
+function resolveNavTarget(targetPath: string): { path: string; hash: string } {
+  let raw = targetPath || "/";
+  let hash = "";
+  const hashAt = raw.indexOf("#");
+  if (hashAt > 0) {
+    hash = raw.slice(hashAt);
+    raw = raw.slice(0, hashAt) || "/";
+  }
+
+  if (raw === "#beranda" || raw === "") {
+    return { path: "/", hash: "" };
+  }
+  if (raw.startsWith("#")) {
+    const matched = Object.keys(SECTION_PATH_MAP).find((key) => SECTION_PATH_MAP[key] === raw);
+    return { path: matched || `/${raw.slice(1)}`, hash: "" };
+  }
+  return { path: raw, hash };
+}
 
 function getInitialPath(): string {
   if (typeof window === "undefined") return "/";
@@ -83,14 +103,24 @@ function scrollToSectionByPath(path: string) {
     ? path
     : SECTION_PATH_MAP[path] || `#${path.replace(/^\/+/, "")}`;
 
-  setTimeout(() => {
+  const started = performance.now();
+  const attempt = () => {
     const el = document.querySelector(selector);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const distance = Math.abs(el.getBoundingClientRect().top);
+      el.scrollIntoView({
+        behavior: distance > window.innerHeight ? "auto" : "smooth",
+        block: "start",
+      });
+      return;
     }
-  }, 60);
+    if (performance.now() - started < 800) {
+      window.setTimeout(attempt, 50);
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  window.setTimeout(attempt, 60);
 }
 
 export function App() {
@@ -103,6 +133,15 @@ export function App() {
   useEffect(() => {
     if (isStandalonePage(currentPath)) {
       scrollStandalonePage(currentPath);
+      return;
+    }
+    if (
+      currentPath !== "/" &&
+      SECTION_PATH_MAP[currentPath] &&
+      window.location.hash &&
+      window.location.hash !== SECTION_PATH_MAP[currentPath]
+    ) {
+      scrollToSectionByPath(window.location.hash);
       return;
     }
     if (currentPath !== "/" && SECTION_PATH_MAP[currentPath]) {
@@ -135,23 +174,14 @@ export function App() {
   }, []);
 
   const handleNavigate = useCallback((targetPath: string) => {
-    let cleanTarget = targetPath || "/";
-    if (cleanTarget === "#beranda") {
-      cleanTarget = "/";
-    } else if (cleanTarget.startsWith("#")) {
-      const matched = Object.keys(SECTION_PATH_MAP).find(
-        (k) => SECTION_PATH_MAP[k] === cleanTarget
-      );
-      cleanTarget = matched || `/${cleanTarget.slice(1)}`;
-    }
+    const { path, hash } = resolveNavTarget(targetPath);
+    setCurrentPath(path);
+    window.history.pushState({ path }, "", hash ? `${path}${hash}` : path);
 
-    setCurrentPath(cleanTarget);
-    window.history.pushState({ path: cleanTarget }, "", cleanTarget);
-
-    if (isStandalonePage(cleanTarget)) {
-      scrollStandalonePage(cleanTarget);
+    if (isStandalonePage(path)) {
+      scrollStandalonePage(path);
     } else {
-      scrollToSectionByPath(cleanTarget);
+      scrollToSectionByPath(hash || path);
     }
   }, []);
 
@@ -182,6 +212,13 @@ export function App() {
       ) : currentPath === "/program-masjid" ? (
         <main id="konten" className="flex-1">
           <ProgramMasjidPage onNavigate={handleNavigate} />
+        </main>
+      ) : currentPath === "/cara-berdonasi" ? (
+        <main id="konten" className="flex-1">
+          <CaraBerdonasiPage
+            onBackToHome={() => handleNavigate("/")}
+            onNavigate={handleNavigate}
+          />
         </main>
       ) : (
         <main id="konten" className="flex-1">
@@ -216,7 +253,10 @@ export function App() {
           <DesainMasjidSection />
 
           {/* 5. Wakaf Pembangunan */}
-          <WakafPembangunanSection onOpenWakaf={() => setIsInfaqOpen(true)} />
+          <WakafPembangunanSection
+            onOpenWakaf={() => setIsInfaqOpen(true)}
+            onNavigate={handleNavigate}
+          />
 
           {/* 6. Skema Pendanaan */}
           <PendanaanSection onOpenWakaf={() => setIsInfaqOpen(true)} />
@@ -233,7 +273,14 @@ export function App() {
       <Footer onNavigate={handleNavigate} />
 
       {/* 4. Interactive Modals */}
-      <InfaqModal open={isInfaqOpen} onOpenChange={setIsInfaqOpen} />
+      <InfaqModal
+        open={isInfaqOpen}
+        onOpenChange={setIsInfaqOpen}
+        onShowGuide={() => {
+          setIsInfaqOpen(false);
+          handleNavigate("/cara-berdonasi");
+        }}
+      />
       <LayananModal open={isLayananOpen} onOpenChange={setIsLayananOpen} />
     </div>
   );

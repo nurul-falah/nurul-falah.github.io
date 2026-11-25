@@ -61,6 +61,7 @@ const phaseImageMap: Record<string, string> = {
 
 export interface WakafSectionProps {
   onOpenWakaf?: () => void;
+  onNavigate?: (path: string) => void;
 }
 
 const financial = masjidData.financial;
@@ -68,7 +69,7 @@ const account = masjidData.bankAccounts[0];
 const phaseIcons = [Building2, Layers, Hammer, Droplets, Sparkles];
 const tahap1Total = masjidData.plan.rab.reduce((sum, item) => sum + item.amount, 0);
 
-export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
+export function WakafPembangunanSection({ onOpenWakaf, onNavigate }: WakafSectionProps) {
   const { tx, dir } = useI18n();
 
   const [copiedAccount, setCopiedAccount] = useState(false);
@@ -1050,6 +1051,18 @@ export function WakafPembangunanSection({ onOpenWakaf }: WakafSectionProps) {
             >
               <MessageCircle className="w-5 h-5 text-emerald-600" />
               {tx("Konfirmasi via WhatsApp")}
+            </a>
+            <a
+              href="/cara-berdonasi"
+              onClick={(event) => {
+                if (!onNavigate) return;
+                event.preventDefault();
+                onNavigate("/cara-berdonasi");
+              }}
+              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800 font-semibold text-sm transition"
+            >
+              <FileText className="w-5 h-5 text-emerald-700" />
+              {tx("Cara Berdonasi")}
             </a>
             <p className="text-center text-[11px] text-slate-400 leading-relaxed pt-1">
               {tx("Setelah transfer, harap konfirmasi kepada panitia agar donasi Anda dapat segera tercatat dan didoakan. Jazākumullāhu khairan.")}

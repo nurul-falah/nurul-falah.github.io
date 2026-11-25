@@ -17,7 +17,13 @@ export function Navbar({
   const { tx } = useI18n();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
+  const navLinks: {
+    label: string;
+    shortLabel: string;
+    href: string;
+    highlight?: boolean;
+    mobileOnly?: boolean;
+  }[] = [
     { label: tx("Pilar Nilai"), shortLabel: tx("Pilar"), href: "/pilar" },
     { label: tx("Program Masjid"), shortLabel: tx("Program"), href: "/program-masjid" },
     { label: "AD/ART", shortLabel: "AD/ART", href: "/ad-art" },
@@ -25,6 +31,7 @@ export function Navbar({
     { label: tx("Desain Masjid"), shortLabel: tx("Desain"), href: "/desain-masjid" },
     { label: tx("Wakaf Pembangunan"), shortLabel: tx("Wakaf"), href: "/wakaf-pembangunan", highlight: true },
     { label: tx("Skema Pendanaan"), shortLabel: tx("Pendanaan"), href: "/pendanaan" },
+    { label: tx("Cara Berdonasi"), shortLabel: tx("Cara Berdonasi"), href: "/cara-berdonasi", mobileOnly: true },
     { label: tx("Rekap Tugas"), shortLabel: tx("Tugas"), href: "/rekap-tugas" },
   ];
 
@@ -75,7 +82,7 @@ export function Navbar({
           {/* Right Group: Desktop Nav Links & CTA Button */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2 min-w-0 flex-1 justify-end">
             <nav className="flex items-center gap-1 text-xs xl:text-sm font-semibold text-slate-600 min-w-0 overflow-x-auto hide-scrollbar">
-              {navLinks.map((link) => {
+              {navLinks.filter((link) => !link.mobileOnly).map((link) => {
                 const isActive = currentPath === link.href;
 
                 if (link.highlight) {
@@ -135,7 +142,7 @@ export function Navbar({
           {/* Tablet (md to lg) Navigation Bar with compact labels */}
           <div className="hidden md:flex lg:hidden items-center gap-1 min-w-0 flex-1 justify-end">
             <nav className="flex items-center gap-0.5 text-xs font-semibold text-slate-600 min-w-0 overflow-x-auto hide-scrollbar">
-              {navLinks.map((link) => {
+              {navLinks.filter((link) => !link.mobileOnly).map((link) => {
                 const isActive = currentPath === link.href;
 
                 return (

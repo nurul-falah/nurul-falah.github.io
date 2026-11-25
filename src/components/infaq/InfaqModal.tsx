@@ -13,9 +13,10 @@ import { useI18n } from "@/i18n/LanguageProvider";
 export interface InfaqModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onShowGuide?: () => void;
 }
 
-export function InfaqModal({ open, onOpenChange }: InfaqModalProps) {
+export function InfaqModal({ open, onOpenChange, onShowGuide }: InfaqModalProps) {
   const { tx } = useI18n();
 
   const [copiedAccount, setCopiedAccount] = useState<boolean>(false);
@@ -126,6 +127,16 @@ export function InfaqModal({ open, onOpenChange }: InfaqModalProps) {
             </span>
           </div>
         </div>
+
+        {onShowGuide && (
+          <button
+            type="button"
+            onClick={onShowGuide}
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-emerald-200 bg-white hover:bg-emerald-50 text-[#047857] font-semibold text-sm transition cursor-pointer"
+          >
+            {tx("Cara Berdonasi")}
+          </button>
+        )}
 
         {/* Footer WhatsApp Confirmation */}
         <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
