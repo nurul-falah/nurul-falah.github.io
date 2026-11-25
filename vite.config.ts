@@ -11,6 +11,7 @@ const SPA_ROUTES = [
   "pilar",
   "jadwal",
   "program",
+  "program-masjid",
   "program-panjang",
   "desain-masjid",
   "wakaf-pembangunan",

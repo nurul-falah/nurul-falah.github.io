@@ -25,6 +25,7 @@ export function Navbar({
     mobileOnly?: boolean;
   }[] = [
     { label: tx("Pilar Nilai"), shortLabel: tx("Pilar"), href: "/pilar" },
+    { label: tx("Program Masjid"), shortLabel: tx("Program"), href: "/program-masjid" },
     { label: "AD/ART", shortLabel: "AD/ART", href: "/ad-art" },
     { label: tx("Struktur Organisasi"), shortLabel: tx("Struktur"), href: "/struktur-organisasi" },
     { label: tx("Desain Masjid"), shortLabel: tx("Desain"), href: "/desain-masjid" },
@@ -78,9 +79,9 @@ export function Navbar({
             </div>
           </a>
 
-          {/* Right Group: Desktop & Tablet Nav Links & CTA Button */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
-            <nav className="flex items-center gap-1 text-xs xl:text-sm font-semibold text-slate-600">
+          {/* Right Group: Desktop Nav Links & CTA Button */}
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2 min-w-0 flex-1 justify-end">
+            <nav className="flex items-center gap-1 text-xs xl:text-sm font-semibold text-slate-600 min-w-0 overflow-x-auto hide-scrollbar">
               {navLinks.filter((link) => !link.mobileOnly).map((link) => {
                 const isActive = currentPath === link.href;
 
@@ -91,7 +92,7 @@ export function Navbar({
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
                       title={link.label}
-                      className={`px-2.5 xl:px-3 py-2 rounded-lg transition flex items-center gap-1 font-bold whitespace-nowrap ${
+                      className={`px-2.5 xl:px-3 py-2 rounded-lg transition flex items-center gap-1 font-bold whitespace-nowrap shrink-0 ${
                         isActive
                           ? "bg-emerald-700 text-white shadow-2xs"
                           : "text-emerald-800 bg-emerald-50 hover:bg-emerald-100"
@@ -112,7 +113,7 @@ export function Navbar({
                     key={link.label}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className={`px-2.5 xl:px-3 py-2 rounded-lg transition whitespace-nowrap ${
+                    className={`px-2.5 xl:px-3 py-2 rounded-lg transition whitespace-nowrap shrink-0 ${
                       isActive
                         ? "text-emerald-800 bg-emerald-50 font-bold"
                         : "hover:text-emerald-700 hover:bg-emerald-50"
@@ -135,12 +136,12 @@ export function Navbar({
               <HeartHandshake className="w-4 h-4 text-amber-300" />
               <span>{tx("Infaq / Wakaf")}</span>
             </button>
-            <LanguageSwitcher className="ms-1" />
+            <LanguageSwitcher className="ms-1 shrink-0" />
           </div>
 
           {/* Tablet (md to lg) Navigation Bar with compact labels */}
-          <div className="hidden md:flex lg:hidden items-center gap-1">
-            <nav className="flex items-center gap-0.5 text-xs font-semibold text-slate-600">
+          <div className="hidden md:flex lg:hidden items-center gap-1 min-w-0 flex-1 justify-end">
+            <nav className="flex items-center gap-0.5 text-xs font-semibold text-slate-600 min-w-0 overflow-x-auto hide-scrollbar">
               {navLinks.filter((link) => !link.mobileOnly).map((link) => {
                 const isActive = currentPath === link.href;
 
@@ -149,7 +150,7 @@ export function Navbar({
                     key={link.label}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className={`px-2 py-1.5 rounded-lg transition whitespace-nowrap ${
+                    className={`px-2 py-1.5 rounded-lg transition whitespace-nowrap shrink-0 ${
                       link.highlight || isActive
                         ? "text-emerald-800 bg-emerald-50 font-bold"
                         : "hover:text-emerald-700 hover:bg-emerald-50"
@@ -169,7 +170,7 @@ export function Navbar({
               <HeartHandshake className="w-3.5 h-3.5 text-amber-300" />
               <span>{tx("Infaq")}</span>
             </button>
-            <LanguageSwitcher className="ms-1" />
+            <LanguageSwitcher className="ms-1 shrink-0" />
           </div>
 
           {/* Mobile Menu Toggle (below md) */}

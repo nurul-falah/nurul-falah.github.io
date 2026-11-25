@@ -1,6 +1,7 @@
 import React from "react";
 import { Milestone, Hammer, BookMarked, CheckCircle2, Sparkles, Compass } from "lucide-react";
 import masjidData from "@/data/masjid.json";
+import { PEMBINAAN_STATUS, pembinaanPrograms } from "@/data/pembinaanPrograms";
 import { useI18n } from "@/i18n/LanguageProvider";
 
 export interface LongTermProgramSectionProps {
@@ -52,34 +53,15 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
 
               {/* Rincian Program Dakwah */}
               <ul className="space-y-3.5 text-xs text-slate-200 mb-6">
-                <li className="flex items-start gap-2.5">
-                  <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <b className="text-white">{tx("Pelatihan Baca-Tulis Al-Qur'an:")}</b>
-                    <p className="text-slate-300 text-[11px]">{tx("Bimbingan membaca Iqro, tajwid, tahsin tilawah, dan literasi menulis huruf hijaiyah secara sistematis sedari dini.")}</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <b className="text-white">{tx("Pelatihan Shalat Berjamaah Maghrib:")}</b>
-                    <p className="text-slate-300 text-[11px]">{tx("Pembiasaan disiplin hadir ke masjid meramaikan shaf shalat Maghrib berjamaah, adab di dalam masjid, dan doa harian.")}</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <b className="text-white">{tx("Pelatihan Imam Shalat Isya:")}</b>
-                    <p className="text-slate-300 text-[11px]">{tx("Kaderisasi keberanian adzan, iqomah, kefasihan bacaan surat, dan tata cara memimpin shalat Isya bagi generasi muda.")}</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <b className="text-white">{tx("Pelatihan Mengajar Baca-Tulis Al-Qur'an:")}</b>
-                    <p className="text-slate-300 text-[11px]">{tx("Training of Trainers (ToT) bagi para remaja dan kader dakwah untuk menjadi pengajar Al-Qur'an generasi berikutnya.")}</p>
-                  </div>
-                </li>
+                {pembinaanPrograms.map((item) => (
+                  <li key={item.title} className="flex items-start gap-2.5">
+                    <Sparkles className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <b className="text-white">{tx(item.title)}</b>
+                      <p className="text-slate-300 text-[11px]">{tx(item.desc)}</p>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -87,7 +69,7 @@ export function LongTermProgramSection({ onOpenWakaf, onOpenLayanan }: LongTermP
             <div className="bg-emerald-950/60 p-4 rounded-xl border border-emerald-500/20 mt-2 flex items-center justify-between text-xs">
               <div>
                 <div className="text-emerald-300 font-bold">{tx("Status Program")}</div>
-                <div className="text-[11px] text-emerald-200">{tx("Sudah berjalan tanpa kendala")}</div>
+                <div className="text-[11px] text-emerald-200">{tx(PEMBINAAN_STATUS)}</div>
               </div>
               <button
                 type="button"

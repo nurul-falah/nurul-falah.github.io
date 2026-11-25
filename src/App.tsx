@@ -7,6 +7,7 @@ import { AdArtSection } from "@/components/home/AdArtSection";
 import { AdArtPage } from "@/components/home/AdArtPage";
 import { HistoryPage } from "@/components/history/HistoryPage";
 import { CaraBerdonasiPage } from "@/components/donate/CaraBerdonasiPage";
+import { ProgramMasjidPage } from "@/components/program/ProgramMasjidPage";
 import { RoutineProgramSection } from "@/components/home/RoutineProgramSection";
 import { LongTermProgramSection } from "@/components/home/LongTermProgramSection";
 import { DesainMasjidSection } from "@/components/home/DesainMasjidSection";
@@ -20,6 +21,12 @@ import { InfaqModal } from "@/components/infaq/InfaqModal";
 import { LayananModal } from "@/components/home/LayananModal";
 import { useI18n } from "@/i18n/LanguageProvider";
 
+const STANDALONE_PAGES = new Set(["/ad-art", "/history", "/program-masjid", "/cara-berdonasi"]);
+
+function isStandalonePage(path: string): boolean {
+  return STANDALONE_PAGES.has(path);
+}
+
 const SECTION_PATH_MAP: Record<string, string> = {
   "/pilar": "#pilar",
   "/jadwal": "#jadwal",
@@ -31,12 +38,6 @@ const SECTION_PATH_MAP: Record<string, string> = {
   "/rekap-tugas": "#rekap-tugas",
   "/struktur-organisasi": "#struktur-organisasi",
 };
-
-const STANDALONE_PATHS = new Set(["/ad-art", "/history", "/cara-berdonasi"]);
-
-function isStandalonePath(path: string): boolean {
-  return STANDALONE_PATHS.has(path);
-}
 
 function resolveNavTarget(targetPath: string): { path: string; hash: string } {
   let raw = targetPath || "/";
@@ -65,6 +66,32 @@ function getInitialPath(): string {
   }
   const cleaned = window.location.pathname.replace(/\/+$/, "");
   return cleaned === "" ? "/" : cleaned;
+}
+
+function hashElementId(): string {
+  const raw = window.location.hash.startsWith("#") ? window.location.hash.slice(1) : "";
+  if (!raw) return "";
+  try {
+    return decodeURIComponent(raw);
+  } catch {
+    return raw;
+  }
+}
+
+function scrollStandalonePage(path: string) {
+  if (path !== "/program-masjid") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  const id = hashElementId();
+  setTimeout(() => {
+    const el = id ? document.getElementById(id) : null;
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, 60);
 }
 
 function scrollToSectionByPath(path: string) {
@@ -104,8 +131,8 @@ export function App() {
 
   // Handle initial load for direct route visits (/pilar, /desain-masjid, etc.) or legacy hashes
   useEffect(() => {
-    if (isStandalonePath(currentPath)) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (isStandalonePage(currentPath)) {
+      scrollStandalonePage(currentPath);
       return;
     }
     if (
@@ -136,8 +163,8 @@ export function App() {
     const handlePopState = () => {
       const path = getInitialPath();
       setCurrentPath(path);
-      if (isStandalonePath(path)) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+      if (isStandalonePage(path)) {
+        scrollStandalonePage(path);
       } else {
         scrollToSectionByPath(window.location.hash || path);
       }
@@ -151,8 +178,8 @@ export function App() {
     setCurrentPath(path);
     window.history.pushState({ path }, "", hash ? `${path}${hash}` : path);
 
-    if (isStandalonePath(path)) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (isStandalonePage(path)) {
+      scrollStandalonePage(path);
     } else {
       scrollToSectionByPath(hash || path);
     }
@@ -173,7 +200,7 @@ export function App() {
         onNavigate={handleNavigate}
       />
 
-      {/* 2. Main Content: Switch between Pages (/ad-art, /history) & Home Landing Page */}
+      {/* 2. Main Content: Switch between standalone pages and the home landing page */}
       {currentPath === "/ad-art" ? (
         <main id="konten" className="flex-1">
           <AdArtPage onBackToHome={() => handleNavigate("/")} />
@@ -181,6 +208,10 @@ export function App() {
       ) : currentPath === "/history" ? (
         <main id="konten" className="flex-1">
           <HistoryPage onBackToHome={() => handleNavigate("/")} />
+        </main>
+      ) : currentPath === "/program-masjid" ? (
+        <main id="konten" className="flex-1">
+          <ProgramMasjidPage onNavigate={handleNavigate} />
         </main>
       ) : currentPath === "/cara-berdonasi" ? (
         <main id="konten" className="flex-1">

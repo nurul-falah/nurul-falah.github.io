@@ -260,12 +260,16 @@
         {
           "src": "/images/program/ngaji-1-v2.webp",
           "fallback": "/images/program/ngaji-1-v2.jpg",
+          "width": 932,
+          "height": 1174,
           "alt": "Anak-anak putri dan putra duduk di meja kecil sambil mengaji di serambi Masjid Nurul Falah pada malam hari",
           "caption": "Kegiatan mengaji anak-anak di serambi Masjid Nurul Falah"
         },
         {
           "src": "/images/program/ngaji-2-v2.webp",
           "fallback": "/images/program/ngaji-2-v2.jpg",
+          "width": 942,
+          "height": 968,
           "alt": "Anak-anak laki-laki mengaji bersama ustadz di serambi Masjid Nurul Falah pada malam hari",
           "caption": "Anak-anak mengaji bersama ustadz di serambi Masjid Nurul Falah"
         }

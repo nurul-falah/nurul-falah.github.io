@@ -4,6 +4,7 @@ import { adartRest } from "./adart-rest";
 import { content } from "./content";
 import { donate } from "./donate";
 import { history } from "./history";
+import { program } from "./program";
 import { ui } from "./ui";
 
-export const catalog = mergeCatalogs(ui, content, history, adart, adartRest, donate);
+export const catalog = mergeCatalogs(ui, content, history, program, adart, adartRest, donate);
